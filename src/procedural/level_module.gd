@@ -1,10 +1,10 @@
 class_name LevelModule extends Node2D
 
 var connectors: Array[ModuleConnector]
-var interactable_spots: Array[InteractableSpot]
+var entity_spots: Array[EntitySpot]
 
 static var _module_connector_class_name := (ModuleConnector as Script).get_global_name()
-static var _spots_class_name := (InteractableSpot as Script).get_global_name()
+static var _spots_class_name := (EntitySpot as Script).get_global_name()
 
 
 func _ready() -> void:
@@ -16,7 +16,7 @@ func init_entities() -> void:
 		connectors.append(connector as ModuleConnector)
 	
 	for spot in find_children("", _spots_class_name):
-		interactable_spots.append(spot as InteractableSpot)
+		entity_spots.append(spot as EntitySpot)
 
 
 ## Connect the module to another module connector.
@@ -58,6 +58,6 @@ func dangling_connectors() -> Array[ModuleConnector]:
 	return dangling
 	
 
-func populate_interactables(rng: RandomNumberGenerator) -> void:
-	for spot in interactable_spots:
+func populate_entities(rng: RandomNumberGenerator) -> void:
+	for spot in entity_spots:
 		spot.populate(rng)
