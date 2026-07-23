@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d4jmbjkwjo3kv"]
+
+[ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="1_6pqnl"]
+
+[node name="Gym" type="Node2D" unique_id=1910923724]
+
+[node name="Camera3D" type="Camera2D" parent="." unique_id=1037422815]
+
+[node name="CharacterController" parent="." unique_id=827916061 instance=ExtResource("1_6pqnl")]

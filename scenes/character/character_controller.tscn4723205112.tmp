@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dluan0057olli"]
+
+[ext_resource type="Script" uid="uid://c6updaebl37wd" path="res://scenes/character/character_controller.gd" id="1_sm8h1"]
+[ext_resource type="Texture2D" uid="uid://be1c4jnqjlqsl" path="res://scenes/character/chicken.png" id="1_xto6n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sm8h1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sm8h1"]
+radius = 32.0
+
+[node name="CharacterController" type="Node2D" unique_id=1427967305 node_paths=PackedStringArray("rigidBody2D")]
+script = ExtResource("1_sm8h1")
+rigidBody2D = NodePath("RigidBody2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1615751047]
+physics_material_override = SubResource("PhysicsMaterial_sm8h1")
+gravity_scale = 0.0
+linear_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=648187429]
+shape = SubResource("CircleShape2D_sm8h1")
+
+[node name="Chicken" type="Sprite2D" parent="RigidBody2D" unique_id=1292811157]
+texture_filter = 1
+texture = ExtResource("1_xto6n")
