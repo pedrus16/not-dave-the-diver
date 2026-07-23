@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1sc8hqjikddg"]
+
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="1_bwtd0"]
+[ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_d6x3p"]
+
+[node name="Module3" type="Node2D" unique_id=131320521]
+script = ExtResource("1_d6x3p")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1886490371]
+polygon = PackedVector2Array(1145, 442, 924, 370, 838, 199, 754, 67, 510, 37, 312, 214, 216, 449, 459, 551, 400, 722, 579, 757, 847, 821, 916, 929, 978, 812, 999, 632, 1146, 592, 1027, 550, 904, 587, 891, 718, 565, 658, 562, 499, 357, 442, 390, 292, 538, 157, 721, 176, 792, 338, 882, 436, 1033, 454)
+
+[node name="ModuleConnector" parent="." unique_id=1097362333 instance=ExtResource("1_bwtd0")]
+position = Vector2(1145, 516)
+rotation = 1.5707964
+location = 3

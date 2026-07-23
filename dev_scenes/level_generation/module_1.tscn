@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dwhrxp1au8d0k"]
+
+[ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_m83f5"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="1_yxfih"]
+
+[node name="Module1" type="Node2D" unique_id=1915704407]
+script = ExtResource("1_m83f5")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=642014082]
+position = Vector2(20, -26)
+polygon = PackedVector2Array(31, 27, 244, 27, 250, 138, 163, 119, 76, 141, 112, 269, 65, 326, -37, 323, 31, 247, 4, 157, -19, 52)
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1218810128]
+position = Vector2(19, -2)
+polygon = PackedVector2Array(396, 2, 579, 2, 659, 79, 567, 203, 439, 270, 517, 360, 695, 404, 805, 526, 547, 547, 206, 547, -31, 542, 145, 455, 342, 379, 338, 263, 469, 197, 450, 95)
+
+[node name="Polygon2D3" type="Polygon2D" parent="." unique_id=1577355708]
+polygon = PackedVector2Array(0, 449, -46, 533, -13, 542, 60, 496, 29, 464)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=298924926]
+
+[node name="ModuleConnector" parent="Node2D" unique_id=1097362333 instance=ExtResource("1_yxfih")]
+position = Vector2(341, 3)
+
+[node name="ModuleConnector2" parent="Node2D" unique_id=1797883773 instance=ExtResource("1_yxfih")]
+position = Vector2(2, 372)
+rotation = 1.5707964
+location = 2
