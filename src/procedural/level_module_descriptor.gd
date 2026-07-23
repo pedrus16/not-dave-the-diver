@@ -30,7 +30,7 @@ func analyze() -> void:
 		return
 
 	var module := node as LevelModule
-	module.init_connectors()
+	module.init_entities()
 	
 	for i in module.connectors.size():
 		var connector := module.connectors[i] as ModuleConnector

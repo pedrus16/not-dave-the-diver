@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dn3hem53cydl6"]
+
+[ext_resource type="Texture2D" uid="uid://ceurk8rbhlfvn" path="res://dev_scenes/level_generation/interactables/sea_urchin.png" id="1_3fqrf"]
+
+[node name="SeaUrchin" type="Node2D" unique_id=405705962]
+
+[node name="SeaUrchin" type="Sprite2D" parent="." unique_id=912189547]
+position = Vector2(0, -15.999999)
+scale = Vector2(0.18413022, 0.18413022)
+texture = ExtResource("1_3fqrf")
