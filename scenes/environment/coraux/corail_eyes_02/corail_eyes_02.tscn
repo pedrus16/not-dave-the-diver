@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://boffb10a7bk3f"]
+
+[ext_resource type="Texture2D" uid="uid://cjsabsgg5wlly" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0000.png" id="1_0512q"]
+[ext_resource type="Texture2D" uid="uid://cd3hy6h8dk8c0" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0001.png" id="2_6n0au"]
+[ext_resource type="Texture2D" uid="uid://kcrm3pfkl07a" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0002.png" id="3_dqeut"]
+[ext_resource type="Texture2D" uid="uid://bph3b0o2jrmof" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0003.png" id="4_l302u"]
+[ext_resource type="Texture2D" uid="uid://dfgtdrpbkg3oa" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0004.png" id="5_2uhld"]
+[ext_resource type="Texture2D" uid="uid://btgg2i716j1rw" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0005.png" id="6_ja45f"]
+[ext_resource type="Texture2D" uid="uid://471mme3hbglj" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0006.png" id="7_dj6ax"]
+[ext_resource type="Texture2D" uid="uid://bkepixd0j0tmm" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0007.png" id="8_daydb"]
+[ext_resource type="Texture2D" uid="uid://dg0ig6fq0ayr7" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0008.png" id="9_1fbpi"]
+[ext_resource type="Texture2D" uid="uid://cuqnncbuyacsy" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0009.png" id="10_2kah3"]
+[ext_resource type="Texture2D" uid="uid://d2d2l65s06kdo" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0010.png" id="11_waiht"]
+[ext_resource type="Texture2D" uid="uid://b0l6m1b3wu538" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0011.png" id="12_1i66c"]
+[ext_resource type="Texture2D" uid="uid://bvg6yb1sib7i0" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0012.png" id="13_ba5gx"]
+[ext_resource type="Texture2D" uid="uid://cp3b1raells5y" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0013.png" id="14_i6atw"]
+[ext_resource type="Texture2D" uid="uid://gjt1uo46y7uj" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0014.png" id="15_rjhcn"]
+[ext_resource type="Texture2D" uid="uid://cna3v3cdvgbs8" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0015.png" id="16_l4vmi"]
+[ext_resource type="Texture2D" uid="uid://rfd72hq75jpy" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0016.png" id="17_ydhfo"]
+[ext_resource type="Texture2D" uid="uid://cvxhtk0d58vqp" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0017.png" id="18_sj6t4"]
+[ext_resource type="Texture2D" uid="uid://ce2sp8aetyrlr" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0018.png" id="19_5a6bi"]
+[ext_resource type="Texture2D" uid="uid://bf7a1h88mna5n" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0019.png" id="20_7vsko"]
+[ext_resource type="Texture2D" uid="uid://dccbahv62rmp" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02_0020.png" id="21_hbr1f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xkji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0512q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6n0au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dqeut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l302u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2uhld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ja45f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dj6ax")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_daydb")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_1fbpi")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_2kah3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_waiht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1i66c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ba5gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i6atw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rjhcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_l4vmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ydhfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sj6t4")
+}, {
+"duration": 2.0,
+"texture": ExtResource("19_5a6bi")
+}, {
+"duration": 2.0,
+"texture": ExtResource("20_7vsko")
+}, {
+"duration": 2.0,
+"texture": ExtResource("21_hbr1f")
+}],
+"loop": 1,
+"name": &"eyes_turning",
+"speed": 20.0
+}]
+
+[node name="CorailEyes02" type="Node2D" unique_id=1352851956]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1804652537]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_8xkji")
+animation = &"eyes_turning"
+autoplay = "eyes_turning"
+frame_progress = 0.53896874

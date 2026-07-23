@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cvfsk1jfxnxar"]
+
+[ext_resource type="Shader" uid="uid://bsvtq7k4v8flr" path="res://scenes/environment/coraux/corail/wavy.tres" id="1_2u2ml"]
+[ext_resource type="Texture2D" uid="uid://b4ongojkjfkht" path="res://scenes/environment/coraux/corail/corail_03.png" id="2_2u2ml"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_51e03"]
+shader = ExtResource("1_2u2ml")
+
+[node name="Corail03" type="Node2D" unique_id=1538578096]
+
+[node name="Corail03" type="Sprite2D" parent="." unique_id=614684892]
+material = SubResource("ShaderMaterial_51e03")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2u2ml")
