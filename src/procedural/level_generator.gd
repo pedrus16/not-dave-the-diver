@@ -38,6 +38,8 @@ func _connect_new_module(root: Node2D, connector: ModuleConnector, rng: RandomNu
 	
 	var new_module := chosen_module.instantiate_and_connect(root, connector_index, connector)
 	
+	new_module.populate_interactables(rng)
+	
 	modules_count += 1
 	
 	for new_connector in new_module.dangling_connectors():
