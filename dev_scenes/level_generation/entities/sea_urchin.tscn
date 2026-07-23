@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dn3hem53cydl6"]
+[gd_scene format=3 uid="uid://5e4cn7t0pskx"]
 
-[ext_resource type="Texture2D" uid="uid://ceurk8rbhlfvn" path="res://dev_scenes/level_generation/interactables/sea_urchin.png" id="1_3fqrf"]
+[ext_resource type="Texture2D" uid="uid://ceurk8rbhlfvn" path="res://dev_scenes/level_generation/entities/sea_urchin.png" id="1_3fqrf"]
 
 [node name="SeaUrchin" type="Node2D" unique_id=405705962]
 

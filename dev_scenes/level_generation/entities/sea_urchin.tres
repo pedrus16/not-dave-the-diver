@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EntityDescriptor" format=3 uid="uid://b8vfvone4he7q"]
+
+[ext_resource type="PackedScene" uid="uid://5e4cn7t0pskx" path="res://dev_scenes/level_generation/entities/sea_urchin.tscn" id="1_5u8v3"]
+[ext_resource type="Script" uid="uid://p302vtqi0dle" path="res://src/entity/entity_descriptor.gd" id="2_ycm7y"]
+
+[resource]
+script = ExtResource("2_ycm7y")
+name = "Sea urchin"
+scene = ExtResource("1_5u8v3")
+metadata/_custom_type_script = "uid://p302vtqi0dle"

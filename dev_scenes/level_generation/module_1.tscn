@@ -2,24 +2,23 @@
 
 [ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_m83f5"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="1_yxfih"]
-[ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/interactable/interactable_spot.gd" id="3_x6mp1"]
-[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/interactable/interactable_list_entry.gd" id="4_wabl4"]
-[ext_resource type="Resource" uid="uid://b8vfvone4he7q" path="res://dev_scenes/level_generation/interactables/sea_urchin.tres" id="5_fbwco"]
-[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/interactable/interactable_list.gd" id="6_rnf3s"]
+[ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="3_x6mp1"]
+[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="4_wabl4"]
+[ext_resource type="Resource" uid="uid://b8vfvone4he7q" path="res://dev_scenes/level_generation/entities/sea_urchin.tres" id="5_fbwco"]
+[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="6_rnf3s"]
 
-[sub_resource type="Resource" id="Resource_uqhvp"]
+[sub_resource type="Resource" id="Resource_wabl4"]
 script = ExtResource("4_wabl4")
 descriptor = ExtResource("5_fbwco")
 metadata/_custom_type_script = "uid://b1u2vlatsqlt5"
 
-[sub_resource type="Resource" id="Resource_2e7gj"]
+[sub_resource type="Resource" id="Resource_fbwco"]
 script = ExtResource("4_wabl4")
-weight = 3.0
 metadata/_custom_type_script = "uid://b1u2vlatsqlt5"
 
 [sub_resource type="Resource" id="Resource_hcks3"]
 script = ExtResource("6_rnf3s")
-interactables = Array[ExtResource("4_wabl4")]([SubResource("Resource_uqhvp"), SubResource("Resource_2e7gj")])
+entities = Array[ExtResource("4_wabl4")]([SubResource("Resource_wabl4"), SubResource("Resource_fbwco")])
 metadata/_custom_type_script = "uid://veq4pqsukcgl"
 
 [node name="Module1" type="Node2D" unique_id=1915704407]
@@ -51,5 +50,5 @@ position = Vector2(387, 244.99997)
 rotation = -0.5054246
 gizmo_extents = 50.0
 script = ExtResource("3_x6mp1")
-available_interactables = SubResource("Resource_hcks3")
+available_entities = SubResource("Resource_hcks3")
 metadata/_custom_type_script = "uid://havu0syglhv2"
