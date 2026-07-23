@@ -14,8 +14,9 @@ rigidBody2D = NodePath("RigidBody2D")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1615751047]
 physics_material_override = SubResource("PhysicsMaterial_sm8h1")
-gravity_scale = 0.0
-linear_damp = 1.0
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=648187429]
 shape = SubResource("CircleShape2D_sm8h1")
@@ -23,3 +24,5 @@ shape = SubResource("CircleShape2D_sm8h1")
 [node name="Chicken" type="Sprite2D" parent="RigidBody2D" unique_id=1292811157]
 texture_filter = 1
 texture = ExtResource("1_xto6n")
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]

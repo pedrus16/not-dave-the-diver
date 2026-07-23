@@ -13,4 +13,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var input: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	rigidBody2D.constant_force = input * movePower + Vector2(0, -buoyancy)
-	
+
+
+func _on_rigid_body_2d_body_entered(body: Node) -> void:
+	print(body is CollisionObject2D)
