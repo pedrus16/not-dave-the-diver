@@ -6,10 +6,46 @@
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="4_m0m1a"]
 [ext_resource type="Script" uid="uid://colwl1hgsb5yy" path="res://dev_scenes/level_generation/debug_camera.gd" id="5_k0n85"]
 
+[sub_resource type="Environment" id="Environment_yh0la"]
+background_mode = 3
+ambient_light_color = Color(0.09427438, 0.20909277, 0.13050884, 1)
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.4
+
+[sub_resource type="Gradient" id="Gradient_2ivh5"]
+offsets = PackedFloat32Array(0.17916666, 0.32083333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.40833336, 0.40833336, 0.40833336, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k0n85"]
+gradient = SubResource("Gradient_2ivh5")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.51282054, 0.4957265)
+fill_to = Vector2(0.2735043, 0.37606838)
+
 [node name="LevelGeneration" type="Node2D" unique_id=263736646 node_paths=PackedStringArray("level_generator", "first_connector")]
 script = ExtResource("1_bg04x")
 level_generator = NodePath("LevelGenerator")
 first_connector = NodePath("FirstConnector")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=635698495]
+process_mode = 4
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1089221258]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+color = Color(0.010565377, 0.027895657, 0.0060518645, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=629720133]
+environment = SubResource("Environment_yh0la")
 
 [node name="LevelGenerator" type="Node" parent="." unique_id=761345694]
 script = ExtResource("1_g2gsq")
@@ -24,3 +60,13 @@ location = 1
 position = Vector2(500, 400)
 script = ExtResource("5_k0n85")
 metadata/_custom_type_script = "uid://colwl1hgsb5yy"
+
+[node name="PointLight2D2" type="PointLight2D" parent="DebugCamera" unique_id=1867009676]
+scale = Vector2(40, 40)
+color = Color(0.69055694, 0.86859334, 0.7268227, 1)
+energy = 2.0
+blend_mode = 2
+texture = SubResource("GradientTexture2D_k0n85")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=824092523]
+color = Color(0.15021509, 0.20556441, 0.21833885, 1)

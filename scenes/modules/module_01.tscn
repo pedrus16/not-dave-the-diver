@@ -82,14 +82,8 @@ position = Vector2(-398, -260)
 [node name="CorailEyes02" parent="Environment" unique_id=105408996 instance=ExtResource("7_44dqy")]
 position = Vector2(348, -85)
 
-[node name="AnimatedSprite2D" parent="Environment/CorailEyes02" index="0" unique_id=915450133]
-flip_h = true
-
 [node name="CorailEyes03" parent="Environment" unique_id=1352851956 instance=ExtResource("8_78fkv")]
-position = Vector2(-321, 274)
-
-[node name="AnimatedSprite2D" parent="Environment/CorailEyes03" index="0" unique_id=1804652537]
-position = Vector2(114, 2)
+position = Vector2(-249, 274)
 flip_h = true
 
 [node name="CorailEyes04" parent="Environment" unique_id=1032060713 instance=ExtResource("8_78fkv")]
@@ -100,21 +94,18 @@ position = Vector2(-383, 22)
 
 [node name="Corail02" parent="Environment" unique_id=307579768 instance=ExtResource("10_gv5r0")]
 position = Vector2(203, 82)
-scale = Vector2(0.5, 0.5)
 
 [node name="Corail03" parent="Environment" unique_id=1596734573 instance=ExtResource("11_la8jp")]
-position = Vector2(-449, 72)
-scale = Vector2(0.8, 0.8)
+position = Vector2(-418, 81)
+scale = Vector2(0.51, 0.57199997)
 
 [node name="Corail04" parent="Environment" unique_id=934144230 instance=ExtResource("11_la8jp")]
-position = Vector2(289, -383)
-scale = Vector2(0.5, 0.5)
+position = Vector2(306, -310)
+scale = Vector2(0.32800007, 0.32599998)
 
 [node name="Corail05" parent="Environment" unique_id=82652889 instance=ExtResource("11_la8jp")]
 position = Vector2(238, -356)
 scale = Vector2(0.4, 0.4)
-
-[node name="Corail03" parent="Environment/Corail05" index="0" unique_id=614684892]
 flip_h = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=473485341]
