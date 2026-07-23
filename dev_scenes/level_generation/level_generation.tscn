@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://bjut3bj2c24xw" path="res://dev_scenes/level_generation/test_registry.tres" id="3_guljt"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="4_m0m1a"]
 [ext_resource type="Script" uid="uid://colwl1hgsb5yy" path="res://dev_scenes/level_generation/debug_camera.gd" id="5_k0n85"]
+[ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="6_fxtox"]
 
 [sub_resource type="Gradient" id="Gradient_2ivh5"]
 offsets = PackedFloat32Array(0.17916666, 0.32083333, 1)
@@ -50,11 +51,11 @@ modules_registry = ExtResource("3_guljt")
 metadata/_custom_type_script = "uid://b08vf7bsktk8w"
 
 [node name="FirstConnector" parent="." unique_id=1097362333 instance=ExtResource("4_m0m1a")]
-position = Vector2(541, 305)
+position = Vector2(955, 342)
 location = 1
 
 [node name="DebugCamera" type="Camera2D" parent="." unique_id=1586633574]
-position = Vector2(500, 400)
+position = Vector2(960, 540)
 script = ExtResource("5_k0n85")
 metadata/_custom_type_script = "uid://colwl1hgsb5yy"
 
@@ -70,3 +71,6 @@ color = Color(0.15021509, 0.20556441, 0.21833885, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=629720133]
 environment = SubResource("Environment_yh0la")
+
+[node name="CharacterController" parent="." unique_id=1427967305 instance=ExtResource("6_fxtox")]
+position = Vector2(952, 215)

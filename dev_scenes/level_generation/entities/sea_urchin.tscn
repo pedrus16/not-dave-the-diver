@@ -1,10 +1,29 @@
 [gd_scene format=3 uid="uid://5e4cn7t0pskx"]
 
 [ext_resource type="Texture2D" uid="uid://ceurk8rbhlfvn" path="res://dev_scenes/level_generation/entities/sea_urchin.png" id="1_3fqrf"]
+[ext_resource type="Script" uid="uid://cy6lpssdqo6a0" path="res://src/entity/area2d_trigger.gd" id="1_v5h5x"]
+[ext_resource type="Script" uid="uid://cbfyng2ojjdy2" path="res://src/entity/effects/o2_delta_effect.gd" id="3_rf25t"]
 
-[node name="SeaUrchin" type="Node2D" unique_id=405705962]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdns4"]
+size = Vector2(43, 29)
+
+[node name="SeaUrchin" type="Area2D" unique_id=1731194988]
+monitorable = false
+script = ExtResource("1_v5h5x")
+metadata/_custom_type_script = "uid://cy6lpssdqo6a0"
 
 [node name="SeaUrchin" type="Sprite2D" parent="." unique_id=912189547]
 position = Vector2(0, -15.999999)
 scale = Vector2(0.18413022, 0.18413022)
 texture = ExtResource("1_3fqrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2024410971]
+position = Vector2(0.5, -16.5)
+shape = SubResource("RectangleShape2D_jdns4")
+
+[node name="O2DeltaEffect" type="Node" parent="." unique_id=1227140705]
+script = ExtResource("3_rf25t")
+o2_delta = -5.0
+metadata/_custom_type_script = "uid://cbfyng2ojjdy2"
+
+[connection signal="triggered" from="." to="O2DeltaEffect" method="_on_triggered"]

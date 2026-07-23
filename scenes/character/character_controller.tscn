@@ -2,15 +2,17 @@
 
 [ext_resource type="Script" uid="uid://c6updaebl37wd" path="res://scenes/character/character_controller.gd" id="1_sm8h1"]
 [ext_resource type="Texture2D" uid="uid://be1c4jnqjlqsl" path="res://scenes/character/chicken.png" id="1_xto6n"]
+[ext_resource type="Script" uid="uid://7t5sh57io46g" path="res://src/refillable_timer.gd" id="3_tmmmg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sm8h1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sm8h1"]
 radius = 32.0
 
-[node name="CharacterController" type="Node2D" unique_id=1427967305 node_paths=PackedStringArray("rigidBody2D")]
+[node name="CharacterController" type="Node2D" unique_id=1427967305 node_paths=PackedStringArray("rigidBody2D", "o2_counter")]
 script = ExtResource("1_sm8h1")
 rigidBody2D = NodePath("RigidBody2D")
+o2_counter = NodePath("O2Counter")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1615751047]
 physics_material_override = SubResource("PhysicsMaterial_sm8h1")
@@ -23,3 +25,7 @@ shape = SubResource("CircleShape2D_sm8h1")
 [node name="Chicken" type="Sprite2D" parent="RigidBody2D" unique_id=1292811157]
 texture_filter = 1
 texture = ExtResource("1_xto6n")
+
+[node name="O2Counter" type="Node" parent="." unique_id=1789200111]
+script = ExtResource("3_tmmmg")
+metadata/_custom_type_script = "uid://7t5sh57io46g"
