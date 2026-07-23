@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://co45n4oii25nt"]
+
+[ext_resource type="PackedScene" uid="uid://c58tfh642e73h" path="res://scenes/o2_counter/o2_counter.tscn" id="1_pwder"]
+[ext_resource type="Script" uid="uid://7t5sh57io46g" path="res://src/refillable_timer.gd" id="2_72663"]
+
+[node name="GameScene" type="Node2D" unique_id=1831513665]
+
+[node name="O2Timer" type="Node" parent="." unique_id=1034949432]
+script = ExtResource("2_72663")
+autostart = true
+metadata/_custom_type_script = "uid://7t5sh57io46g"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1491905184]
+
+[node name="O2Bottle" parent="HUD" unique_id=142397266 node_paths=PackedStringArray("timer") instance=ExtResource("1_pwder")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -157.0
+offset_right = 58.0
+offset_bottom = -15.424805
+grow_vertical = 0
+timer = NodePath("../../O2Timer")
