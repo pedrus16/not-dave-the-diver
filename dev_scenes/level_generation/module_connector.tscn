@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://dtcivevbr2jb7" path="res://src/procedural/module_connector.gd" id="1_gr58r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdns4"]
-size = Vector2(150, 25)
+size = Vector2(300, 50)
 
 [node name="ModuleConnector" type="Area2D" unique_id=141346909]
+monitoring = false
+monitorable = false
 script = ExtResource("1_gr58r")
 metadata/_custom_type_script = "uid://dtcivevbr2jb7"
 

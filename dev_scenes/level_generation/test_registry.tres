@@ -3,27 +3,33 @@
 [ext_resource type="PackedScene" uid="uid://ba0acdah1wxhm" path="res://dev_scenes/level_generation/closed_connector.tscn" id="1_ao7ev"]
 [ext_resource type="Script" uid="uid://244r6cyhfexa" path="res://src/procedural/level_module_descriptor.gd" id="1_uov7g"]
 [ext_resource type="Script" uid="uid://cesqiy0yquyrm" path="res://src/procedural/level_module_registry.gd" id="2_nxtcf"]
-[ext_resource type="PackedScene" uid="uid://dwhrxp1au8d0k" path="res://dev_scenes/level_generation/module_1.tscn" id="2_wrnqs"]
-[ext_resource type="PackedScene" uid="uid://c5ffrh31nth1p" path="res://dev_scenes/level_generation/module_2.tscn" id="3_wrnqs"]
-[ext_resource type="PackedScene" uid="uid://b1sc8hqjikddg" path="res://dev_scenes/level_generation/module_3.tscn" id="4_c6cd1"]
+[ext_resource type="PackedScene" uid="uid://y11870pihh11" path="res://scenes/modules/module_01.tscn" id="3_wrnqs"]
+[ext_resource type="PackedScene" uid="uid://ckhs2q3cqlcmm" path="res://scenes/modules/module_02.tscn" id="4_c6cd1"]
+[ext_resource type="PackedScene" uid="uid://01ugerbgd8i6" path="res://scenes/modules/module_03.tscn" id="5_ao7ev"]
+[ext_resource type="PackedScene" uid="uid://dhnj3q1on6xx6" path="res://scenes/modules/module_04.tscn" id="6_nlvox"]
 
-[sub_resource type="Resource" id="Resource_uov7g"]
-script = ExtResource("1_uov7g")
-scene = ExtResource("2_wrnqs")
-metadata/_custom_type_script = "uid://244r6cyhfexa"
-
-[sub_resource type="Resource" id="Resource_c6cd1"]
+[sub_resource type="Resource" id="Resource_2ivh5"]
 script = ExtResource("1_uov7g")
 scene = ExtResource("3_wrnqs")
 metadata/_custom_type_script = "uid://244r6cyhfexa"
 
-[sub_resource type="Resource" id="Resource_ao7ev"]
+[sub_resource type="Resource" id="Resource_1ibii"]
 script = ExtResource("1_uov7g")
 scene = ExtResource("4_c6cd1")
 metadata/_custom_type_script = "uid://244r6cyhfexa"
 
+[sub_resource type="Resource" id="Resource_8ukve"]
+script = ExtResource("1_uov7g")
+scene = ExtResource("5_ao7ev")
+metadata/_custom_type_script = "uid://244r6cyhfexa"
+
+[sub_resource type="Resource" id="Resource_swo0r"]
+script = ExtResource("1_uov7g")
+scene = ExtResource("6_nlvox")
+metadata/_custom_type_script = "uid://244r6cyhfexa"
+
 [resource]
 script = ExtResource("2_nxtcf")
-modules = Array[ExtResource("1_uov7g")]([SubResource("Resource_uov7g"), SubResource("Resource_c6cd1"), SubResource("Resource_ao7ev")])
+modules = Array[ExtResource("1_uov7g")]([SubResource("Resource_2ivh5"), SubResource("Resource_1ibii"), SubResource("Resource_8ukve"), SubResource("Resource_swo0r")])
 closed_connector = ExtResource("1_ao7ev")
 metadata/_custom_type_script = "uid://cesqiy0yquyrm"
