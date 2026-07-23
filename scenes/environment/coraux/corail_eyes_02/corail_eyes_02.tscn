@@ -90,7 +90,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"eyes_turning",
-"speed": 20.0
+"speed": 15.0
 }]
 
 [node name="CorailEyes02" type="AnimatedSprite2D" unique_id=1804652537]

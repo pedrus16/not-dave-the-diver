@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_oxtgf"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="2_cyddb"]
+[ext_resource type="Texture2D" uid="uid://615oanveo8p0" path="res://scenes/environment/rocks/rock_01.png" id="3_0wm26"]
 [ext_resource type="Texture2D" uid="uid://dy4usy3fciyuu" path="res://scenes/environment/rocks/rock_corail_01.png" id="3_t5g02"]
+[ext_resource type="Texture2D" uid="uid://bj0mngxvw833k" path="res://scenes/environment/rocks/rock_02.png" id="4_ipy0c"]
 [ext_resource type="Texture2D" uid="uid://dw5bi4jy7x0ef" path="res://scenes/environment/rocks/rock_corail_05.png" id="4_j4dgx"]
 [ext_resource type="Texture2D" uid="uid://b052qm186njve" path="res://scenes/environment/rocks/rock_corail_02.png" id="5_jkmdi"]
 [ext_resource type="Texture2D" uid="uid://by7umetuimgg0" path="res://scenes/environment/rocks/rock_03.png" id="6_rwgsd"]
@@ -38,9 +40,25 @@ metadata/_custom_type_script = "uid://b123m5gjglbmt"
 [node name="ModuleConnector2" parent="." unique_id=1505297462 instance=ExtResource("2_cyddb")]
 position = Vector2(1238, 847)
 rotation = 1.5707964
-location = 2
+location = 3
 
 [node name="Environment" type="Node2D" parent="." unique_id=1113616067]
+
+[node name="Rock02" type="Sprite2D" parent="Environment" unique_id=1309908617]
+position = Vector2(1001, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0wm26")
+flip_h = true
+
+[node name="Rock08" type="Sprite2D" parent="Environment" unique_id=534720652]
+position = Vector2(639, 208)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ipy0c")
+
+[node name="Rock01" type="Sprite2D" parent="Environment" unique_id=875140776]
+position = Vector2(875, 199)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0wm26")
 
 [node name="RockCorail01" type="Sprite2D" parent="Environment" unique_id=1051876873]
 position = Vector2(336, 151)

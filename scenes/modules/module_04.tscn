@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://dhnj3q1on6xx6"]
+
+[ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_k15w6"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="2_m45yt"]
+[ext_resource type="Texture2D" uid="uid://dy4usy3fciyuu" path="res://scenes/environment/rocks/rock_corail_01.png" id="3_wakso"]
+[ext_resource type="Texture2D" uid="uid://lnhsyeocbb2b" path="res://scenes/environment/rocks/rock_corail_04.png" id="4_sth11"]
+[ext_resource type="Texture2D" uid="uid://615oanveo8p0" path="res://scenes/environment/rocks/rock_01.png" id="5_5g3eu"]
+[ext_resource type="Texture2D" uid="uid://eqxhx0tlvrql" path="res://scenes/environment/rocks/rock_corail_06.png" id="6_swo0r"]
+[ext_resource type="Texture2D" uid="uid://2e1ipbv6yonl" path="res://scenes/environment/rocks/rock_corail_03.png" id="7_2lbao"]
+[ext_resource type="Texture2D" uid="uid://by7umetuimgg0" path="res://scenes/environment/rocks/rock_03.png" id="8_ue1sn"]
+[ext_resource type="Texture2D" uid="uid://bya4lmcsgv08m" path="res://scenes/environment/rocks/rock_06.png" id="9_jujjm"]
+[ext_resource type="Texture2D" uid="uid://dw5bi4jy7x0ef" path="res://scenes/environment/rocks/rock_corail_05.png" id="10_nxnd3"]
+[ext_resource type="PackedScene" uid="uid://boffb10a7bk3f" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02.tscn" id="11_bykx3"]
+[ext_resource type="PackedScene" uid="uid://dm2apb8s36kwu" path="res://scenes/environment/coraux/corail_eyes_01/corail_eyes_01.tscn" id="12_d03rl"]
+[ext_resource type="PackedScene" uid="uid://cvfsk1jfxnxar" path="res://scenes/environment/coraux/corail/corail_03.tscn" id="13_8beet"]
+[ext_resource type="PackedScene" uid="uid://bi31if8jthrt8" path="res://scenes/environment/coraux/corail/corail_02.tscn" id="14_42u8b"]
+[ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="15_swo0r"]
+[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="16_2lbao"]
+[ext_resource type="Resource" uid="uid://b8vfvone4he7q" path="res://dev_scenes/level_generation/entities/sea_urchin.tres" id="17_ue1sn"]
+[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="18_jujjm"]
+
+[sub_resource type="Resource" id="Resource_5vedk"]
+script = ExtResource("16_2lbao")
+descriptor = ExtResource("17_ue1sn")
+metadata/_custom_type_script = "uid://b1u2vlatsqlt5"
+
+[sub_resource type="Resource" id="Resource_nxnd3"]
+script = ExtResource("18_jujjm")
+entities = Array[ExtResource("16_2lbao")]([SubResource("Resource_5vedk")])
+metadata/_custom_type_script = "uid://veq4pqsukcgl"
+
+[node name="Module04" type="Node2D" unique_id=1916459913]
+script = ExtResource("1_k15w6")
+metadata/_custom_type_script = "uid://b123m5gjglbmt"
+
+[node name="ModuleConnector3" parent="." unique_id=141346909 instance=ExtResource("2_m45yt")]
+position = Vector2(1153, 469)
+rotation = 1.5707964
+location = 3
+
+[node name="ModuleConnector4" parent="." unique_id=2060574584 instance=ExtResource("2_m45yt")]
+position = Vector2(-650, 430)
+rotation = 1.5707964
+location = 2
+
+[node name="Environment" type="Node2D" parent="." unique_id=1397754006]
+
+[node name="RockCorail01" type="Sprite2D" parent="Environment" unique_id=2021623398]
+position = Vector2(-499, 103)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wakso")
+
+[node name="RockCorail04" type="Sprite2D" parent="Environment" unique_id=1082493562]
+position = Vector2(-154, 109.99997)
+scale = Vector2(0.566, 0.566)
+texture = ExtResource("4_sth11")
+
+[node name="Rock01" type="Sprite2D" parent="Environment" unique_id=402732642]
+position = Vector2(986.99994, 152)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("5_5g3eu")
+
+[node name="RockCorail02" type="Sprite2D" parent="Environment" unique_id=1952245544]
+position = Vector2(643, 253)
+scale = Vector2(0.639, 0.639)
+texture = ExtResource("3_wakso")
+flip_h = true
+
+[node name="RockCorail06" type="Sprite2D" parent="Environment" unique_id=1127553304]
+position = Vector2(242, 130)
+scale = Vector2(0.592, 0.592)
+texture = ExtResource("6_swo0r")
+
+[node name="RockCorail03" type="Sprite2D" parent="Environment" unique_id=1198657032]
+position = Vector2(-526.00006, 748)
+scale = Vector2(0.436, 0.436)
+texture = ExtResource("3_wakso")
+
+[node name="RockCorail05" type="Sprite2D" parent="Environment" unique_id=522675600]
+position = Vector2(-355.00003, 981)
+scale = Vector2(0.64425, 0.64425)
+texture = ExtResource("7_2lbao")
+
+[node name="RockCorail07" type="Sprite2D" parent="Environment" unique_id=747051671]
+position = Vector2(1191.0001, 788.00006)
+scale = Vector2(0.519, 0.519)
+texture = ExtResource("4_sth11")
+flip_h = true
+
+[node name="RockCorail08" type="Sprite2D" parent="Environment" unique_id=500435698]
+position = Vector2(958, 869)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_wakso")
+
+[node name="Rock03" type="Sprite2D" parent="Environment" unique_id=118801043]
+position = Vector2(628, 940.00006)
+scale = Vector2(0.60599995, 0.60599995)
+texture = ExtResource("8_ue1sn")
+
+[node name="Rock06" type="Sprite2D" parent="Environment" unique_id=119645411]
+position = Vector2(-66.00001, 891)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("9_jujjm")
+
+[node name="RockCorail09" type="Sprite2D" parent="Environment" unique_id=902862594]
+position = Vector2(262, 910)
+scale = Vector2(0.767, 0.767)
+texture = ExtResource("10_nxnd3")
+
+[node name="CorailEyes02" parent="Environment" unique_id=1804652537 instance=ExtResource("11_bykx3")]
+position = Vector2(-290, 706)
+
+[node name="CorailEyes01" parent="Environment" unique_id=915450133 instance=ExtResource("12_d03rl")]
+position = Vector2(699, 768)
+
+[node name="Corail03" parent="Environment" unique_id=614684892 instance=ExtResource("13_8beet")]
+position = Vector2(4, 688)
+
+[node name="Corail04" parent="Environment" unique_id=197385530 instance=ExtResource("13_8beet")]
+position = Vector2(37, 731)
+
+[node name="Corail05" parent="Environment" unique_id=1202130492 instance=ExtResource("13_8beet")]
+position = Vector2(546, 724.00006)
+scale = Vector2(0.375, 0.375)
+flip_h = true
+
+[node name="Corail06" parent="Environment" unique_id=306678555 instance=ExtResource("13_8beet")]
+position = Vector2(1020, 638)
+scale = Vector2(0.375, 0.375)
+flip_h = true
+
+[node name="Corail07" parent="Environment" unique_id=418946949 instance=ExtResource("13_8beet")]
+position = Vector2(1105, 702)
+flip_h = true
+
+[node name="Corail02" parent="Environment" unique_id=343938259 instance=ExtResource("14_42u8b")]
+position = Vector2(-450, 708)
+
+[node name="CorailEyes03" parent="Environment" unique_id=302085524 instance=ExtResource("12_d03rl")]
+position = Vector2(181, 309)
+flip_v = true
+
+[node name="CorailEyes04" parent="Environment" unique_id=2051240154 instance=ExtResource("11_bykx3")]
+position = Vector2(72, 288)
+flip_v = true
+
+[node name="Area2D5" type="Area2D" parent="." unique_id=78265905]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D5" unique_id=1073858718]
+position = Vector2(712, -15)
+polygon = PackedVector2Array(645, 725, 530, 627, 265, 722, 99, 686, 20, 776, -203, 836, -226, 849, -430, 709, -700, 773, -821, 693, -966, 710, -1080, 829, -1184, 684, -1321, 599, -1394, 631, -1367, 871, -1268, 1123, -1031, 1187, -641, 1092, -85, 1154, 316, 1058, 655, 943, 714, 866)
+
+[node name="Area2D6" type="Area2D" parent="." unique_id=1529544617]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D6" unique_id=419980800]
+position = Vector2(712, -15)
+polygon = PackedVector2Array(371, 42, 479, 107, 485, 268, 374, 374, 217, 386, 166, 364, 114, 478, -98, 504, -275, 384, -315, 282, -413, 359, -635, 356, -651, 330, -673, 204, -725, 184, -790, 213, -877, 274, -1006, 292, -1092, 251, -1193, 305, -1354, 282, -1404, 157, -1370, 94, -1427, -38, -1265, -54, -1048, 31, -987, -49, -533, -81, -271, 93, -50, 47, 122, -39, 249, -27)
+
+[node name="EntitySpot" type="Marker2D" parent="." unique_id=2027366235]
+position = Vector2(-443.99997, 478.00003)
+rotation = -0.5777294
+gizmo_extents = 82.8
+script = ExtResource("15_swo0r")
+available_entities = SubResource("Resource_nxnd3")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot2" type="Marker2D" parent="." unique_id=1298337054]
+position = Vector2(552, 664)
+rotation = -0.5777294
+gizmo_extents = 82.8
+script = ExtResource("15_swo0r")
+available_entities = SubResource("Resource_nxnd3")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot3" type="Marker2D" parent="." unique_id=698631963]
+position = Vector2(941, 451)
+rotation = -0.5777294
+gizmo_extents = 82.8
+script = ExtResource("15_swo0r")
+available_entities = SubResource("Resource_nxnd3")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot4" type="Marker2D" parent="." unique_id=1070952530]
+position = Vector2(19, 693)
+rotation = -0.5777294
+gizmo_extents = 82.8
+script = ExtResource("15_swo0r")
+available_entities = SubResource("Resource_nxnd3")
+metadata/_custom_type_script = "uid://havu0syglhv2"
