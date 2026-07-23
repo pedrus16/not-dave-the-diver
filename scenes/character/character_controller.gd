@@ -19,3 +19,7 @@ func _physics_process(delta: float) -> void:
 ## Adds a positive or negative number of seconds to o2 timer.
 func add_o2_delta(seconds: float) -> void:
 	o2_counter.add_time(seconds)
+
+
+func _on_rigid_body_2d_body_entered(body: Node) -> void:
+	print(body is CollisionObject2D)

@@ -2,8 +2,40 @@
 
 [ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="1_6pqnl"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbais"]
+size = Vector2(374, 46.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5va1c"]
+size = Vector2(1160, 257)
+
 [node name="Gym" type="Node2D" unique_id=1910923724]
 
 [node name="Camera3D" type="Camera2D" parent="." unique_id=1037422815]
 
 [node name="CharacterController" parent="." unique_id=827916061 instance=ExtResource("1_6pqnl")]
+position = Vector2(-47, -38)
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1678061149]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1143701262]
+position = Vector2(-4, 54.25)
+shape = SubResource("RectangleShape2D_cbais")
+
+[node name="Polygon2D" type="Polygon2D" parent="Platform" unique_id=2016808154]
+color = Color(0.7875765, 0.39197582, 0.086137496, 1)
+polygon = PackedVector2Array(-192, 31, 183, 32, 184, 77, -191, 78)
+
+[node name="Water" type="Area2D" parent="." unique_id=322572260]
+input_pickable = false
+gravity_space_override = 3
+gravity = 0.0
+linear_damp_space_override = 3
+linear_damp = 3.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Water" unique_id=511379866]
+color = Color(0.3137255, 0.84313726, 1, 0.27058825)
+polygon = PackedVector2Array(-577, 71, 581, 69, 583, 326, -579, 327)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water" unique_id=282588046]
+position = Vector2(1, 197.5)
+shape = SubResource("RectangleShape2D_5va1c")
