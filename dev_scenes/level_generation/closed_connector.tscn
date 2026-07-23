@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ba0acdah1wxhm"]
+
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="1_d48pe"]
+
+[node name="ClosedConnector" type="Node2D" unique_id=525646126]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1518610706]
+polygon = PackedVector2Array(-83, -21, 26, -36, 109, -22, 93, 31, -1, 24, -106, 35, -98, -8)
+
+[node name="ModuleConnector" parent="." unique_id=1097362333 instance=ExtResource("1_d48pe")]

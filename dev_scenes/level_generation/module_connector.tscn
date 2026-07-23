@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dn4pxaw6sxydl"]
+
+[ext_resource type="Script" uid="uid://dtcivevbr2jb7" path="res://src/procedural/module_connector.gd" id="1_gr58r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdns4"]
+size = Vector2(150, 25)
+
+[node name="ModuleConnector" type="Area2D" unique_id=141346909]
+script = ExtResource("1_gr58r")
+metadata/_custom_type_script = "uid://dtcivevbr2jb7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=462827250]
+shape = SubResource("RectangleShape2D_jdns4")
