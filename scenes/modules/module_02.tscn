@@ -2,17 +2,18 @@
 
 [ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_oxtgf"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="2_cyddb"]
-[ext_resource type="Texture2D" uid="uid://615oanveo8p0" path="res://scenes/environment/rocks/rock_01.png" id="3_0wm26"]
+[ext_resource type="PackedScene" uid="uid://pwl6unbme06u" path="res://scenes/environment/rocks/rock_01.tscn" id="3_ipy0c"]
 [ext_resource type="Texture2D" uid="uid://dy4usy3fciyuu" path="res://scenes/environment/rocks/rock_corail_01.png" id="3_t5g02"]
-[ext_resource type="Texture2D" uid="uid://bj0mngxvw833k" path="res://scenes/environment/rocks/rock_02.png" id="4_ipy0c"]
+[ext_resource type="PackedScene" uid="uid://bnxt2r8ha73q6" path="res://scenes/environment/rocks/rock_02.tscn" id="4_0wm26"]
 [ext_resource type="Texture2D" uid="uid://dw5bi4jy7x0ef" path="res://scenes/environment/rocks/rock_corail_05.png" id="4_j4dgx"]
 [ext_resource type="Texture2D" uid="uid://b052qm186njve" path="res://scenes/environment/rocks/rock_corail_02.png" id="5_jkmdi"]
-[ext_resource type="Texture2D" uid="uid://by7umetuimgg0" path="res://scenes/environment/rocks/rock_03.png" id="6_rwgsd"]
-[ext_resource type="Texture2D" uid="uid://cfmitto7jduaw" path="res://scenes/environment/rocks/rock_05.png" id="7_1ibii"]
+[ext_resource type="PackedScene" uid="uid://do0t0bkuiqn5e" path="res://scenes/environment/rocks/rock_05.tscn" id="6_s5pk2"]
 [ext_resource type="Texture2D" uid="uid://eqxhx0tlvrql" path="res://scenes/environment/rocks/rock_corail_06.png" id="8_20dr1"]
-[ext_resource type="Texture2D" uid="uid://bus7mwvoqdqdi" path="res://scenes/environment/rocks/rock_04.png" id="9_0wm26"]
+[ext_resource type="PackedScene" uid="uid://bu0j8claeb2ac" path="res://scenes/environment/rocks/rock_03.tscn" id="9_uko52"]
+[ext_resource type="PackedScene" uid="uid://cpnulttlstnkt" path="res://scenes/environment/rocks/rock_06.tscn" id="10_hcv0d"]
 [ext_resource type="PackedScene" uid="uid://bi31if8jthrt8" path="res://scenes/environment/coraux/corail/corail_02.tscn" id="10_ipy0c"]
 [ext_resource type="PackedScene" uid="uid://cihdmbqob5mep" path="res://scenes/environment/coraux/corail/corail_01.tscn" id="11_s5pk2"]
+[ext_resource type="PackedScene" uid="uid://bvxyfw7ugo8r5" path="res://scenes/environment/rocks/rock_04.tscn" id="12_hcv0d"]
 [ext_resource type="PackedScene" uid="uid://cvfsk1jfxnxar" path="res://scenes/environment/coraux/corail/corail_03.tscn" id="12_uko52"]
 [ext_resource type="PackedScene" uid="uid://boffb10a7bk3f" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02.tscn" id="13_hcv0d"]
 [ext_resource type="PackedScene" uid="uid://dm2apb8s36kwu" path="res://scenes/environment/coraux/corail_eyes_01/corail_eyes_01.tscn" id="14_mty75"]
@@ -42,87 +43,68 @@ position = Vector2(1238, 847)
 rotation = 1.5707964
 location = 3
 
-[node name="Environment" type="Node2D" parent="." unique_id=1113616067]
+[node name="Environment" type="Node2D" parent="." unique_id=145218305]
 
-[node name="Rock02" type="Sprite2D" parent="Environment" unique_id=1309908617]
+[node name="Rock01" parent="Environment" unique_id=289249423 instance=ExtResource("3_ipy0c")]
 position = Vector2(1001, 376)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_0wm26")
-flip_h = true
+scale = Vector2(-0.5, 0.5)
 
-[node name="Rock08" type="Sprite2D" parent="Environment" unique_id=534720652]
+[node name="Rock02" parent="Environment" unique_id=1726092137 instance=ExtResource("4_0wm26")]
 position = Vector2(639, 208)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_ipy0c")
 
-[node name="Rock01" type="Sprite2D" parent="Environment" unique_id=875140776]
+[node name="Rock03" parent="Environment" unique_id=182317772 instance=ExtResource("3_ipy0c")]
 position = Vector2(875, 199)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_0wm26")
 
-[node name="RockCorail01" type="Sprite2D" parent="Environment" unique_id=1051876873]
+[node name="Rock04" parent="Environment" unique_id=739971234 instance=ExtResource("3_ipy0c")]
 position = Vector2(336, 151)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_t5g02")
 
-[node name="RockCorail05" type="Sprite2D" parent="Environment" unique_id=962056381]
+[node name="Rock05" parent="Environment" unique_id=77722664 instance=ExtResource("6_s5pk2")]
 position = Vector2(558, 404)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_j4dgx")
 
-[node name="RockCorail02" type="Sprite2D" parent="Environment" unique_id=580975197]
+[node name="Rock06" parent="Environment" unique_id=1314830729 instance=ExtResource("4_0wm26")]
 position = Vector2(-289, 97)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_jkmdi")
 
-[node name="Rock03" type="Sprite2D" parent="Environment" unique_id=456892787]
+[node name="Rock07" parent="Environment" unique_id=1222117331 instance=ExtResource("9_uko52")]
 position = Vector2(-273, 358)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("6_rwgsd")
 
-[node name="Rock05" type="Sprite2D" parent="Environment" unique_id=693124216]
+[node name="Rock08" parent="Environment" unique_id=135874853 instance=ExtResource("6_s5pk2")]
 position = Vector2(-185, 594)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_1ibii")
 
-[node name="RockCorail07" type="Sprite2D" parent="Environment" unique_id=1518250654]
+[node name="Rock09" parent="Environment" unique_id=19334125 instance=ExtResource("10_hcv0d")]
 position = Vector2(-74, 794)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_20dr1")
 
-[node name="RockCorail03" type="Sprite2D" parent="Environment" unique_id=319056773]
+[node name="Rock10" parent="Environment" unique_id=1011722024 instance=ExtResource("4_0wm26")]
 position = Vector2(65.99999, 998)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_jkmdi")
 
-[node name="Rock04" type="Sprite2D" parent="Environment" unique_id=523193750]
+[node name="Rock11" parent="Environment" unique_id=1185515947 instance=ExtResource("12_hcv0d")]
 position = Vector2(774, 479)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_0wm26")
 
-[node name="RockCorail04" type="Sprite2D" parent="Environment" unique_id=357364566]
+[node name="Rock12" parent="Environment" unique_id=112893674 instance=ExtResource("3_ipy0c")]
 position = Vector2(1045, 593)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_t5g02")
 
-[node name="Rock06" type="Sprite2D" parent="Environment" unique_id=1400670387]
+[node name="Rock13" parent="Environment" unique_id=2088036591 instance=ExtResource("12_hcv0d")]
 position = Vector2(360, 1110)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_0wm26")
 
-[node name="Rock07" type="Sprite2D" parent="Environment" unique_id=1477912351]
+[node name="Rock14" parent="Environment" unique_id=1536656567 instance=ExtResource("9_uko52")]
 position = Vector2(1091, 1131)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_rwgsd")
 
-[node name="RockCorail06" type="Sprite2D" parent="Environment" unique_id=1227518606]
+[node name="Rock15" parent="Environment" unique_id=199806501 instance=ExtResource("6_s5pk2")]
 position = Vector2(620, 1135)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("4_j4dgx")
 
-[node name="RockCorail08" type="Sprite2D" parent="Environment" unique_id=406399698]
+[node name="Rock16" parent="Environment" unique_id=1344483507 instance=ExtResource("3_ipy0c")]
 position = Vector2(890, 1135)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_t5g02")
 
 [node name="Corail02" parent="Environment" unique_id=614684892 instance=ExtResource("10_ipy0c")]
@@ -174,16 +156,6 @@ scale = Vector2(0.27499998, 0.27499998)
 [node name="Corail09" parent="Environment" unique_id=212479826 instance=ExtResource("12_uko52")]
 position = Vector2(-6.0000305, 589)
 scale = Vector2(0.35, 0.35)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1218315915]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1920849191]
-polygon = PackedVector2Array(-491, 7, -152, 0, -104, 49, -86, 107, -106, 187, -104, 242, -83, 311, -118, 415, -29, 516, 20, 610, 78, 717, 162, 839, 192, 911, 291, 947, 389, 954, 558, 994, 619, 979, 737, 1006, 812, 970, 925, 1026, 1083, 994, 1147, 989, 1245, 1028, 1277, 1210, 587, 1206, 316, 1197, 18, 1098, -161, 1043, -233, 992, -317, 819, -328, 747, -416, 612, -481, 323, -441, 193, -485, 51)
-
-[node name="Area2D2" type="Area2D" parent="." unique_id=1874173751]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2" unique_id=1897430364]
-polygon = PackedVector2Array(159, -81, 142, 63, 217, 136, 170, 182, 191, 281, 290, 340, 336, 434, 474, 544, 555, 596, 727, 642, 813, 604, 899, 556, 930, 611, 910, 675, 938, 761, 1031, 784, 1099, 762, 1119, 706, 1194, 700, 1227, 687, 1224, 534, 1060, 381, 873, 322, 689, 265, 529, 135, 520, 69, 424, 8, 295, -65, 176, -74, 176, -74)
 
 [node name="EntitySpot" type="Marker2D" parent="." unique_id=1496097455]
 position = Vector2(139.00003, 207.00003)

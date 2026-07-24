@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bya4lmcsgv08m" path="res://scenes/environment/rocks/rock_06.png" id="1_6yj5u"]
 
-[node name="Rock05" type="Sprite2D" unique_id=289249423]
+[node name="Rock06" type="Sprite2D" unique_id=289249423]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_6yj5u")
 
