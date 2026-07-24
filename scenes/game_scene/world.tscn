@@ -91,7 +91,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "clips": PackedStringArray("jump"),
-"times": PackedFloat32Array(4.733333)
+"times": PackedFloat32Array(3.8333333)
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -100,7 +100,7 @@ tracks/1/path = NodePath("../Egg")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(6.85),
+"times": PackedFloat32Array(5.95),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -114,7 +114,7 @@ tracks/2/path = NodePath("../Egg:constant_force")
 tracks/2/interp = 0
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2.1, 2.2333333),
+"times": PackedFloat32Array(1.2, 1.3333335),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(2000, -400), Vector2(0, 980)]
@@ -126,7 +126,7 @@ tracks/3/path = NodePath("../Egg:freeze")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(2.1),
+"times": PackedFloat32Array(1.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -138,7 +138,7 @@ tracks/4/path = NodePath("../Egg:angular_velocity")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(2.01),
+"times": PackedFloat32Array(1.1100001),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [12.566370614359172]
@@ -150,7 +150,7 @@ tracks/5/path = NodePath("../Egg:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(6.2700005, 6.8500004),
+"times": PackedFloat32Array(5.370001, 5.950001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -242,6 +242,7 @@ location = 1
 [node name="Air" type="Area2D" parent="." unique_id=90016433 groups=["air"]]
 position = Vector2(959, -430)
 collision_layer = 3
+collision_mask = 3
 input_pickable = false
 gravity_space_override = 3
 linear_damp_space_override = 3
@@ -281,14 +282,11 @@ collision_layer = 2
 collision_mask = 2
 freeze = true
 linear_velocity = Vector2(20, -5)
-linear_damp_mode = 1
-linear_damp = 0.1
 angular_velocity = 0.029147
-angular_damp_mode = 1
-angular_damp = 1.0
 
 [node name="CharacterController" parent="." unique_id=1427967305 instance=ExtResource("2_yvi15")]
 position = Vector2(467, -396)
+movePower = 480.0
 disable_controls = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterController/RigidBody2D" parent_id_path=PackedInt32Array(1427967305, 1615751047) index="2" unique_id=625463772]
