@@ -16,6 +16,7 @@ func spawn_entity(scene: PackedScene) -> Node2D:
 	
 	return _entity
 
+
 ## Instantiate an entity in this spot, by randomly picking one from available_entities.
 func populate(rng: RandomNumberGenerator) -> void:
 	if available_entities == null :
