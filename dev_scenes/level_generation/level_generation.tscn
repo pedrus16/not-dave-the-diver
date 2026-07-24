@@ -35,17 +35,20 @@ glow_enabled = true
 glow_intensity = 1.0
 glow_bloom = 0.4
 
-[node name="LevelGeneration" type="Node2D" unique_id=263736646 node_paths=PackedStringArray("level_generator", "first_connector")]
+[node name="LevelGeneration" type="Node2D" unique_id=263736646 node_paths=PackedStringArray("level_generator", "first_connector", "modules_root")]
 script = ExtResource("1_bg04x")
 level_generator = NodePath("LevelGenerator")
-first_connector = NodePath("FirstConnector")
+first_connector = NodePath("ModulesRoot/FirstConnector")
+modules_root = NodePath("ModulesRoot")
 
 [node name="LevelGenerator" type="Node" parent="." unique_id=761345694]
 script = ExtResource("1_g2gsq")
 modules_registry = ExtResource("3_guljt")
 metadata/_custom_type_script = "uid://b08vf7bsktk8w"
 
-[node name="FirstConnector" parent="." unique_id=1097362333 instance=ExtResource("4_m0m1a")]
+[node name="ModulesRoot" type="Node2D" parent="." unique_id=862089204]
+
+[node name="FirstConnector" parent="ModulesRoot" unique_id=1097362333 instance=ExtResource("4_m0m1a")]
 position = Vector2(955, 342)
 location = 1
 
