@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://06oxjeu4t776"
+path="res://.godot/imported/Submerged Flight Depth 2.ogg-4ddd95ba6eecd84c5c6a23e6d065d50f.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Submerged Flight Depth 2.ogg"
+dest_files=["res://.godot/imported/Submerged Flight Depth 2.ogg-4ddd95ba6eecd84c5c6a23e6d065d50f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
