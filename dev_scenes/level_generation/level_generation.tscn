@@ -4,29 +4,6 @@
 [ext_resource type="Script" uid="uid://b08vf7bsktk8w" path="res://src/procedural/level_generator.gd" id="1_g2gsq"]
 [ext_resource type="Resource" uid="uid://bjut3bj2c24xw" path="res://dev_scenes/level_generation/test_registry.tres" id="3_guljt"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="4_m0m1a"]
-[ext_resource type="Script" uid="uid://colwl1hgsb5yy" path="res://dev_scenes/level_generation/debug_camera.gd" id="5_k0n85"]
-[ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="6_fxtox"]
-
-[sub_resource type="Gradient" id="Gradient_k0n85"]
-colors = PackedColorArray(0.13238159, 0.24559334, 0.18595856, 1, 2.6471912e-07, 0.2598645, 0.26004887, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jc4cr"]
-gradient = SubResource("Gradient_k0n85")
-width = 1980
-height = 1080
-fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0)
-
-[sub_resource type="Gradient" id="Gradient_2ivh5"]
-offsets = PackedFloat32Array(0.17916666, 0.5625, 0.69166666, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.6680894, 0.6680894, 0.6680894, 1, 0.40833336, 0.40833336, 0.40833336, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_k0n85"]
-gradient = SubResource("Gradient_2ivh5")
-use_hdr = true
-fill = 1
-fill_from = Vector2(0.51282054, 0.4957265)
-fill_to = Vector2(0.23931624, 0.17948718)
 
 [sub_resource type="Environment" id="Environment_yh0la"]
 background_mode = 3
@@ -46,29 +23,11 @@ modules_registry = ExtResource("3_guljt")
 metadata/_custom_type_script = "uid://b08vf7bsktk8w"
 
 [node name="FirstConnector" parent="." unique_id=1097362333 instance=ExtResource("4_m0m1a")]
-position = Vector2(955, 342)
+position = Vector2(955, 0)
 location = 1
-
-[node name="DebugCamera" type="Camera2D" parent="." unique_id=1586633574]
-position = Vector2(960, 540)
-script = ExtResource("5_k0n85")
-metadata/_custom_type_script = "uid://colwl1hgsb5yy"
-
-[node name="Sprite2D" type="Sprite2D" parent="DebugCamera" unique_id=607627784]
-texture = SubResource("GradientTexture2D_jc4cr")
-
-[node name="PointLight2D2" type="PointLight2D" parent="DebugCamera" unique_id=1867009676]
-scale = Vector2(40, 40)
-color = Color(0.69055694, 0.86859334, 0.7268227, 1)
-energy = 2.0
-blend_mode = 2
-texture = SubResource("GradientTexture2D_k0n85")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=824092523]
 color = Color(0.7735114, 0.8405158, 0.8606091, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=629720133]
 environment = SubResource("Environment_yh0la")
-
-[node name="CharacterController" parent="." unique_id=1427967305 instance=ExtResource("6_fxtox")]
-position = Vector2(952, 215)

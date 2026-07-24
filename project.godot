@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NotDaveTheDiver"
-run/main_scene="uid://d4jmbjkwjo3kv"
+run/main_scene="uid://ccjdbkpmpoihg"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -26,6 +26,10 @@ window/stretch/aspect="expand"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[global_group]
+
+air="Air areas where the character movements forces are not applied"
 
 [input]
 
@@ -53,6 +57,8 @@ move_right={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=0.0
+2d/default_linear_damp=3.0
 
 [rendering]
 
