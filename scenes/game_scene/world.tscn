@@ -6,9 +6,95 @@
 [ext_resource type="Script" uid="uid://d23ii5dg7nded" path="res://scenes/character/camera.gd" id="3_0xl4e"]
 [ext_resource type="Texture2D" uid="uid://615oanveo8p0" path="res://scenes/environment/rocks/rock_01.png" id="3_e5ift"]
 [ext_resource type="Texture2D" uid="uid://by7umetuimgg0" path="res://scenes/environment/rocks/rock_03.png" id="4_e5ift"]
+[ext_resource type="PackedScene" uid="uid://c7j8k2yf3hy4g" path="res://scenes/egg/egg.tscn" id="7_hi5s7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1917, 873)
+
+[sub_resource type="Animation" id="Animation_7ikvl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Egg:linear_velocity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Egg:constant_force")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 980)]
+}
+
+[sub_resource type="Animation" id="Animation_f30al"]
+resource_name = "egg"
+length = 8.566667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("../Egg:linear_velocity")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(100, -50), Vector2(100, -50)]
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("jump"),
+"times": PackedFloat32Array(1.9999999)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Egg")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.75),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Egg:constant_force")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, -400), Vector2(0, 980)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2tfwb"]
+_data = {
+&"RESET": SubResource("Animation_7ikvl"),
+&"egg": SubResource("Animation_f30al")
+}
 
 [sub_resource type="Animation" id="Animation_e5ift"]
 length = 0.001
@@ -115,9 +201,17 @@ position = Vector2(1, 42)
 position_smoothing_enabled = true
 script = ExtResource("3_0xl4e")
 
+[node name="AnimationEgg" type="AnimationPlayer" parent="." unique_id=1199442682]
+root_node = NodePath("../AnimationChicken")
+libraries/ = SubResource("AnimationLibrary_2tfwb")
+autoplay = &"egg"
+
 [node name="AnimationChicken" type="AnimationPlayer" parent="." unique_id=1471844362]
 root_node = NodePath("../CharacterController")
 libraries/ = SubResource("AnimationLibrary_7ikvl")
-autoplay = &"jump"
+
+[node name="Egg" parent="." unique_id=530117776 instance=ExtResource("7_hi5s7")]
+position = Vector2(504, -371)
+linear_velocity = Vector2(20, -5)
 
 [editable path="CharacterController"]

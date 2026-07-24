@@ -14,7 +14,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	print(disable_controls)
 	if disable_controls == true: return
 	
 	var input: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
