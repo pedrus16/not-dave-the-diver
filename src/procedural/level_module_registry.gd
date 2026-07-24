@@ -1,7 +1,8 @@
 class_name LevelModuleRegistry extends Resource
 
 @export var modules: Array[LevelModuleDescriptor]
-@export var closed_connector: PackedScene
+@export var horizontal_closed_connector: PackedScene
+@export var vertical_closed_connector: PackedScene
 
 var _analyzed := false
 ## Array item type: LevelModuleDescriptor

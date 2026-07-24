@@ -171,11 +171,14 @@ func _compute_next_cell(connector: ModuleConnector, current_cell: Vector2i) -> V
 
 ## Connect a wall to the given connector.
 func _close_connector(root: Node2D, connector: ModuleConnector) -> void:
-	var wall := modules_registry.closed_connector.instantiate() as Node2D
-	root.add_child(wall)
+	var wall: Node2D
 	
-	if connector.location == ModuleConnector.Location.LEFT || connector.location == ModuleConnector.Location.RIGHT:
-		wall.rotation_degrees += 90
+	if ModuleConnector.is_location_vertical(connector.location):
+		wall = modules_registry.vertical_closed_connector.instantiate() as Node2D
+	else:
+		wall = modules_registry.horizontal_closed_connector.instantiate() as Node2D
+
+	root.add_child(wall)
 	
 	wall.global_position = connector.global_position
 

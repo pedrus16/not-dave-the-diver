@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ckhs2q3cqlcmm" path="res://scenes/modules/module_02.tscn" id="4_c6cd1"]
 [ext_resource type="PackedScene" uid="uid://01ugerbgd8i6" path="res://scenes/modules/module_03.tscn" id="5_ao7ev"]
 [ext_resource type="PackedScene" uid="uid://dhnj3q1on6xx6" path="res://scenes/modules/module_04.tscn" id="6_nlvox"]
+[ext_resource type="PackedScene" uid="uid://bit2kgiv1c6t2" path="res://scenes/modules/vertical_wall.tscn" id="8_4l5wn"]
 
 [sub_resource type="Resource" id="Resource_2ivh5"]
 script = ExtResource("1_uov7g")
@@ -31,5 +32,6 @@ metadata/_custom_type_script = "uid://244r6cyhfexa"
 [resource]
 script = ExtResource("2_nxtcf")
 modules = Array[ExtResource("1_uov7g")]([SubResource("Resource_2ivh5"), SubResource("Resource_1ibii"), SubResource("Resource_8ukve"), SubResource("Resource_swo0r")])
-closed_connector = ExtResource("1_nlvox")
+horizontal_closed_connector = ExtResource("1_nlvox")
+vertical_closed_connector = ExtResource("8_4l5wn")
 metadata/_custom_type_script = "uid://cesqiy0yquyrm"
