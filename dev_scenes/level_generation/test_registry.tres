@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LevelModuleRegistry" format=3 uid="uid://bjut3bj2c24xw"]
 
-[ext_resource type="PackedScene" uid="uid://ba0acdah1wxhm" path="res://dev_scenes/level_generation/closed_connector.tscn" id="1_ao7ev"]
+[ext_resource type="PackedScene" uid="uid://cuq48jkhdhwfp" path="res://scenes/modules/horizontal_wall.tscn" id="1_nlvox"]
 [ext_resource type="Script" uid="uid://244r6cyhfexa" path="res://src/procedural/level_module_descriptor.gd" id="1_uov7g"]
 [ext_resource type="Script" uid="uid://cesqiy0yquyrm" path="res://src/procedural/level_module_registry.gd" id="2_nxtcf"]
 [ext_resource type="PackedScene" uid="uid://y11870pihh11" path="res://scenes/modules/module_01.tscn" id="3_wrnqs"]
@@ -31,5 +31,5 @@ metadata/_custom_type_script = "uid://244r6cyhfexa"
 [resource]
 script = ExtResource("2_nxtcf")
 modules = Array[ExtResource("1_uov7g")]([SubResource("Resource_2ivh5"), SubResource("Resource_1ibii"), SubResource("Resource_8ukve"), SubResource("Resource_swo0r")])
-closed_connector = ExtResource("1_ao7ev")
+closed_connector = ExtResource("1_nlvox")
 metadata/_custom_type_script = "uid://cesqiy0yquyrm"

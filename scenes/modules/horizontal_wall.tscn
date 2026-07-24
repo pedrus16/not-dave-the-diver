@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cuq48jkhdhwfp"]
+
+[ext_resource type="Texture2D" uid="uid://bus7mwvoqdqdi" path="res://scenes/environment/rocks/rock_04.png" id="1_snhwx"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="2_adc6b"]
+[ext_resource type="Texture2D" uid="uid://2e1ipbv6yonl" path="res://scenes/environment/rocks/rock_corail_03.png" id="2_r3ug3"]
+
+[node name="HorizontalWall" type="Node2D" unique_id=811414302]
+
+[node name="Environment" type="Node2D" parent="." unique_id=879946256]
+
+[node name="Rock04" type="Sprite2D" parent="Environment" unique_id=1231751984]
+position = Vector2(-174, -59)
+scale = Vector2(0.42299998, 0.42299998)
+texture = ExtResource("1_snhwx")
+
+[node name="RockCorail03" type="Sprite2D" parent="Environment/Rock04" unique_id=573415952]
+position = Vector2(536.64307, 30.732864)
+scale = Vector2(1.213948, 1.213948)
+texture = ExtResource("2_r3ug3")
+
+[node name="ModuleConnector" parent="." unique_id=141346909 instance=ExtResource("2_adc6b")]
+
+[node name="Area2D6" type="Area2D" parent="." unique_id=892148385]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D6" unique_id=305138111]
+position = Vector2(641, 38)
+polygon = PackedVector2Array(-952, -180, -1004, -55, -972, 31, -827, 42, -737, -22, -723, 51, -662, 73, -508, 87, -445, 22, -401, -104, -439, -200, -492, -253, -553, -259, -730, -204, -868, -231)

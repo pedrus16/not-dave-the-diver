@@ -34,10 +34,10 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_mjddk")
 }, {
-"duration": 1.0,
+"duration": 50.0,
 "texture": ExtResource("4_oqy3q")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("5_avffv")
 }, {
 "duration": 1.0,
@@ -61,13 +61,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_rso86")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("13_rt8sv")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("14_jipv8")
 }, {
-"duration": 2.0,
+"duration": 50.0,
 "texture": ExtResource("15_vn5je")
 }, {
 "duration": 1.0,
@@ -76,16 +76,16 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_ydxon")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("18_ux70d")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("19_3vcoj")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("20_ufks0")
 }, {
-"duration": 2.0,
+"duration": 50.0,
 "texture": ExtResource("21_1s16a")
 }],
 "loop": 1,
@@ -98,4 +98,4 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_jc4cr")
 animation = &"eyes_turning"
 autoplay = "eyes_turning"
-frame_progress = 0.5219084
+frame_progress = 0.5449864
