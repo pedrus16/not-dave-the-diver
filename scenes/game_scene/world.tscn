@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://bwmt4lh6udo8c"]
+
+[ext_resource type="PackedScene" uid="uid://bo386p23bbp2l" path="res://dev_scenes/level_generation/level_generation.tscn" id="1_vl2gp"]
+[ext_resource type="Texture2D" uid="uid://bya4lmcsgv08m" path="res://scenes/environment/rocks/rock_06.png" id="2_x7y2d"]
+[ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="2_yvi15"]
+[ext_resource type="Script" uid="uid://d23ii5dg7nded" path="res://scenes/character/camera.gd" id="3_0xl4e"]
+[ext_resource type="Texture2D" uid="uid://615oanveo8p0" path="res://scenes/environment/rocks/rock_01.png" id="3_e5ift"]
+[ext_resource type="Texture2D" uid="uid://by7umetuimgg0" path="res://scenes/environment/rocks/rock_03.png" id="4_e5ift"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1917, 873)
+
+[sub_resource type="Animation" id="Animation_e5ift"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody2D:constant_force")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:disable_controls")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hi5s7"]
+resource_name = "jump"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody2D:constant_force")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(1000, -2000), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:disable_controls")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ikvl"]
+_data = {
+&"RESET": SubResource("Animation_e5ift"),
+&"jump": SubResource("Animation_hi5s7")
+}
+
+[node name="World" type="Node2D" unique_id=594139589]
+
+[node name="LevelGeneration" parent="." unique_id=263736646 instance=ExtResource("1_vl2gp")]
+
+[node name="Air" type="Area2D" parent="." unique_id=90016433 groups=["air"]]
+position = Vector2(959, -430)
+input_pickable = false
+gravity_space_override = 3
+linear_damp_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Air" unique_id=1593736066]
+position = Vector2(2.5, -67.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Cliffs" type="StaticBody2D" parent="." unique_id=26798520]
+position = Vector2(311, -141)
+
+[node name="SpriteCliffLeft" type="Sprite2D" parent="Cliffs" unique_id=1503877475]
+texture = ExtResource("2_x7y2d")
+
+[node name="SpriteCliffRightBottom" type="Sprite2D" parent="Cliffs" unique_id=808323098]
+position = Vector2(1236, -10)
+texture = ExtResource("3_e5ift")
+
+[node name="SpriteCliffRightTop" type="Sprite2D" parent="Cliffs" unique_id=1455815825]
+position = Vector2(1404, -503)
+texture = ExtResource("4_e5ift")
+
+[node name="CollisionLeft" type="CollisionPolygon2D" parent="Cliffs" unique_id=1509900987]
+polygon = PackedVector2Array(-333, -376, -25, -376, 96, -218, 181, -220, 298, -89, 305, -50, 418, 21, 413, 129, 351, 182, 262, 216, 154, 315, -90, 384, -328, 365)
+one_way_collision = true
+
+[node name="CollisionRight" type="CollisionPolygon2D" parent="Cliffs" unique_id=4044598]
+polygon = PackedVector2Array(886, -329, 957, -371, 1122, -371, 1032, -472, 1069, -624, 1189, -648, 1199, -706, 1690, -875, 1718, 372, 951, 321, 867, 87, 983, 21, 955, -86, 901, -114, 861, -208)
+
+[node name="CharacterController" parent="." unique_id=1427967305 instance=ExtResource("2_yvi15")]
+position = Vector2(475, -412)
+disable_controls = true
+
+[node name="Camera2D" type="Camera2D" parent="CharacterController/RigidBody2D" parent_id_path=PackedInt32Array(1427967305, 1615751047) index="2" unique_id=625463772]
+position = Vector2(1, 42)
+position_smoothing_enabled = true
+script = ExtResource("3_0xl4e")
+
+[node name="AnimationChicken" type="AnimationPlayer" parent="." unique_id=1471844362]
+root_node = NodePath("../CharacterController")
+libraries/ = SubResource("AnimationLibrary_7ikvl")
+autoplay = &"jump"
+
+[editable path="CharacterController"]
