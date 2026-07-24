@@ -5,6 +5,13 @@ class_name EntitySpot extends Marker2D
 
 ## Instantiate an entity in this spot, by randomly picking one from available_entities.
 func populate(rng: RandomNumberGenerator) -> void:
+	if available_entities == null :
+		push_warning("null available_entities in %s" % get_path())
+		return
+
+	if available_entities.entities.is_empty():
+		return
+	
 	var weights := PackedFloat32Array()
 	weights.resize(available_entities.entities.size())
 	
