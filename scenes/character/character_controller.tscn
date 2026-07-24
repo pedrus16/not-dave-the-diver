@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://7t5sh57io46g" path="res://src/refillable_timer.gd" id="3_tmmmg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sm8h1"]
+friction = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tmmmg"]
 radius = 32.01562

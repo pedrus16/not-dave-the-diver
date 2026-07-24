@@ -10,6 +10,9 @@ class_name CharacterController extends Node2D
 
 var sprite_rotation: float = 0.0
 var is_swimming: bool = false
+var _last_input_angle: float = 0.0
+var _dir_changed_elapsed_time: float = 0.0
+var _sprite_angle_offset = PI * 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,8 +27,20 @@ func _physics_process(delta: float) -> void:
 	rigidBody2D.constant_force = input * movePower + Vector2(0, -buoyancy)
 	
 	is_swimming = not input.is_zero_approx()
+	var input_angle = input.angle()
 	if input.is_zero_approx(): return
-	sprite_rotation = lerp_angle(sprite.rotation, input.angle() + PI * 0.5, delta)
+	
+	_dir_changed_elapsed_time += delta * Engine.time_scale
+	
+	if abs(sprite.rotation - (_last_input_angle + _sprite_angle_offset)) > 0.001:
+		sprite_rotation = lerp_angle(sprite.rotation, _last_input_angle + _sprite_angle_offset, min(1.0, _dir_changed_elapsed_time))
+	else:
+		sprite_rotation = _last_input_angle + _sprite_angle_offset
+
+	if _last_input_angle != input_angle:
+		_dir_changed_elapsed_time = 0.0
+		_last_input_angle = input_angle
+
 
 func _process(delta: float) -> void:
 	sprite.rotation = sprite_rotation
