@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1sc8hqjikddg"]
 
-[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="1_bwtd0"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="1_bwtd0"]
 [ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_d6x3p"]
 
 [node name="Module3" type="Node2D" unique_id=131320521]

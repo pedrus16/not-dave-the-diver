@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cihdmbqob5mep" path="res://scenes/environment/coraux/corail/corail_01.tscn" id="9_frldj"]
 [ext_resource type="PackedScene" uid="uid://bi31if8jthrt8" path="res://scenes/environment/coraux/corail/corail_02.tscn" id="10_gv5r0"]
 [ext_resource type="PackedScene" uid="uid://cvfsk1jfxnxar" path="res://scenes/environment/coraux/corail/corail_03.tscn" id="11_la8jp"]
-[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="13_6oqp7"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="13_6oqp7"]
 [ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="14_hhc73"]
 [ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="15_2ivh5"]
 [ext_resource type="Resource" uid="uid://b8vfvone4he7q" path="res://dev_scenes/level_generation/entities/sea_urchin.tres" id="16_sixiu"]

@@ -10,9 +10,9 @@ Pour qu'un module soit pris en compte par l'algorithme de génération, il faut 
 res://config/modules_registry.tres
 ```
 
-Cette ressource contient aussi `Closed Connector`, qui est utilisé pour "fermer" un module avec un mur.
+Cette ressource contient aussi Horizontal et Vertical `Closed Connector`, qui sont utilisés pour "fermer" un module avec un mur.
 
-A noter que dans la scène de test `res://dev_scenes/level_generation/level_generation.tscn`, les modules sont directement
+À noter que dans la scène de test `res://dev_scenes/level_generation/level_generation.tscn`, les modules sont directement
 rentrés dans le Node `LevelGenerator`.
 
 ## Créer un module
@@ -20,19 +20,19 @@ rentrés dans le Node `LevelGenerator`.
 Pour créer un module :
 
 - Créer une nouvelle scène de type `LevelModule`
-- Ajouter des visuels, des colliders 2D
+- Ajouter des visuels et rochers qui sont dans scenes/environment (préférer les .tscn quand ils existent)
 - Ajouter des connecteurs aux entrées / sorties (attention pour l'instant elles font toutes la même taille).
-  Pour cela il faut utiliser la scène `res://dev_scenes/level-generation/module_connector.tscn` (bientôt mis dans res://scenes)
-- Ajouter des spots pour les interactables (noeud de type `InteractableSpot`)
+  Pour cela il faut utiliser la scène `res://scenes/modules/module_connector.tscn`
+- Ajouter des spots pour les entities (noeud de type `EntitySpot`)
 
 ### Spots
 
-Pour configurer les spots, il faut rentrer la liste des interactables qui peuvent apparaître à cet endroit.
+Pour configurer les spots, il faut rentrer la liste des entities qui peuvent apparaître à cet endroit.
 
-La liste des interactables peut être directement renseignée dans l'inspecteur du Spot, ou sauvegardée dans un fichier
-Resource (de type `InteractableList`), pour être réutilisé plusieurs fois.
+La liste des entities peut être directement renseignée dans l'inspecteur du Spot, ou sauvegardée dans un fichier
+Resource (de type `EntityList`), pour être réutilisé plusieurs fois.
 
-Pour chaque entrée de la liste, il faut glisser le `InteractableDescriptor` souhaité (ex: sea_urchin.tres), ainsi que le
+Pour chaque entrée de la liste, il faut glisser le `EntityDescriptor` souhaité (ex: sea_urchin.tres), ainsi que le
 poids.
 
 Plus le poids est élevé, plus il y a de chance de faire apparaître cet objet plus qu'un autre.
