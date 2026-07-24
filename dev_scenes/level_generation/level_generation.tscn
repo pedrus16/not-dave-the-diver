@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://br54olfkh8xss" path="res://dev_scenes/level_generation/level_generation.gd" id="1_bg04x"]
 [ext_resource type="Script" uid="uid://b08vf7bsktk8w" path="res://src/procedural/level_generator.gd" id="1_g2gsq"]
+[ext_resource type="Resource" uid="uid://dgkj5jnojkba7" path="res://config/generation_config.tres" id="3_8f734"]
 [ext_resource type="Resource" uid="uid://bjut3bj2c24xw" path="res://dev_scenes/level_generation/test_registry.tres" id="3_guljt"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="4_m0m1a"]
 [ext_resource type="Script" uid="uid://colwl1hgsb5yy" path="res://dev_scenes/level_generation/debug_camera.gd" id="5_k0n85"]
@@ -35,19 +36,17 @@ glow_enabled = true
 glow_intensity = 1.0
 glow_bloom = 0.4
 
-[node name="LevelGeneration" type="Node2D" unique_id=263736646 node_paths=PackedStringArray("level_generator", "first_connector")]
+[node name="LevelGeneration" type="Node2D" unique_id=263736646 node_paths=PackedStringArray("level_generator", "first_connector", "modules_root")]
 script = ExtResource("1_bg04x")
 level_generator = NodePath("LevelGenerator")
-first_connector = NodePath("FirstConnector")
+first_connector = NodePath("ModulesRoot/FirstConnector")
+modules_root = NodePath("ModulesRoot")
 
 [node name="LevelGenerator" type="Node" parent="." unique_id=761345694]
 script = ExtResource("1_g2gsq")
+config = ExtResource("3_8f734")
 modules_registry = ExtResource("3_guljt")
 metadata/_custom_type_script = "uid://b08vf7bsktk8w"
-
-[node name="FirstConnector" parent="." unique_id=1097362333 instance=ExtResource("4_m0m1a")]
-position = Vector2(955, 342)
-location = 1
 
 [node name="DebugCamera" type="Camera2D" parent="." unique_id=1586633574]
 position = Vector2(960, 540)
@@ -63,6 +62,12 @@ color = Color(0.69055694, 0.86859334, 0.7268227, 1)
 energy = 2.0
 blend_mode = 2
 texture = SubResource("GradientTexture2D_k0n85")
+
+[node name="ModulesRoot" type="Node2D" parent="." unique_id=862089204]
+
+[node name="FirstConnector" parent="ModulesRoot" unique_id=1097362333 instance=ExtResource("4_m0m1a")]
+position = Vector2(955, 342)
+location = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=824092523]
 color = Color(0.7735114, 0.8405158, 0.8606091, 1)

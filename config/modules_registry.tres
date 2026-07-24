@@ -1,15 +1,37 @@
 [gd_resource type="Resource" script_class="LevelModuleRegistry" format=3 uid="uid://dt8h2eysjrn3f"]
 
+[ext_resource type="PackedScene" uid="uid://cuq48jkhdhwfp" path="res://scenes/modules/horizontal_wall.tscn" id="1_0t53s"]
 [ext_resource type="Script" uid="uid://244r6cyhfexa" path="res://src/procedural/level_module_descriptor.gd" id="1_luuv3"]
 [ext_resource type="PackedScene" uid="uid://y11870pihh11" path="res://scenes/modules/module_01.tscn" id="2_lrsyy"]
 [ext_resource type="Script" uid="uid://cesqiy0yquyrm" path="res://src/procedural/level_module_registry.gd" id="2_xc2u8"]
+[ext_resource type="PackedScene" uid="uid://ckhs2q3cqlcmm" path="res://scenes/modules/module_02.tscn" id="4_cl6gy"]
+[ext_resource type="PackedScene" uid="uid://01ugerbgd8i6" path="res://scenes/modules/module_03.tscn" id="5_27n7e"]
+[ext_resource type="PackedScene" uid="uid://dhnj3q1on6xx6" path="res://scenes/modules/module_04.tscn" id="6_y7xe2"]
+[ext_resource type="PackedScene" uid="uid://bit2kgiv1c6t2" path="res://scenes/modules/vertical_wall.tscn" id="8_4lr28"]
 
 [sub_resource type="Resource" id="Resource_pcn5x"]
 script = ExtResource("1_luuv3")
 scene = ExtResource("2_lrsyy")
 metadata/_custom_type_script = "uid://244r6cyhfexa"
 
+[sub_resource type="Resource" id="Resource_mnfxv"]
+script = ExtResource("1_luuv3")
+scene = ExtResource("4_cl6gy")
+metadata/_custom_type_script = "uid://244r6cyhfexa"
+
+[sub_resource type="Resource" id="Resource_icsfm"]
+script = ExtResource("1_luuv3")
+scene = ExtResource("5_27n7e")
+metadata/_custom_type_script = "uid://244r6cyhfexa"
+
+[sub_resource type="Resource" id="Resource_8f734"]
+script = ExtResource("1_luuv3")
+scene = ExtResource("6_y7xe2")
+metadata/_custom_type_script = "uid://244r6cyhfexa"
+
 [resource]
 script = ExtResource("2_xc2u8")
-modules = Array[ExtResource("1_luuv3")]([SubResource("Resource_pcn5x")])
+modules = Array[ExtResource("1_luuv3")]([SubResource("Resource_pcn5x"), SubResource("Resource_mnfxv"), SubResource("Resource_icsfm"), SubResource("Resource_8f734")])
+horizontal_closed_connector = ExtResource("1_0t53s")
+vertical_closed_connector = ExtResource("8_4lr28")
 metadata/_custom_type_script = "uid://cesqiy0yquyrm"
