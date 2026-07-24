@@ -32,6 +32,6 @@ metadata/_custom_type_script = "uid://244r6cyhfexa"
 [resource]
 script = ExtResource("2_nxtcf")
 modules = Array[ExtResource("1_uov7g")]([SubResource("Resource_2ivh5"), SubResource("Resource_1ibii"), SubResource("Resource_8ukve"), SubResource("Resource_swo0r")])
-horizontal_closed_connector = ExtResource("1_nlvox")
-vertical_closed_connector = ExtResource("8_4l5wn")
+horizontal_closed_connector = ExtResource("8_4l5wn")
+vertical_closed_connector = ExtResource("1_nlvox")
 metadata/_custom_type_script = "uid://cesqiy0yquyrm"
