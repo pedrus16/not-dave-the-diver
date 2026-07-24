@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b08vf7bsktk8w" path="res://src/procedural/level_generator.gd" id="1_7ikvl"]
 [ext_resource type="Script" uid="uid://3t0t5q6bk8lg" path="res://scenes/game_scene/world.gd" id="1_f30al"]
-[ext_resource type="Resource" uid="uid://bjut3bj2c24xw" path="res://dev_scenes/level_generation/test_registry.tres" id="2_f30al"]
 [ext_resource type="Texture2D" uid="uid://bya4lmcsgv08m" path="res://scenes/environment/rocks/rock_06.png" id="2_x7y2d"]
 [ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="2_yvi15"]
-[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="3_2tfwb"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="3_2tfwb"]
 [ext_resource type="Texture2D" uid="uid://615oanveo8p0" path="res://scenes/environment/rocks/rock_01.png" id="3_e5ift"]
+[ext_resource type="Resource" uid="uid://dgkj5jnojkba7" path="res://config/generation_config.tres" id="3_s16c2"]
 [ext_resource type="Texture2D" uid="uid://by7umetuimgg0" path="res://scenes/environment/rocks/rock_03.png" id="4_e5ift"]
+[ext_resource type="Resource" uid="uid://dt8h2eysjrn3f" path="res://config/modules_registry.tres" id="4_yts0w"]
 [ext_resource type="PackedScene" uid="uid://c7j8k2yf3hy4g" path="res://scenes/egg/egg.tscn" id="7_hi5s7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
@@ -232,7 +233,8 @@ first_connector = NodePath("FirstConnector")
 
 [node name="LevelGenerator" type="Node" parent="Level" unique_id=2134251418]
 script = ExtResource("1_7ikvl")
-modules_registry = ExtResource("2_f30al")
+config = ExtResource("3_s16c2")
+modules_registry = ExtResource("4_yts0w")
 metadata/_custom_type_script = "uid://b08vf7bsktk8w"
 
 [node name="FirstConnector" parent="Level" unique_id=141346909 instance=ExtResource("3_2tfwb")]

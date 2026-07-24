@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://01ugerbgd8i6"]
 
 [ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_imh3s"]
-[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="2_3hn3n"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="2_3hn3n"]
 [ext_resource type="Texture2D" uid="uid://b052qm186njve" path="res://scenes/environment/rocks/rock_corail_02.png" id="3_ecuek"]
 [ext_resource type="PackedScene" uid="uid://bu0j8claeb2ac" path="res://scenes/environment/rocks/rock_03.tscn" id="3_y78mh"]
 [ext_resource type="PackedScene" uid="uid://do0t0bkuiqn5e" path="res://scenes/environment/rocks/rock_05.tscn" id="5_4sjny"]
