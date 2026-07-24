@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://bmb0qe1twg6d"]
+
+[ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_mt2dw"]
+[ext_resource type="PackedScene" uid="uid://pwl6unbme06u" path="res://scenes/environment/rocks/rock_01.tscn" id="2_wl2tj"]
+[ext_resource type="PackedScene" uid="uid://bnxt2r8ha73q6" path="res://scenes/environment/rocks/rock_02.tscn" id="3_jt8p7"]
+[ext_resource type="PackedScene" uid="uid://bu0j8claeb2ac" path="res://scenes/environment/rocks/rock_03.tscn" id="4_sdek3"]
+[ext_resource type="PackedScene" uid="uid://bvxyfw7ugo8r5" path="res://scenes/environment/rocks/rock_04.tscn" id="5_tesov"]
+[ext_resource type="PackedScene" uid="uid://do0t0bkuiqn5e" path="res://scenes/environment/rocks/rock_05.tscn" id="6_vbwnd"]
+[ext_resource type="PackedScene" uid="uid://cpnulttlstnkt" path="res://scenes/environment/rocks/rock_06.tscn" id="7_gx3gv"]
+[ext_resource type="Texture2D" uid="uid://2e1ipbv6yonl" path="res://scenes/environment/rocks/rock_corail_03.png" id="8_47844"]
+[ext_resource type="PackedScene" uid="uid://cihdmbqob5mep" path="res://scenes/environment/coraux/corail/corail_01.tscn" id="9_6d860"]
+[ext_resource type="PackedScene" uid="uid://dyi75dhme185n" path="res://dev_scenes/level_generation/module_connector.tscn" id="10_42mhk"]
+[ext_resource type="PackedScene" uid="uid://cvfsk1jfxnxar" path="res://scenes/environment/coraux/corail/corail_03.tscn" id="11_72vcy"]
+[ext_resource type="PackedScene" uid="uid://dm2apb8s36kwu" path="res://scenes/environment/coraux/corail_eyes_01/corail_eyes_01.tscn" id="12_nesk8"]
+[ext_resource type="Texture2D" uid="uid://beh7dfuhy0uyh" path="res://scenes/environment/coraux/corail/corail_02.png" id="14_vbwnd"]
+[ext_resource type="Texture2D" uid="uid://b4ongojkjfkht" path="res://scenes/environment/coraux/corail/corail_03.png" id="15_gx3gv"]
+
+[node name="Module05" type="Node2D" unique_id=2042728769]
+script = ExtResource("1_mt2dw")
+metadata/_custom_type_script = "uid://b123m5gjglbmt"
+
+[node name="ModuleConnector" parent="." unique_id=141346909 instance=ExtResource("10_42mhk")]
+position = Vector2(89, 277)
+rotation = 1.5707964
+location = 2
+
+[node name="Rock01" parent="." unique_id=289249423 instance=ExtResource("2_wl2tj")]
+position = Vector2(213, 857.00006)
+rotation = -0.5235988
+scale = Vector2(0.564, 0.56700003)
+
+[node name="Rock02" parent="." unique_id=403073739 instance=ExtResource("3_jt8p7")]
+position = Vector2(719.99994, 339)
+rotation = -1.3089969
+scale = Vector2(0.489, 0.5135001)
+
+[node name="Rock03" parent="." unique_id=313665199 instance=ExtResource("4_sdek3")]
+position = Vector2(145, 528)
+scale = Vector2(0.34800005, 0.553)
+
+[node name="Rock04" parent="." unique_id=1972174878 instance=ExtResource("5_tesov")]
+position = Vector2(571, 130.99998)
+rotation = 0.2617994
+
+[node name="Rock13" parent="." unique_id=1109681730 instance=ExtResource("5_tesov")]
+position = Vector2(1863.0001, 551.00006)
+rotation = 0.2617994
+
+[node name="Rock05" parent="." unique_id=1377679525 instance=ExtResource("6_vbwnd")]
+position = Vector2(596, 960)
+
+[node name="Rock09" parent="." unique_id=541492493 instance=ExtResource("6_vbwnd")]
+position = Vector2(263, 65.999985)
+rotation = 2.6179938
+
+[node name="Rock06" parent="." unique_id=1420058512 instance=ExtResource("7_gx3gv")]
+position = Vector2(1051, 359.00006)
+rotation = 2.6179938
+
+[node name="Rock08" parent="." unique_id=1683409633 instance=ExtResource("7_gx3gv")]
+position = Vector2(1208, 828.0001)
+rotation = 3.6508186
+
+[node name="Rock07" parent="." unique_id=1066979510 instance=ExtResource("7_gx3gv")]
+position = Vector2(932, 902.99994)
+rotation = 1.3089969
+
+[node name="RockCorail03" type="Sprite2D" parent="." unique_id=234638289]
+position = Vector2(922, 105.00001)
+scale = Vector2(0.598, 0.592)
+texture = ExtResource("8_47844")
+
+[node name="RockCorail04" type="Sprite2D" parent="." unique_id=957284703]
+position = Vector2(2022, 553)
+rotation = 1.0471976
+scale = Vector2(0.46284133, 0.45221615)
+texture = ExtResource("8_47844")
+
+[node name="Corail01" parent="." unique_id=614684892 instance=ExtResource("9_6d860")]
+position = Vector2(1023, 70.00003)
+scale = Vector2(0.208, 0.192)
+
+[node name="Corail03" parent="." unique_id=1471823767 instance=ExtResource("11_72vcy")]
+position = Vector2(71.1157, 23.239676)
+rotation = -0.2617994
+scale = Vector2(0.14803389, 0.12510473)
+
+[node name="CorailEyes01" parent="." unique_id=915450133 instance=ExtResource("12_nesk8")]
+position = Vector2(89.999985, 172.99998)
+rotation = -2.0943952
+scale = Vector2(0.231, 0.26700023)
+
+[node name="CorailEyes02" parent="." unique_id=121103554 instance=ExtResource("12_nesk8")]
+position = Vector2(145.99998, 355)
+rotation = -0.5235988
+scale = Vector2(0.16612682, 0.17783284)
+
+[node name="Rock10" parent="." unique_id=84574876 instance=ExtResource("4_sdek3")]
+position = Vector2(1512, 1001.00006)
+rotation = -1.5707964
+scale = Vector2(0.482, 0.507)
+
+[node name="Rock11" parent="." unique_id=167528945 instance=ExtResource("4_sdek3")]
+position = Vector2(1356, 213.00006)
+rotation = -2.3561945
+scale = Vector2(0.482, 0.507)
+
+[node name="Rock12" parent="." unique_id=1119359697 instance=ExtResource("2_wl2tj")]
+position = Vector2(1644.0001, 2.000061)
+rotation = 2.3561945
+
+[node name="ModuleConnector2" parent="." unique_id=600099157 instance=ExtResource("10_42mhk")]
+position = Vector2(1799, 242)
+rotation = -1.5707963
+location = 3
+
+[node name="ModuleConnector3" parent="." unique_id=78291950 instance=ExtResource("10_42mhk")]
+position = Vector2(1676, 778)
+rotation = -1.5707963
+location = 3
+
+[node name="CorailEyes03" parent="." unique_id=484861540 instance=ExtResource("12_nesk8")]
+position = Vector2(1634.9999, 548)
+rotation = -1.3089969
+scale = Vector2(0.26, 0.26)
+
+[node name="Corail02" type="Sprite2D" parent="." unique_id=1846765633]
+position = Vector2(1391.0001, 738.00006)
+rotation = 0.5235988
+scale = Vector2(0.21200003, 0.22500008)
+texture = ExtResource("14_vbwnd")
+
+[node name="Corail04" type="Sprite2D" parent="." unique_id=552126439]
+position = Vector2(-16.000092, 722.9999)
+scale = Vector2(0.27, 0.234)
+texture = ExtResource("15_gx3gv")
+
+[node name="Corail05" parent="." unique_id=674493125 instance=ExtResource("11_72vcy")]
+position = Vector2(506, 339.99997)
+rotation = -0.5235988
+scale = Vector2(0.22900002, 0.19299999)
+
+[node name="Corail06" parent="." unique_id=158933314 instance=ExtResource("9_6d860")]
+position = Vector2(1033, 741.99994)
+rotation = 0.2617994
+scale = Vector2(0.366, 0.308)
