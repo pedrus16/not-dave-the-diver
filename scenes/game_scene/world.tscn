@@ -328,6 +328,7 @@ root_node = NodePath("../CharacterController")
 libraries/ = SubResource("AnimationLibrary_7ikvl")
 
 [node name="Water" type="ColorRect" parent="." unique_id=1820705150]
+z_index = 2
 offset_left = -2236.0
 offset_right = 4562.0
 offset_bottom = 4724.0
