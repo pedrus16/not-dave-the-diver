@@ -1,7 +1,7 @@
 class_name EntitySpot extends Marker2D
 
 @export var can_hold_egg := false
-@export var available_entities: EntityList = preload("res://config/default_entity_list.tres")
+@export var available_entities: EntityList = preload("res://config/default_floating_entity_list.tres")
 
 var _entity: Node2D
 

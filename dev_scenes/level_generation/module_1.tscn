@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_m83f5"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="1_yxfih"]
 [ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="3_x6mp1"]
+[ext_resource type="Resource" uid="uid://djeu6m2fqyiyx" path="res://config/default_wall_entity_list.tres" id="4_oik0o"]
 
 [node name="Module1" type="Node2D" unique_id=1915704407]
 script = ExtResource("1_m83f5")
@@ -33,4 +34,5 @@ position = Vector2(387, 244.99997)
 rotation = -0.5054246
 gizmo_extents = 50.0
 script = ExtResource("3_x6mp1")
+available_entities = ExtResource("4_oik0o")
 metadata/_custom_type_script = "uid://havu0syglhv2"

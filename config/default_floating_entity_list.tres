@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EntityList" format=3 uid="uid://bykuwg7k38e2g"]
+
+[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="1_k6p1j"]
+[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="2_tee0g"]
+
+[resource]
+script = ExtResource("2_tee0g")
+metadata/_custom_type_script = "uid://veq4pqsukcgl"
