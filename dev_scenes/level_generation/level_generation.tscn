@@ -46,12 +46,6 @@ script = ExtResource("1_g2gsq")
 modules_registry = ExtResource("3_guljt")
 metadata/_custom_type_script = "uid://b08vf7bsktk8w"
 
-[node name="ModulesRoot" type="Node2D" parent="." unique_id=862089204]
-
-[node name="FirstConnector" parent="ModulesRoot" unique_id=1097362333 instance=ExtResource("4_m0m1a")]
-position = Vector2(955, 342)
-location = 1
-
 [node name="DebugCamera" type="Camera2D" parent="." unique_id=1586633574]
 position = Vector2(960, 540)
 script = ExtResource("5_k0n85")
@@ -66,6 +60,12 @@ color = Color(0.69055694, 0.86859334, 0.7268227, 1)
 energy = 2.0
 blend_mode = 2
 texture = SubResource("GradientTexture2D_k0n85")
+
+[node name="ModulesRoot" type="Node2D" parent="." unique_id=862089204]
+
+[node name="FirstConnector" parent="ModulesRoot" unique_id=1097362333 instance=ExtResource("4_m0m1a")]
+position = Vector2(955, 342)
+location = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=824092523]
 color = Color(0.7735114, 0.8405158, 0.8606091, 1)
