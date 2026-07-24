@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://br54olfkh8xss" path="res://dev_scenes/level_generation/level_generation.gd" id="1_bg04x"]
 [ext_resource type="Script" uid="uid://b08vf7bsktk8w" path="res://src/procedural/level_generator.gd" id="1_g2gsq"]
+[ext_resource type="Resource" uid="uid://dgkj5jnojkba7" path="res://config/generation_config.tres" id="3_8f734"]
 [ext_resource type="Resource" uid="uid://bjut3bj2c24xw" path="res://dev_scenes/level_generation/test_registry.tres" id="3_guljt"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://dev_scenes/level_generation/module_connector.tscn" id="4_m0m1a"]
 [ext_resource type="Script" uid="uid://colwl1hgsb5yy" path="res://dev_scenes/level_generation/debug_camera.gd" id="5_k0n85"]
@@ -43,6 +44,7 @@ modules_root = NodePath("ModulesRoot")
 
 [node name="LevelGenerator" type="Node" parent="." unique_id=761345694]
 script = ExtResource("1_g2gsq")
+config = ExtResource("3_8f734")
 modules_registry = ExtResource("3_guljt")
 metadata/_custom_type_script = "uid://b08vf7bsktk8w"
 

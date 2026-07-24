@@ -1,22 +1,31 @@
 class_name LevelGenerator extends Node
 
+@export var config: GenerationConfig
 @export var modules_registry: LevelModuleRegistry
 
 var _first_connector_pos: Vector2
-var _dangling_connectors_by_depth: Dictionary[int, Array] = {} # Array[ConnectorInfo]
-var _existing_module_cells: Dictionary[Vector2i, bool] = {}
+var _dangling_connectors_by_depth: Dictionary[int, Array] # Array[ConnectorInfo]
+var _existing_module_cells: Dictionary[Vector2i, bool]
 
 
 func _ready() -> void:
+	if config == null:
+		push_warning("GenerationConfig is null. Will use default values.")
+		config = GenerationConfig.new()
+	
 	modules_registry.analyze()
 
 
 ## Instantiate a new procedurally generated level, starting with the given connector.
 func instantiate_level(root: Node2D, first_connector: ModuleConnector, level_seed: int) -> void:
+	# Reinit member variables
+	_first_connector_pos = first_connector.global_position
+	_dangling_connectors_by_depth = {}
+	_existing_module_cells = {}
+	
 	var rng := RandomNumberGenerator.new()
 	rng.seed = level_seed
 	
-	_first_connector_pos = first_connector.global_position
 	
 	var current_connector := ConnectorInfo.new(first_connector, Vector2i(0, 0))
 	
@@ -42,6 +51,7 @@ func _next_connector() -> ConnectorInfo:
 	return connector
 
 
+## Attempt to connect a new module by using the given connector.
 func _connect_new_module(root: Node2D, info: ConnectorInfo, rng: RandomNumberGenerator) -> void:
 	if _should_close_connector(info, rng):
 		_close_connector(root, info.connector)
@@ -78,15 +88,19 @@ func _connect_new_module(root: Node2D, info: ConnectorInfo, rng: RandomNumberGen
 ## Connectors horizontally far from the center are more likely to be closed, to favorise vertical exploration.
 func _should_close_connector(info: ConnectorInfo, rng: RandomNumberGenerator) -> bool:
 	# Security: avoid infinite recursion with arbitrary max modules count
-	if _existing_module_cells.size() > 30:
+	if _existing_module_cells.size() > config.max_module_count:
 		return true
 	
 	# Avoid modules to overlap
 	if _existing_module_cells.has(info.module_cell):
 		return true
 	
+	# Avoid modules to go above the surface
+	if info.module_cell.y < 0:
+		return true
+	
 	# Avoid modules to go up
-	if info.connector.location == ModuleConnector.Location.UP:
+	if config.avoid_up_connections && info.connector.location == ModuleConnector.Location.UP:
 		return true
 
 	# Avoid modules to go to far (left/right) and to deep
@@ -102,9 +116,8 @@ func _should_close_connector_from_x(new_module_cell: Vector2i, rng: RandomNumber
 	
 	x += maxf(0, 2 - new_module_cell.y)
 	
-	# TODO: les mettre en params
-	var x0 := 1.4
-	var k := 3.0
+	var x0 := config.horizontal_limit_probability_center
+	var k := config.horizontal_limit_probability_slope
 	
 	# https://www.desmos.com/calculator/c1rw20yjis
 	var probability := 1 / (1 + exp(-k * (x - x0)))
@@ -113,11 +126,14 @@ func _should_close_connector_from_x(new_module_cell: Vector2i, rng: RandomNumber
 
 
 func _should_close_connector_from_y(new_module_cell: Vector2i) -> bool:
-	return new_module_cell.y > 5
+	return new_module_cell.y > config.max_depth
 
 
 ## We force vertical modules in the center, if the connector is either UP or DOWN.
 func _should_force_vertical_module(info: ConnectorInfo) -> bool:
+	if !config.force_vertical_modules_in_center:
+		return false
+	
 	if !ModuleConnector.is_location_vertical(info.connector.location):
 		return false
 	
