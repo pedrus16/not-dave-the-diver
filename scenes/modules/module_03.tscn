@@ -14,6 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://cvfsk1jfxnxar" path="res://scenes/environment/coraux/corail/corail_03.tscn" id="13_6e405"]
 [ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="14_lhkv4"]
 [ext_resource type="PackedScene" uid="uid://bi31if8jthrt8" path="res://scenes/environment/coraux/corail/corail_02.tscn" id="14_ypu1t"]
+[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="15_tura4"]
+[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="17_4sjny"]
+
+[sub_resource type="Resource" id="Resource_g1ol8"]
+script = ExtResource("17_4sjny")
+metadata/_custom_type_script = "uid://veq4pqsukcgl"
 
 [node name="Module03" type="Node2D" unique_id=1160243106]
 script = ExtResource("1_imh3s")
@@ -152,28 +158,32 @@ flip_h = true
 
 [node name="EntitySpot" type="Marker2D" parent="." unique_id=129794613]
 position = Vector2(-443.99997, 478.00003)
-rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("14_lhkv4")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot2" type="Marker2D" parent="." unique_id=1240435885]
 position = Vector2(552, 664)
-rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("14_lhkv4")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot3" type="Marker2D" parent="." unique_id=936587632]
 position = Vector2(401, 336.00006)
-rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("14_lhkv4")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot4" type="Marker2D" parent="." unique_id=1004982206]
 position = Vector2(214, 752)
-rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("14_lhkv4")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot5" type="Marker2D" parent="." unique_id=863412282]
+position = Vector2(-139, 694)
+gizmo_extents = 82.8
+script = ExtResource("14_lhkv4")
+can_hold_egg = true
+available_entities = SubResource("Resource_g1ol8")
 metadata/_custom_type_script = "uid://havu0syglhv2"

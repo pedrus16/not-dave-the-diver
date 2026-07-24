@@ -17,6 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://cvfsk1jfxnxar" path="res://scenes/environment/coraux/corail/corail_03.tscn" id="13_8beet"]
 [ext_resource type="PackedScene" uid="uid://bi31if8jthrt8" path="res://scenes/environment/coraux/corail/corail_02.tscn" id="14_42u8b"]
 [ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="15_swo0r"]
+[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="16_2lbao"]
+[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="18_jujjm"]
+
+[sub_resource type="Resource" id="Resource_ypu1t"]
+script = ExtResource("18_jujjm")
+metadata/_custom_type_script = "uid://veq4pqsukcgl"
 
 [node name="Module04" type="Node2D" unique_id=1916459913]
 script = ExtResource("1_k15w6")
@@ -132,28 +138,32 @@ flip_v = true
 
 [node name="EntitySpot" type="Marker2D" parent="." unique_id=2027366235]
 position = Vector2(-443.99997, 478.00003)
-rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("15_swo0r")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot2" type="Marker2D" parent="." unique_id=1298337054]
 position = Vector2(552, 664)
-rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("15_swo0r")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot3" type="Marker2D" parent="." unique_id=698631963]
 position = Vector2(941, 451)
-rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("15_swo0r")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot4" type="Marker2D" parent="." unique_id=1070952530]
 position = Vector2(19, 693)
-rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("15_swo0r")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot5" type="Marker2D" parent="." unique_id=684318185]
+position = Vector2(220, 672)
+gizmo_extents = 82.8
+script = ExtResource("15_swo0r")
+can_hold_egg = true
+available_entities = SubResource("Resource_ypu1t")
 metadata/_custom_type_script = "uid://havu0syglhv2"

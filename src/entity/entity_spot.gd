@@ -1,7 +1,20 @@
 class_name EntitySpot extends Marker2D
 
+@export var can_hold_egg := false
 @export var available_entities: EntityList = preload("res://config/default_entity_list.tres")
 
+var _entity: Node2D
+
+
+## Spawns an entity in the spot, eventually freeing the former one if it exists.
+func spawn_entity(scene: PackedScene) -> Node2D:
+	if _entity != null:
+		_entity.queue_free()
+	
+	_entity = scene.instantiate()
+	add_child(_entity)
+	
+	return _entity
 
 ## Instantiate an entity in this spot, by randomly picking one from available_entities.
 func populate(rng: RandomNumberGenerator) -> void:
@@ -24,8 +37,7 @@ func populate(rng: RandomNumberGenerator) -> void:
 		# The empty entity is valid, so we return without error.
 		return
 	
-	var node := picked_entities.scene.instantiate()
-	add_child(node)
+	spawn_entity(picked_entities.scene)
 
 
 func _sum_weights(sum: float, entry: EntityListEntry) -> float:

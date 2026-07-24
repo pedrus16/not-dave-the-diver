@@ -145,29 +145,29 @@ position = Vector2(-6.0000305, 589)
 scale = Vector2(0.35, 0.35)
 
 [node name="EntitySpot" type="Marker2D" parent="." unique_id=1496097455]
-position = Vector2(139.00003, 207.00003)
-rotation = -0.5777294
+position = Vector2(169, 185)
+rotation = -0.66634786
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
+can_hold_egg = true
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot2" type="Marker2D" parent="." unique_id=1387087675]
-position = Vector2(120, 684.00006)
-rotation = -0.5777294
+position = Vector2(171, 654)
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot4" type="Marker2D" parent="." unique_id=1251973347]
-position = Vector2(224.99988, 381)
-rotation = -1.1554588
+position = Vector2(311.99997, 412)
+rotation = -1.4954209
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot3" type="Marker2D" parent="." unique_id=1535000517]
-position = Vector2(791.0001, 892.0001)
-rotation = -1.7331883
+position = Vector2(816, 953)
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
+can_hold_egg = true
 metadata/_custom_type_script = "uid://havu0syglhv2"

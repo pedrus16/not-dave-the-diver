@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cmpgadulgw58c"]
+
+[ext_resource type="Script" uid="uid://cy6lpssdqo6a0" path="res://src/entity/area2d_trigger.gd" id="1_w5fk4"]
+[ext_resource type="Texture2D" uid="uid://6tvhquxebfsg" path="res://scenes/egg/IMG_1923.png" id="2_kiwsf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdns4"]
+radius = 39.1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wqjo"]
+atlas = ExtResource("2_kiwsf")
+region = Rect2(307.76804, 570.4197, 107.95212, 133.18768)
+
+[node name="BelovedEgg" type="Area2D" unique_id=1244645963]
+script = ExtResource("1_w5fk4")
+metadata/_custom_type_script = "uid://cy6lpssdqo6a0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1539654337]
+position = Vector2(0.29299927, -23.532999)
+shape = SubResource("CircleShape2D_jdns4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1441255055]
+position = Vector2(0.29299927, -23.532999)
+scale = Vector2(0.398, 0.398)
+texture = SubResource("AtlasTexture_7wqjo")

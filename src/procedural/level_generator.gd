@@ -5,7 +5,7 @@ class_name LevelGenerator extends Node
 
 var _first_connector_pos: Vector2
 var _dangling_connectors_by_depth: Dictionary[int, Array] # Array[ConnectorInfo]
-var _existing_module_cells: Dictionary[Vector2i, bool]
+var _existing_modules: Dictionary[Vector2i, LevelModule]
 
 
 func _ready() -> void:
@@ -21,7 +21,7 @@ func instantiate_level(root: Node2D, first_connector: ModuleConnector, level_see
 	# Reinit member variables
 	_first_connector_pos = first_connector.global_position
 	_dangling_connectors_by_depth = {}
-	_existing_module_cells = {}
+	_existing_modules = {}
 	
 	var rng := RandomNumberGenerator.new()
 	rng.seed = level_seed
@@ -32,6 +32,8 @@ func instantiate_level(root: Node2D, first_connector: ModuleConnector, level_see
 	while current_connector != null:
 		_connect_new_module(root, current_connector, rng)
 		current_connector = _next_connector()
+	
+	_place_egg(rng)
 
 
 ## Finds the next connector to connect.
@@ -78,9 +80,41 @@ func _connect_new_module(root: Node2D, info: ConnectorInfo, rng: RandomNumberGen
 	
 	new_module.populate_entities(rng)
 	
-	_existing_module_cells[info.module_cell] = true
+	_existing_modules[info.module_cell] = new_module
 	
 	_append_new_connectors(new_module, info.module_cell)
+
+
+## Place the unique egg in one of the deepest EntitySlots.
+func _place_egg(rng: RandomNumberGenerator) -> void:
+	var max_depth := -1
+	var deepest_spots: Array[EntitySpot] = []
+	
+	for cell in _existing_modules:
+		var module := _existing_modules[cell]
+		
+		# Ignore module if it doesn't have an EntitySpot
+		if module.entity_spots.is_empty():
+			continue
+		
+		if cell.y < max_depth:
+			continue
+		
+		if cell.y > max_depth:
+			# Reset the array: we found a deeper module
+			deepest_spots = []
+			max_depth = cell.y
+		
+		for spot in module.entity_spots:
+			if spot.can_hold_egg:
+				deepest_spots.append(spot)
+	
+	if deepest_spots.is_empty():
+		push_error("Cannot place the egg: there are no spots in the level")
+		return
+	
+	var chosen_spot := deepest_spots[rng.randi() % deepest_spots.size()]
+	chosen_spot.spawn_entity(config.egg_scene)
 
 
 ## Returns true if the generator should close the connector (i.e. add a wall instead of a module).
@@ -88,11 +122,11 @@ func _connect_new_module(root: Node2D, info: ConnectorInfo, rng: RandomNumberGen
 ## Connectors horizontally far from the center are more likely to be closed, to favorise vertical exploration.
 func _should_close_connector(info: ConnectorInfo, rng: RandomNumberGenerator) -> bool:
 	# Security: avoid infinite recursion with arbitrary max modules count
-	if _existing_module_cells.size() > config.max_module_count:
+	if _existing_modules.size() > config.max_module_count:
 		return true
 	
 	# Avoid modules to overlap
-	if _existing_module_cells.has(info.module_cell):
+	if _existing_modules.has(info.module_cell):
 		return true
 	
 	# Avoid modules to go above the surface

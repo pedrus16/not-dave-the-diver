@@ -23,3 +23,6 @@ class_name GenerationConfig extends Resource
 ##
 ## Corresponds to k parameter in https://www.desmos.com/calculator/bcq1kbygzg.
 @export_range(0.0, 10.0) var horizontal_limit_probability_slope := 3.0
+
+## A unique egg is placed in one of the deepest modules.
+@export var egg_scene: PackedScene = preload("res://scenes/entities/beloved_egg.tscn")
