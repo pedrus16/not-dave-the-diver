@@ -31,3 +31,7 @@ static func opposite_location(loc: Location) -> Location:
 		_:
 			push_error("Unexpected Location value %v" % loc)
 			return Location.UP
+
+
+static func is_location_vertical(loc: Location) -> bool:
+	return loc == Location.UP || loc == Location.DOWN
