@@ -264,7 +264,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_2a7fc")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"dying",
 "speed": 25.0
 }, {
@@ -347,7 +347,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("52_cdgyk")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"hurted",
 "speed": 25.0
 }, {
@@ -769,6 +769,6 @@ animations = [{
 
 [node name="Cocotte" type="AnimatedSprite2D" unique_id=911124559]
 sprite_frames = SubResource("SpriteFrames_tntd7")
-animation = &"walking"
+animation = &"swimming"
 autoplay = "idle"
-frame_progress = 0.95649135
+frame_progress = 0.43854213

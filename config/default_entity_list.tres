@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EntityList" format=3 uid="uid://big0bys4ney11"]
+
+[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="1_t7qhr"]
+[ext_resource type="PackedScene" uid="uid://5e4cn7t0pskx" path="res://scenes/entities/sea_urchin.tscn" id="2_cp48j"]
+[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="2_iw2gb"]
+
+[sub_resource type="Resource" id="Resource_0mnu5"]
+script = ExtResource("1_t7qhr")
+scene = ExtResource("2_cp48j")
+metadata/_custom_type_script = "uid://b1u2vlatsqlt5"
+
+[sub_resource type="Resource" id="Resource_2dl2l"]
+script = ExtResource("1_t7qhr")
+metadata/_custom_type_script = "uid://b1u2vlatsqlt5"
+
+[resource]
+script = ExtResource("2_iw2gb")
+entities = Array[ExtResource("1_t7qhr")]([SubResource("Resource_0mnu5"), SubResource("Resource_2dl2l")])
+metadata/_custom_type_script = "uid://veq4pqsukcgl"

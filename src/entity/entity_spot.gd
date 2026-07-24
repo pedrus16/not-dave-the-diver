@@ -1,6 +1,6 @@
 class_name EntitySpot extends Marker2D
 
-@export var available_entities: EntityList
+@export var available_entities: EntityList = preload("res://config/default_entity_list.tres")
 
 
 ## Instantiate an entity in this spot, by randomly picking one from available_entities.
@@ -20,11 +20,11 @@ func populate(rng: RandomNumberGenerator) -> void:
 	
 	var picked_entities := available_entities.entities[rng.rand_weighted(weights)] as EntityListEntry
 	
-	if picked_entities.descriptor == null || picked_entities.descriptor.scene == null:
+	if picked_entities.scene == null:
 		# The empty entity is valid, so we return without error.
 		return
 	
-	var node := picked_entities.descriptor.scene.instantiate()
+	var node := picked_entities.scene.instantiate()
 	add_child(node)
 
 

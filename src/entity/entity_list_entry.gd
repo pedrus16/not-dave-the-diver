@@ -1,4 +1,4 @@
 class_name EntityListEntry extends Resource
 
-@export var descriptor: EntityDescriptor
+@export var scene: PackedScene
 @export var weight := 1.0

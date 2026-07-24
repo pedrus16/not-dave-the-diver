@@ -17,19 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://cvfsk1jfxnxar" path="res://scenes/environment/coraux/corail/corail_03.tscn" id="11_la8jp"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="13_6oqp7"]
 [ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="14_hhc73"]
-[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="15_2ivh5"]
-[ext_resource type="Resource" uid="uid://b8vfvone4he7q" path="res://dev_scenes/level_generation/entities/sea_urchin.tres" id="16_sixiu"]
-[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="17_e86wj"]
-
-[sub_resource type="Resource" id="Resource_5vedk"]
-script = ExtResource("15_2ivh5")
-descriptor = ExtResource("16_sixiu")
-metadata/_custom_type_script = "uid://b1u2vlatsqlt5"
-
-[sub_resource type="Resource" id="Resource_h22c0"]
-script = ExtResource("17_e86wj")
-entities = Array[ExtResource("15_2ivh5")]([SubResource("Resource_5vedk")])
-metadata/_custom_type_script = "uid://veq4pqsukcgl"
 
 [node name="Module01" type="Node2D" unique_id=1367764623]
 script = ExtResource("1_evyin")
@@ -120,7 +107,6 @@ position = Vector2(393.58096, 294.58096)
 rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("14_hhc73")
-available_entities = SubResource("Resource_h22c0")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot2" type="Marker2D" parent="." unique_id=335042789]
@@ -128,7 +114,6 @@ position = Vector2(552, 664)
 rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("14_hhc73")
-available_entities = SubResource("Resource_h22c0")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [editable path="Environment/CorailEyes02"]
