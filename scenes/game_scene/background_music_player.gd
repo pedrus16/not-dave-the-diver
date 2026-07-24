@@ -4,6 +4,8 @@ const MUTE_DB := -60.0
 
 @export var player: Node2D
 @export var top_reference: Node2D
+@export_range(-60.0, 0.0) var fade_in_initial_volume := -5.0
+@export_range(0.0, 10.0) var fade_in_duration := 2.0
 
 @onready var _sync_stream := stream as AudioStreamSynchronized
 var _tracks_count: int
@@ -22,9 +24,7 @@ func _process(_delta: float) -> void:
 
 	if !_started:
 		if player_depth > 0:
-			_init_max_depth()
-			_started = true
-			playing = true
+			_start()
 		else:
 			return
 
@@ -33,10 +33,19 @@ func _process(_delta: float) -> void:
 	_update_faders(ratio)
 
 
+func _start() -> void:
+	_init_max_depth()
+	
+	volume_db = fade_in_initial_volume
+	get_tree().create_tween().tween_property(self, "volume_db", 0.0, fade_in_duration)
+	
+	playing = true
+	_started = true
+
+
 func _init_max_depth() -> void:
 	var deepest_reduce := func(deepest: float, connector: Node2D) -> float: return maxf(deepest, connector.global_position.y)
 	var connectors := get_tree().current_scene.find_children("", _module_connector_class_name, true, false)
-	print(connectors.size())
 	
 	_max_depth = absf(connectors.reduce(deepest_reduce, 0.0))
 
