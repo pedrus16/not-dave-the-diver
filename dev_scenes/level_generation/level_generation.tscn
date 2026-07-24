@@ -7,23 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="4_m0m1a"]
 [ext_resource type="Script" uid="uid://colwl1hgsb5yy" path="res://dev_scenes/level_generation/debug_camera.gd" id="5_k0n85"]
 [ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="6_fxtox"]
+[ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="8_icsfm"]
+[ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="9_mnfxv"]
 
-[sub_resource type="Gradient" id="Gradient_k0n85"]
-colors = PackedColorArray(0.13238159, 0.24559334, 0.18595856, 1, 2.6471912e-07, 0.2598645, 0.26004887, 1)
+[sub_resource type="Gradient" id="Gradient_mnfxv"]
+colors = PackedColorArray(0.03050395, 0.08181354, 0.054491207, 1, 2.6471912e-07, 0.2598645, 0.26004887, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jc4cr"]
-gradient = SubResource("Gradient_k0n85")
+gradient = SubResource("Gradient_mnfxv")
 width = 1980
 height = 1080
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="Gradient" id="Gradient_2ivh5"]
+[sub_resource type="Gradient" id="Gradient_1wx2u"]
 offsets = PackedFloat32Array(0.17916666, 0.5625, 0.69166666, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.6680894, 0.6680894, 0.6680894, 1, 0.40833336, 0.40833336, 0.40833336, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_k0n85"]
-gradient = SubResource("Gradient_2ivh5")
+gradient = SubResource("Gradient_1wx2u")
 use_hdr = true
 fill = 1
 fill_from = Vector2(0.51282054, 0.4957265)
@@ -48,13 +50,15 @@ config = ExtResource("3_8f734")
 modules_registry = ExtResource("3_guljt")
 metadata/_custom_type_script = "uid://b08vf7bsktk8w"
 
+[node name="Gradient" type="Sprite2D" parent="." unique_id=607627784]
+position = Vector2(745.00006, 4821)
+scale = Vector2(10, 10)
+texture = SubResource("GradientTexture2D_jc4cr")
+
 [node name="DebugCamera" type="Camera2D" parent="." unique_id=1586633574]
-position = Vector2(960, 540)
+position = Vector2(951, 402)
 script = ExtResource("5_k0n85")
 metadata/_custom_type_script = "uid://colwl1hgsb5yy"
-
-[node name="Sprite2D" type="Sprite2D" parent="DebugCamera" unique_id=607627784]
-texture = SubResource("GradientTexture2D_jc4cr")
 
 [node name="PointLight2D2" type="PointLight2D" parent="DebugCamera" unique_id=1867009676]
 scale = Vector2(40, 40)
@@ -77,3 +81,11 @@ environment = SubResource("Environment_yh0la")
 
 [node name="CharacterController" parent="." unique_id=1427967305 instance=ExtResource("6_fxtox")]
 position = Vector2(952, 215)
+
+[node name="Water" parent="." unique_id=429885869 instance=ExtResource("8_icsfm")]
+position = Vector2(-808, 24396)
+region_enabled = true
+region_rect = Rect2(0, 0, 50000, 50000)
+
+[node name="Waves" parent="." unique_id=627467438 instance=ExtResource("9_mnfxv")]
+position = Vector2(1022, -593)

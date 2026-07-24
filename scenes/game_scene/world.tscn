@@ -15,6 +15,26 @@
 [ext_resource type="AudioStream" uid="uid://c610io8bv0g1v" path="res://audio/music/Submerged Flight Depth 3.ogg" id="14_40lml"]
 [ext_resource type="AudioStream" uid="uid://w683mocrv3o1" path="res://audio/music/Submerged Flight Depth 4.ogg" id="15_das7k"]
 [ext_resource type="Script" uid="uid://daw85aqcwu1da" path="res://scenes/game_scene/background_music_player.gd" id="16_6xlfg"]
+[ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="16_40lml"]
+[ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="17_das7k"]
+
+[sub_resource type="Gradient" id="Gradient_k0n85"]
+offsets = PackedFloat32Array(0.027173912, 0.3423913, 0.67210144, 1)
+colors = PackedColorArray(0.020798873, 0.08089232, 0.03073338, 1, 0.020955876, 0.14135295, 0.10011532, 1, 0.062752634, 0.26087144, 0.2130422, 1, 5.7756904e-07, 0.5492049, 0.5495584, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_04jd1"]
+gradient = SubResource("Gradient_k0n85")
+width = 1980
+height = 1080
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_40lml"]
+offsets = PackedFloat32Array(0.432971, 0.9945652)
+colors = PackedColorArray(0.27921075, 0.52946955, 0.4798261, 1, 0.43009743, 0.70156705, 0.6639023, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jc4cr"]
+gradient = SubResource("Gradient_40lml")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1917, 873)
@@ -37,6 +57,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 "
+
+[sub_resource type="Gradient" id="Gradient_2ivh5"]
+offsets = PackedFloat32Array(0.17916666, 0.375, 0.5307971, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.40833336, 0.40833336, 0.40833336, 1, 0.16924539, 0.16924527, 0.1692453, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_smo5t"]
+gradient = SubResource("Gradient_2ivh5")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.51282054, 0.4957265)
+fill_to = Vector2(0.16894197, 0.14163822)
 
 [sub_resource type="Animation" id="Animation_7ikvl"]
 length = 0.001
@@ -243,7 +274,21 @@ stream_2/volume = 0.0
 stream_3/stream = ExtResource("15_das7k")
 stream_3/volume = 0.0
 
+[sub_resource type="Environment" id="Environment_dp0gw"]
+background_mode = 3
+ambient_light_color = Color(0.31014773, 0.5727031, 0.39093536, 1)
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 0.2
+glow_bloom = 0.4
+fog_density = 0.815
+
 [node name="World" type="Node2D" unique_id=594139589]
+
+[node name="Gradient_water" type="Sprite2D" parent="." unique_id=1252377305]
+position = Vector2(1056, 5406)
+scale = Vector2(10, 10)
+texture = SubResource("GradientTexture2D_04jd1")
 
 [node name="Level" type="Node2D" parent="." unique_id=1088868975 node_paths=PackedStringArray("level_generator", "first_connector")]
 script = ExtResource("1_f30al")
@@ -260,6 +305,17 @@ metadata/_custom_type_script = "uid://b08vf7bsktk8w"
 position = Vector2(955, 0)
 location = 1
 
+[node name="gradient_sky" type="Sprite2D" parent="." unique_id=925322712]
+light_mask = 0
+position = Vector2(797, -984)
+rotation = -1.5707964
+texture = SubResource("GradientTexture1D_jc4cr")
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 3000)
+
+[node name="Waves" parent="." unique_id=627467438 instance=ExtResource("17_das7k")]
+position = Vector2(191, -2)
+
 [node name="Air" type="Area2D" parent="." unique_id=90016433 groups=["air"]]
 position = Vector2(959, -430)
 collision_layer = 3
@@ -270,7 +326,8 @@ linear_damp_space_override = 3
 angular_damp_space_override = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Air" unique_id=1593736066]
-position = Vector2(2.5, -67.5)
+light_mask = 0
+position = Vector2(9, -74)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Cliffs" type="StaticBody2D" parent="." unique_id=26798520]
@@ -280,13 +337,16 @@ collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_hi5s7")
 
 [node name="SpriteCliffLeft" type="Sprite2D" parent="Cliffs" unique_id=1503877475]
+light_mask = 0
 texture = ExtResource("2_x7y2d")
 
 [node name="SpriteCliffRightBottom" type="Sprite2D" parent="Cliffs" unique_id=808323098]
+light_mask = 0
 position = Vector2(1236, -10)
 texture = ExtResource("3_e5ift")
 
 [node name="SpriteCliffRightTop" type="Sprite2D" parent="Cliffs" unique_id=1455815825]
+light_mask = 0
 position = Vector2(1404, -503)
 texture = ExtResource("4_e5ift")
 
@@ -318,6 +378,14 @@ position = Vector2(1, 42)
 position_smoothing_enabled = true
 script = SubResource("GDScript_e5ift")
 
+[node name="PointLight2D2" type="PointLight2D" parent="CharacterController/RigidBody2D" parent_id_path=PackedInt32Array(1427967305, 1615751047) index="3" unique_id=825826375]
+position = Vector2(-4, 9.000004)
+scale = Vector2(40, 40)
+color = Color(0.69055694, 0.86859334, 0.7268227, 1)
+energy = 1.3
+blend_mode = 2
+texture = SubResource("GradientTexture2D_smo5t")
+
 [node name="AnimationEgg" type="AnimationPlayer" parent="." unique_id=1199442682]
 root_node = NodePath("../AnimationChicken")
 libraries/ = SubResource("AnimationLibrary_2tfwb")
@@ -328,6 +396,7 @@ root_node = NodePath("../CharacterController")
 libraries/ = SubResource("AnimationLibrary_7ikvl")
 
 [node name="Water" type="ColorRect" parent="." unique_id=1820705150]
+visible = false
 z_index = 2
 offset_left = -2236.0
 offset_right = 4562.0
@@ -340,5 +409,15 @@ bus = &"Music"
 script = ExtResource("16_6xlfg")
 player = NodePath("../CharacterController/RigidBody2D")
 top_reference = NodePath("../Level/FirstConnector")
+
+[node name="Water2" parent="." unique_id=429885869 instance=ExtResource("16_40lml")]
+position = Vector2(-768, 24976)
+region_enabled = true
+region_rect = Rect2(0, 0, 50000, 50000)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484726210]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=869254139]
+environment = SubResource("Environment_dp0gw")
 
 [editable path="CharacterController"]
