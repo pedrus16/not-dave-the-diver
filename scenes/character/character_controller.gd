@@ -2,6 +2,7 @@ class_name CharacterController extends Node2D
 
 @export var rigidBody2D: RigidBody2D
 @export var sprite: AnimatedSprite2D
+@export var inventory: CharacterInventory
 @export var o2_counter: RefillableTimer
 @export var movePower: float = 240.0
 @export var buoyancy: float = 10.0
@@ -49,9 +50,14 @@ func _process(delta: float) -> void:
 	else:
 		sprite.animation = "idle"
 
+
 ## Adds a positive or negative number of seconds to o2 timer.
 func add_o2_delta(seconds: float) -> void:
 	o2_counter.add_time(seconds)
+
+
+func take_item(item: Node2D) -> void:
+	inventory.take_item(item)
 
 
 func _on_rigid_body_2d_body_entered(body: Node) -> void:

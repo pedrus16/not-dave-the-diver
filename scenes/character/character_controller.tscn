@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6updaebl37wd" path="res://scenes/character/character_controller.gd" id="1_sm8h1"]
 [ext_resource type="PackedScene" uid="uid://cv4e728m3r5so" path="res://scenes/character/cocotte/cocotte.tscn" id="2_tmmmg"]
 [ext_resource type="Script" uid="uid://7t5sh57io46g" path="res://src/refillable_timer.gd" id="3_tmmmg"]
+[ext_resource type="Script" uid="uid://c036si0iwdhi2" path="res://scenes/character/character_inventory.gd" id="4_x54mg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sm8h1"]
 friction = 0.1
@@ -10,13 +11,15 @@ friction = 0.1
 [sub_resource type="CircleShape2D" id="CircleShape2D_tmmmg"]
 radius = 32.01562
 
-[node name="CharacterController" type="Node2D" unique_id=1427967305 node_paths=PackedStringArray("rigidBody2D", "sprite", "o2_counter")]
+[node name="CharacterController" type="Node2D" unique_id=1427967305 node_paths=PackedStringArray("rigidBody2D", "sprite", "inventory", "o2_counter")]
 script = ExtResource("1_sm8h1")
 rigidBody2D = NodePath("RigidBody2D")
 sprite = NodePath("RigidBody2D/Cocotte")
+inventory = NodePath("CharacterInventory")
 o2_counter = NodePath("O2Counter")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1615751047]
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_sm8h1")
 lock_rotation = true
 contact_monitor = true
@@ -25,12 +28,24 @@ max_contacts_reported = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=648187429]
 shape = SubResource("CircleShape2D_tmmmg")
 
+[node name="ItemsRoot" type="Node2D" parent="RigidBody2D" unique_id=1152148003]
+
 [node name="Cocotte" parent="RigidBody2D" unique_id=911124559 instance=ExtResource("2_tmmmg")]
 position = Vector2(-3, 4)
 scale = Vector2(0.29296875, 0.29296875)
 
+[node name="ItemsAnchor" type="Node2D" parent="RigidBody2D/Cocotte" unique_id=1993737306]
+position = Vector2(10.24, 109.22667)
+scale = Vector2(3.4133334, 3.4133334)
+
 [node name="O2Counter" type="Node" parent="." unique_id=1789200111]
 script = ExtResource("3_tmmmg")
 metadata/_custom_type_script = "uid://7t5sh57io46g"
+
+[node name="CharacterInventory" type="Node" parent="." unique_id=971453168 node_paths=PackedStringArray("items_root", "items_anchor")]
+script = ExtResource("4_x54mg")
+items_root = NodePath("../RigidBody2D/ItemsRoot")
+items_anchor = NodePath("../RigidBody2D/Cocotte/ItemsAnchor")
+metadata/_custom_type_script = "uid://c036si0iwdhi2"
 
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]

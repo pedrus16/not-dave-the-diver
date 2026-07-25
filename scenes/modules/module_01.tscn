@@ -17,6 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://cvfsk1jfxnxar" path="res://scenes/environment/coraux/corail/corail_03.tscn" id="11_la8jp"]
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="13_6oqp7"]
 [ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="14_hhc73"]
+[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="15_2ivh5"]
+[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="17_e86wj"]
+[ext_resource type="Resource" uid="uid://bykuwg7k38e2g" path="res://config/default_floating_entity_list.tres" id="18_4x8ep"]
+
+[sub_resource type="Resource" id="Resource_1ibii"]
+script = ExtResource("17_e86wj")
+metadata/_custom_type_script = "uid://veq4pqsukcgl"
 
 [node name="Module01" type="Node2D" unique_id=1367764623]
 script = ExtResource("1_evyin")
@@ -104,16 +111,24 @@ location = 1
 
 [node name="EntitySpot" type="Marker2D" parent="." unique_id=896347330]
 position = Vector2(393.58096, 294.58096)
-rotation = -0.5777294
 gizmo_extents = 82.8
 script = ExtResource("14_hhc73")
+available_entities = ExtResource("18_4x8ep")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot2" type="Marker2D" parent="." unique_id=335042789]
-position = Vector2(552, 664)
-rotation = -0.5777294
+position = Vector2(515, 666)
 gizmo_extents = 82.8
 script = ExtResource("14_hhc73")
+available_entities = ExtResource("18_4x8ep")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot3" type="Marker2D" parent="." unique_id=687964579]
+position = Vector2(662, 626)
+gizmo_extents = 82.8
+script = ExtResource("14_hhc73")
+can_hold_egg = true
+available_entities = SubResource("Resource_1ibii")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [editable path="Environment/CorailEyes02"]

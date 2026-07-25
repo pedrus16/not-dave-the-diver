@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="6_fxtox"]
 [ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="8_icsfm"]
 [ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="9_mnfxv"]
+[ext_resource type="PackedScene" uid="uid://cmpgadulgw58c" path="res://scenes/entities/beloved_egg.tscn" id="10_1wx2u"]
 
 [sub_resource type="Gradient" id="Gradient_mnfxv"]
 colors = PackedColorArray(0.03050395, 0.08181354, 0.054491207, 1, 2.6471912e-07, 0.2598645, 0.26004887, 1)
@@ -81,6 +82,7 @@ environment = SubResource("Environment_yh0la")
 
 [node name="CharacterController" parent="." unique_id=1427967305 instance=ExtResource("6_fxtox")]
 position = Vector2(952, 215)
+movePower = 480.0
 
 [node name="Water" parent="." unique_id=429885869 instance=ExtResource("8_icsfm")]
 position = Vector2(-808, 24396)
@@ -89,3 +91,6 @@ region_rect = Rect2(0, 0, 50000, 50000)
 
 [node name="Waves" parent="." unique_id=627467438 instance=ExtResource("9_mnfxv")]
 position = Vector2(1022, -593)
+
+[node name="BelovedEgg" parent="." unique_id=1244645963 instance=ExtResource("10_1wx2u")]
+position = Vector2(1066, 371)

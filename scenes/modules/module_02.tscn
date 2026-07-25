@@ -18,6 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://boffb10a7bk3f" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02.tscn" id="13_hcv0d"]
 [ext_resource type="PackedScene" uid="uid://dm2apb8s36kwu" path="res://scenes/environment/coraux/corail_eyes_01/corail_eyes_01.tscn" id="14_mty75"]
 [ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="15_1ibii"]
+[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="16_20dr1"]
+[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="18_ipy0c"]
+[ext_resource type="Resource" uid="uid://djeu6m2fqyiyx" path="res://config/default_wall_entity_list.tres" id="19_s5pk2"]
+
+[sub_resource type="Resource" id="Resource_e8alt"]
+script = ExtResource("18_ipy0c")
+metadata/_custom_type_script = "uid://veq4pqsukcgl"
 
 [node name="Module02" type="Node2D" unique_id=142313231]
 script = ExtResource("1_oxtgf")
@@ -145,29 +152,31 @@ position = Vector2(-6.0000305, 589)
 scale = Vector2(0.35, 0.35)
 
 [node name="EntitySpot" type="Marker2D" parent="." unique_id=1496097455]
-position = Vector2(139.00003, 207.00003)
-rotation = -0.5777294
+position = Vector2(169, 185)
+rotation = -0.66634786
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
+available_entities = ExtResource("19_s5pk2")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot2" type="Marker2D" parent="." unique_id=1387087675]
-position = Vector2(120, 684.00006)
-rotation = -0.5777294
+position = Vector2(171, 654)
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot4" type="Marker2D" parent="." unique_id=1251973347]
-position = Vector2(224.99988, 381)
-rotation = -1.1554588
+position = Vector2(311.99997, 412)
+rotation = -1.4954209
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
+available_entities = ExtResource("19_s5pk2")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot3" type="Marker2D" parent="." unique_id=1535000517]
-position = Vector2(791.0001, 892.0001)
-rotation = -1.7331883
+position = Vector2(816, 953)
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
+can_hold_egg = true
+available_entities = SubResource("Resource_e8alt")
 metadata/_custom_type_script = "uid://havu0syglhv2"
