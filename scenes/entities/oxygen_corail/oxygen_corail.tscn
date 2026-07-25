@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://d0ymq064tqhq1"]
+
+[ext_resource type="Texture2D" uid="uid://d1xqp0qvg5tt" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0000.png" id="1_o4qcn"]
+[ext_resource type="Texture2D" uid="uid://di65yt7mesetv" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0001.png" id="2_tkhpm"]
+[ext_resource type="Texture2D" uid="uid://ctirq8kbf25ts" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0002.png" id="3_yi2pf"]
+[ext_resource type="Texture2D" uid="uid://derpj3sqbqkf7" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0003.png" id="4_mbcp3"]
+[ext_resource type="Texture2D" uid="uid://c63onua1vqxhm" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0004.png" id="5_4gq1j"]
+[ext_resource type="Texture2D" uid="uid://d0nl2lbvcdbmv" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0005.png" id="6_pxtfv"]
+[ext_resource type="Texture2D" uid="uid://dwpb47qjvsei6" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0006.png" id="7_7ybvu"]
+[ext_resource type="Texture2D" uid="uid://baqtac8ddx15p" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0007.png" id="8_boulx"]
+[ext_resource type="Texture2D" uid="uid://e2bcbd6qduu5" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0008.png" id="9_2afqj"]
+[ext_resource type="Texture2D" uid="uid://buneop00jrf8" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0009.png" id="10_evx4w"]
+[ext_resource type="Texture2D" uid="uid://bj8vx4p3hk0gl" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0010.png" id="11_f14kg"]
+[ext_resource type="Texture2D" uid="uid://bxmprbg1i7q7p" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0011.png" id="12_704c6"]
+[ext_resource type="Texture2D" uid="uid://cm8f5dldc7wpx" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0012.png" id="13_kltyd"]
+[ext_resource type="Texture2D" uid="uid://ca4cm5jwbaac0" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0013.png" id="14_46qxt"]
+[ext_resource type="Texture2D" uid="uid://cwsc43inu1ep6" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0014.png" id="15_fwg7r"]
+[ext_resource type="Texture2D" uid="uid://bjg0kiol2gbn1" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0015.png" id="16_asvul"]
+[ext_resource type="Texture2D" uid="uid://0p2g1fw7bytl" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0016.png" id="17_w7bru"]
+[ext_resource type="Texture2D" uid="uid://mcfb1km5ad5" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0017.png" id="18_wy4gu"]
+[ext_resource type="Texture2D" uid="uid://cv3m4or56rd58" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0018.png" id="19_s0246"]
+[ext_resource type="Texture2D" uid="uid://b25hgea707liu" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0019.png" id="20_r1v3l"]
+[ext_resource type="Texture2D" uid="uid://pi2fnliqrrjq" path="res://scenes/entities/oxygen_corail/oxygen_prod/oxygen_corail_oxygen_prod_0020.png" id="21_itp3l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d85xp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o4qcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tkhpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yi2pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mbcp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4gq1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pxtfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7ybvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_boulx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2afqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_evx4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_f14kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_704c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kltyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_46qxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fwg7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_asvul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w7bru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wy4gu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_s0246")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_r1v3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_itp3l")
+}],
+"loop": 1,
+"name": &"oxygen_prod",
+"speed": 15.0
+}]
+
+[node name="OxygenCorail" type="AnimatedSprite2D" unique_id=2020132405]
+sprite_frames = SubResource("SpriteFrames_d85xp")
+animation = &"oxygen_prod"
+autoplay = "oxygen_prod"
+frame_progress = 0.21202648
