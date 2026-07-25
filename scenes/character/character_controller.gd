@@ -1,5 +1,7 @@
 class_name CharacterController extends Node2D
 
+signal died
+
 @export var rigidBody2D: RigidBody2D
 @export var sprite: AnimatedSprite2D
 @export var inventory: CharacterInventory
@@ -108,10 +110,13 @@ func take_item(item: Node2D, drop_callback) -> void:
 
 ## Triggers death animation and disable controls
 func kill() -> void:
-	if disable_death:
+	if disable_death || _dead:
 		return
 	
 	_dead = true
 	sprite.animation = "dying"
 	disable_controls = true
 	rigidBody2D.add_constant_force(-_last_input * movePower)
+	
+	await sprite.animation_finished
+	died.emit()

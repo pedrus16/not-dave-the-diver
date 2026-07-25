@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="20_smo5t"]
 [ext_resource type="PackedScene" uid="uid://dlxim7mtv1puh" path="res://scenes/o2_counter/bubble_counter.tscn" id="21_dp0gw"]
 [ext_resource type="PackedScene" uid="uid://d11bik32neiih" path="res://scenes/ui/retry.tscn" id="21_rbc4q"]
+[ext_resource type="Script" uid="uid://ckn81jtj2rc8k" path="res://scenes/game_scene/overlay_manager.gd" id="22_rbc4q"]
 
 [sub_resource type="Gradient" id="Gradient_k0n85"]
 offsets = PackedFloat32Array(0.027173912, 0.3423913, 0.67210144, 1)
@@ -341,17 +342,17 @@ glow_intensity = 0.2
 glow_bloom = 0.4
 fog_density = 0.815
 
-[node name="World" type="Node2D" unique_id=594139589]
+[node name="World" type="Node2D" unique_id=594139589 node_paths=PackedStringArray("level_generator", "first_connector")]
+script = ExtResource("1_f30al")
+level_generator = NodePath("Level/LevelGenerator")
+first_connector = NodePath("Level/FirstConnector")
 
 [node name="Gradient_water" type="Sprite2D" parent="." unique_id=1252377305]
 position = Vector2(1056, 5406)
 scale = Vector2(10, 10)
 texture = SubResource("GradientTexture2D_04jd1")
 
-[node name="Level" type="Node2D" parent="." unique_id=1088868975 node_paths=PackedStringArray("level_generator", "first_connector")]
-script = ExtResource("1_f30al")
-level_generator = NodePath("LevelGenerator")
-first_connector = NodePath("FirstConnector")
+[node name="Level" type="Node2D" parent="." unique_id=1088868975]
 
 [node name="LevelGenerator" type="Node" parent="Level" unique_id=2134251418]
 script = ExtResource("1_7ikvl")
@@ -445,6 +446,7 @@ angular_velocity = 0.029147
 position = Vector2(467, -396)
 movePower = 480.0
 disable_controls = true
+disable_death = false
 
 [node name="CollisionShape2D" parent="CharacterController/RigidBody2D" parent_id_path=PackedInt32Array(1427967305, 1615751047) index="0" unique_id=648187429]
 shape = SubResource("CircleShape2D_sm8h1")
@@ -503,35 +505,15 @@ offset_right = 204.0
 offset_bottom = 204.0
 timer = NodePath("../../CharacterController/O2Counter")
 
-[node name="RetryBackground" type="ColorRect" parent="HUD" unique_id=1741494237]
+[node name="Retry" parent="HUD" unique_id=460428931 instance=ExtResource("21_rbc4q")]
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.09019608, 0.011764706, 0.011764706, 0.78431374)
 
-[node name="Retry" parent="HUD/RetryBackground" unique_id=460428931 instance=ExtResource("21_rbc4q")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -980.0
-offset_top = -203.5
-offset_right = 980.0
-offset_bottom = 203.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="OverlayManager" type="Node" parent="HUD" unique_id=174364221 node_paths=PackedStringArray("defeat_overlay")]
+script = ExtResource("22_rbc4q")
+defeat_overlay = NodePath("../Retry")
 
-[node name="Control" type="Control" parent="HUD" unique_id=273576183]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 136.0
-offset_top = 74.0
-offset_right = 176.0
-offset_bottom = 114.0
+[connection signal="died" from="CharacterController" to="HUD/OverlayManager" method="show_defeat"]
+[connection signal="pressed" from="HUD/Retry/VBoxContainer/HBoxContainer/RetryButton" to="." method="restart_game"]
 
 [editable path="CharacterController"]
+[editable path="HUD/Retry"]
