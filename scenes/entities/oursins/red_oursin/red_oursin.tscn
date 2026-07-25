@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cftfx4y88qpu8"]
+
+[ext_resource type="Texture2D" uid="uid://2tup7om18r68" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0000.png" id="1_6kd5d"]
+[ext_resource type="Texture2D" uid="uid://dtygauaahqo2v" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0001.png" id="2_kfbw6"]
+[ext_resource type="Texture2D" uid="uid://c4cub6uvcd7ex" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0002.png" id="3_awybw"]
+[ext_resource type="Texture2D" uid="uid://b2kymlprgoik2" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0003.png" id="4_t5qtw"]
+[ext_resource type="Texture2D" uid="uid://bybd4pe3gw46v" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0004.png" id="5_nfxx6"]
+[ext_resource type="Texture2D" uid="uid://dxjjimfkdfqpq" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0005.png" id="6_nph82"]
+[ext_resource type="Texture2D" uid="uid://cbnpl0s4edflg" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0006.png" id="7_ef3qh"]
+[ext_resource type="Texture2D" uid="uid://qwrqpkpbvwfg" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0007.png" id="8_bq6rq"]
+[ext_resource type="Texture2D" uid="uid://dtejrjcwfnpvn" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0008.png" id="9_i6566"]
+[ext_resource type="Texture2D" uid="uid://c3bjk2obvnmv" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0009.png" id="10_rjfga"]
+[ext_resource type="Texture2D" uid="uid://dmf1lnpl5wvp" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0010.png" id="11_ni1mc"]
+[ext_resource type="Texture2D" uid="uid://c3utx05cpdx3c" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0011.png" id="12_ea3us"]
+[ext_resource type="Texture2D" uid="uid://dya3r8sm08bk4" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0012.png" id="13_uk87e"]
+[ext_resource type="Texture2D" uid="uid://ck6xqyiv7mym8" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0013.png" id="14_us3ct"]
+[ext_resource type="Texture2D" uid="uid://uxgs8jdp265f" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0014.png" id="15_od732"]
+[ext_resource type="Texture2D" uid="uid://bkctfok8bhe18" path="res://scenes/entities/oursins/red_oursin/attack/oursin_02_attack_0015.png" id="16_u1v3s"]
+[ext_resource type="Texture2D" uid="uid://co074l8xu1jw2" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0000.png" id="17_alc3u"]
+[ext_resource type="Texture2D" uid="uid://c8d6uh4mcjd0n" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0001.png" id="18_t7o7f"]
+[ext_resource type="Texture2D" uid="uid://cxiwvx82ypiqi" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0002.png" id="19_8ch8e"]
+[ext_resource type="Texture2D" uid="uid://bwk3vs1n0ee6b" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0003.png" id="20_6empl"]
+[ext_resource type="Texture2D" uid="uid://bgsurya5amoia" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0004.png" id="21_e6slp"]
+[ext_resource type="Texture2D" uid="uid://cndqwo0ggk8oo" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0005.png" id="22_gc5m6"]
+[ext_resource type="Texture2D" uid="uid://c4y647g0spoql" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0006.png" id="23_44oj0"]
+[ext_resource type="Texture2D" uid="uid://bkenl1m82l1t4" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0007.png" id="24_w3gor"]
+[ext_resource type="Texture2D" uid="uid://u8nvvep1iwwn" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0008.png" id="25_8h23d"]
+[ext_resource type="Texture2D" uid="uid://dhjyuednlyhkk" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0009.png" id="26_bgu32"]
+[ext_resource type="Texture2D" uid="uid://s67hfietn66u" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0010.png" id="27_xo4ne"]
+[ext_resource type="Texture2D" uid="uid://d3mphqd2nbl4v" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0011.png" id="28_vhgfh"]
+[ext_resource type="Texture2D" uid="uid://e2pc4fplkerl" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0012.png" id="29_qssqn"]
+[ext_resource type="Texture2D" uid="uid://rnrrcdcyuf10" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0013.png" id="30_wwvvo"]
+[ext_resource type="Texture2D" uid="uid://c4mc75exjup38" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0014.png" id="31_xdxnk"]
+[ext_resource type="Texture2D" uid="uid://dvlboh5sxrky5" path="res://scenes/entities/oursins/red_oursin/idle/oursin_02_idle_0015.png" id="32_bbfup"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_78nr2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6kd5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kfbw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_awybw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t5qtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nfxx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nph82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ef3qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bq6rq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i6566")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rjfga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ni1mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ea3us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uk87e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_us3ct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_od732")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_u1v3s")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_alc3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_t7o7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8ch8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6empl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_e6slp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_gc5m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_44oj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_w3gor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8h23d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_bgu32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xo4ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vhgfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qssqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_wwvvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xdxnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bbfup")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 15.0
+}]
+
+[node name="RedOursin" type="AnimatedSprite2D" unique_id=986655947]
+sprite_frames = SubResource("SpriteFrames_78nr2")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.7101046
