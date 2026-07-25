@@ -39,10 +39,11 @@ glow_enabled = true
 glow_intensity = 1.0
 glow_bloom = 0.4
 
-[node name="LevelGeneration" type="Node2D" unique_id=263736646 node_paths=PackedStringArray("level_generator", "first_connector", "modules_root")]
+[node name="LevelGeneration" type="Node2D" unique_id=263736646 node_paths=PackedStringArray("level_generator", "first_connector", "character_body", "modules_root")]
 script = ExtResource("1_bg04x")
 level_generator = NodePath("LevelGenerator")
 first_connector = NodePath("ModulesRoot/FirstConnector")
+character_body = NodePath("CharacterController/RigidBody2D")
 modules_root = NodePath("ModulesRoot")
 
 [node name="LevelGenerator" type="Node" parent="." unique_id=761345694]
@@ -94,3 +95,5 @@ position = Vector2(1022, -593)
 
 [node name="BelovedEgg" parent="." unique_id=1244645963 instance=ExtResource("10_1wx2u")]
 position = Vector2(1066, 371)
+
+[editable path="CharacterController"]

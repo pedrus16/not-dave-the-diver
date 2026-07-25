@@ -5,6 +5,7 @@ const ROPE_SEGMENT_COUNT := 4
 
 ## Must not be child of character's moving parts.
 @export var items_root: Node2D
+@export var hen_rigid_body: RigidBody2D
 @export var items_anchor: Node2D
 
 
@@ -29,8 +30,7 @@ func _create_rope(item: Node2D) -> void:
 	
 	var hen_anchor := CRopeAnchor.new()
 	hen_anchor.index = 0
-	hen_anchor.node_path = items_anchor.get_path()
-	hen_anchor.pull_strength = 0.0
+	hen_anchor.node_path = hen_rigid_body.get_path()
 	hen_anchor.collision_resolve = false
 	
 	var item_anchor := CRopeAnchor.new()

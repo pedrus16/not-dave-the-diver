@@ -15,6 +15,7 @@ region = Rect2(307.76804, 570.4197, 107.95212, 133.18768)
 
 [node name="BelovedEgg" type="RigidBody2D" unique_id=1662193688]
 collision_layer = 2
+mass = 0.3
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012467965]

@@ -54,9 +54,10 @@ script = ExtResource("3_tmmmg")
 autostart = true
 metadata/_custom_type_script = "uid://7t5sh57io46g"
 
-[node name="CharacterInventory" type="Node" parent="." unique_id=971453168 node_paths=PackedStringArray("items_root", "items_anchor")]
+[node name="CharacterInventory" type="Node" parent="." unique_id=971453168 node_paths=PackedStringArray("items_root", "hen_rigid_body", "items_anchor")]
 script = ExtResource("4_x54mg")
 items_root = NodePath("../ItemsRoot")
+hen_rigid_body = NodePath("../RigidBody2D")
 items_anchor = NodePath("../RigidBody2D/Cocotte/ItemsAnchor")
 metadata/_custom_type_script = "uid://c036si0iwdhi2"
 
