@@ -43,5 +43,5 @@ metadata/_custom_type_script = "uid://c6adivoj0o54e"
 [node name="Buoyancy" type="Node" parent="." unique_id=1608280249 node_paths=PackedStringArray("rigidBody2D")]
 script = ExtResource("3_pn31o")
 rigidBody2D = NodePath("..")
-buoyancy = -1000.0
+buoyancy = -2000.0
 metadata/_custom_type_script = "uid://3n7r8juui21u"

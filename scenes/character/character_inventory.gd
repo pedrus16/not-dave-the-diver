@@ -8,6 +8,8 @@ const ROPE_SEGMENT_COUNT := 4
 @export var hen_rigid_body: RigidBody2D
 @export var items_anchor: Node2D
 
+var _dragged_items: Array[ItemAndRope] = []
+
 
 func take_item(item: Node2D) -> void:
 	item.reparent(items_root)
@@ -15,13 +17,24 @@ func take_item(item: Node2D) -> void:
 	var angle := Vector2.DOWN.angle_to(item.global_position - items_anchor.global_position)
 	item.global_rotation = angle
 	
-	_create_rope(item)
+	var rope := _create_rope(item)
 	
 	# Set item as last child, so it is displayed above the rope
 	items_root.move_child(item, -1)
+	
+	_dragged_items.append(ItemAndRope.new(item, rope))
 
 
-func _create_rope(item: Node2D) -> void:
+func on_movement_direction_change(direction: Vector2) -> void:
+	var pull_strength := 3000.0
+	if direction.y < 0:
+		pull_strength = 300.0
+	
+	for item in _dragged_items:
+		item.rope.anchors[0].pull_strength = pull_strength
+
+
+func _create_rope(item: Node2D) -> CRope2D:
 	var data := CRopeData.new()
 	data.create_line_by_count(items_anchor.global_position, item.global_position, ROPE_SEGMENT_COUNT)
 	
@@ -53,3 +66,14 @@ func _create_rope(item: Node2D) -> void:
 	rope.render_modules = [renderer]
 
 	items_root.add_child(rope)
+	
+	return rope
+
+
+class ItemAndRope:
+	var item: Node2D
+	var rope: CRope2D
+	
+	func _init(item_: Node2D, rope_: CRope2D) -> void:
+		item = item_
+		rope = rope_
