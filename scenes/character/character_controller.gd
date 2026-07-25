@@ -17,6 +17,8 @@ var _last_input := Vector2.ZERO
 var _dir_changed_elapsed_time := 0.0
 var _sprite_angle_offset := PI * 0.5
 var _dead := false
+var _animation_overriden := false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -56,11 +58,13 @@ func _process(delta: float) -> void:
 	if _dead: return
 	
 	sprite.rotation = sprite_rotation
-	if is_swimming:
-		sprite.animation = "swimming"
-	else:
-		sprite.animation = "idle"
-		
+	
+	if !_animation_overriden:
+		if is_swimming:
+			sprite.animation = "swimming"
+		else:
+			sprite.animation = "idle"
+	
 	if not in_water:
 		o2_counter.add_time(refill_rate * delta)
 	
@@ -86,6 +90,11 @@ func _on_o_2_counter_timeout() -> void:
 
 ## Adds a positive or negative number of seconds to o2 timer.
 func add_o2_delta(seconds: float) -> void:
+	if seconds < 0.0 && !_animation_overriden:
+		sprite.play(&"hurted")
+		_animation_overriden = true
+		sprite.animation_finished.connect(func(): _animation_overriden = false, CONNECT_ONE_SHOT)
+
 	o2_counter.add_time(seconds)
 
 
