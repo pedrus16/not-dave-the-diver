@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ne1x2to8nxs3"]
 
 [ext_resource type="FontFile" uid="uid://cfji8srb6puup" path="res://scenes/ui/ChelseaMarket-Regular.ttf" id="1_k23cl"]
+[ext_resource type="Script" uid="uid://c0h4u5kftb1ji" path="res://scenes/ui/pause.gd" id="1_qgos8"]
 [ext_resource type="PackedScene" uid="uid://oityoildfldv" path="res://scenes/ui/overlay_button.tscn" id="2_qgos8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdns4"]
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jdns4")
+script = ExtResource("1_qgos8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1632680220]
 layout_mode = 1

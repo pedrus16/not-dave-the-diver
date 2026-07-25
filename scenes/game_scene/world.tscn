@@ -488,6 +488,7 @@ root_node = NodePath("../CharacterController")
 libraries/ = SubResource("AnimationLibrary_7ikvl")
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=237005951 node_paths=PackedStringArray("player", "top_reference")]
+process_mode = 3
 stream = SubResource("AudioStreamSynchronized_s16c2")
 bus = &"Music"
 script = ExtResource("16_6xlfg")
