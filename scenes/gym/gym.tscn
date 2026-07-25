@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://d4jmbjkwjo3kv"]
 
 [ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="1_6pqnl"]
-[ext_resource type="PackedScene" uid="uid://c58tfh642e73h" path="res://scenes/o2_counter/o2_counter.tscn" id="2_y08fo"]
 [ext_resource type="PackedScene" uid="uid://cmpgadulgw58c" path="res://scenes/entities/beloved_egg.tscn" id="3_a8uch"]
 [ext_resource type="PackedScene" uid="uid://5e4cn7t0pskx" path="res://scenes/entities/blue_urchin.tscn" id="4_1iner"]
 [ext_resource type="PackedScene" uid="uid://c8vvo5awsy5ij" path="res://scenes/entities/bubble.tscn" id="4_2xucn"]
 [ext_resource type="PackedScene" uid="uid://boblwkibwv0jy" path="res://scenes/entities/bubble_spawner.tscn" id="5_2xucn"]
+[ext_resource type="PackedScene" uid="uid://dlxim7mtv1puh" path="res://scenes/o2_counter/bubble_counter.tscn" id="6_2xucn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbais"]
 size = Vector2(665, 46.5)
@@ -67,7 +67,11 @@ angle_range_degree = 30.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=187618121]
 
-[node name="O2Counter" parent="CanvasLayer" unique_id=142397266 node_paths=PackedStringArray("timer") instance=ExtResource("2_y08fo")]
-timer = NodePath("../../World/CharacterController/O2Counter")
+[node name="BubbleCounter" parent="CanvasLayer" unique_id=870930951 instance=ExtResource("6_2xucn")]
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 204.0
+offset_bottom = 204.0
 
 [editable path="World/CharacterController"]

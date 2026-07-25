@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://ca17scf5p0otf" path="res://scenes/o2_counter/bubble_filling.tres" id="1_1c78b"]
 [ext_resource type="Texture2D" uid="uid://suoew2cnvqs7" path="res://scenes/o2_counter/bubble_ui.png" id="1_50aqk"]
+[ext_resource type="Script" uid="uid://e2onqb1h5cko" path="res://scenes/o2_counter/bubble_counter.gd" id="3_nngb3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_px5xa"]
 shader = ExtResource("1_1c78b")
@@ -9,10 +10,10 @@ shader_parameter/chargement = 1.0
 
 [node name="BubbleCounter" type="TextureRect" unique_id=870930951]
 material = SubResource("ShaderMaterial_px5xa")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -800.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(154, 154)
+offset_right = 154.0
+offset_bottom = 154.0
 texture = ExtResource("1_50aqk")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("3_nngb3")
