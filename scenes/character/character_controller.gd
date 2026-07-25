@@ -8,6 +8,7 @@ class_name CharacterController extends Node2D
 @export var refill_rate := 2.0
 
 @export var disable_controls := false
+@export var disable_death := false
 
 var sprite_rotation := 0.0
 var is_swimming := false
@@ -91,6 +92,9 @@ func take_item(item: Node2D) -> void:
 
 ## Triggers death animation and disable controls
 func kill() -> void:
+	if disable_death:
+		return
+	
 	_dead = true
 	sprite.animation = "dying"
 	disable_controls = true
