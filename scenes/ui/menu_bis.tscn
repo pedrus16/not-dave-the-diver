@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bjq33438jso4j"]
+
+[ext_resource type="Script" uid="uid://0bcd6rpltr85" path="res://scenes/ui/menu.gd" id="1_tq5ef"]
+[ext_resource type="Texture2D" uid="uid://dpk2i3lr5kvua" path="res://scenes/ui/Splashscreen3.png" id="2_xg3hk"]
+[ext_resource type="PackedScene" uid="uid://oityoildfldv" path="res://scenes/ui/overlay_button.tscn" id="4_xg3hk"]
+
+[node name="Menu" type="Control" unique_id=1169801504]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tq5ef")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=724030094]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xg3hk")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="ButtonPlay" parent="." unique_id=1284350547 instance=ExtResource("4_xg3hk")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18400002
+anchor_top = 0.611
+anchor_right = 0.363
+anchor_bottom = 0.736232
+offset_left = 0.7199707
+offset_top = 0.11999512
+offset_right = 0.039978027
+offset_bottom = 0.11993408
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
