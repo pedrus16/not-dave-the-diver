@@ -6,7 +6,7 @@
 shader = ExtResource("1_fwpvs")
 shader_parameter/ColorParameter = Color(0.6431373, 0.8509804, 0.77254903, 1)
 shader_parameter/decalage = 0.0
-shader_parameter/speed = 0.0
+shader_parameter/speed = 1.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_j5wos"]
 

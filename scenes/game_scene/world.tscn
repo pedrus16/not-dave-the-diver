@@ -17,9 +17,9 @@
 [ext_resource type="AudioStream" uid="uid://c610io8bv0g1v" path="res://audio/music/Submerged Flight Depth 3.ogg" id="14_40lml"]
 [ext_resource type="AudioStream" uid="uid://w683mocrv3o1" path="res://audio/music/Submerged Flight Depth 4.ogg" id="15_das7k"]
 [ext_resource type="Script" uid="uid://daw85aqcwu1da" path="res://scenes/game_scene/background_music_player.gd" id="16_6xlfg"]
-[ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="16_40lml"]
-[ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="17_das7k"]
 [ext_resource type="PackedScene" uid="uid://c58tfh642e73h" path="res://scenes/o2_counter/o2_counter.tscn" id="16_40lml"]
+[ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="17_das7k"]
+[ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="20_smo5t"]
 
 [sub_resource type="Gradient" id="Gradient_k0n85"]
 offsets = PackedFloat32Array(0.027173912, 0.3423913, 0.67210144, 1)
@@ -420,14 +420,6 @@ autoplay = &"egg"
 root_node = NodePath("../CharacterController")
 libraries/ = SubResource("AnimationLibrary_7ikvl")
 
-[node name="Water" type="ColorRect" parent="." unique_id=1820705150]
-visible = false
-z_index = 2
-offset_left = -2236.0
-offset_right = 4562.0
-offset_bottom = 4724.0
-color = Color(7.123351e-06, 0.6831233, 0.9040415, 0.3254902)
-
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=237005951 node_paths=PackedStringArray("player", "top_reference")]
 stream = SubResource("AudioStreamSynchronized_s16c2")
 bus = &"Music"
@@ -435,16 +427,16 @@ script = ExtResource("16_6xlfg")
 player = NodePath("../CharacterController/RigidBody2D")
 top_reference = NodePath("../Level/FirstConnector")
 
-[node name="Water2" parent="." unique_id=429885869 instance=ExtResource("16_40lml")]
-z_index = 1000
-position = Vector2(-768, 24976)
-region_enabled = true
-region_rect = Rect2(0, 0, 50000, 50000)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484726210]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=869254139]
 environment = SubResource("Environment_dp0gw")
+
+[node name="Water_effect" parent="." unique_id=1022863566 instance=ExtResource("20_smo5t")]
+z_index = 1000
+position = Vector2(18, 24996)
+region_enabled = true
+region_rect = Rect2(0, 0, 50000, 50000)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=354840347]
 
