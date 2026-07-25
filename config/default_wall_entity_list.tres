@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EntityList" format=3 uid="uid://djeu6m2fqyiyx"]
 
 [ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="1_jvmt8"]
-[ext_resource type="PackedScene" uid="uid://5e4cn7t0pskx" path="res://scenes/entities/sea_urchin.tscn" id="2_bit5l"]
+[ext_resource type="PackedScene" uid="uid://5e4cn7t0pskx" path="res://scenes/entities/red_urchin.tscn" id="2_bit5l"]
 [ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="2_xwn13"]
 [ext_resource type="PackedScene" uid="uid://dip520of4tcjx" path="res://scenes/entities/anvil.tscn" id="3_bit5l"]
 [ext_resource type="PackedScene" uid="uid://boblwkibwv0jy" path="res://scenes/entities/bubble_spawner.tscn" id="4_owew2"]

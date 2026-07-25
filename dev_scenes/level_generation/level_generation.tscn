@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="8_icsfm"]
 [ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="9_mnfxv"]
 [ext_resource type="PackedScene" uid="uid://cmpgadulgw58c" path="res://scenes/entities/beloved_egg.tscn" id="10_1wx2u"]
+[ext_resource type="PackedScene" uid="uid://5e4cn7t0pskx" path="res://scenes/entities/red_urchin.tscn" id="11_2uwm7"]
 
 [sub_resource type="Gradient" id="Gradient_mnfxv"]
 colors = PackedColorArray(0.03050395, 0.08181354, 0.054491207, 1, 2.6471912e-07, 0.2598645, 0.26004887, 1)
@@ -95,5 +96,8 @@ position = Vector2(1022, -593)
 
 [node name="BelovedEgg" parent="." unique_id=1244645963 instance=ExtResource("10_1wx2u")]
 position = Vector2(1066, 371)
+
+[node name="SeaUrchin" parent="." unique_id=49922503 instance=ExtResource("11_2uwm7")]
+position = Vector2(789, 220)
 
 [editable path="CharacterController"]

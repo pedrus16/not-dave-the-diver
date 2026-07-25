@@ -86,7 +86,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack",
-"speed": 15.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -146,4 +146,3 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_78nr2")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.7101046

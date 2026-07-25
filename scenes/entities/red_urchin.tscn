@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://5e4cn7t0pskx"]
+
+[ext_resource type="PackedScene" uid="uid://cftfx4y88qpu8" path="res://scenes/entities/oursins/red_oursin/red_oursin.tscn" id="1_x4ay5"]
+[ext_resource type="Script" uid="uid://cbfyng2ojjdy2" path="res://src/entity/effects/o2_delta_effect.gd" id="2_0432x"]
+[ext_resource type="Script" uid="uid://bdyaxfsh1d72t" path="res://src/entity/effects/push_back_effect.gd" id="3_0432x"]
+[ext_resource type="Script" uid="uid://bprto0q34ue4k" path="res://src/entity/effects/play_animation_effect.gd" id="4_611do"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_611do"]
+radius = 58.077534
+
+[node name="SeaUrchin" type="Area2D" unique_id=49922503]
+monitorable = false
+
+[node name="RedOursin" parent="." unique_id=986655947 instance=ExtResource("1_x4ay5")]
+position = Vector2(0, -106)
+frame = 0
+frame_progress = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2024410971]
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_611do")
+
+[node name="O2DeltaEffect" type="Node" parent="." unique_id=1227140705 node_paths=PackedStringArray("collision_object")]
+script = ExtResource("2_0432x")
+o2_delta = -5.0
+collision_object = NodePath("..")
+metadata/_custom_type_script = "uid://cbfyng2ojjdy2"
+
+[node name="PushBackEffect" type="Node" parent="." unique_id=115882819 node_paths=PackedStringArray("collision_object")]
+script = ExtResource("3_0432x")
+collision_object = NodePath("..")
+metadata/_custom_type_script = "uid://denyrphtuf8as"
+
+[node name="PlayAnimationEffect" type="Node" parent="." unique_id=124099157 node_paths=PackedStringArray("sprite", "collision_object")]
+script = ExtResource("4_611do")
+sprite = NodePath("../RedOursin")
+trigger_animation = &"attack"
+after_trigger_animation = &"idle"
+collision_object = NodePath("..")
+metadata/_custom_type_script = "uid://bprto0q34ue4k"
