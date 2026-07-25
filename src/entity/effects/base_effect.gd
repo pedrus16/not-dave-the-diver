@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	var character := _find_character(body)
+	var character := find_character(body)
 	if character == null:
 		return
 	
@@ -41,14 +41,14 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_body_exited(body: Node2D) -> void:
-	var character := _find_character(body)
+	var character := find_character(body)
 	if character == null:
 		return
 	
 	_entered_character = null
 
 
-func _find_character(body: Node) -> CharacterController:
+static func find_character(body: Node) -> CharacterController:
 	var node := body
 
 	while node:
