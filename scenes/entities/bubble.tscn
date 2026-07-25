@@ -16,19 +16,19 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RigidBody2D/Bubble:scale")
+tracks/0/path = NodePath("Area2D:monitoring")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.20000002, 0.20000002)]
+"update": 1,
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RigidBody2D/CollisionShape2D:scale")
+tracks/1/path = NodePath("CollisionShape2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,14 +40,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RigidBody2D/Area2D/CollisionShape2D:scale")
+tracks/2/path = NodePath("Scale/Sprite:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(1e-05, 1e-05)]
 }
 
 [sub_resource type="Animation" id="Animation_q0q6g"]
@@ -56,23 +56,23 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RigidBody2D/Bubble:scale")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Area2D:monitoring")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.20000002, 0.20000002), Vector2(1e-05, 1e-05)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RigidBody2D/CollisionShape2D:scale")
+tracks/1/path = NodePath("CollisionShape2D:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.01, 0.4),
+"times": PackedFloat32Array(0, 0.23333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
@@ -80,55 +80,88 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RigidBody2D/Area2D/CollisionShape2D:scale")
+tracks/2/path = NodePath("Scale/Sprite:scale")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.23333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+"values": [Vector2(0.2, 0.2), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_txyof"]
+resource_name = "spawn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scale/Sprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_txyof"]
 _data = {
 &"RESET": SubResource("Animation_o7vo0"),
-&"consume": SubResource("Animation_q0q6g")
+&"consume": SubResource("Animation_q0q6g"),
+&"spawn": SubResource("Animation_txyof")
 }
 
-[node name="Bubble" type="Node2D" unique_id=584058430]
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1022816464]
+collision_layer = 4
+collision_mask = 5
+lock_rotation = true
 script = ExtResource("1_o7vo0")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1022816464]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1367495498]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1367495498]
 shape = SubResource("CircleShape2D_yf5fn")
 
-[node name="Bubble" type="Sprite2D" parent="RigidBody2D" unique_id=968073750]
-scale = Vector2(0.20000002, 0.20000002)
+[node name="Scale" type="Node2D" parent="." unique_id=506855196]
+unique_name_in_owner = true
+
+[node name="Sprite" type="Sprite2D" parent="Scale" unique_id=968073750]
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("2_q0q6g")
 
-[node name="Area2D" type="Area2D" parent="RigidBody2D" unique_id=973326749]
+[node name="Area2D" type="Area2D" parent="." unique_id=973326749]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D" unique_id=1088987040]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1088987040]
 shape = SubResource("CircleShape2D_g4v7s")
 
-[node name="Buoyancy" type="Node" parent="RigidBody2D" unique_id=1922335482 node_paths=PackedStringArray("rigidBody2D", "area2D")]
+[node name="Buoyancy" type="Node" parent="." unique_id=1922335482 node_paths=PackedStringArray("rigidBody2D", "area2D")]
 script = ExtResource("3_txyof")
 rigidBody2D = NodePath("..")
 area2D = NodePath("../Area2D")
 buoyancy = 80.0
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=928362655]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_txyof")
+autoplay = &"spawn"
+
 [node name="O2DeltaEffect" type="Node" parent="." unique_id=672668008 node_paths=PackedStringArray("collision_object")]
 script = ExtResource("4_8585c")
 o2_delta = 10.0
 mode = 1
-collision_object = NodePath("../RigidBody2D/Area2D")
+collision_object = NodePath("../Area2D")
 metadata/_custom_type_script = "uid://cbfyng2ojjdy2"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=928362655]
-unique_name_in_owner = true
-libraries/ = SubResource("AnimationLibrary_txyof")
-
-[connection signal="area_entered" from="RigidBody2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

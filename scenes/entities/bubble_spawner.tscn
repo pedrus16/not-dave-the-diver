@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://boblwkibwv0jy"]
+
+[ext_resource type="Script" uid="uid://bxnm5o2i1svh" path="res://scenes/gym/bubble_spawner.gd" id="1_ysuoi"]
+[ext_resource type="PackedScene" uid="uid://c8vvo5awsy5ij" path="res://scenes/entities/bubble.tscn" id="2_y6bkr"]
+
+[node name="BubbleSpawner" type="Marker2D" unique_id=1673619177]
+script = ExtResource("1_ysuoi")
+scene = ExtResource("2_y6bkr")
+rate = 1.0

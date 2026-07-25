@@ -48,7 +48,7 @@ frame_progress = 0.0
 position = Vector2(10.24, 109.22667)
 scale = Vector2(3.4133334, 3.4133334)
 
-[node name="BreathArea" type="Area2D" parent="RigidBody2D/Cocotte" unique_id=970908284]
+[node name="BreathArea" type="Area2D" parent="RigidBody2D/Cocotte" unique_id=970908284 groups=["oxygen_consumer"]]
 position = Vector2(10.24, -98.98667)
 scale = Vector2(3.4133334, 3.4133334)
 
