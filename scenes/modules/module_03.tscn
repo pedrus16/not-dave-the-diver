@@ -182,3 +182,27 @@ script = ExtResource("14_lhkv4")
 can_hold_egg = true
 available_entities = ExtResource("15_6e405")
 metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot6" type="Marker2D" parent="." unique_id=1833710875]
+position = Vector2(62, 436.00003)
+rotation = 3.35362
+gizmo_extents = 82.8
+script = ExtResource("14_lhkv4")
+available_entities = ExtResource("15_6e405")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot7" type="Marker2D" parent="." unique_id=2064086969]
+position = Vector2(762, 286.00003)
+rotation = 3.35362
+gizmo_extents = 82.8
+script = ExtResource("14_lhkv4")
+available_entities = ExtResource("15_6e405")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot8" type="Marker2D" parent="." unique_id=2083862591]
+position = Vector2(988.00006, 621)
+rotation = 5.9536114
+gizmo_extents = 82.8
+script = ExtResource("14_lhkv4")
+available_entities = ExtResource("15_6e405")
+metadata/_custom_type_script = "uid://havu0syglhv2"

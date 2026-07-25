@@ -26,7 +26,7 @@ func populate(rng: RandomNumberGenerator) -> void:
 	if available_entities.entities.is_empty():
 		return
 	
-	var matching_entities = available_entities.entities.filter(
+	var matching_entities := available_entities.entities.filter(
 		func(entity: EntityListEntry):
 			return absf(global_rotation_degrees) <= entity.max_vertical_angle
 	)
@@ -43,7 +43,7 @@ func populate(rng: RandomNumberGenerator) -> void:
 	var picked_entities := matching_entities[rng.rand_weighted(weights)] as EntityListEntry
 	
 	if picked_entities.scene == null:
-		# The empty entity is valid, so we return without error.
+		push_warning("null scene")
 		return
 	
 	spawn_entity(picked_entities.scene)
