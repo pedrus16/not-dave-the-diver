@@ -20,6 +20,7 @@ rigidBody2D = NodePath("RigidBody2D")
 sprite = NodePath("RigidBody2D/Cocotte")
 inventory = NodePath("CharacterInventory")
 o2_counter = NodePath("O2Counter")
+refill_rate = 5.0
 
 [node name="ItemsRoot" type="Node2D" parent="." unique_id=1152148003]
 
@@ -36,6 +37,9 @@ shape = SubResource("CircleShape2D_tmmmg")
 [node name="Cocotte" parent="RigidBody2D" unique_id=911124559 instance=ExtResource("2_tmmmg")]
 position = Vector2(-3, 4)
 scale = Vector2(0.29296875, 0.29296875)
+animation = &"dying"
+frame = 25
+frame_progress = 1.0
 
 [node name="ItemsAnchor" type="Node2D" parent="RigidBody2D/Cocotte" unique_id=1993737306]
 position = Vector2(10.24, 109.22667)
@@ -64,3 +68,4 @@ metadata/_custom_type_script = "uid://c036si0iwdhi2"
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
 [connection signal="area_entered" from="RigidBody2D/Cocotte/BreathArea" to="." method="_on_breath_area_area_entered"]
 [connection signal="area_exited" from="RigidBody2D/Cocotte/BreathArea" to="." method="_on_breath_area_area_exited"]
+[connection signal="timeout" from="O2Counter" to="." method="_on_o_2_counter_timeout"]

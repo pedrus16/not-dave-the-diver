@@ -1,43 +1,62 @@
 [gd_scene format=3 uid="uid://d4jmbjkwjo3kv"]
 
 [ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="1_6pqnl"]
+[ext_resource type="PackedScene" uid="uid://c58tfh642e73h" path="res://scenes/o2_counter/o2_counter.tscn" id="2_y08fo"]
+[ext_resource type="PackedScene" uid="uid://cmpgadulgw58c" path="res://scenes/entities/beloved_egg.tscn" id="3_a8uch"]
+[ext_resource type="PackedScene" uid="uid://5e4cn7t0pskx" path="res://scenes/entities/sea_urchin.tscn" id="4_1iner"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbais"]
 size = Vector2(665, 46.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5va1c"]
-size = Vector2(1925, 563)
+size = Vector2(1925, 617)
 
 [node name="Gym" type="Node2D" unique_id=1910923724]
 
-[node name="Camera3D" type="Camera2D" parent="." unique_id=1037422815]
+[node name="World" type="Node2D" parent="." unique_id=457812329]
 
-[node name="CharacterController" parent="." unique_id=827916061 instance=ExtResource("1_6pqnl")]
+[node name="CharacterController" parent="World" unique_id=827916061 instance=ExtResource("1_6pqnl")]
 position = Vector2(-47, -38)
 
-[node name="Platform" type="StaticBody2D" parent="." unique_id=1678061149]
+[node name="Camera3D" type="Camera2D" parent="World/CharacterController/RigidBody2D" parent_id_path=PackedInt32Array(827916061, 1615751047) index="0" unique_id=1037422815]
+position = Vector2(47, 38)
+
+[node name="Platform" type="StaticBody2D" parent="World" unique_id=1678061149]
 position = Vector2(-483, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1143701262]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Platform" unique_id=1143701262]
 position = Vector2(-149.5, 54.25)
 shape = SubResource("RectangleShape2D_cbais")
 
-[node name="Polygon2D" type="Polygon2D" parent="Platform" unique_id=2016808154]
+[node name="Polygon2D" type="Polygon2D" parent="World/Platform" unique_id=2016808154]
 position = Vector2(-142.40427, 0)
 scale = Vector2(1.7739362, 1)
 color = Color(0.7875765, 0.39197582, 0.086137496, 1)
 polygon = PackedVector2Array(-192, 31, 183, 32, 184, 77, -191, 78)
 
-[node name="Air" type="Area2D" parent="." unique_id=322572260]
-input_pickable = false
-gravity_space_override = 3
-
-[node name="Polygon2D" type="Polygon2D" parent="Air" unique_id=511379866]
+[node name="Water" type="Polygon2D" parent="World" unique_id=511379866]
 position = Vector2(-1.8235779, -54.232567)
 scale = Vector2(1.6617901, 1.8294573)
 color = Color(0.3137255, 0.84313726, 1, 0.27058825)
 polygon = PackedVector2Array(-577, 71, 581, 69, 583, 326, -579, 327)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Air" unique_id=282588046]
-position = Vector2(-1, -262.5)
+[node name="Air" type="Area2D" parent="World" unique_id=322572260 groups=["air"]]
+input_pickable = false
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Air" unique_id=282588046]
+position = Vector2(-1, -235.5)
 shape = SubResource("RectangleShape2D_5va1c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=187618121]
+
+[node name="O2Counter" parent="CanvasLayer" unique_id=142397266 node_paths=PackedStringArray("timer") instance=ExtResource("2_y08fo")]
+timer = NodePath("../../World/CharacterController/O2Counter")
+
+[node name="BelovedEgg" parent="." unique_id=1662193688 instance=ExtResource("3_a8uch")]
+position = Vector2(89, 369)
+
+[node name="SeaUrchin" parent="." unique_id=49922503 instance=ExtResource("4_1iner")]
+position = Vector2(357, 318)
+
+[editable path="World/CharacterController"]
