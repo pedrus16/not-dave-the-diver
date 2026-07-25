@@ -2,41 +2,53 @@
 
 [ext_resource type="Texture2D" uid="uid://bd5oq64kp8anm" path="res://scenes/ui/panel.png" id="1_ieb5t"]
 [ext_resource type="FontFile" uid="uid://cfji8srb6puup" path="res://scenes/ui/ChelseaMarket-Regular.ttf" id="2_1twu8"]
+[ext_resource type="PackedScene" uid="uid://oityoildfldv" path="res://scenes/ui/overlay_button.tscn" id="3_1twu8"]
 
-[node name="Retry" type="TextureRect" unique_id=460428931]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdns4"]
+bg_color = Color(0.09019608, 0.011764706, 0.011764706, 0.78431374)
+
+[node name="RetryOverlay" type="Panel" unique_id=1139665170]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jdns4")
+
+[node name="Retry" type="TextureRect" parent="." unique_id=460428931]
+visible = false
+layout_mode = 0
 offset_right = 1960.0
-offset_bottom = 407.0
+offset_bottom = 1080.0
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_ieb5t")
 
-[node name="Text" type="Label" parent="." unique_id=585712150]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1632680220]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.8509826, 0.99999994, 0.99913305, 1)
-theme_override_fonts/font = ExtResource("2_1twu8")
-theme_override_font_sizes/font_size = 250
-text = "Retry"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/separation = 61
+alignment = 1
 
-[node name="Text2" type="Label" parent="." unique_id=1760952452]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -645.0
-offset_right = 645.0
-offset_bottom = 319.0
-grow_horizontal = 2
-offset_transform_enabled = true
+[node name="Bloub bloub" type="Label" parent="VBoxContainer" unique_id=1760952452]
+layout_mode = 2
+size_flags_horizontal = 4
 offset_transform_position_ratio = Vector2(0, -1.5)
 theme_override_colors/font_color = Color(0.98385686, 0.37131527, 0.36800972, 1)
 theme_override_fonts/font = ExtResource("2_1twu8")
-theme_override_font_sizes/font_size = 350
+theme_override_font_sizes/font_size = 83
 text = "Blub blub blub..."
 horizontal_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1653704364]
+layout_mode = 2
+theme_override_constants/separation = 39
+alignment = 1
+
+[node name="RetryButton" parent="VBoxContainer/HBoxContainer" unique_id=573227147 instance=ExtResource("3_1twu8")]
+layout_mode = 2
+text = "Retry"
