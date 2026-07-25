@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://6m05qmxwd7d"]
+
+[ext_resource type="Shader" uid="uid://cu1yv35ncwc5g" path="res://scenes/environment/canvas_texture.tres" id="1_0yqpo"]
+[ext_resource type="Texture2D" uid="uid://eqxhx0tlvrql" path="res://scenes/environment/rocks/rock_corail_06.png" id="2_e7xwj"]
+[ext_resource type="PackedScene" uid="uid://b7asv38u3ol7r" path="res://scenes/environment/coraux/corail/corail_03_dark.tscn" id="3_tqymh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_68raa"]
+shader = ExtResource("1_0yqpo")
+shader_parameter/ColorParameter = Color(0.03137255, 0.07450981, 0.09019608, 1)
+shader_parameter/alpha = 1.0
+
+[node name="Rock06Dark" type="Sprite2D" unique_id=289249423]
+z_index = 2
+material = SubResource("ShaderMaterial_68raa")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_e7xwj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=426951892]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=482315311]
+polygon = PackedVector2Array(-22, -376, 88, -228, 176, -222, 302, -96, 422, 18, 406, 142, 270, 218, 196, 290, 136, 352, -104, 388, -302, 358, -378, 304, -350, 262, -382, 142, -312, 58, -326, -30, -402, -110, -440, -240, -334, -362, -176, -384)
+
+[node name="Corail03Dark" parent="." unique_id=614684892 instance=ExtResource("3_tqymh")]
+z_index = 2
+position = Vector2(256, -56)
+
+[node name="Corail03Dark2" parent="." unique_id=1065433933 instance=ExtResource("3_tqymh")]
+z_index = 2
+position = Vector2(134, -208)
+
+[node name="Corail03Dark3" parent="." unique_id=1261822933 instance=ExtResource("3_tqymh")]
+z_index = 2
+position = Vector2(374, 0)
+flip_h = true
+
+[node name="Corail03Dark4" parent="." unique_id=108911859 instance=ExtResource("3_tqymh")]
+z_index = 2
+position = Vector2(192, -248)
+flip_h = true
+
+[node name="Corail03Dark5" parent="." unique_id=1900336477 instance=ExtResource("3_tqymh")]
+z_index = 2
+position = Vector2(404, -70)
+flip_h = true
+
+[node name="Corail03Dark6" parent="." unique_id=1704242660 instance=ExtResource("3_tqymh")]
+z_index = 2
+position = Vector2(2, -348)
+flip_h = true
+
+[node name="Corail03Dark7" parent="." unique_id=871378818 instance=ExtResource("3_tqymh")]
+z_index = 2
+position = Vector2(-198, -356)
+flip_h = true
+
+[node name="Corail03Dark8" parent="." unique_id=850639850 instance=ExtResource("3_tqymh")]
+z_index = 2
+position = Vector2(-48, -308)
+flip_h = true

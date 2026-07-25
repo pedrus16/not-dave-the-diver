@@ -436,6 +436,7 @@ player = NodePath("../CharacterController/RigidBody2D")
 top_reference = NodePath("../Level/FirstConnector")
 
 [node name="Water2" parent="." unique_id=429885869 instance=ExtResource("16_40lml")]
+z_index = 1000
 position = Vector2(-768, 24976)
 region_enabled = true
 region_rect = Rect2(0, 0, 50000, 50000)
