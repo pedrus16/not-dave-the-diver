@@ -62,6 +62,8 @@ position = Vector2(582, 305)
 
 [node name="BubbleSpawner" parent="World" unique_id=870790478 instance=ExtResource("5_2xucn")]
 position = Vector2(698, 415)
+rate = 0.75
+angle_range_degree = 30.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=187618121]
 

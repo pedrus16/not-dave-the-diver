@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://3n7r8juui21u" path="res://src/buoyancy.gd" id="3_txyof"]
 [ext_resource type="Script" uid="uid://cbfyng2ojjdy2" path="res://src/entity/effects/o2_delta_effect.gd" id="4_8585c"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2xucn"]
+friction = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
 radius = 25.079872
 
@@ -89,6 +92,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0.2, 0.2), Vector2(1e-05, 1e-05)]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.23333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_txyof"]
 resource_name = "spawn"
@@ -128,6 +145,7 @@ _data = {
 [node name="RigidBody2D" type="RigidBody2D" unique_id=1022816464]
 collision_layer = 4
 collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_2xucn")
 lock_rotation = true
 script = ExtResource("1_o7vo0")
 
@@ -150,7 +168,7 @@ shape = SubResource("CircleShape2D_g4v7s")
 script = ExtResource("3_txyof")
 rigidBody2D = NodePath("..")
 area2D = NodePath("../Area2D")
-buoyancy = 80.0
+buoyancy = 100.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=928362655]
 unique_name_in_owner = true
@@ -164,4 +182,9 @@ mode = 1
 collision_object = NodePath("../Area2D")
 metadata/_custom_type_script = "uid://cbfyng2ojjdy2"
 
+[node name="Timer" type="Timer" parent="." unique_id=1058711966]
+wait_time = 5.0
+autostart = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

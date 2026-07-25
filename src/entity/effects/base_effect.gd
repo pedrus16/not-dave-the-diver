@@ -52,7 +52,7 @@ func _find_character(body: Node) -> CharacterController:
 	var node := body
 
 	while node:
-		if node is CharacterController && node.rigidBody2D == body:
+		if node is CharacterController and (body is not RigidBody2D or node.rigidBody2D == body):
 			return node
 		
 		node = node.get_parent()
