@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cv4e728m3r5so" path="res://scenes/character/cocotte/cocotte.tscn" id="2_tmmmg"]
 [ext_resource type="Script" uid="uid://7t5sh57io46g" path="res://src/refillable_timer.gd" id="3_tmmmg"]
 [ext_resource type="Script" uid="uid://c036si0iwdhi2" path="res://scenes/character/character_inventory.gd" id="4_x54mg"]
+[ext_resource type="Script" uid="uid://3n7r8juui21u" path="res://src/buoyancy.gd" id="5_jg0a6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sm8h1"]
 friction = 0.1
@@ -13,6 +14,9 @@ radius = 32.01562
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 30.016663
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 17.262676
 
 [node name="CharacterController" type="Node2D" unique_id=1427967305 node_paths=PackedStringArray("rigidBody2D", "sprite", "inventory", "o2_counter")]
 script = ExtResource("1_sm8h1")
@@ -53,8 +57,22 @@ scale = Vector2(3.4133334, 3.4133334)
 shape = SubResource("CircleShape2D_g4v7s")
 debug_color = Color(0.68541384, 0.45240247, 1, 0.41960785)
 
+[node name="Area2D" type="Area2D" parent="RigidBody2D" unique_id=1931963597]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D" unique_id=1814544605]
+shape = SubResource("CircleShape2D_yf5fn")
+
+[node name="Buoyancy" type="Node" parent="RigidBody2D" unique_id=1839481813 node_paths=PackedStringArray("rigidBody2D", "area2D")]
+script = ExtResource("5_jg0a6")
+rigidBody2D = NodePath("..")
+area2D = NodePath("../Area2D")
+buoyancy = 40.0
+metadata/_custom_type_script = "uid://3n7r8juui21u"
+
 [node name="O2Counter" type="Node" parent="." unique_id=1789200111]
 script = ExtResource("3_tmmmg")
+max_duration = 20.0
+initial_duration = 20.0
 autostart = true
 metadata/_custom_type_script = "uid://7t5sh57io46g"
 

@@ -4,12 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://c58tfh642e73h" path="res://scenes/o2_counter/o2_counter.tscn" id="2_y08fo"]
 [ext_resource type="PackedScene" uid="uid://cmpgadulgw58c" path="res://scenes/entities/beloved_egg.tscn" id="3_a8uch"]
 [ext_resource type="PackedScene" uid="uid://5e4cn7t0pskx" path="res://scenes/entities/sea_urchin.tscn" id="4_1iner"]
+[ext_resource type="Script" uid="uid://bvxf2s7p3uvsm" path="res://scenes/gym/bubble.gd" id="4_eaum8"]
+[ext_resource type="Texture2D" uid="uid://d1i371se7hs5m" path="res://scenes/entities/bubble.png" id="5_j4p3a"]
+[ext_resource type="Script" uid="uid://3n7r8juui21u" path="res://src/buoyancy.gd" id="6_th6f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbais"]
 size = Vector2(665, 46.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5va1c"]
 size = Vector2(1925, 617)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 25.079872
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 25.079872
 
 [node name="Gym" type="Node2D" unique_id=1910923724]
 
@@ -48,15 +57,39 @@ gravity_space_override = 3
 position = Vector2(-1, -235.5)
 shape = SubResource("RectangleShape2D_5va1c")
 
+[node name="BelovedEgg" parent="World" unique_id=1662193688 instance=ExtResource("3_a8uch")]
+position = Vector2(89, 369)
+
+[node name="SeaUrchin" parent="World" unique_id=49922503 instance=ExtResource("4_1iner")]
+position = Vector2(357, 318)
+
+[node name="Bubble" type="Node2D" parent="World" unique_id=1693013043]
+position = Vector2(582, 305)
+script = ExtResource("4_eaum8")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="World/Bubble" unique_id=147764929]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Bubble/RigidBody2D" unique_id=1201103753]
+shape = SubResource("CircleShape2D_yf5fn")
+
+[node name="Bubble" type="Sprite2D" parent="World/Bubble/RigidBody2D" unique_id=882552322]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_j4p3a")
+
+[node name="Area2D" type="Area2D" parent="World/Bubble/RigidBody2D" unique_id=735121910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Bubble/RigidBody2D/Area2D" unique_id=1079131563]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Buoyancy" type="Node" parent="World/Bubble/RigidBody2D" unique_id=386555022 node_paths=PackedStringArray("rigidBody2D", "area2D")]
+script = ExtResource("6_th6f5")
+rigidBody2D = NodePath("..")
+area2D = NodePath("../Area2D")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=187618121]
 
 [node name="O2Counter" parent="CanvasLayer" unique_id=142397266 node_paths=PackedStringArray("timer") instance=ExtResource("2_y08fo")]
 timer = NodePath("../../World/CharacterController/O2Counter")
-
-[node name="BelovedEgg" parent="." unique_id=1662193688 instance=ExtResource("3_a8uch")]
-position = Vector2(89, 369)
-
-[node name="SeaUrchin" parent="." unique_id=49922503 instance=ExtResource("4_1iner")]
-position = Vector2(357, 318)
 
 [editable path="World/CharacterController"]
