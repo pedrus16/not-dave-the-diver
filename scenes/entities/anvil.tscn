@@ -12,6 +12,7 @@ height = 186.0
 [node name="Anvil" type="RigidBody2D" unique_id=1468967216]
 collision_layer = 2
 physics_material_override = ExtResource("1_1sgol")
+freeze = true
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=2062406171]
 position = Vector2(-10, -45.000004)

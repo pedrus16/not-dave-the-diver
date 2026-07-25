@@ -28,6 +28,8 @@ func populate(rng: RandomNumberGenerator) -> void:
 	
 	var matching_entities := available_entities.entities.filter(
 		func(entity: EntityListEntry):
+			if entity.max_vertical_angle < 100.0:
+				print(global_rotation_degrees)
 			return absf(global_rotation_degrees) <= entity.max_vertical_angle
 	)
 	

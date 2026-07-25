@@ -123,6 +123,15 @@ can_hold_egg = true
 available_entities = ExtResource("18_sixiu")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
+[node name="EntitySpot7" type="Marker2D" parent="." unique_id=2051467374]
+position = Vector2(284, 231)
+rotation = 0.40894616
+gizmo_extents = 82.8
+script = ExtResource("14_hhc73")
+can_hold_egg = true
+available_entities = ExtResource("18_sixiu")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
 [node name="EntitySpot4" type="Marker2D" parent="." unique_id=1292783077]
 position = Vector2(357, 556.99994)
 rotation = 0.92018914
