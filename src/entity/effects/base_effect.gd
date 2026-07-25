@@ -46,9 +46,11 @@ func _on_body_exited(body: Node2D) -> void:
 	_entered_character = null
 
 
-func _find_character(node: Node) -> CharacterController:
+func _find_character(body: Node) -> CharacterController:
+	var node := body
+
 	while node:
-		if node is CharacterController:
+		if node is CharacterController && node.rigidBody2D == body:
 			return node
 		
 		node = node.get_parent()
