@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c3dwrrfykameu"]
+
+[ext_resource type="Script" uid="uid://dkuujytiw08cr" path="res://scenes/fps_counter/fps_counter.gd" id="1_d2vwk"]
+
+[node name="FPSCounter" type="Label" unique_id=487028017]
+offset_right = 86.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 22
+text = "FPS: 240"
+script = ExtResource("1_d2vwk")
