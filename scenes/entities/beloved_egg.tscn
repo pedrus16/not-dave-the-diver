@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cmpgadulgw58c"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://d266lk4iah3p4" path="res://config/items_physics_material.tres" id="1_8fdbm"]
 [ext_resource type="Texture2D" uid="uid://6tvhquxebfsg" path="res://scenes/egg/IMG_1923.png" id="2_kiwsf"]
 [ext_resource type="Script" uid="uid://3n7r8juui21u" path="res://src/buoyancy.gd" id="3_8fdbm"]
 [ext_resource type="Script" uid="uid://c6adivoj0o54e" path="res://src/entity/effects/pick_effect.gd" id="3_kiwsf"]
@@ -17,6 +18,7 @@ region = Rect2(307.76804, 570.4197, 107.95212, 133.18768)
 [node name="BelovedEgg" type="RigidBody2D" unique_id=1662193688]
 collision_layer = 2
 mass = 0.3
+physics_material_override = ExtResource("1_8fdbm")
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012467965]

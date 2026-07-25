@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dip520of4tcjx"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://d266lk4iah3p4" path="res://config/items_physics_material.tres" id="1_1sgol"]
+[ext_resource type="Script" uid="uid://c6adivoj0o54e" path="res://src/entity/effects/pick_effect.gd" id="2_pn31o"]
+[ext_resource type="Texture2D" uid="uid://ddxjecbceqbsr" path="res://scenes/entities/anvil.png" id="2_s0nbs"]
+[ext_resource type="Script" uid="uid://3n7r8juui21u" path="res://src/buoyancy.gd" id="3_pn31o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdns4"]
+size = Vector2(126, 61)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1sgol"]
+radius = 47.0
+height = 168.0
+
+[node name="Anvil" type="RigidBody2D" unique_id=1468967216]
+collision_layer = 2
+physics_material_override = ExtResource("1_1sgol")
+
+[node name="Anvil" type="Sprite2D" parent="." unique_id=1741420592]
+position = Vector2(-4.000004, -30)
+scale = Vector2(0.20892859, 0.20892859)
+texture = ExtResource("2_s0nbs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=820771292]
+position = Vector2(-2, -29.5)
+shape = SubResource("RectangleShape2D_jdns4")
+
+[node name="PickArea" type="Area2D" parent="." unique_id=1087280163]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickArea" unique_id=1748693508]
+position = Vector2(0, -28)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1sgol")
+
+[node name="PickEffect" type="Node" parent="." unique_id=1006999124 node_paths=PackedStringArray("root_rigid_body", "collision_object")]
+script = ExtResource("2_pn31o")
+root_rigid_body = NodePath("..")
+mode = 1
+collision_object = NodePath("../PickArea")
+metadata/_custom_type_script = "uid://c6adivoj0o54e"
+
+[node name="Buoyancy" type="Node" parent="." unique_id=1608280249 node_paths=PackedStringArray("rigidBody2D")]
+script = ExtResource("3_pn31o")
+rigidBody2D = NodePath("..")
+buoyancy = -2000.0
+metadata/_custom_type_script = "uid://3n7r8juui21u"

@@ -25,6 +25,7 @@ sprite = NodePath("RigidBody2D/Cocotte")
 inventory = NodePath("CharacterInventory")
 o2_counter = NodePath("O2Counter")
 refill_rate = 5.0
+disable_death = true
 
 [node name="ItemsRoot" type="Node2D" parent="." unique_id=1152148003]
 

@@ -8,6 +8,7 @@ class_name CharacterController extends Node2D
 @export var refill_rate := 2.0
 
 @export var disable_controls := false
+@export var disable_death := false
 
 var sprite_rotation := 0.0
 var is_swimming := false
@@ -21,6 +22,7 @@ var _dead := false
 func _ready() -> void:
 	pass # Replace with function body.
 
+
 func _unhandled_input(event: InputEvent) -> void:
 	if disable_controls == true: return
 	
@@ -33,6 +35,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_last_input = input
 		
 	is_swimming = not input.is_zero_approx()
+	
+	inventory.on_movement_direction_change(input)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -54,7 +59,6 @@ func _process(delta: float) -> void:
 	if is_swimming:
 		sprite.animation = "swimming"
 	else:
-		sprite.animation
 		sprite.animation = "idle"
 		
 	if not in_water:
@@ -65,14 +69,12 @@ func _on_breath_area_area_entered(area: Area2D) -> void:
 	if not area.is_in_group("air"): return
 	
 	in_water = false
-	#rigidBody2D.gravity_scale = 1.0
 
 
 func _on_breath_area_area_exited(area: Area2D) -> void:
 	if not area.is_in_group("air"): return
 	
 	in_water = true
-	#rigidBody2D.gravity_scale = 0.0
 
 
 func _on_o_2_counter_timeout() -> void:
@@ -90,6 +92,9 @@ func take_item(item: Node2D) -> void:
 
 ## Triggers death animation and disable controls
 func kill() -> void:
+	if disable_death:
+		return
+	
 	_dead = true
 	sprite.animation = "dying"
 	disable_controls = true
