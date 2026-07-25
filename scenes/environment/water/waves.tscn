@@ -4,7 +4,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3diw"]
 shader = ExtResource("1_fwpvs")
-shader_parameter/ColorParameter = Color(0.29243925, 0.5930264, 0.5256403, 1)
+shader_parameter/ColorParameter = Color(0.6431373, 0.8509804, 0.77254903, 1)
 shader_parameter/decalage = 0.0
 shader_parameter/speed = 0.0
 
@@ -12,9 +12,9 @@ shader_parameter/speed = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rue2s"]
 shader = ExtResource("1_fwpvs")
-shader_parameter/ColorParameter = Color(0.64501584, 0.849487, 0.771797, 1)
-shader_parameter/decalage = 0.5
-shader_parameter/speed = 2.0
+shader_parameter/ColorParameter = Color(0.33928972, 0.55173546, 0.4766841, 1)
+shader_parameter/decalage = 2.57
+shader_parameter/speed = 0.34
 
 [node name="Waves" type="Node2D" unique_id=627467438]
 

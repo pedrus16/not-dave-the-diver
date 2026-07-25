@@ -318,7 +318,8 @@ region_enabled = true
 region_rect = Rect2(0, 0, 2000, 3000)
 
 [node name="Waves" parent="." unique_id=627467438 instance=ExtResource("17_das7k")]
-position = Vector2(191, -2)
+position = Vector2(214.00002, 3)
+scale = Vector2(1.0400003, 1.1599995)
 
 [node name="GravityArea" type="Area2D" parent="." unique_id=1417413745]
 position = Vector2(960, -397)
