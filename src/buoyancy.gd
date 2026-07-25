@@ -1,0 +1,31 @@
+class_name Buoyancy extends Node
+
+## Body that the buoyancy force is applied to
+@export var rigidBody2D: RigidBody2D
+
+## Area to detect if the body is in water or not
+@export var area2D: Area2D
+
+## Amount of buoyancy (force applied). A negative value makes the body sink.
+@export var buoyancy := 10.0
+
+var _buoyancy_applied := false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	print(area2D)
+	area2D.connect("area_entered", _on_area_entered)
+	area2D.connect("area_exited", _on_area_exited)
+
+
+func _on_area_entered(other: Area2D) -> void:
+	if not other.is_in_group("air") or not _buoyancy_applied: return
+	
+	rigidBody2D.add_constant_force(Vector2(0, buoyancy))
+	_buoyancy_applied = false
+
+func _on_area_exited(other: Area2D) -> void:
+	if not other.is_in_group("air") or _buoyancy_applied: return
+	
+	rigidBody2D.add_constant_force(Vector2(0, -buoyancy))
+	_buoyancy_applied = true
