@@ -11,7 +11,7 @@ const ROPE_SEGMENT_COUNT := 4
 var _dragged_items: Array[ItemAndRope] = []
 
 
-func take_item(item: Node2D) -> void:
+func take_item(item: Node2D, drop_callback: Callable) -> void:
 	item.reparent(items_root)
 
 	var angle := Vector2.DOWN.angle_to(item.global_position - items_anchor.global_position)
@@ -22,7 +22,18 @@ func take_item(item: Node2D) -> void:
 	# Set item as last child, so it is displayed above the rope
 	items_root.move_child(item, -1)
 	
-	_dragged_items.append(ItemAndRope.new(item, rope))
+	_dragged_items.append(ItemAndRope.new(item, rope, drop_callback))
+
+
+func drop_last_item() -> void:
+	var item := _dragged_items.pop_back() as ItemAndRope
+	if item == null:
+		return
+	
+	item.rope.queue_free()
+	
+	if item.drop_callback != null:
+		item.drop_callback.call()
 
 
 func on_movement_direction_change(direction: Vector2) -> void:
@@ -73,7 +84,9 @@ func _create_rope(item: Node2D) -> CRope2D:
 class ItemAndRope:
 	var item: Node2D
 	var rope: CRope2D
+	var drop_callback: Callable
 	
-	func _init(item_: Node2D, rope_: CRope2D) -> void:
+	func _init(item_: Node2D, rope_: CRope2D, drop_callback_: Callable) -> void:
 		item = item_
 		rope = rope_
+		drop_callback = drop_callback_

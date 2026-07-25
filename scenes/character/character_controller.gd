@@ -63,6 +63,9 @@ func _process(delta: float) -> void:
 		
 	if not in_water:
 		o2_counter.add_time(refill_rate * delta)
+	
+	if Input.is_action_just_pressed(&"drop_last_item"):
+		inventory.drop_last_item()
 
 
 func _on_breath_area_area_entered(area: Area2D) -> void:
@@ -86,8 +89,8 @@ func add_o2_delta(seconds: float) -> void:
 	o2_counter.add_time(seconds)
 
 
-func take_item(item: Node2D) -> void:
-	inventory.take_item(item)
+func take_item(item: Node2D, drop_callback) -> void:
+	inventory.take_item(item, drop_callback)
 
 
 ## Triggers death animation and disable controls
