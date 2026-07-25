@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://d4jmbjkwjo3kv"]
 
 [ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="1_6pqnl"]
+[ext_resource type="Script" uid="uid://3t0t5q6bk8lg" path="res://scenes/game_scene/world.gd" id="1_62vp0"]
+[ext_resource type="Script" uid="uid://b08vf7bsktk8w" path="res://src/procedural/level_generator.gd" id="2_m7sb5"]
 [ext_resource type="PackedScene" uid="uid://cmpgadulgw58c" path="res://scenes/entities/beloved_egg.tscn" id="3_a8uch"]
+[ext_resource type="Resource" uid="uid://dgkj5jnojkba7" path="res://config/generation_config.tres" id="3_jtdfu"]
 [ext_resource type="PackedScene" uid="uid://5e4cn7t0pskx" path="res://scenes/entities/blue_urchin.tscn" id="4_1iner"]
 [ext_resource type="PackedScene" uid="uid://c8vvo5awsy5ij" path="res://scenes/entities/bubble.tscn" id="4_2xucn"]
+[ext_resource type="Resource" uid="uid://dt8h2eysjrn3f" path="res://config/modules_registry.tres" id="4_5ohyd"]
 [ext_resource type="PackedScene" uid="uid://boblwkibwv0jy" path="res://scenes/entities/bubble_spawner.tscn" id="5_2xucn"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="5_js1kk"]
 [ext_resource type="PackedScene" uid="uid://dlxim7mtv1puh" path="res://scenes/o2_counter/bubble_counter.tscn" id="6_2xucn"]
+[ext_resource type="PackedScene" uid="uid://b56q2ilrsxwhc" path="res://scenes/entities/diodon/diodon.tscn" id="11_m7sb5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbais"]
 size = Vector2(665, 46.5)
@@ -17,15 +23,31 @@ size = Vector2(1925, 617)
 
 [node name="World" type="Node2D" parent="." unique_id=457812329]
 
+[node name="Level" type="Node2D" parent="World" unique_id=1510726305 node_paths=PackedStringArray("level_generator", "first_connector")]
+script = ExtResource("1_62vp0")
+level_generator = NodePath("LevelGenerator")
+first_connector = NodePath("FirstConnector")
+
+[node name="LevelGenerator" type="Node" parent="World/Level" unique_id=651802586]
+script = ExtResource("2_m7sb5")
+config = ExtResource("3_jtdfu")
+modules_registry = ExtResource("4_5ohyd")
+metadata/_custom_type_script = "uid://b08vf7bsktk8w"
+
+[node name="FirstConnector" parent="World/Level" unique_id=141346909 instance=ExtResource("5_js1kk")]
+position = Vector2(955, 0)
+location = 1
+
 [node name="CharacterController" parent="World" unique_id=827916061 instance=ExtResource("1_6pqnl")]
-position = Vector2(491, 307)
+position = Vector2(935, -740)
 in_water = true
+disable_death = false
 
 [node name="Camera3D" type="Camera2D" parent="World/CharacterController/RigidBody2D" parent_id_path=PackedInt32Array(827916061, 1615751047) index="0" unique_id=1037422815]
 position = Vector2(47, 38)
 
 [node name="Platform" type="StaticBody2D" parent="World" unique_id=1678061149]
-position = Vector2(-483, 0)
+position = Vector2(480.00012, -641)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Platform" unique_id=1143701262]
 position = Vector2(-149.5, 54.25)
@@ -38,12 +60,13 @@ color = Color(0.7875765, 0.39197582, 0.086137496, 1)
 polygon = PackedVector2Array(-192, 31, 183, 32, 184, 77, -191, 78)
 
 [node name="Water" type="Polygon2D" parent="World" unique_id=511379866]
-position = Vector2(-1.8235779, -54.232567)
+position = Vector2(961.17645, -695.2325)
 scale = Vector2(1.6617901, 1.8294573)
 color = Color(0.3137255, 0.84313726, 1, 0.27058825)
 polygon = PackedVector2Array(-577, 71, 581, 69, 583, 326, -579, 327)
 
 [node name="Air" type="Area2D" parent="World" unique_id=322572260 groups=["air"]]
+position = Vector2(963.0001, -641)
 input_pickable = false
 gravity_space_override = 3
 
@@ -52,26 +75,30 @@ position = Vector2(-1, -235.5)
 shape = SubResource("RectangleShape2D_5va1c")
 
 [node name="BelovedEgg" parent="World" unique_id=1662193688 instance=ExtResource("3_a8uch")]
-position = Vector2(89, 369)
+position = Vector2(1052.0001, -272)
 
 [node name="SeaUrchin" parent="World" unique_id=49922503 instance=ExtResource("4_1iner")]
-position = Vector2(357, 318)
+position = Vector2(1320.0001, -323)
 
 [node name="Bubble" parent="World" unique_id=584058430 instance=ExtResource("4_2xucn")]
-position = Vector2(582, 305)
+position = Vector2(1545.0001, -336)
 
 [node name="BubbleSpawner" parent="World" unique_id=870790478 instance=ExtResource("5_2xucn")]
-position = Vector2(698, 415)
+position = Vector2(1661.0001, -226)
 rate = 0.75
 angle_range_degree = 30.0
 
+[node name="Diodon" parent="World" unique_id=325988343 instance=ExtResource("11_m7sb5")]
+position = Vector2(824, -355)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=187618121]
 
-[node name="BubbleCounter" parent="CanvasLayer" unique_id=870930951 instance=ExtResource("6_2xucn")]
+[node name="BubbleCounter" parent="CanvasLayer" unique_id=870930951 node_paths=PackedStringArray("timer") instance=ExtResource("6_2xucn")]
 anchors_preset = -1
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 204.0
 offset_bottom = 204.0
+timer = NodePath("../../World/CharacterController/O2Counter")
 
 [editable path="World/CharacterController"]

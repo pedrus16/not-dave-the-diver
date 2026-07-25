@@ -114,3 +114,4 @@ func kill() -> void:
 	_dead = true
 	sprite.animation = "dying"
 	disable_controls = true
+	rigidBody2D.add_constant_force(-_last_input * movePower)

@@ -7,7 +7,12 @@ class_name Buoyancy extends Node
 @export var area2D: Area2D
 
 ## Amount of buoyancy (force applied). A negative value makes the body sink.
-@export var buoyancy := 10.0
+@export var buoyancy := 10.0:
+	set(value):
+		buoyancy = value
+		if rigidBody2D and not _buoyancy_applied:
+			rigidBody2D.add_constant_force(Vector2(0, -buoyancy))
+			_buoyancy_applied = true
 
 var _buoyancy_applied := false
 

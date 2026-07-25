@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://b56q2ilrsxwhc"]
+
+[ext_resource type="Texture2D" uid="uid://dlvygta58qecd" path="res://scenes/entities/diodon/frames/Diodon_Qui_Gonfle-4.png" id="1_n5udd"]
+[ext_resource type="Script" uid="uid://b263kp20ttajk" path="res://scenes/entities/diodon/diodon.gd" id="1_qo8a2"]
+[ext_resource type="Texture2D" uid="uid://dkupwnghtxafa" path="res://scenes/entities/diodon/frames/Diodon_Plat_Nage-1.png" id="2_bjpki"]
+[ext_resource type="Texture2D" uid="uid://b2p5pmcr06cs3" path="res://scenes/entities/diodon/frames/Diodon_Plat_Nage-2.png" id="3_14coh"]
+[ext_resource type="Texture2D" uid="uid://cxe3advagfypx" path="res://scenes/entities/diodon/frames/Diodon_Plat_Nage-3.png" id="4_qo8a2"]
+[ext_resource type="Texture2D" uid="uid://bw3yv6tgxl30l" path="res://scenes/entities/diodon/frames/Diodon_Plat_Nage-4.png" id="5_0rj54"]
+[ext_resource type="Script" uid="uid://3n7r8juui21u" path="res://src/buoyancy.gd" id="6_bjpki"]
+[ext_resource type="Script" uid="uid://cbfyng2ojjdy2" path="res://src/entity/effects/o2_delta_effect.gd" id="7_14coh"]
+[ext_resource type="Script" uid="uid://bdyaxfsh1d72t" path="res://src/entity/effects/push_back_effect.gd" id="9_0rj54"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n5udd"]
+bounce = 0.8
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n5udd")
+}],
+"loop": 1,
+"name": &"blowed_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bjpki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_14coh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qo8a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0rj54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qo8a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_14coh")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 24.020824
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 54.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_57qmd"]
+radius = 104.0
+
+[sub_resource type="Animation" id="Animation_qo8a2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0rj54"]
+resource_name = "blow"
+length = 2.2333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7, 1.8666667, 2, 2.1, 2.1666667, 2.2),
+"transitions": PackedFloat32Array(0.99999887, 1.0000048, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.22, 0.158), Vector2(0.3, 0.45), Vector2(0.45, 0.3), Vector2(0.4, 0.42), Vector2(0.41, 0.4), Vector2(0.4, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.7666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idle", &"blowed_idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:scale")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_du1ts"]
+_data = {
+&"RESET": SubResource("Animation_qo8a2"),
+&"blow": SubResource("Animation_0rj54")
+}
+
+[node name="Diodon" type="RigidBody2D" unique_id=325988343]
+physics_material_override = SubResource("PhysicsMaterial_n5udd")
+script = ExtResource("1_qo8a2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1493464933]
+unique_name_in_owner = true
+position = Vector2(6, 5)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1381124521]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=366818938]
+collision_layer = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=153520407]
+shape = SubResource("CircleShape2D_yf5fn")
+
+[node name="Buoyancy" type="Node" parent="." unique_id=122777120 node_paths=PackedStringArray("rigidBody2D")]
+script = ExtResource("6_bjpki")
+rigidBody2D = NodePath("..")
+buoyancy = 0.0
+metadata/_custom_type_script = "uid://3n7r8juui21u"
+
+[node name="O2DeltaEffect" type="Node" parent="." unique_id=2138932931 node_paths=PackedStringArray("collision_object")]
+script = ExtResource("7_14coh")
+o2_delta = -5.0
+mode = 1
+collision_object = NodePath("../Area2D")
+metadata/_custom_type_script = "uid://cbfyng2ojjdy2"
+
+[node name="AggroArea" type="Area2D" parent="." unique_id=2112616518]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea" unique_id=1093962494]
+shape = SubResource("CircleShape2D_57qmd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=758200493]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_du1ts")
+
+[node name="PushBackEffect" type="Node" parent="." unique_id=369026111 node_paths=PackedStringArray("collision_object")]
+script = ExtResource("9_0rj54")
+collision_object = NodePath("../Area2D")
+metadata/_custom_type_script = "uid://bdyaxfsh1d72t"
+
+[connection signal="body_entered" from="AggroArea" to="." method="_on_aggro_area_body_entered"]
