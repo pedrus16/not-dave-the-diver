@@ -19,20 +19,28 @@ func spawn_entity(scene: PackedScene) -> Node2D:
 
 ## Instantiate an entity in this spot, by randomly picking one from available_entities.
 func populate(rng: RandomNumberGenerator) -> void:
-	if available_entities == null :
+	if available_entities == null:
 		push_warning("null available_entities in %s" % get_path())
 		return
 
 	if available_entities.entities.is_empty():
 		return
 	
+	var matching_entities = available_entities.entities.filter(
+		func(entity: EntityListEntry):
+			return absf(global_rotation_degrees) <= entity.max_vertical_angle
+	)
+	
+	if matching_entities.is_empty():
+		return
+	
 	var weights := PackedFloat32Array()
-	weights.resize(available_entities.entities.size())
+	weights.resize(matching_entities.size())
 	
-	for i in range(available_entities.entities.size()):
-		weights[i] = available_entities.entities[i].weight
+	for i in range(matching_entities.size()):
+		weights[i] = matching_entities[i].weight
 	
-	var picked_entities := available_entities.entities[rng.rand_weighted(weights)] as EntityListEntry
+	var picked_entities := matching_entities[rng.rand_weighted(weights)] as EntityListEntry
 	
 	if picked_entities.scene == null:
 		# The empty entity is valid, so we return without error.

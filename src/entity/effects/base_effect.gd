@@ -17,6 +17,8 @@ var _already_triggered := false
 func _ready() -> void:
 	collision_object.body_entered.connect(_on_body_entered)
 	collision_object.body_exited.connect(_on_body_exited)
+	collision_object.area_entered.connect(_on_body_entered)
+	collision_object.area_exited.connect(_on_body_exited)
 
 
 func _process(delta: float) -> void:
@@ -50,7 +52,7 @@ func _find_character(body: Node) -> CharacterController:
 	var node := body
 
 	while node:
-		if node is CharacterController && node.rigidBody2D == body:
+		if node is CharacterController and (body is not RigidBody2D or node.rigidBody2D == body):
 			return node
 		
 		node = node.get_parent()

@@ -34,6 +34,7 @@ version_control/autoload_on_startup=true
 [global_group]
 
 air="Air areas where the character movements forces are not applied"
+oxygen_consumer=""
 
 [input]
 

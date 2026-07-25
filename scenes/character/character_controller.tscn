@@ -41,15 +41,14 @@ shape = SubResource("CircleShape2D_tmmmg")
 [node name="Cocotte" parent="RigidBody2D" unique_id=911124559 instance=ExtResource("2_tmmmg")]
 position = Vector2(-3, 4)
 scale = Vector2(0.29296875, 0.29296875)
-animation = &"dying"
-frame = 25
-frame_progress = 1.0
+animation = &"idle"
+frame_progress = 0.0
 
 [node name="ItemsAnchor" type="Node2D" parent="RigidBody2D/Cocotte" unique_id=1993737306]
 position = Vector2(10.24, 109.22667)
 scale = Vector2(3.4133334, 3.4133334)
 
-[node name="BreathArea" type="Area2D" parent="RigidBody2D/Cocotte" unique_id=970908284]
+[node name="BreathArea" type="Area2D" parent="RigidBody2D/Cocotte" unique_id=970908284 groups=["oxygen_consumer"]]
 position = Vector2(10.24, -98.98667)
 scale = Vector2(3.4133334, 3.4133334)
 
