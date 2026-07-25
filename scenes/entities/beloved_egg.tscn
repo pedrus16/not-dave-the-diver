@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cmpgadulgw58c"]
 
-[ext_resource type="Script" uid="uid://cy6lpssdqo6a0" path="res://src/entity/area2d_trigger.gd" id="1_w5fk4"]
 [ext_resource type="Texture2D" uid="uid://6tvhquxebfsg" path="res://scenes/egg/IMG_1923.png" id="2_kiwsf"]
 [ext_resource type="Script" uid="uid://c6adivoj0o54e" path="res://src/entity/effects/pick_effect.gd" id="3_kiwsf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vw8f7"]
+radius = 22.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdns4"]
 radius = 39.1
@@ -11,12 +13,18 @@ radius = 39.1
 atlas = ExtResource("2_kiwsf")
 region = Rect2(307.76804, 570.4197, 107.95212, 133.18768)
 
-[node name="BelovedEgg" type="Area2D" unique_id=1244645963]
-script = ExtResource("1_w5fk4")
-mode = 1
-metadata/_custom_type_script = "uid://cy6lpssdqo6a0"
+[node name="BelovedEgg" type="RigidBody2D" unique_id=1662193688]
+collision_layer = 2
+freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1539654337]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012467965]
+position = Vector2(0, -23.73)
+shape = SubResource("CircleShape2D_vw8f7")
+
+[node name="PickArea" type="Area2D" parent="." unique_id=104114852]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickArea" unique_id=1539654337]
 position = Vector2(0.29299927, -23.532999)
 shape = SubResource("CircleShape2D_jdns4")
 
@@ -25,9 +33,9 @@ position = Vector2(0.29299927, -23.532999)
 scale = Vector2(0.398, 0.398)
 texture = SubResource("AtlasTexture_7wqjo")
 
-[node name="PickEffect" type="Node" parent="." unique_id=465458047 node_paths=PackedStringArray("entity_root")]
+[node name="PickEffect" type="Node" parent="." unique_id=465458047 node_paths=PackedStringArray("root_rigid_body", "collision_object")]
 script = ExtResource("3_kiwsf")
-entity_root = NodePath("..")
+root_rigid_body = NodePath("..")
+mode = 1
+collision_object = NodePath("../PickArea")
 metadata/_custom_type_script = "uid://c6adivoj0o54e"
-
-[connection signal="triggered" from="." to="PickEffect" method="_on_triggered"]

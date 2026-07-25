@@ -1,4 +1,4 @@
-class_name O2DeltaEffect extends Node
+class_name O2DeltaEffect extends BaseEffect
 ## Add or remove time to O2 bottle when _on_triggered is called.
 
 ## O2 to add (or remove if negative).
@@ -8,5 +8,5 @@ class_name O2DeltaEffect extends Node
 @export var o2_delta := 5.0
 
 
-func _on_triggered(character: CharacterController, delta: float) -> void:
+func _on_trigger(character: CharacterController, delta: float) -> void:
 	character.add_o2_delta(o2_delta * delta)

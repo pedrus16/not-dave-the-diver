@@ -1,28 +1,29 @@
-class_name Area2DTrigger extends Area2D
-## Triggers the `triggered` signal when interacting with the player.
-
-## The area was triggered.
-##
-## delta is the duration for which the trigger occured.
-## For OnEnter and Oneshot modes, it is equal to 1.0.
-signal triggered(character: CharacterController, delta: float)
+@abstract class_name BaseEffect extends Node
 
 @export var mode := Mode.OnEnter
+@export var collision_object: Area2D
 
 var _entered_character: CharacterController = null
 var _already_triggered := false
 
 
+## Function to implement, called when the effect is triggered.
+##
+## delta is the duration for which the trigger occured.
+## For OnEnter and Oneshot modes, it is equal to 1.0.
+@abstract func _on_trigger(character: CharacterController, delta: float) -> void
+
+
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	collision_object.body_entered.connect(_on_body_entered)
+	collision_object.body_exited.connect(_on_body_exited)
 
 
 func _process(delta: float) -> void:
 	if mode != Mode.WhileInside || !_entered_character:
 		return
 	
-	triggered.emit(_entered_character, delta)
+	_on_trigger(_entered_character, delta)
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -34,7 +35,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if mode == Mode.OnEnter || (mode == Mode.Oneshot && !_already_triggered):
 		_already_triggered = true
-		triggered.emit(character, 1.0)
+		_on_trigger(character, 1.0)
 
 
 func _on_body_exited(body: Node2D) -> void:
