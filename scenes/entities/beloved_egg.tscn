@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cmpgadulgw58c"]
 
 [ext_resource type="Texture2D" uid="uid://6tvhquxebfsg" path="res://scenes/egg/IMG_1923.png" id="2_kiwsf"]
+[ext_resource type="Script" uid="uid://3n7r8juui21u" path="res://src/buoyancy.gd" id="3_8fdbm"]
 [ext_resource type="Script" uid="uid://c6adivoj0o54e" path="res://src/entity/effects/pick_effect.gd" id="3_kiwsf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vw8f7"]
@@ -40,3 +41,9 @@ root_rigid_body = NodePath("..")
 mode = 1
 collision_object = NodePath("../PickArea")
 metadata/_custom_type_script = "uid://c6adivoj0o54e"
+
+[node name="Buoyancy" type="Node" parent="." unique_id=1746376276 node_paths=PackedStringArray("rigidBody2D")]
+script = ExtResource("3_8fdbm")
+rigidBody2D = NodePath("..")
+buoyancy = -50.0
+metadata/_custom_type_script = "uid://3n7r8juui21u"
