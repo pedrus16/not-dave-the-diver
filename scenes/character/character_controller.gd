@@ -6,13 +6,13 @@ class_name CharacterController extends Node2D
 @export var o2_counter: RefillableTimer
 @export var movePower := 240.0
 @export var refill_rate := 2.0
+@export var in_water := false
 
 @export var disable_controls := false
 @export var disable_death := false
 
 var sprite_rotation := 0.0
 var is_swimming := false
-var in_water := false
 var _last_input := Vector2.ZERO
 var _dir_changed_elapsed_time := 0.0
 var _sprite_angle_offset := PI * 0.5

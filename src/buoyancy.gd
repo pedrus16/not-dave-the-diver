@@ -14,8 +14,8 @@ var _buoyancy_applied := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if area2D:
-		area2D.connect("area_entered", _on_area_entered)
-		area2D.connect("area_exited", _on_area_exited)
+		area2D.area_entered.connect(_on_area_entered)
+		area2D.area_exited.connect(_on_area_exited)
 	
 	rigidBody2D.add_constant_force(Vector2(0, -buoyancy))
 	_buoyancy_applied = true
