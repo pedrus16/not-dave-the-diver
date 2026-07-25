@@ -18,13 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://boffb10a7bk3f" path="res://scenes/environment/coraux/corail_eyes_02/corail_eyes_02.tscn" id="13_hcv0d"]
 [ext_resource type="PackedScene" uid="uid://dm2apb8s36kwu" path="res://scenes/environment/coraux/corail_eyes_01/corail_eyes_01.tscn" id="14_mty75"]
 [ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="15_1ibii"]
-[ext_resource type="Script" uid="uid://b1u2vlatsqlt5" path="res://src/entity/entity_list_entry.gd" id="16_20dr1"]
-[ext_resource type="Script" uid="uid://veq4pqsukcgl" path="res://src/entity/entity_list.gd" id="18_ipy0c"]
 [ext_resource type="Resource" uid="uid://djeu6m2fqyiyx" path="res://config/default_wall_entity_list.tres" id="19_s5pk2"]
-
-[sub_resource type="Resource" id="Resource_e8alt"]
-script = ExtResource("18_ipy0c")
-metadata/_custom_type_script = "uid://veq4pqsukcgl"
 
 [node name="Module02" type="Node2D" unique_id=142313231]
 script = ExtResource("1_oxtgf")
@@ -178,5 +172,5 @@ position = Vector2(816, 953)
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
 can_hold_egg = true
-available_entities = SubResource("Resource_e8alt")
+available_entities = ExtResource("19_s5pk2")
 metadata/_custom_type_script = "uid://havu0syglhv2"

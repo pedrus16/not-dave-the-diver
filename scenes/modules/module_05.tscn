@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dm2apb8s36kwu" path="res://scenes/environment/coraux/corail_eyes_01/corail_eyes_01.tscn" id="12_nesk8"]
 [ext_resource type="Texture2D" uid="uid://beh7dfuhy0uyh" path="res://scenes/environment/coraux/corail/corail_02.png" id="14_vbwnd"]
 [ext_resource type="Texture2D" uid="uid://b4ongojkjfkht" path="res://scenes/environment/coraux/corail/corail_03.png" id="15_gx3gv"]
+[ext_resource type="Script" uid="uid://havu0syglhv2" path="res://src/entity/entity_spot.gd" id="15_vbwnd"]
+[ext_resource type="Resource" uid="uid://djeu6m2fqyiyx" path="res://config/default_wall_entity_list.tres" id="16_gx3gv"]
 
 [node name="Module05" type="Node2D" unique_id=2042728769]
 script = ExtResource("1_mt2dw")
@@ -144,3 +146,11 @@ scale = Vector2(0.22900002, 0.19299999)
 position = Vector2(1033, 741.99994)
 rotation = 0.2617994
 scale = Vector2(0.366, 0.308)
+
+[node name="EntitySpot" type="Marker2D" parent="." unique_id=2023717190]
+position = Vector2(564, 808)
+gizmo_extents = 114.8
+script = ExtResource("15_vbwnd")
+can_hold_egg = true
+available_entities = ExtResource("16_gx3gv")
+metadata/_custom_type_script = "uid://havu0syglhv2"
