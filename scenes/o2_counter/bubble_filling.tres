@@ -60,6 +60,12 @@ operator = 2
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_nu4ws"]
 
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_dev3l"]
+parameter_name = "alpha"
+hint = 1
+default_value_enabled = true
+default_value = 1.0
+
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_pniwu"]
 expanded_output_ports = [0]
 texture = ExtResource("1_fnngr")
@@ -78,6 +84,7 @@ input_name = "uv"
 [resource]
 mode = 1
 flags/light_only = false
+preview_params/alpha = "1.0"
 nodes/fragment/0/position = Vector2(3046.6802, 404.1234)
 nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_pniwu")
 nodes/fragment/4/position = Vector2(49.399696, 664.01385)
@@ -123,4 +130,6 @@ nodes/fragment/26/node = SubResource("VisualShaderNodeVectorOp_pniwu")
 nodes/fragment/26/position = Vector2(1353.4084, -195.63686)
 nodes/fragment/28/node = SubResource("VisualShaderNodeVectorCompose_nu4ws")
 nodes/fragment/28/position = Vector2(810.3225, 1436.5277)
-nodes/fragment/connections = PackedInt32Array(9, 2, 10, 0, 4, 4, 11, 0, 12, 0, 11, 1, 10, 0, 13, 0, 13, 0, 12, 0, 14, 0, 15, 0, 15, 0, 13, 1, 16, 0, 17, 0, 17, 0, 4, 0, 7, 4, 18, 0, 11, 0, 18, 1, 18, 0, 19, 0, 7, 4, 20, 0, 8, 0, 20, 1, 18, 0, 22, 0, 21, 0, 22, 1, 20, 0, 23, 0, 22, 0, 23, 1, 25, 0, 26, 1, 18, 0, 26, 0, 24, 0, 0, 0, 19, 0, 0, 1, 23, 0, 24, 4, 26, 0, 24, 3, 28, 0, 24, 0, 14, 0, 28, 0, 14, 0, 28, 1, 14, 0, 28, 2)
+nodes/fragment/29/node = SubResource("VisualShaderNodeFloatParameter_dev3l")
+nodes/fragment/29/position = Vector2(1853.3334, 866.6667)
+nodes/fragment/connections = PackedInt32Array(9, 2, 10, 0, 4, 4, 11, 0, 12, 0, 11, 1, 10, 0, 13, 0, 13, 0, 12, 0, 14, 0, 15, 0, 15, 0, 13, 1, 16, 0, 17, 0, 17, 0, 4, 0, 7, 4, 18, 0, 11, 0, 18, 1, 18, 0, 19, 0, 7, 4, 20, 0, 8, 0, 20, 1, 18, 0, 22, 0, 21, 0, 22, 1, 20, 0, 23, 0, 22, 0, 23, 1, 25, 0, 26, 1, 18, 0, 26, 0, 24, 0, 0, 0, 19, 0, 0, 1, 23, 0, 24, 4, 26, 0, 24, 3, 28, 0, 24, 0, 14, 0, 28, 0, 14, 0, 28, 1, 14, 0, 28, 2, 29, 0, 19, 2)
