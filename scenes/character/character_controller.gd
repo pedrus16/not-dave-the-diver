@@ -93,7 +93,11 @@ func add_o2_delta(seconds: float) -> void:
 	if seconds < 0.0 && !_animation_overriden:
 		sprite.play(&"hurted")
 		_animation_overriden = true
-		sprite.animation_finished.connect(func(): _animation_overriden = false, CONNECT_ONE_SHOT)
+		sprite.animation_finished.connect(
+			func():
+				_animation_overriden = false
+				sprite.play()
+		, CONNECT_ONE_SHOT)
 
 	o2_counter.add_time(seconds)
 
