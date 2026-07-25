@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://daw85aqcwu1da" path="res://scenes/game_scene/background_music_player.gd" id="16_6xlfg"]
 [ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="16_40lml"]
 [ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="17_das7k"]
+[ext_resource type="PackedScene" uid="uid://c58tfh642e73h" path="res://scenes/o2_counter/o2_counter.tscn" id="16_40lml"]
 
 [sub_resource type="Gradient" id="Gradient_k0n85"]
 offsets = PackedFloat32Array(0.027173912, 0.3423913, 0.67210144, 1)
@@ -37,7 +38,10 @@ colors = PackedColorArray(0.27921075, 0.52946955, 0.4798261, 1, 0.43009743, 0.70
 gradient = SubResource("Gradient_40lml")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(1917, 873)
+size = Vector2(1917, 858)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xlfg"]
+size = Vector2(1917, 888)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hi5s7"]
 
@@ -316,8 +320,8 @@ region_rect = Rect2(0, 0, 2000, 3000)
 [node name="Waves" parent="." unique_id=627467438 instance=ExtResource("17_das7k")]
 position = Vector2(191, -2)
 
-[node name="Air" type="Area2D" parent="." unique_id=90016433 groups=["air"]]
-position = Vector2(959, -430)
+[node name="GravityArea" type="Area2D" parent="." unique_id=1417413745]
+position = Vector2(960, -397)
 collision_layer = 3
 collision_mask = 3
 input_pickable = false
@@ -325,10 +329,17 @@ gravity_space_override = 3
 linear_damp_space_override = 3
 angular_damp_space_override = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Air" unique_id=1593736066]
-light_mask = 0
-position = Vector2(9, -74)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityArea" unique_id=71317740]
+position = Vector2(-5, -78)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AirArea" type="Area2D" parent="." unique_id=595086112 groups=["air"]]
+position = Vector2(936, -395)
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AirArea" unique_id=16910279]
+position = Vector2(3, -60)
+shape = SubResource("RectangleShape2D_6xlfg")
 
 [node name="Cliffs" type="StaticBody2D" parent="." unique_id=26798520]
 position = Vector2(311, -141)
@@ -419,5 +430,10 @@ region_rect = Rect2(0, 0, 50000, 50000)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=869254139]
 environment = SubResource("Environment_dp0gw")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=354840347]
+
+[node name="O2Counter" parent="HUD" unique_id=142397266 node_paths=PackedStringArray("timer") instance=ExtResource("16_40lml")]
+timer = NodePath("../../CharacterController/O2Counter")
 
 [editable path="CharacterController"]

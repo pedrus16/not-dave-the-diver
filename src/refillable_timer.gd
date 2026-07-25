@@ -3,6 +3,9 @@ class_name RefillableTimer extends Node
 ## Emitted when the timer reaches the end.
 signal timeout
 
+## Max duration in seconds
+@export var max_duration := 10.0
+
 ## Initial duration in seconds
 @export var initial_duration := 10.0
 
@@ -38,4 +41,8 @@ func start() -> void:
 
 ## Add time to the timer
 func add_time(seconds: float) -> void:
-	time_left += seconds
+	time_left = min(max_duration, time_left + seconds)
+	# Restarting the timer when adding time
+	if autostart:
+		_started = true
+	

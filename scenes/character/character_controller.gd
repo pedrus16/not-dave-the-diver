@@ -6,11 +6,13 @@ class_name CharacterController extends Node2D
 @export var o2_counter: RefillableTimer
 @export var movePower: float = 240.0
 @export var buoyancy: float = 10.0
+@export var refill_rate: float = 2.0
 
 @export var disable_controls: bool = false
 
 var sprite_rotation: float = 0.0
 var is_swimming: bool = false
+var in_water: bool = false
 var _last_input_angle: float = 0.0
 var _dir_changed_elapsed_time: float = 0.0
 var _sprite_angle_offset = PI * 0.5
@@ -49,6 +51,10 @@ func _process(delta: float) -> void:
 		sprite.animation = "swimming"
 	else:
 		sprite.animation = "idle"
+		
+	if not in_water:
+		o2_counter.add_time(refill_rate * delta)
+		
 
 
 ## Adds a positive or negative number of seconds to o2 timer.
@@ -60,5 +66,13 @@ func take_item(item: Node2D) -> void:
 	inventory.take_item(item)
 
 
-func _on_rigid_body_2d_body_entered(body: Node) -> void:
-	pass
+func _on_breath_area_area_entered(area: Area2D) -> void:
+	if not area.is_in_group("air"): return
+	
+	in_water = false
+
+
+func _on_breath_area_area_exited(area: Area2D) -> void:
+	if not area.is_in_group("air"): return
+	
+	in_water = true
