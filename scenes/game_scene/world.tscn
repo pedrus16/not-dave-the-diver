@@ -392,6 +392,8 @@ freeze = true
 linear_velocity = Vector2(20, -5)
 angular_velocity = 0.029147
 
+[node name="ItemsRoot" type="Node2D" parent="." unique_id=424878046]
+
 [node name="CharacterController" parent="." unique_id=1427967305 instance=ExtResource("2_yvi15")]
 position = Vector2(467, -396)
 movePower = 480.0
@@ -412,6 +414,9 @@ color = Color(0.69055694, 0.86859334, 0.7268227, 1)
 energy = 1.3
 blend_mode = 2
 texture = SubResource("GradientTexture2D_smo5t")
+
+[node name="CharacterInventory" parent="CharacterController" index="2" unique_id=971453168 node_paths=PackedStringArray("items_root")]
+items_root = NodePath("../../ItemsRoot")
 
 [node name="AnimationEgg" type="AnimationPlayer" parent="." unique_id=1199442682]
 root_node = NodePath("../AnimationChicken")

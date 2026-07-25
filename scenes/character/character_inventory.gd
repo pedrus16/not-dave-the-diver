@@ -11,9 +11,15 @@ const ROPE_SEGMENT_COUNT := 4
 var _dragged_items: Array[ItemAndRope] = []
 
 
+func _ready() -> void:
+	if items_root == null:
+		push_warning("Using CharacterController as items_root")
+		items_root = get_parent()
+
+
 func take_item(item: Node2D, drop_callback: Callable) -> void:
 	item.reparent(items_root)
-
+	
 	var angle := Vector2.DOWN.angle_to(item.global_position - items_anchor.global_position)
 	item.global_rotation = angle
 	

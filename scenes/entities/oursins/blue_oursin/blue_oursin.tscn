@@ -36,31 +36,31 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_jc4cr"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("1_kirgn")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("2_i7mwa")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("3_n4lxp")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("4_ffk6y")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("5_0t2g3")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("6_c3vv2")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("7_c3p3r")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("8_5mfmv")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("9_rspll")
 }, {
 "duration": 1.0,
@@ -86,7 +86,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack",
-"speed": 15.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -144,6 +144,5 @@ animations = [{
 
 [node name="BlueOursin" type="AnimatedSprite2D" unique_id=727903909]
 sprite_frames = SubResource("SpriteFrames_jc4cr")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.55115426

@@ -59,5 +59,9 @@ func dangling_connectors() -> Array[ModuleConnector]:
 	
 
 func populate_entities(rng: RandomNumberGenerator) -> void:
-	for spot in entity_spots:
+	var entity_count := (rng.randf() ** 0.5) * 3 + 1
+	
+	var spots_to_populate := entity_spots.duplicate().slice(0, min(entity_count, entity_spots.size()))
+	
+	for spot in spots_to_populate:
 		spot.populate(rng)

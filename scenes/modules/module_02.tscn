@@ -153,8 +153,46 @@ script = ExtResource("15_1ibii")
 available_entities = ExtResource("19_s5pk2")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
+[node name="EntitySpot5" type="Marker2D" parent="." unique_id=2072557051]
+position = Vector2(-43.999985, 493)
+rotation = 0.6609289
+gizmo_extents = 82.8
+script = ExtResource("15_1ibii")
+available_entities = ExtResource("19_s5pk2")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot6" type="Marker2D" parent="." unique_id=1297745744]
+position = Vector2(426.00003, 980.00006)
+rotation = 0.16529262
+gizmo_extents = 82.8
+script = ExtResource("15_1ibii")
+available_entities = ExtResource("19_s5pk2")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot7" type="Marker2D" parent="." unique_id=1629521210]
+position = Vector2(548, 569)
+rotation = -2.8863983
+gizmo_extents = 82.8
+script = ExtResource("15_1ibii")
+available_entities = ExtResource("19_s5pk2")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot8" type="Marker2D" parent="." unique_id=955440420]
+position = Vector2(884, 692)
+rotation = -1.9078859
+gizmo_extents = 82.8
+script = ExtResource("15_1ibii")
+available_entities = ExtResource("19_s5pk2")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
 [node name="EntitySpot2" type="Marker2D" parent="." unique_id=1387087675]
 position = Vector2(171, 654)
+gizmo_extents = 82.8
+script = ExtResource("15_1ibii")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot9" type="Marker2D" parent="." unique_id=2100484417]
+position = Vector2(589, 810)
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
 metadata/_custom_type_script = "uid://havu0syglhv2"

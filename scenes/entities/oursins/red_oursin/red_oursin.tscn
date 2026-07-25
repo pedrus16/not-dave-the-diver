@@ -36,31 +36,31 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_78nr2"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("1_6kd5d")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("2_kfbw6")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("3_awybw")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("4_t5qtw")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("5_nfxx6")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("6_nph82")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("7_ef3qh")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("8_bq6rq")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("9_i6566")
 }, {
 "duration": 1.0,
@@ -86,7 +86,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack",
-"speed": 15.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -144,6 +144,5 @@ animations = [{
 
 [node name="RedOursin" type="AnimatedSprite2D" unique_id=986655947]
 sprite_frames = SubResource("SpriteFrames_78nr2")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.7101046
