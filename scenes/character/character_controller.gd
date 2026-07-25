@@ -70,9 +70,11 @@ func _on_breath_area_area_entered(area: Area2D) -> void:
 	if not area.is_in_group("air"): return
 	
 	in_water = false
+	rigidBody2D.gravity_scale = 1.0
 
 
 func _on_breath_area_area_exited(area: Area2D) -> void:
 	if not area.is_in_group("air"): return
 	
 	in_water = true
+	rigidBody2D.gravity_scale = 0.0

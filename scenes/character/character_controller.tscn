@@ -21,6 +21,8 @@ sprite = NodePath("RigidBody2D/Cocotte")
 inventory = NodePath("CharacterInventory")
 o2_counter = NodePath("O2Counter")
 
+[node name="ItemsRoot" type="Node2D" parent="." unique_id=1152148003]
+
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1615751047]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_sm8h1")
@@ -30,8 +32,6 @@ max_contacts_reported = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=648187429]
 shape = SubResource("CircleShape2D_tmmmg")
-
-[node name="ItemsRoot" type="Node2D" parent="RigidBody2D" unique_id=1152148003]
 
 [node name="Cocotte" parent="RigidBody2D" unique_id=911124559 instance=ExtResource("2_tmmmg")]
 position = Vector2(-3, 4)
@@ -56,7 +56,7 @@ metadata/_custom_type_script = "uid://7t5sh57io46g"
 
 [node name="CharacterInventory" type="Node" parent="." unique_id=971453168 node_paths=PackedStringArray("items_root", "items_anchor")]
 script = ExtResource("4_x54mg")
-items_root = NodePath("../RigidBody2D/ItemsRoot")
+items_root = NodePath("../ItemsRoot")
 items_anchor = NodePath("../RigidBody2D/Cocotte/ItemsAnchor")
 metadata/_custom_type_script = "uid://c036si0iwdhi2"
 
