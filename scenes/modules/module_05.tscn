@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bmb0qe1twg6d"]
 
 [ext_resource type="Script" uid="uid://b123m5gjglbmt" path="res://src/procedural/level_module.gd" id="1_mt2dw"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="2_tesov"]
 [ext_resource type="PackedScene" uid="uid://pwl6unbme06u" path="res://scenes/environment/rocks/rock_01.tscn" id="2_wl2tj"]
 [ext_resource type="PackedScene" uid="uid://bnxt2r8ha73q6" path="res://scenes/environment/rocks/rock_02.tscn" id="3_jt8p7"]
 [ext_resource type="PackedScene" uid="uid://bu0j8claeb2ac" path="res://scenes/environment/rocks/rock_03.tscn" id="4_sdek3"]
@@ -9,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cpnulttlstnkt" path="res://scenes/environment/rocks/rock_06.tscn" id="7_gx3gv"]
 [ext_resource type="Texture2D" uid="uid://2e1ipbv6yonl" path="res://scenes/environment/rocks/rock_corail_03.png" id="8_47844"]
 [ext_resource type="PackedScene" uid="uid://cihdmbqob5mep" path="res://scenes/environment/coraux/corail/corail_01.tscn" id="9_6d860"]
-[ext_resource type="PackedScene" uid="uid://dyi75dhme185n" path="res://dev_scenes/level_generation/module_connector.tscn" id="10_42mhk"]
 [ext_resource type="PackedScene" uid="uid://cvfsk1jfxnxar" path="res://scenes/environment/coraux/corail/corail_03.tscn" id="11_72vcy"]
 [ext_resource type="PackedScene" uid="uid://dm2apb8s36kwu" path="res://scenes/environment/coraux/corail_eyes_01/corail_eyes_01.tscn" id="12_nesk8"]
 [ext_resource type="Texture2D" uid="uid://beh7dfuhy0uyh" path="res://scenes/environment/coraux/corail/corail_02.png" id="14_vbwnd"]
@@ -19,7 +19,7 @@
 script = ExtResource("1_mt2dw")
 metadata/_custom_type_script = "uid://b123m5gjglbmt"
 
-[node name="ModuleConnector" parent="." unique_id=141346909 instance=ExtResource("10_42mhk")]
+[node name="ModuleConnector" parent="." unique_id=141346909 instance=ExtResource("2_tesov")]
 position = Vector2(89, 277)
 rotation = 1.5707964
 location = 2
@@ -109,12 +109,12 @@ scale = Vector2(0.482, 0.507)
 position = Vector2(1644.0001, 2.000061)
 rotation = 2.3561945
 
-[node name="ModuleConnector2" parent="." unique_id=600099157 instance=ExtResource("10_42mhk")]
+[node name="ModuleConnector2" parent="." unique_id=519366315 instance=ExtResource("2_tesov")]
 position = Vector2(1799, 242)
 rotation = -1.5707963
 location = 3
 
-[node name="ModuleConnector3" parent="." unique_id=78291950 instance=ExtResource("10_42mhk")]
+[node name="ModuleConnector3" parent="." unique_id=914634522 instance=ExtResource("2_tesov")]
 position = Vector2(1676, 778)
 rotation = -1.5707963
 location = 3
