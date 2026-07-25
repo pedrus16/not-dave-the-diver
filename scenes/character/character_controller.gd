@@ -118,5 +118,4 @@ func kill() -> void:
 	disable_controls = true
 	rigidBody2D.add_constant_force(-_last_input * movePower)
 	
-	await sprite.animation_finished
 	died.emit()
