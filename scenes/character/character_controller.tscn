@@ -25,8 +25,7 @@ sprite = NodePath("RigidBody2D/Cocotte")
 inventory = NodePath("CharacterInventory")
 o2_counter = NodePath("O2Counter")
 refill_rate = 5.0
-
-[node name="ItemsRoot" type="Node2D" parent="." unique_id=1152148003]
+disable_death = true
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1615751047]
 collision_layer = 2
@@ -75,9 +74,8 @@ initial_duration = 20.0
 autostart = true
 metadata/_custom_type_script = "uid://7t5sh57io46g"
 
-[node name="CharacterInventory" type="Node" parent="." unique_id=971453168 node_paths=PackedStringArray("items_root", "hen_rigid_body", "items_anchor")]
+[node name="CharacterInventory" type="Node" parent="." unique_id=971453168 node_paths=PackedStringArray("hen_rigid_body", "items_anchor")]
 script = ExtResource("4_x54mg")
-items_root = NodePath("../ItemsRoot")
 hen_rigid_body = NodePath("../RigidBody2D")
 items_anchor = NodePath("../RigidBody2D/Cocotte/ItemsAnchor")
 metadata/_custom_type_script = "uid://c036si0iwdhi2"
