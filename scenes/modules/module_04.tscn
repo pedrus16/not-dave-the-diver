@@ -156,7 +156,7 @@ script = ExtResource("15_swo0r")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
 [node name="EntitySpot5" type="Marker2D" parent="." unique_id=684318185]
-position = Vector2(220, 672)
+position = Vector2(226, 681)
 gizmo_extents = 82.8
 script = ExtResource("15_swo0r")
 can_hold_egg = true
@@ -184,6 +184,7 @@ position = Vector2(-184, 679)
 rotation = 6.200074
 gizmo_extents = 82.8
 script = ExtResource("15_swo0r")
+can_hold_egg = true
 available_entities = ExtResource("18_swo0r")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
@@ -192,6 +193,7 @@ position = Vector2(878.0001, 675.99994)
 rotation = 6.3204384
 gizmo_extents = 82.8
 script = ExtResource("15_swo0r")
+can_hold_egg = true
 available_entities = ExtResource("18_swo0r")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 

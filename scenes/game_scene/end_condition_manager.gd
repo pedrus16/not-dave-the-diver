@@ -28,6 +28,8 @@ func _play_victory() -> void:
 
 	_hide_bubble_counter()
 	
+	character.disable_controls = true
+	
 	_ended = true
 	victory.emit()
 

@@ -212,3 +212,12 @@ script = ExtResource("15_1ibii")
 can_hold_egg = true
 available_entities = ExtResource("19_s5pk2")
 metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot10" type="Marker2D" parent="." unique_id=2113842256]
+position = Vector2(1109, 985)
+rotation = -0.28617463
+gizmo_extents = 82.8
+script = ExtResource("15_1ibii")
+can_hold_egg = true
+available_entities = ExtResource("19_s5pk2")
+metadata/_custom_type_script = "uid://havu0syglhv2"

@@ -10,19 +10,20 @@
 [sub_resource type="Resource" id="Resource_nxnd3"]
 script = ExtResource("1_jvmt8")
 scene = ExtResource("2_pl5yt")
-weight = 0.3
+weight = 0.6
 depths = 4294967292
 metadata/_custom_type_script = "uid://b1u2vlatsqlt5"
 
 [sub_resource type="Resource" id="Resource_guf1m"]
 script = ExtResource("1_jvmt8")
 scene = ExtResource("2_bit5l")
-weight = 0.5
+weight = 0.8
 metadata/_custom_type_script = "uid://b1u2vlatsqlt5"
 
 [sub_resource type="Resource" id="Resource_jujjm"]
 script = ExtResource("1_jvmt8")
 scene = ExtResource("3_bit5l")
+max_vertical_angle = 35.0
 metadata/_custom_type_script = "uid://b1u2vlatsqlt5"
 
 [sub_resource type="Resource" id="Resource_6ys4o"]

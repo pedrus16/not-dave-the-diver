@@ -2,36 +2,38 @@
 
 [ext_resource type="PhysicsMaterial" uid="uid://d266lk4iah3p4" path="res://config/items_physics_material.tres" id="1_1sgol"]
 [ext_resource type="Script" uid="uid://c6adivoj0o54e" path="res://src/entity/effects/pick_effect.gd" id="2_pn31o"]
-[ext_resource type="Texture2D" uid="uid://ddxjecbceqbsr" path="res://scenes/entities/anvil.png" id="2_s0nbs"]
 [ext_resource type="Script" uid="uid://3n7r8juui21u" path="res://src/buoyancy.gd" id="3_pn31o"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdns4"]
-size = Vector2(126, 61)
+[ext_resource type="Texture2D" uid="uid://bawri81ek7rhe" path="res://scenes/entities/anvil.png" id="5_ktob1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1sgol"]
-radius = 47.0
-height = 168.0
+radius = 55.0
+height = 186.0
 
 [node name="Anvil" type="RigidBody2D" unique_id=1468967216]
 collision_layer = 2
 physics_material_override = ExtResource("1_1sgol")
+freeze = true
 
-[node name="Anvil" type="Sprite2D" parent="." unique_id=1741420592]
-position = Vector2(-4.000004, -30)
-scale = Vector2(0.20892859, 0.20892859)
-texture = ExtResource("2_s0nbs")
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2062406171]
+position = Vector2(-9.600006, -8.619194)
+scale = Vector2(0.32952324, 0.32952324)
+texture = ExtResource("5_ktob1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=820771292]
-position = Vector2(-2, -29.5)
-shape = SubResource("RectangleShape2D_jdns4")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1126379186]
+position = Vector2(0.3999939, 42.380814)
+polygon = PackedVector2Array(-41, -86, 49, -86, 62, -65, 13, -38, 33, 1, -30, 1, -15, -35, -74, -61, -86, -80)
 
 [node name="PickArea" type="Area2D" parent="." unique_id=1087280163]
+position = Vector2(0.3999939, 36.380814)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickArea" unique_id=1748693508]
-position = Vector2(0, -28)
+position = Vector2(-7, -41)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_1sgol")
+
+[node name="EntityAnchor" type="Node2D" parent="." unique_id=1255378818]
+position = Vector2(0, 35)
 
 [node name="PickEffect" type="Node" parent="." unique_id=1006999124 node_paths=PackedStringArray("root_rigid_body", "collision_object")]
 script = ExtResource("2_pn31o")

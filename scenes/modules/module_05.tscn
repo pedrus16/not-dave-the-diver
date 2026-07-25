@@ -155,6 +155,22 @@ can_hold_egg = true
 available_entities = ExtResource("16_gx3gv")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 
+[node name="EntitySpot11" type="Marker2D" parent="." unique_id=1373295460]
+position = Vector2(866, 756)
+gizmo_extents = 114.8
+script = ExtResource("15_vbwnd")
+can_hold_egg = true
+available_entities = ExtResource("16_gx3gv")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
+[node name="EntitySpot12" type="Marker2D" parent="." unique_id=1690140581]
+position = Vector2(303, 692)
+gizmo_extents = 114.8
+script = ExtResource("15_vbwnd")
+can_hold_egg = true
+available_entities = ExtResource("16_gx3gv")
+metadata/_custom_type_script = "uid://havu0syglhv2"
+
 [node name="EntitySpot2" type="Marker2D" parent="." unique_id=719702249]
 position = Vector2(256, 441)
 rotation = 1.2744006
