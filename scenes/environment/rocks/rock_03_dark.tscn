@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bp828g20sw4tj"]
+
+[ext_resource type="Shader" uid="uid://cu1yv35ncwc5g" path="res://scenes/environment/canvas_texture.tres" id="1_67u8f"]
+[ext_resource type="Texture2D" uid="uid://2e1ipbv6yonl" path="res://scenes/environment/rocks/rock_corail_03.png" id="2_tqdjm"]
+[ext_resource type="PackedScene" uid="uid://b7asv38u3ol7r" path="res://scenes/environment/coraux/corail/corail_03_dark.tscn" id="3_106is"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efe1y"]
+shader = ExtResource("1_67u8f")
+shader_parameter/ColorParameter = Color(0.03137255, 0.07450981, 0.09019608, 1)
+shader_parameter/alpha = 1.0
+
+[node name="Rock03Dark" type="Sprite2D" unique_id=289249423]
+z_index = 2
+material = SubResource("ShaderMaterial_efe1y")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_tqdjm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=426951892]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=482315311]
+polygon = PackedVector2Array(18, -296, 234, -306, 312, -214, 364, -66, 318, 24, 270, 102, 310, 190, 268, 228, 234, 308, 34, 342, -226, 294, -290, 140, -380, 10, -358, -92, -216, -160, -152, -238)
+
+[node name="Corail03Dark" parent="." unique_id=614684892 instance=ExtResource("3_106is")]
+z_index = 2
+position = Vector2(220, -258)
+
+[node name="Corail03Dark2" parent="." unique_id=1139393806 instance=ExtResource("3_106is")]
+z_index = 2
+position = Vector2(224, -294)
+flip_h = true
+
+[node name="Corail03Dark3" parent="." unique_id=1800023474 instance=ExtResource("3_106is")]
+z_index = 2
+position = Vector2(136, -334)
+
+[node name="Corail03Dark4" parent="." unique_id=214998631 instance=ExtResource("3_106is")]
+z_index = 2
+position = Vector2(-48, -300)
+
+[node name="Corail03Dark5" parent="." unique_id=1629936329 instance=ExtResource("3_106is")]
+z_index = 2
+position = Vector2(-244, -242)
+
+[node name="Corail03Dark6" parent="." unique_id=1588121668 instance=ExtResource("3_106is")]
+z_index = 2
+position = Vector2(264, 110)
+
+[node name="Corail03Dark7" parent="." unique_id=659470246 instance=ExtResource("3_106is")]
+z_index = 2
+position = Vector2(-346, -108)
