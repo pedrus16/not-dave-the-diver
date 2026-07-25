@@ -9,6 +9,8 @@
 [ext_resource type="Resource" uid="uid://dgkj5jnojkba7" path="res://config/generation_config.tres" id="3_s16c2"]
 [ext_resource type="Texture2D" uid="uid://by7umetuimgg0" path="res://scenes/environment/rocks/rock_03.png" id="4_e5ift"]
 [ext_resource type="Resource" uid="uid://dt8h2eysjrn3f" path="res://config/modules_registry.tres" id="4_yts0w"]
+[ext_resource type="Shader" uid="uid://c5bscnmx8vs13" path="res://scenes/environment/sky/sky.tres" id="6_04jd1"]
+[ext_resource type="Texture2D" uid="uid://xj8vx411rf" path="res://scenes/environment/sky/sky.png" id="6_das7k"]
 [ext_resource type="PackedScene" uid="uid://c7j8k2yf3hy4g" path="res://scenes/egg/egg.tscn" id="7_hi5s7"]
 [ext_resource type="AudioStream" uid="uid://cdpl362rkig0a" path="res://audio/music/Submerged Flight Depth 1.ogg" id="12_3653u"]
 [ext_resource type="AudioStream" uid="uid://06oxjeu4t776" path="res://audio/music/Submerged Flight Depth 2.ogg" id="13_6xlfg"]
@@ -36,6 +38,9 @@ colors = PackedColorArray(0.27921075, 0.52946955, 0.4798261, 1, 0.43009743, 0.70
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_jc4cr"]
 gradient = SubResource("Gradient_40lml")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smo5t"]
+shader = ExtResource("6_04jd1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1917, 858)
@@ -316,6 +321,14 @@ rotation = -1.5707964
 texture = SubResource("GradientTexture1D_jc4cr")
 region_enabled = true
 region_rect = Rect2(0, 0, 2000, 3000)
+
+[node name="Sky" type="Sprite2D" parent="gradient_sky" unique_id=1454287374]
+light_mask = 0
+material = SubResource("ShaderMaterial_smo5t")
+position = Vector2(-555, -52)
+rotation = 1.5707964
+scale = Vector2(0.92, 0.9200006)
+texture = ExtResource("6_das7k")
 
 [node name="Waves" parent="." unique_id=627467438 instance=ExtResource("17_das7k")]
 position = Vector2(214.00002, 3)
