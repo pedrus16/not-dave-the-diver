@@ -11,8 +11,12 @@ func spawn_entity(scene: PackedScene) -> Node2D:
 	if _entity != null:
 		_entity.queue_free()
 	
-	_entity = scene.instantiate()
+	_entity = scene.instantiate() as Node2D
 	add_child(_entity)
+	
+	var anchor := _entity.find_child("EntityAnchor", false) as Node2D
+	if anchor != null:
+		_entity.position = -anchor.position
 	
 	return _entity
 
@@ -28,8 +32,6 @@ func populate(rng: RandomNumberGenerator) -> void:
 	
 	var matching_entities := available_entities.entities.filter(
 		func(entity: EntityListEntry):
-			if entity.max_vertical_angle < 100.0:
-				print(global_rotation_degrees)
 			return absf(global_rotation_degrees) <= entity.max_vertical_angle
 	)
 	

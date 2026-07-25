@@ -22,10 +22,11 @@ physics_material_override = ExtResource("1_8fdbm")
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012467965]
-position = Vector2(0, -23.73)
+position = Vector2(0, -0.72999954)
 shape = SubResource("CircleShape2D_vw8f7")
 
 [node name="PickArea" type="Area2D" parent="." unique_id=104114852]
+position = Vector2(0, 23)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickArea" unique_id=1539654337]
@@ -33,9 +34,12 @@ position = Vector2(0.29299927, -23.532999)
 shape = SubResource("CircleShape2D_jdns4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1441255055]
-position = Vector2(0.29299927, -23.532999)
+position = Vector2(0.29299927, -0.53299904)
 scale = Vector2(0.398, 0.398)
 texture = SubResource("AtlasTexture_7wqjo")
+
+[node name="EntityAnchor" type="Node2D" parent="." unique_id=529028001]
+position = Vector2(0, 24)
 
 [node name="PickEffect" type="Node" parent="." unique_id=465458047 node_paths=PackedStringArray("root_rigid_body", "collision_object")]
 script = ExtResource("3_kiwsf")
