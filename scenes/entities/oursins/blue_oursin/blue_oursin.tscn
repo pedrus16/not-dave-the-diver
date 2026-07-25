@@ -146,4 +146,5 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_jc4cr")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.32776085
+frame = 2
+frame_progress = 0.6284049
