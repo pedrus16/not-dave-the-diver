@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://c58tfh642e73h" path="res://scenes/o2_counter/o2_counter.tscn" id="16_40lml"]
 [ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="17_das7k"]
 [ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="20_smo5t"]
+[ext_resource type="PackedScene" uid="uid://dlxim7mtv1puh" path="res://scenes/o2_counter/bubble_counter.tscn" id="21_dp0gw"]
+[ext_resource type="PackedScene" uid="uid://d11bik32neiih" path="res://scenes/ui/retry.tscn" id="21_rbc4q"]
 
 [sub_resource type="Gradient" id="Gradient_k0n85"]
 offsets = PackedFloat32Array(0.027173912, 0.3423913, 0.67210144, 1)
@@ -442,5 +444,42 @@ region_rect = Rect2(0, 0, 50000, 50000)
 
 [node name="O2Counter" parent="HUD" unique_id=142397266 node_paths=PackedStringArray("timer") instance=ExtResource("16_40lml")]
 timer = NodePath("../../CharacterController/O2Counter")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD" unique_id=1195582691]
+offset_right = 296.0
+offset_bottom = 296.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="BubbleCounter" parent="HUD/MarginContainer" unique_id=870930951 instance=ExtResource("21_dp0gw")]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.6, 0.6)
+stretch_mode = 3
+
+[node name="RetryBackground" type="ColorRect" parent="HUD" unique_id=1741494237]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09019608, 0.011764706, 0.011764706, 0.78431374)
+
+[node name="Retry" parent="HUD/RetryBackground" unique_id=460428931 instance=ExtResource("21_rbc4q")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -980.0
+offset_top = -203.5
+offset_right = 980.0
+offset_bottom = 203.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [editable path="CharacterController"]

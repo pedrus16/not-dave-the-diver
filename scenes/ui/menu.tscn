@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dlmf4qiyu717a"]
+
+[ext_resource type="FontFile" uid="uid://cfji8srb6puup" path="res://scenes/ui/ChelseaMarket-Regular.ttf" id="1_wedc3"]
+[ext_resource type="PackedScene" uid="uid://dgnqrfmctlwdi" path="res://scenes/ui/play.tscn" id="2_c2n5p"]
+
+[node name="Menu" type="Control" unique_id=1169801504]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=685397869]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.45346332, 0.37475127, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=496578547]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=460311115]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Titre" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1657354550]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6098624, 0.9331758, 0.80932516, 1)
+theme_override_fonts/font = ExtResource("1_wedc3")
+theme_override_font_sizes/font_size = 100
+text = "Not Dave the Diver"
+
+[node name="Play" parent="MarginContainer/VBoxContainer" unique_id=460428931 instance=ExtResource("2_c2n5p")]
+layout_mode = 2
+offset_transform_scale = Vector2(0.3, 0.3)
