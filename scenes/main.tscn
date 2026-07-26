@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cnqjuw0d7brfq" path="res://game.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bjq33438jso4j" path="res://scenes/ui/menu_bis.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c3dwrrfykameu" path="res://scenes/fps_counter/fps_counter.tscn" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://cuttsde4xn40x" path="res://src/preloader.gd" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bwmt4lh6udo8c" path="res://scenes/game_scene/world.tscn" id="5_tbgi4"]
+[ext_resource type="Shader" uid="uid://ca17scf5p0otf" path="res://scenes/o2_counter/bubble_filling.tres" id="5_tefeu"]
 
 [node name="Main" type="Node" unique_id=1289240389]
 script = ExtResource("1_jyhfs")
@@ -22,5 +25,11 @@ anchor_bottom = 1.0
 offset_left = 15.0
 offset_bottom = -15.0
 grow_vertical = 0
+
+[node name="Preloader" type="Node" parent="." unique_id=1235991423]
+script = ExtResource("4_jyhfs")
+preload_shaders = Array[Shader]([ExtResource("5_tefeu")])
+game_scene = ExtResource("5_tbgi4")
+metadata/_custom_type_script = "uid://cuttsde4xn40x"
 
 [connection signal="start" from="UI/Menu" to="." method="_on_menu_start"]
