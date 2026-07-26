@@ -45,4 +45,14 @@ func add_time(seconds: float) -> void:
 	# Restarting the timer when adding time
 	if autostart:
 		_started = true
-	
+
+
+## Refills to max over the given duration.
+func refill_to_full(duration: float) -> void:
+	if autostart:
+		_started = true
+
+	var tween := create_tween()
+	tween.tween_property(self, "time_left", max_duration, duration)
+	tween.tween_callback(func(): time_left = max_duration)
+
