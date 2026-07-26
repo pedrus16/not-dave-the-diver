@@ -45,6 +45,8 @@ func create() -> void:
 	data.create_line_by_length(character_body.global_position, surface_anchor.global_position, segments_length)
 	
 	_rope = CRope2D.new()
+	_rope.damping = 1.0
+	_rope.collision_stride = 1
 	_rope.collision_mask = collision_mask
 	_rope.data = data
 
@@ -78,6 +80,10 @@ func create() -> void:
 	_rope.render_modules = [renderer]
 
 	rope_parent.add_child(_rope)
+
+
+func is_character_attached() -> bool:
+	return _is_character_attached
 
 
 func detach_character() -> void:
