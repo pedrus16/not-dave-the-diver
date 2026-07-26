@@ -1,6 +1,9 @@
 class_name CharacterController extends Node2D
 
 signal died
+signal entered_water
+signal exited_water
+signal o2_refilled
 
 @export var rigidBody2D: RigidBody2D
 @export var sprite: AnimatedSprite2D
@@ -20,6 +23,7 @@ var _dir_changed_elapsed_time := 0.0
 var _sprite_angle_offset := PI * 0.5
 var _dead := false
 var _animation_overriden := false
+var _has_been_underwater := false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -67,23 +71,28 @@ func _process(delta: float) -> void:
 		else:
 			sprite.animation = "idle"
 	
-	if not in_water:
-		o2_counter.add_time(refill_rate * delta)
-	
 	if Input.is_action_just_pressed(&"drop_last_item"):
 		inventory.drop_last_item()
 
 
 func _on_breath_area_area_entered(area: Area2D) -> void:
 	if not area.is_in_group("air"): return
-	
+
 	in_water = false
+
+	if not _has_been_underwater:
+		return
+
+	o2_counter.refill_to_full(1.0)
+	exited_water.emit()
 
 
 func _on_breath_area_area_exited(area: Area2D) -> void:
 	if not area.is_in_group("air"): return
 	
 	in_water = true
+	_has_been_underwater = true
+	entered_water.emit()
 
 
 func _on_o_2_counter_timeout() -> void:
@@ -100,6 +109,9 @@ func add_o2_delta(seconds: float) -> void:
 				_animation_overriden = false
 				sprite.play()
 		, CONNECT_ONE_SHOT)
+
+	if seconds > 0.0:
+		o2_refilled.emit()
 
 	o2_counter.add_time(seconds)
 
