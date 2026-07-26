@@ -434,7 +434,7 @@ shape = SubResource("RectangleShape2D_6xlfg")
 
 [node name="Cliffs" type="StaticBody2D" parent="." unique_id=26798520]
 position = Vector2(311, -141)
-collision_layer = 3
+collision_layer = 11
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_hi5s7")
 
@@ -474,7 +474,8 @@ script = ExtResource("15_m3xrb")
 character_body = NodePath("../../CharacterController/RigidBody2D")
 surface_anchor = NodePath("../RopeAnchor")
 rope_parent = NodePath("..")
-segments_length = 80.0
+collision_mask = 8
+debug_print_points_count = true
 metadata/_custom_type_script = "uid://c4wwbhalilay5"
 
 [node name="RopeAnchor" type="Marker2D" parent="RopeParent" unique_id=759660272]

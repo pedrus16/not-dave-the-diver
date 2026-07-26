@@ -4,11 +4,15 @@ class_name LifeRopeController extends Node
 @export var surface_anchor: Node2D
 @export var rope_parent: Node2D
 
+@export_range(100, 2000) var max_points := 600
 @export_range(1.0, 500.0) var max_attach_distance := 100.0
 @export_range(5.0, 200.0) var segments_length := 40.0
 @export_range(1.05, 5.0) var grow_ratio := 1.1
 @export_range(1.0, 100.0) var retract_speed := 10.0
 @export_range(0.0, 100000.0, 1.0, "exp") var retract_pull_strength := 3000.0
+@export_flags_2d_physics var collision_mask: int
+
+@export var debug_print_points_count := false
 
 var retracting := false:
 	set(val):
@@ -41,6 +45,7 @@ func create() -> void:
 	data.create_line_by_length(character_body.global_position, surface_anchor.global_position, segments_length)
 	
 	_rope = CRope2D.new()
+	_rope.collision_mask = collision_mask
 	_rope.data = data
 
 	# Surface anchor has last index, because it is more performant to append points to the end
@@ -127,8 +132,7 @@ func _process_retractation(delta: float) -> void:
 	_retract_timer = 0.0
 	
 	_rope.data.remove()
-	# Update anvil anchor index
-	_surface_anchor.index = _rope.data.get_count() - 1
+	_update_surface_anchor_index()
 
 
 func _process_expansion() -> void:
@@ -141,6 +145,11 @@ func _process_expansion() -> void:
 	if avg_segment <= segments_length * grow_ratio:
 		return
 	
+	# If the rope has reached its maximum size, the character drops it
+	if last + 1 >= max_points:
+		detach_character()
+		return
+	
 	var last_pt := pts[last]
 	var to_prev := pts[last - 1] - last_pt
 	var d := to_prev.length()
@@ -148,8 +157,7 @@ func _process_expansion() -> void:
 		return
 	
 	data.append(last_pt + to_prev / d * minf(segments_length, d * 0.5), last)
-	# Update anvil anchor index
-	_surface_anchor.index = data.get_count() - 1
+	_update_surface_anchor_index()
 
 
 func _on_retracting_changed() -> void:
@@ -161,3 +169,11 @@ func _on_retracting_changed() -> void:
 		_character_anchor.pull_strength = retract_pull_strength
 	else:
 		_character_anchor.pull_strength = 0.0
+
+
+func _update_surface_anchor_index() -> void:
+	var count := _rope.data.get_count()
+	_surface_anchor.index = count - 1
+	
+	if debug_print_points_count:
+		print("%d points in rope" % count)
