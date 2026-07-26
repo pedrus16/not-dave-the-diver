@@ -41,6 +41,16 @@
 [ext_resource type="AudioStream" uid="uid://b6pjdy550fx4t" path="res://audio/small_oxygen_refill.ogg" id="33_smrfl"]
 [ext_resource type="AudioStream" uid="uid://brraex12dk162" path="res://audio/greater_oxygen_refill.ogg" id="34_grrfl"]
 [ext_resource type="AudioStream" uid="uid://b1om05sfss3sl" path="res://audio/bubble_pop.ogg" id="35_bbpop"]
+[ext_resource type="Script" path="res://src/oxygen_level_monitor.gd" id="36_oxmon"]
+[ext_resource type="Script" path="res://scenes/game_scene/oxygen_level_bed.gd" id="37_oxbed"]
+[ext_resource type="AudioStream" uid="uid://dq0tlecab47fu" path="res://audio/oxygen_levels/moderate_oxygen_level_loop.ogg" id="38_modl"]
+[ext_resource type="AudioStream" uid="uid://bvlu3g2t7mj1d" path="res://audio/oxygen_levels/dangerous_oxygen_level_loop.ogg" id="40_danl"]
+[ext_resource type="AudioStream" uid="uid://cmc08slwq515j" path="res://audio/oxygen_levels/about_to_die_oxygen_level_loop.ogg" id="41_atdl"]
+[ext_resource type="Script" path="res://scenes/game_scene/oxygen_impact_player.gd" id="42_oximp"]
+[ext_resource type="AudioStream" uid="uid://cx51j4mnhrgpk" path="res://audio/oxygen_levels/moderate_oxygen_level_impact.ogg" id="43_modi"]
+[ext_resource type="AudioStream" uid="uid://cpf14qa81p6ru" path="res://audio/oxygen_levels/dangerous_oxygen_level_impact.ogg" id="45_dani"]
+[ext_resource type="AudioStream" uid="uid://sr4rv8gnjx6y" path="res://audio/oxygen_levels/about_to_die_oxygen_level_impact.ogg" id="46_atdi"]
+[ext_resource type="Script" path="res://scenes/game_scene/critical_music_ducker.gd" id="47_oxduck"]
 
 [sub_resource type="Gradient" id="Gradient_40lml"]
 offsets = PackedFloat32Array(0.432971, 0.9945652)
@@ -450,6 +460,15 @@ glow_intensity = 0.2
 glow_bloom = 0.4
 fog_density = 0.815
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_oxbed"]
+stream_count = 4
+stream_0/stream = ExtResource("38_modl")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("40_danl")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("41_atdl")
+stream_2/volume = 0.0
+
 [node name="World" type="Node2D" unique_id=594139589 node_paths=PackedStringArray("level_generator", "first_connector")]
 script = ExtResource("1_f30al")
 level_generator = NodePath("Level/LevelGenerator")
@@ -684,14 +703,37 @@ script = ExtResource("31_uwamb")
 [node name="SmallRefillSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2097759333]
 process_mode = 3
 stream = ExtResource("33_smrfl")
+volume_db = -4.0
+bus = &"SFX"
 
 [node name="GreaterRefillSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2104344890]
 process_mode = 3
 stream = ExtResource("34_grrfl")
+volume_db = -4.0
+bus = &"SFX"
 
 [node name="BubblePopSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1075111747]
 process_mode = 3
 stream = ExtResource("35_bbpop")
+
+[node name="OxygenLevelMonitor" type="Node" parent="." node_paths=PackedStringArray("timer")]
+script = ExtResource("36_oxmon")
+timer = NodePath("../CharacterController/O2Counter")
+
+[node name="OxygenLevelBed" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamSynchronized_oxbed")
+bus = &"OxygenLevels"
+script = ExtResource("37_oxbed")
+
+[node name="OxygenImpactPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+bus = &"SFX"
+script = ExtResource("42_oximp")
+impact_streams = Array[AudioStream]([ExtResource("43_modi"), ExtResource("45_dani"), ExtResource("46_atdi")])
+
+[node name="CriticalMusicDucker" type="Node" parent="."]
+script = ExtResource("47_oxduck")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484726210]
 
@@ -734,6 +776,8 @@ pause_overlay = NodePath("../PauseOverlay")
 [connection signal="defeat" from="EndConditionManager" to="HUD/OverlayManager" method="show_defeat"]
 [connection signal="victory" from="EndConditionManager" to="HUD/OverlayManager" method="show_victory"]
 [connection signal="body_entered" from="WaterEntryEffect" to="WaterEntryEffect" method="_on_body_entered"]
+[connection signal="victory" from="EndConditionManager" to="CriticalMusicDucker" method="mute_for_end"]
+[connection signal="victory" from="EndConditionManager" to="OxygenLevelBed" method="mute_for_end"]
 [connection signal="died" from="CharacterController" to="EndConditionManager" method="_on_character_died"]
 [connection signal="entered_water" from="CharacterController" to="SurfaceMusicPlayer" method="stop"]
 [connection signal="entered_water" from="CharacterController" to="DiveSoundPlayer" method="_on_character_entered_water"]
@@ -748,6 +792,13 @@ pause_overlay = NodePath("../PauseOverlay")
 [connection signal="pressed" from="HUD/VictoryOverlay/VBoxContainer/VBoxContainer/MainMenuButton" to="." method="go_to_main_menu"]
 [connection signal="pressed" from="HUD/PauseOverlay/VBoxContainer/VBoxContainer/ResumeButton" to="HUD/OverlayManager" method="exit_pause"]
 [connection signal="pressed" from="HUD/PauseOverlay/VBoxContainer/VBoxContainer/MainMenuButton" to="." method="go_to_main_menu"]
+[connection signal="died" from="CharacterController" to="OxygenLevelMonitor" method="stop"]
+[connection signal="died" from="CharacterController" to="CriticalMusicDucker" method="mute_for_end"]
+[connection signal="died" from="CharacterController" to="OxygenLevelBed" method="mute_for_end"]
+[connection signal="level_changed" from="OxygenLevelMonitor" to="OxygenLevelBed" method="_on_oxygen_level_monitor_level_changed"]
+[connection signal="level_changed" from="OxygenLevelMonitor" to="OxygenImpactPlayer" method="_on_oxygen_level_monitor_level_changed"]
+[connection signal="level_changed" from="OxygenLevelMonitor" to="CriticalMusicDucker" method="_on_oxygen_level_monitor_level_changed"]
+[connection signal="exited_water" from="CharacterController" to="GreaterRefillSoundPlayer" method="play"]
 
 [editable path="CharacterController"]
 [editable path="HUD/DefeatOverlay"]
