@@ -12,15 +12,13 @@ content_margin_right = 70.0
 content_margin_bottom = 30.0
 texture = ExtResource("4_6p2gm")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x1hca"]
-load_path = "res://.godot/imported/buttonPlay.png-304ec66bba9a1323311eba0449a0abe4.ctex"
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dv0wl"]
+texture = ExtResource("4_6p2gm")
+modulate_color = Color(0.92861444, 0.74328643, 0.65477693, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jdns4"]
-content_margin_left = 70.0
-content_margin_top = 25.0
-content_margin_right = 70.0
-content_margin_bottom = 30.0
-texture = SubResource("CompressedTexture2D_x1hca")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g2x5"]
+texture = ExtResource("4_6p2gm")
+modulate_color = Color(0.95053834, 0.9118864, 0.86403483, 1)
 
 [node name="Menu" type="Control" unique_id=1169801504]
 layout_mode = 3
@@ -61,8 +59,8 @@ theme_override_colors/font_color = Color(0.8509804, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_xg3hk")
 theme_override_font_sizes/font_size = 62
 theme_override_styles/normal = SubResource("StyleBoxTexture_lejwo")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_jdns4")
-theme_override_styles/hover = SubResource("StyleBoxTexture_jdns4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dv0wl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1g2x5")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
