@@ -39,7 +39,8 @@ func _back_to_menu() -> void:
 func _preload_audio_streams(game: Node2D) -> void:
 	var canvas_layers := game.find_children("", "CanvasLayer")
 	var buses: Dictionary[AudioStreamPlayer, StringName] = {}
-	
+	var was_playing: Dictionary[AudioStreamPlayer, bool] = {}
+
 	game.visible = false
 	for layer in canvas_layers:
 		layer.visible = false
@@ -49,6 +50,7 @@ func _preload_audio_streams(game: Node2D) -> void:
 	for child in game.find_children("", "AudioStreamPlayer"):
 		var player := child as AudioStreamPlayer
 		buses[player] = player.bus
+		was_playing[player] = player.playing
 		player.bus = &"MuteBus"
 		player.play()
 	
@@ -58,7 +60,12 @@ func _preload_audio_streams(game: Node2D) -> void:
 		player.stop()
 		player.seek(0.0)
 		player.bus = buses[player]
-	
+
+		# autoplay and players that start themselves in _ready fire once, on
+		# tree entry. Without this they stay stopped after the preload.
+		if was_playing[player]:
+			player.play()
+
 	game.set_process(PROCESS_MODE_INHERIT)
 	
 	game.visible = true
