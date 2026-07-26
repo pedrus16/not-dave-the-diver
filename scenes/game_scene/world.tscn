@@ -481,7 +481,7 @@ stream_3/stream = ExtResource("15_das7k")
 stream_3/volume = 0.0
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_oxbed"]
-stream_count = 4
+stream_count = 3
 stream_0/stream = ExtResource("38_modl")
 stream_0/volume = 0.0
 stream_1/stream = ExtResource("40_danl")
@@ -792,6 +792,7 @@ timer = NodePath("../CharacterController/O2Counter")
 [node name="OxygenLevelBed" type="AudioStreamPlayer" parent="." unique_id=557526038]
 process_mode = 3
 stream = SubResource("AudioStreamSynchronized_oxbed")
+bus = &"OxygenLevels"
 script = ExtResource("37_oxbed")
 
 [node name="OxygenImpactPlayer" type="AudioStreamPlayer" parent="." unique_id=840819614]
@@ -925,9 +926,6 @@ pause_overlay = NodePath("../PauseOverlay")
 [connection signal="pressed" from="HUD/VictoryOverlay/VBoxContainer/VBoxContainer/MainMenuButton" to="." method="go_to_main_menu"]
 [connection signal="pressed" from="HUD/PauseOverlay/VBoxContainer/VBoxContainer/ResumeButton" to="HUD/OverlayManager" method="exit_pause"]
 [connection signal="pressed" from="HUD/PauseOverlay/VBoxContainer/VBoxContainer/MainMenuButton" to="." method="go_to_main_menu"]
-[connection signal="died" from="CharacterController" to="OxygenLevelMonitor" method="stop"]
-[connection signal="died" from="CharacterController" to="CriticalMusicDucker" method="mute_for_end"]
-[connection signal="died" from="CharacterController" to="OxygenLevelBed" method="mute_for_end"]
 
 [editable path="CharacterController"]
 [editable path="HUD/DefeatOverlay"]
