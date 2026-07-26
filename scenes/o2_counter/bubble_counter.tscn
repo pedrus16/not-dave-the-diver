@@ -14,6 +14,7 @@ material = SubResource("ShaderMaterial_px5xa")
 custom_minimum_size = Vector2(154, 154)
 offset_right = 154.0
 offset_bottom = 154.0
+pivot_offset = Vector2(77, 77)
 texture = ExtResource("1_50aqk")
 expand_mode = 1
 stretch_mode = 4
