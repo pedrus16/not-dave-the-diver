@@ -5,7 +5,6 @@ signal level_changed(level: Level, descending: bool)
 enum Level {
 	GOOD,
 	MODERATE,
-	WORRYING,
 	DANGEROUS,
 	ABOUT_TO_DIE,
 }
@@ -37,13 +36,11 @@ func stop() -> void:
 
 
 static func _level_for(ratio: float) -> Level:
-	if ratio > 0.70:
+	if ratio > 0.80:
 		return Level.GOOD
-	if ratio > 0.50:
+	if ratio > 0.40:
 		return Level.MODERATE
-	if ratio > 0.25:
-		return Level.WORRYING
-	if ratio > 0.05:
+	if ratio > 0.15:
 		return Level.DANGEROUS
 
 	return Level.ABOUT_TO_DIE

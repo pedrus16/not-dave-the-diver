@@ -8,6 +8,7 @@ const MUTE_DB := -60.0
 
 var _targets: Array[float] = []
 var _volumes: Array[float] = []
+var _ended := false
 
 
 func _ready() -> void:
@@ -31,7 +32,20 @@ func _process(delta: float) -> void:
 
 
 func _on_oxygen_level_monitor_level_changed(level: OxygenLevelMonitor.Level, _descending: bool) -> void:
+	if _ended:
+		return
+
 	var active_index := int(level) - 1
 
 	for i in range(_targets.size()):
 		_targets[i] = 0.0 if i == active_index else MUTE_DB
+
+
+func mute_for_end() -> void:
+	if _ended:
+		return
+
+	_ended = true
+
+	for i in range(_targets.size()):
+		_targets[i] = MUTE_DB

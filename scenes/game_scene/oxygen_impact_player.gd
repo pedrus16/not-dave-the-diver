@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-## Impact streams in severity order: moderate, worrying, dangerous, about_to_die.
+## Impact streams in severity order: moderate, dangerous, about_to_die.
 @export var impact_streams: Array[AudioStream] = []
 
 ## Seconds before another impact can play.

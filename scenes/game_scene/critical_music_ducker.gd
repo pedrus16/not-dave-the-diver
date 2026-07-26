@@ -8,10 +8,18 @@ const MUTE_DB := -60.0
 @onready var _resting_volume_db := AudioServer.get_bus_volume_db(_music_index)
 
 var _is_critical := false
+var _ended := false
 var _tween: Tween
 
 
+func _exit_tree() -> void:
+	AudioServer.set_bus_volume_db(_music_index, _resting_volume_db)
+
+
 func _on_oxygen_level_monitor_level_changed(level: OxygenLevelMonitor.Level, _descending: bool) -> void:
+	if _ended:
+		return
+
 	var critical := level == OxygenLevelMonitor.Level.ABOUT_TO_DIE
 
 	if critical == _is_critical:
@@ -22,14 +30,13 @@ func _on_oxygen_level_monitor_level_changed(level: OxygenLevelMonitor.Level, _de
 	_fade_music_to(MUTE_DB if critical else _resting_volume_db)
 
 
-## Restores the music bus. Called when the character dies.
-func restore() -> void:
-	if !_is_critical:
+func mute_for_end() -> void:
+	if _ended:
 		return
 
-	_is_critical = false
+	_ended = true
 
-	_fade_music_to(_resting_volume_db)
+	_fade_music_to(MUTE_DB)
 
 
 func _fade_music_to(target_db: float) -> void:
