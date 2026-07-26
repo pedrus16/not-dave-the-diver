@@ -17,3 +17,13 @@ func _on_body_entered(body: Node2D) -> void:
 		var effect_instance: Node2D = effect.instantiate()
 		add_child(effect_instance)
 		effect_instance.global_position = Vector2(body.global_position.x, global_position.y)
+		var timer = Timer.new()
+		timer.one_shot = true
+		timer.wait_time = 4
+		add_child(timer)
+		timer.timeout.connect(
+			func():
+				effect_instance.queue_free()
+				timer.queue_free()
+		)
+		

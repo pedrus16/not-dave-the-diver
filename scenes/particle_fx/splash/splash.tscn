@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1v4ywcx3jrxh"]
 
 [ext_resource type="Texture2D" uid="uid://bwj4dxt326rrn" path="res://scenes/particle_fx/splash/Fx_Game-4.png" id="1_on0j7"]
+[ext_resource type="AudioStream" uid="uid://dy0bckj2w1wmk" path="res://scenes/particle_fx/water-drop.ogg" id="2_7aq86"]
 
 [sub_resource type="Animation" id="Animation_7aq86"]
 length = 0.001
@@ -54,7 +55,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.44),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.21568628, 0.72156864, 0.6784314, 1), Color(0.21568628, 0.72156864, 0.6784314, 0)]
+"values": [Color(0.21568628, 0.72156864, 0.6784314, 0.74509805), Color(0.21568628, 0.72156864, 0.6784314, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8yip2"]
@@ -79,3 +80,8 @@ offset = Vector2(28.95, -30.705)
 root_node = NodePath("../Node2D/FxGame4")
 libraries/ = SubResource("AnimationLibrary_8yip2")
 autoplay = &"splash"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=452779162]
+stream = ExtResource("2_7aq86")
+autoplay = true
+bus = &"SFX"

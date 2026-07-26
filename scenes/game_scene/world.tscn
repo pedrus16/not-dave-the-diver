@@ -23,11 +23,12 @@
 [ext_resource type="Script" uid="uid://daw85aqcwu1da" path="res://scenes/game_scene/background_music_player.gd" id="16_6xlfg"]
 [ext_resource type="Shader" uid="uid://c7fyrrosormw2" path="res://scenes/character/rope.gdshader" id="16_atqfn"]
 [ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="17_das7k"]
-[ext_resource type="Script" uid="uid://cv0qdx1fvhw7x" path="res://scenes/character/o2_light_updater.gd" id="19_7kswv"]
 [ext_resource type="Script" uid="uid://bq2o06f8xxv6g" path="res://scenes/game_scene/water_entry_effect.gd" id="18_7kswv"]
+[ext_resource type="Script" uid="uid://cv0qdx1fvhw7x" path="res://scenes/character/o2_light_updater.gd" id="19_7kswv"]
 [ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="20_smo5t"]
 [ext_resource type="PackedScene" uid="uid://dlxim7mtv1puh" path="res://scenes/o2_counter/bubble_counter.tscn" id="21_dp0gw"]
 [ext_resource type="PackedScene" uid="uid://d11bik32neiih" path="res://scenes/ui/retry.tscn" id="21_rbc4q"]
+[ext_resource type="AudioStream" uid="uid://dt3utus7jpcka" path="res://scenes/character/chicken_bawk.ogg" id="21_tpw37"]
 [ext_resource type="Script" uid="uid://ckn81jtj2rc8k" path="res://scenes/game_scene/overlay_manager.gd" id="22_rbc4q"]
 [ext_resource type="PackedScene" uid="uid://byochmg0hyqbm" path="res://scenes/ui/victory.tscn" id="22_rohsr"]
 [ext_resource type="PackedScene" uid="uid://ne1x2to8nxs3" path="res://scenes/ui/pause.tscn" id="25_rbuxe"]
@@ -185,7 +186,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "clips": PackedStringArray("jump"),
-"times": PackedFloat32Array(2.8)
+"times": PackedFloat32Array(2.3333333)
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -194,7 +195,7 @@ tracks/1/path = NodePath("../Egg")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(4.9166665),
+"times": PackedFloat32Array(4.45),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -244,7 +245,7 @@ tracks/5/path = NodePath("../Egg:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(4.3366675, 4.9166675),
+"times": PackedFloat32Array(3.8700008, 4.450001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -305,6 +306,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("ChickenBawk:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("ChickenBawk:stream")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_tpw37")]
 }
 
 [sub_resource type="Animation" id="Animation_hi5s7"]
@@ -385,6 +410,18 @@ tracks/5/keys = {
 "args": [],
 "method": &"start"
 }]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ChickenBawk:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ikvl"]
@@ -603,6 +640,11 @@ o2_counter = NodePath("../O2Counter")
 light = NodePath("../RigidBody2D/PointLight2D2")
 smooth_speed = 2.0
 metadata/_custom_type_script = "uid://cv0qdx1fvhw7x"
+
+[node name="ChickenBawk" type="AudioStreamPlayer" parent="CharacterController" unique_id=1565093521]
+stream = ExtResource("21_tpw37")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="AnimationEgg" type="AnimationPlayer" parent="." unique_id=1199442682]
 root_node = NodePath("../AnimationChicken")
