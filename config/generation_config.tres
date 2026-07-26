@@ -5,3 +5,4 @@
 
 [resource]
 script = ExtResource("1_jqc3a")
+avoid_up_connections = false

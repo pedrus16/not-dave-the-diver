@@ -24,6 +24,8 @@ func instantiate_and_connect(root: Node2D, connector_index: int, connect_to: Mod
 ##
 ## root is a temporary node used to instantiate then free the module.
 func analyze() -> void:
+	_connectors = {}
+	
 	var node := scene.instantiate()
 	if node is not LevelModule:
 		push_error("Module is not a LevelModule. Please add LevelModule script to root node in %s" % resource_path)
