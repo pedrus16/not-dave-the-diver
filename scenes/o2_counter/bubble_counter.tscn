@@ -7,6 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_px5xa"]
 shader = ExtResource("1_1c78b")
 shader_parameter/chargement = 1.0
+shader_parameter/alpha = 1.0
 
 [node name="BubbleCounter" type="TextureRect" unique_id=870930951]
 material = SubResource("ShaderMaterial_px5xa")
