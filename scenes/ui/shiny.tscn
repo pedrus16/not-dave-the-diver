@@ -9,8 +9,8 @@ colors = PackedColorArray(1, 1, 1, 1, 0.14660496, 0.14660496, 0.14660496, 1, 0, 
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jc4cr"]
 gradient = SubResource("Gradient_r71jv")
-width = 200
-height = 200
+width = 300
+height = 300
 fill = 1
 fill_from = Vector2(0.5102389, 0.48293516)
 fill_to = Vector2(0.16894197, 0.8242321)
@@ -117,13 +117,13 @@ _data = {
 z_index = 6
 
 [node name="Shiny01" type="Sprite2D" parent="." unique_id=1001490100]
-modulate = Color(0.77254903, 1, 0.9372549, 0.78431374)
+modulate = Color(0.77254903, 1, 0.9372549, 0.11764706)
 z_index = 6
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_hfuyk")
 
 [node name="Shiny02" type="Sprite2D" parent="." unique_id=920766808]
-modulate = Color(0.77254903, 1, 0.9372549, 0.78431374)
+modulate = Color(0.77254903, 1, 0.9372549, 0.11764706)
 z_index = 6
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_oywq5")
@@ -131,7 +131,7 @@ texture = ExtResource("2_oywq5")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1620764664]
 z_index = 6
 color = Color(0.82095236, 0.9999133, 0.91816455, 1)
-energy = 1.5
+energy = 2.5
 texture = SubResource("GradientTexture2D_jc4cr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1046742159]
