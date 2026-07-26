@@ -51,3 +51,6 @@ func connectors_by_location(location: ModuleConnector.Location) -> Array: # Arra
 	
 	return _connectors[location]
 	
+
+func has_connecter_at(location: ModuleConnector.Location) -> bool:
+	return _connectors.has(location)
