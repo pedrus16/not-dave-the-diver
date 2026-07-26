@@ -10,12 +10,23 @@ content_margin_right = 70.0
 content_margin_bottom = 30.0
 texture = ExtResource("2_1g2x5")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dev3l"]
+texture = ExtResource("2_1g2x5")
+modulate_color = Color(0.55455405, 0.554554, 0.5545539, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0wax"]
+texture = ExtResource("2_1g2x5")
+modulate_color = Color(0.73467994, 0.73467994, 0.7346799, 1)
+
 [node name="Button" type="Button" unique_id=1284350547]
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.8509804, 1, 1, 1)
+theme_override_colors/font_color = Color(0.86056405, 0.9999997, 0.9782507, 1)
+theme_override_colors/font_pressed_color = Color(0.6544874, 0.99999994, 0.94012916, 1)
+theme_override_colors/font_hover_color = Color(0.7920536, 0.9999997, 0.9448093, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.6666667, 1, 0.91764706, 1)
 theme_override_fonts/font = ExtResource("1_dv0wl")
 theme_override_font_sizes/font_size = 62
 theme_override_styles/normal = SubResource("StyleBoxTexture_jdns4")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_jdns4")
-theme_override_styles/hover = SubResource("StyleBoxTexture_jdns4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dev3l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e0wax")
 text = "Button"
