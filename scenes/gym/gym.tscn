@@ -41,7 +41,6 @@ location = 1
 [node name="CharacterController" parent="World" unique_id=827916061 instance=ExtResource("1_6pqnl")]
 position = Vector2(935, -740)
 in_water = true
-disable_death = false
 
 [node name="Camera3D" type="Camera2D" parent="World/CharacterController/RigidBody2D" parent_id_path=PackedInt32Array(827916061, 1615751047) index="0" unique_id=1037422815]
 position = Vector2(47, 38)

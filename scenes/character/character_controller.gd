@@ -17,6 +17,11 @@ signal o2_refilled
 @export var disable_controls := false
 @export var disable_death := false
 
+# For double tap "interact_rope"
+const COMBO_TIMEOUT_SEC = 0.3
+var _last_key_delta := 0.0
+var _key_count := 0
+
 var sprite_rotation := 0.0
 var is_swimming := false
 var _last_input := Vector2.ZERO
@@ -35,13 +40,16 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if disable_controls == true: return
 	
-	var input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	if event.is_action_pressed(&"interact_rope"):
+		if _last_key_delta > COMBO_TIMEOUT_SEC:
+			_key_count = 0
+		
+		if _key_count <= 2:
+			_key_count += 1
+			
+		_last_key_delta = 0.0
 	
-	if rope_controller != null && rope_controller.is_character_attached():
-		rope_controller.retracting = input.y < -0.4 && in_water
-		if rope_controller.retracting:
-			input.y = 0.0
-			input = input.normalized()
+	var input := Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down")
 	
 	var input_delta := input - _last_input
 	rigidBody2D.add_constant_force(input_delta * movePower)
@@ -57,11 +65,14 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed(&"interact_rope") && rope_controller != null:
-		if rope_controller.is_character_attached():
+	if Input.is_action_just_pressed(&"interact_rope") and rope_controller != null and not rope_controller.is_character_attached():
+		rope_controller.try_attach_character()
+	else:
+		if _key_count == 2:
 			rope_controller.detach_character()
-		else:
-			rope_controller.try_attach_character()
+			
+	if rope_controller != null && rope_controller.is_character_attached():
+		rope_controller.retracting = Input.is_action_pressed(&"interact_rope") && in_water
 	
 	_dir_changed_elapsed_time += delta * Engine.time_scale
 	
@@ -87,6 +98,8 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed(&"drop_last_item"):
 		inventory.drop_last_item()
+	
+	_last_key_delta += delta
 
 
 func _on_breath_area_area_entered(area: Area2D) -> void:

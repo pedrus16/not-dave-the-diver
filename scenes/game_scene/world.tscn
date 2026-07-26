@@ -447,7 +447,6 @@ bubble_counter = NodePath("../HUD/BubbleCounter")
 
 [node name="LifeRopeController" type="Node" parent="RopeParent" unique_id=1255801689 node_paths=PackedStringArray("rope", "character_body", "surface_anchor")]
 script = ExtResource("15_m3xrb")
-debug_print_points_count = true
 rope = NodePath("../LifeRope")
 character_body = NodePath("../../CharacterController/RigidBody2D")
 surface_anchor = NodePath("../RopeAnchor")
