@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cebtjchdcj21"]
+
+[ext_resource type="Texture2D" uid="uid://dj3opqvipiqye" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0000.png" id="1_8u07p"]
+[ext_resource type="Texture2D" uid="uid://dshe1g3kphnol" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0001.png" id="2_gah20"]
+[ext_resource type="Texture2D" uid="uid://dg1tebdjqv0h5" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0002.png" id="3_jo0a0"]
+[ext_resource type="Texture2D" uid="uid://nttgqbsx2go8" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0003.png" id="4_81xra"]
+[ext_resource type="Texture2D" uid="uid://c6sybvbnakrd7" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0004.png" id="5_la6hf"]
+[ext_resource type="Texture2D" uid="uid://bgb17mjllse7s" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0005.png" id="6_yqddo"]
+[ext_resource type="Texture2D" uid="uid://bmhhmgncb1vkt" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0006.png" id="7_upffv"]
+[ext_resource type="Texture2D" uid="uid://cjbjcamfy53cp" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0007.png" id="8_35ykb"]
+[ext_resource type="Texture2D" uid="uid://cw3stlmxdbwym" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0008.png" id="9_ux5pt"]
+[ext_resource type="Texture2D" uid="uid://bqmf1c32k70r6" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0009.png" id="10_myixg"]
+[ext_resource type="Texture2D" uid="uid://ba5a0dey7ctbb" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0010.png" id="11_hc8rs"]
+[ext_resource type="Texture2D" uid="uid://dy6ciluxv5qcr" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0011.png" id="12_372ns"]
+[ext_resource type="Texture2D" uid="uid://b14k6gcbualh5" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0012.png" id="13_57ttt"]
+[ext_resource type="Texture2D" uid="uid://bdomkuh1yoci3" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0013.png" id="14_l7ctw"]
+[ext_resource type="Texture2D" uid="uid://b0j8jc53ipmli" path="res://scenes/entities/fish_blue/swimming/fish_blue_swimming_0014.png" id="15_iriiw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g21i7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8u07p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gah20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jo0a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_81xra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_la6hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yqddo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_upffv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_35ykb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ux5pt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_myixg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hc8rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_372ns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_57ttt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_l7ctw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_iriiw")
+}],
+"loop": 1,
+"name": &"swimming",
+"speed": 14.0
+}]
+
+[node name="FishBlue" type="AnimatedSprite2D" unique_id=2147276717]
+sprite_frames = SubResource("SpriteFrames_g21i7")
+animation = &"swimming"
+autoplay = "swimming"
+frame = 4
+frame_progress = 0.6741654
