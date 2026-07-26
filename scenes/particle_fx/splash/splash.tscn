@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c1v4ywcx3jrxh"]
+
+[ext_resource type="Texture2D" uid="uid://bwj4dxt326rrn" path="res://scenes/particle_fx/splash/Fx_Game-4.png" id="1_on0j7"]
+
+[sub_resource type="Animation" id="Animation_7aq86"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8yqqk"]
+resource_name = "splash"
+length = 0.43333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333333, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1), Vector2(2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.44),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.21568628, 0.72156864, 0.6784314, 1), Color(0.21568628, 0.72156864, 0.6784314, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8yip2"]
+_data = {
+&"RESET": SubResource("Animation_7aq86"),
+&"splash": SubResource("Animation_8yqqk")
+}
+
+[node name="Splash" type="Node2D" unique_id=1894590401]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1860125546]
+position = Vector2(-1, 0)
+scale = Vector2(0.4, 0.4)
+
+[node name="FxGame4" type="Sprite2D" parent="Node2D" unique_id=350558940]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("1_on0j7")
+offset = Vector2(28.95, -30.705)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=965972281]
+root_node = NodePath("../Node2D/FxGame4")
+libraries/ = SubResource("AnimationLibrary_8yip2")
+autoplay = &"splash"

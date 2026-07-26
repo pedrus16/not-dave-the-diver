@@ -24,6 +24,7 @@
 [ext_resource type="Shader" uid="uid://c7fyrrosormw2" path="res://scenes/character/rope.gdshader" id="16_atqfn"]
 [ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="17_das7k"]
 [ext_resource type="Script" uid="uid://cv0qdx1fvhw7x" path="res://scenes/character/o2_light_updater.gd" id="19_7kswv"]
+[ext_resource type="Script" uid="uid://bq2o06f8xxv6g" path="res://scenes/game_scene/water_entry_effect.gd" id="18_7kswv"]
 [ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="20_smo5t"]
 [ext_resource type="PackedScene" uid="uid://dlxim7mtv1puh" path="res://scenes/o2_counter/bubble_counter.tscn" id="21_dp0gw"]
 [ext_resource type="PackedScene" uid="uid://d11bik32neiih" path="res://scenes/ui/retry.tscn" id="21_rbc4q"]
@@ -90,6 +91,9 @@ size = Vector2(1917, 858)
 size = Vector2(1917, 888)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hi5s7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(540, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sm8h1"]
 radius = 32.0
@@ -509,6 +513,7 @@ position = Vector2(-5, -78)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="AirArea" type="Area2D" parent="." unique_id=595086112 groups=["air"]]
+visible = false
 position = Vector2(936, -395)
 input_pickable = false
 
@@ -550,6 +555,16 @@ collision_mask = 2
 freeze = true
 linear_velocity = Vector2(20, -5)
 angular_velocity = 0.029147
+
+[node name="WaterEntryEffect" type="Area2D" parent="." unique_id=1645653300]
+position = Vector2(939, 33)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("18_7kswv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterEntryEffect" unique_id=1750590574]
+position = Vector2(11, 0)
+shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="ItemsRoot" type="Node2D" parent="." unique_id=424878046]
 
@@ -676,6 +691,7 @@ pause_overlay = NodePath("../PauseOverlay")
 
 [connection signal="defeat" from="EndConditionManager" to="HUD/OverlayManager" method="show_defeat"]
 [connection signal="victory" from="EndConditionManager" to="HUD/OverlayManager" method="show_victory"]
+[connection signal="body_entered" from="WaterEntryEffect" to="WaterEntryEffect" method="_on_body_entered"]
 [connection signal="died" from="CharacterController" to="EndConditionManager" method="_on_character_died"]
 [connection signal="entered_water" from="CharacterController" to="SurfaceMusicPlayer" method="stop"]
 [connection signal="entered_water" from="CharacterController" to="DiveSoundPlayer" method="_on_character_entered_water"]
