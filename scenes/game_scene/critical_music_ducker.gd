@@ -17,7 +17,8 @@ var _tween: Tween
 
 
 func _exit_tree() -> void:
-	AudioServer.set_bus_volume_db(_music_index, _resting_volume_db)
+	_apply_duck(0.0)
+
 
 func _ready() -> void:
 	for bus_name in ducked_buses:
@@ -29,6 +30,7 @@ func _ready() -> void:
 
 		_bus_indices.append(index)
 		_resting_volumes_db.append(AudioServer.get_bus_volume_db(index))
+
 
 func _on_oxygen_level_monitor_level_changed(level: OxygenLevelMonitor.Level, _descending: bool) -> void:
 	if _ended:
@@ -50,7 +52,7 @@ func mute_for_end() -> void:
 
 	_ended = true
 
-	_fade_music_to(MUTE_DB)
+	_fade_to(MUTE_DB)
 
 
 func _fade_to(target_duck_db: float) -> void:

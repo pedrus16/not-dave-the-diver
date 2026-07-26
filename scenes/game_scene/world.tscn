@@ -63,6 +63,9 @@
 [ext_resource type="AudioStream" path="res://audio/chicken/chicken_hurt_4.ogg" id="56_hrt4"]
 [ext_resource type="AudioStream" uid="uid://d0egegdid7myj" path="res://audio/urchin_stab.ogg" id="57_stab"]
 [ext_resource type="AudioStream" path="res://audio/chicken/chicken_death.ogg" id="58_death"]
+[ext_resource type="AudioStream" uid="uid://bgmb2fwwgolms" path="res://audio/game_start.ogg" id="59_gstart"]
+[ext_resource type="AudioStream" uid="uid://4f648glckitv" path="res://audio/death_fanfare.ogg" id="60_dfanf"]
+[ext_resource type="AudioStream" uid="uid://cbygy6jtx3s66" path="res://audio/dive_completed_victory.ogg" id="61_vict"]
 
 [sub_resource type="Gradient" id="Gradient_40lml"]
 offsets = PackedFloat32Array(0.432971, 0.9945652)
@@ -823,6 +826,22 @@ process_mode = 3
 stream = ExtResource("58_death")
 bus = &"SFX"
 
+[node name="GameStartJinglePlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("59_gstart")
+autoplay = true
+bus = &"Jingles"
+
+[node name="DeathFanfarePlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("60_dfanf")
+bus = &"Jingles"
+
+[node name="VictoryJinglePlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("61_vict")
+bus = &"Jingles"
+
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484726210]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=869254139]
@@ -893,6 +912,8 @@ pause_overlay = NodePath("../PauseOverlay")
 [connection signal="o2_lost" from="CharacterController" to="ChickenHurtPlayer" method="play_random"]
 [connection signal="o2_lost" from="CharacterController" to="UrchinStabPlayer" method="play"]
 [connection signal="died" from="CharacterController" to="ChickenDeathPlayer" method="play"]
+[connection signal="died" from="CharacterController" to="DeathFanfarePlayer" method="play"]
+[connection signal="victory" from="EndConditionManager" to="VictoryJinglePlayer" method="play"]
 [connection signal="o2_refilled" from="CharacterController" to="SmallRefillSoundPlayer" method="play"]
 [connection signal="o2_refilled" from="CharacterController" to="BubblePopSoundPlayer" method="play"]
 [connection signal="level_changed" from="OxygenLevelMonitor" to="OxygenLevelBed" method="_on_oxygen_level_monitor_level_changed"]
