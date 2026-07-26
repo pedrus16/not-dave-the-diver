@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cwkghnxlcw71w"]
+
+[ext_resource type="PackedScene" uid="uid://d2jqai8me6wkh" path="res://scenes/entities/fish_cyan/fish_cyan.tscn" id="1_pmokv"]
+[ext_resource type="Script" uid="uid://dpismpva273ys" path="res://scenes/entities/fish_random_movement.gd" id="2_u1gf8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c0pts"]
+radius = 11.0
+height = 80.0
+
+[node name="FishBlueEntity" type="RigidBody2D" unique_id=65348747]
+collision_layer = 0
+collision_mask = 8
+lock_rotation = true
+
+[node name="FishCyan" parent="." unique_id=1423447155 instance=ExtResource("1_pmokv")]
+scale = Vector2(0.2, 0.2)
+speed_scale = 0.68
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1639581188]
+position = Vector2(-3, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_c0pts")
+
+[node name="FishRandomMovement" type="Node" parent="." unique_id=872925549 node_paths=PackedStringArray("rigid_body", "sprite")]
+script = ExtResource("2_u1gf8")
+rigid_body = NodePath("..")
+sprite = NodePath("../FishCyan")
+travel_time_min = 5.0
+travel_time_max = 10.0
+float_amplitude = 50.0
+metadata/_custom_type_script = "uid://dpismpva273ys"

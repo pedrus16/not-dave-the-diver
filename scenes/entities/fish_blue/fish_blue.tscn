@@ -73,5 +73,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_g21i7")
 animation = &"swimming"
 autoplay = "swimming"
-frame = 4
-frame_progress = 0.6741654
+frame_progress = 0.3361478

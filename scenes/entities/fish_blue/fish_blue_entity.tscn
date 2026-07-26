@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dhnm0x68sci1w"]
+
+[ext_resource type="PackedScene" uid="uid://cebtjchdcj21" path="res://scenes/entities/fish_blue/fish_blue.tscn" id="1_penys"]
+[ext_resource type="Script" uid="uid://dpismpva273ys" path="res://scenes/entities/fish_random_movement.gd" id="2_k5piw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdns4"]
+radius = 33.1
+
+[node name="FishBlueEntity" type="RigidBody2D" unique_id=65348747]
+collision_layer = 0
+collision_mask = 8
+
+[node name="FishBlue" parent="." unique_id=2147276717 instance=ExtResource("1_penys")]
+scale = Vector2(0.2, 0.2)
+speed_scale = 0.68
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1639581188]
+shape = SubResource("CircleShape2D_jdns4")
+
+[node name="FishRandomMovement" type="Node" parent="." unique_id=872925549 node_paths=PackedStringArray("rigid_body", "sprite")]
+script = ExtResource("2_k5piw")
+rigid_body = NodePath("..")
+sprite = NodePath("../FishBlue")
+travel_time_min = 5.0
+travel_time_max = 10.0
+float_amplitude = 50.0
+metadata/_custom_type_script = "uid://dpismpva273ys"
