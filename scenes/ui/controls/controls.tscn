@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4soq51vaem36"]
+
+[ext_resource type="Texture2D" uid="uid://bnoahnvihljs1" path="res://scenes/ui/controls/control_ui_keyboard.png" id="1_0j2d2"]
+
+[node name="Controls" type="TextureRect" unique_id=816654439]
+offset_right = 1800.0
+offset_bottom = 501.0
+texture = ExtResource("1_0j2d2")
+expand_mode = 1
+stretch_mode = 5
