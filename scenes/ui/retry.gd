@@ -1,6 +1,6 @@
-class_name Menu extends Control
+class_name RetryMenu extends Panel
 
-signal start
+signal restart
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +13,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_play_pressed() -> void:
-	print("PLY")
-	start.emit()
+func _on_retry_button_pressed() -> void:
+	restart.emit()

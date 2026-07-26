@@ -55,4 +55,3 @@ func refill_to_full(duration: float) -> void:
 	var tween := create_tween()
 	tween.tween_property(self, "time_left", max_duration, duration)
 	tween.tween_callback(func(): time_left = max_duration)
-

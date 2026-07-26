@@ -16,4 +16,5 @@ func restart_game() -> void:
 
 
 func go_to_main_menu() -> void:
+	get_tree().paused = false
 	main_menu_requested.emit()

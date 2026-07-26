@@ -30,14 +30,14 @@
 [ext_resource type="PackedScene" uid="uid://byochmg0hyqbm" path="res://scenes/ui/victory.tscn" id="22_rohsr"]
 [ext_resource type="PackedScene" uid="uid://ne1x2to8nxs3" path="res://scenes/ui/pause.tscn" id="25_rbuxe"]
 [ext_resource type="AudioStream" uid="uid://62cobqg2x8lp" path="res://audio/surface_bgm.ogg" id="26_srfbg"]
-[ext_resource type="Script" path="res://scenes/game_scene/dive_sound_player.gd" id="28_dvsnd"]
+[ext_resource type="Script" uid="uid://ufnwalbuqfx" path="res://scenes/game_scene/dive_sound_player.gd" id="28_dvsnd"]
 [ext_resource type="AudioStream" uid="uid://dk7o6cdytbx40" path="res://audio/dive_in.ogg" id="29_dvin"]
 [ext_resource type="AudioStream" uid="uid://btdbg35ei8qjy" path="res://audio/dive_out.ogg" id="30_dvout"]
-[ext_resource type="Script" path="res://scenes/game_scene/underwater_ambience_player.gd" id="31_uwamb"]
+[ext_resource type="Script" uid="uid://mn5nh8bhcego" path="res://scenes/game_scene/underwater_ambience_player.gd" id="31_uwamb"]
 [ext_resource type="AudioStream" uid="uid://cjnd0gtgi5cbf" path="res://audio/underwater_bgm.ogg" id="32_uwbgm"]
-[ext_resource type="AudioStream" path="res://audio/small_oxygen_refill.ogg" id="33_smrfl"]
-[ext_resource type="AudioStream" path="res://audio/greater_oxygen_refill.ogg" id="34_grrfl"]
-[ext_resource type="AudioStream" path="res://audio/bubble_pop.ogg" id="35_bbpop"]
+[ext_resource type="AudioStream" uid="uid://b6pjdy550fx4t" path="res://audio/small_oxygen_refill.ogg" id="33_smrfl"]
+[ext_resource type="AudioStream" uid="uid://brraex12dk162" path="res://audio/greater_oxygen_refill.ogg" id="34_grrfl"]
+[ext_resource type="AudioStream" uid="uid://b1om05sfss3sl" path="res://audio/bubble_pop.ogg" id="35_bbpop"]
 
 [sub_resource type="Gradient" id="Gradient_40lml"]
 offsets = PackedFloat32Array(0.432971, 0.9945652)
@@ -180,7 +180,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "clips": PackedStringArray("jump"),
-"times": PackedFloat32Array(3.8333333)
+"times": PackedFloat32Array(2.8)
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -189,7 +189,7 @@ tracks/1/path = NodePath("../Egg")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(5.95),
+"times": PackedFloat32Array(4.9166665),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -203,10 +203,10 @@ tracks/2/path = NodePath("../Egg:constant_force")
 tracks/2/interp = 0
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.2, 1.3333335),
+"times": PackedFloat32Array(0.16666669, 0.30000013),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2000, -400), Vector2(0, 980)]
+"values": [Vector2(1000, -400), Vector2(0, 980)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -215,7 +215,7 @@ tracks/3/path = NodePath("../Egg:freeze")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.2),
+"times": PackedFloat32Array(0.16666669),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -227,7 +227,7 @@ tracks/4/path = NodePath("../Egg:angular_velocity")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.1100001),
+"times": PackedFloat32Array(0.07666677),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [12.566370614359172]
@@ -239,7 +239,7 @@ tracks/5/path = NodePath("../Egg:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(5.370001, 5.950001),
+"times": PackedFloat32Array(4.3366675, 4.9166675),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -495,7 +495,7 @@ polygon = PackedVector2Array(-333, -376, -25, -376, 96, -218, 181, -220, 298, -8
 polygon = PackedVector2Array(886, -329, 957, -371, 1122, -371, 1032, -472, 1069, -624, 1189, -648, 1199, -706, 1690, -875, 1718, 372, 951, 321, 867, 87, 983, 21, 955, -86, 901, -114, 861, -208)
 
 [node name="Egg" parent="." unique_id=530117776 instance=ExtResource("7_hi5s7")]
-position = Vector2(472, -381)
+position = Vector2(502, -381)
 rotation = -1.6648128
 collision_layer = 2
 collision_mask = 2
@@ -576,39 +576,35 @@ script = ExtResource("16_6xlfg")
 player = NodePath("../CharacterController/RigidBody2D")
 top_reference = NodePath("../Level/FirstConnector")
 
-[node name="SurfaceMusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SurfaceMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=702159242]
 process_mode = 3
 stream = ExtResource("26_srfbg")
 autoplay = true
 bus = &"Music"
 
-[node name="DiveSoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="DiveSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=897693760]
 process_mode = 3
-bus = &"SFX"
 script = ExtResource("28_dvsnd")
 dive_in_stream = ExtResource("29_dvin")
 dive_out_stream = ExtResource("30_dvout")
 
-[node name="UnderwaterAmbiencePlayer" type="AudioStreamPlayer" parent="."]
+[node name="UnderwaterAmbiencePlayer" type="AudioStreamPlayer" parent="." unique_id=1556371006]
 process_mode = 3
 stream = ExtResource("32_uwbgm")
 bus = &"Music"
 script = ExtResource("31_uwamb")
 
-[node name="SmallRefillSoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SmallRefillSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2097759333]
 process_mode = 3
 stream = ExtResource("33_smrfl")
-bus = &"SFX"
 
-[node name="GreaterRefillSoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="GreaterRefillSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2104344890]
 process_mode = 3
 stream = ExtResource("34_grrfl")
-bus = &"SFX"
 
-[node name="BubblePopSoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BubblePopSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1075111747]
 process_mode = 3
 stream = ExtResource("35_bbpop")
-bus = &"SFX"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484726210]
 
@@ -651,19 +647,19 @@ pause_overlay = NodePath("../PauseOverlay")
 [connection signal="defeat" from="EndConditionManager" to="HUD/OverlayManager" method="show_defeat"]
 [connection signal="victory" from="EndConditionManager" to="HUD/OverlayManager" method="show_victory"]
 [connection signal="died" from="CharacterController" to="EndConditionManager" method="_on_character_died"]
+[connection signal="entered_water" from="CharacterController" to="SurfaceMusicPlayer" method="stop"]
+[connection signal="entered_water" from="CharacterController" to="DiveSoundPlayer" method="_on_character_entered_water"]
+[connection signal="entered_water" from="CharacterController" to="UnderwaterAmbiencePlayer" method="_on_character_entered_water"]
+[connection signal="exited_water" from="CharacterController" to="DiveSoundPlayer" method="_on_character_exited_water"]
+[connection signal="exited_water" from="CharacterController" to="GreaterRefillSoundPlayer" method="play"]
+[connection signal="o2_refilled" from="CharacterController" to="SmallRefillSoundPlayer" method="play"]
+[connection signal="o2_refilled" from="CharacterController" to="BubblePopSoundPlayer" method="play"]
 [connection signal="pressed" from="HUD/DefeatOverlay/VBoxContainer/VBoxContainer/RetryButton" to="." method="restart_game"]
 [connection signal="pressed" from="HUD/DefeatOverlay/VBoxContainer/VBoxContainer/MainMenuButton" to="." method="go_to_main_menu"]
 [connection signal="pressed" from="HUD/VictoryOverlay/VBoxContainer/VBoxContainer/RetryButton" to="." method="restart_game"]
 [connection signal="pressed" from="HUD/VictoryOverlay/VBoxContainer/VBoxContainer/MainMenuButton" to="." method="go_to_main_menu"]
 [connection signal="pressed" from="HUD/PauseOverlay/VBoxContainer/VBoxContainer/ResumeButton" to="HUD/OverlayManager" method="exit_pause"]
 [connection signal="pressed" from="HUD/PauseOverlay/VBoxContainer/VBoxContainer/MainMenuButton" to="." method="go_to_main_menu"]
-[connection signal="entered_water" from="CharacterController" to="SurfaceMusicPlayer" method="stop"]
-[connection signal="entered_water" from="CharacterController" to="DiveSoundPlayer" method="_on_character_entered_water"]
-[connection signal="exited_water" from="CharacterController" to="DiveSoundPlayer" method="_on_character_exited_water"]
-[connection signal="entered_water" from="CharacterController" to="UnderwaterAmbiencePlayer" method="_on_character_entered_water"]
-[connection signal="o2_refilled" from="CharacterController" to="SmallRefillSoundPlayer" method="play"]
-[connection signal="o2_refilled" from="CharacterController" to="BubblePopSoundPlayer" method="play"]
-[connection signal="exited_water" from="CharacterController" to="GreaterRefillSoundPlayer" method="play"]
 
 [editable path="CharacterController"]
 [editable path="HUD/DefeatOverlay"]
