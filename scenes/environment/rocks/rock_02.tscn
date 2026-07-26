@@ -7,6 +7,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_upm7a")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=426951892]
+collision_layer = 9
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=482315311]
 polygon = PackedVector2Array(-102, -358, 58, -264, 290, -168, 308, -24, 386, 40, 378, 154, 244, 234, 272, 280, 196, 324, -40, 392, -270, 328, -346, 102, -238, 2, -320, -84, -378, -220, -318, -358)

@@ -8,6 +8,7 @@ signal o2_refilled
 @export var rigidBody2D: RigidBody2D
 @export var sprite: AnimatedSprite2D
 @export var inventory: CharacterInventory
+@export var rope_controller: LifeRopeController
 @export var o2_counter: RefillableTimer
 @export var movePower := 240.0
 @export var refill_rate := 2.0
@@ -35,6 +36,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if disable_controls == true: return
 	
 	var input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	if rope_controller != null && rope_controller.is_character_attached():
+		rope_controller.retracting = input.y < -0.4 && in_water
+		if rope_controller.retracting:
+			input.y = 0.0
+			input = input.normalized()
+	
 	var input_delta := input - _last_input
 	rigidBody2D.add_constant_force(input_delta * movePower)
 	
@@ -49,6 +57,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed(&"interact_rope") && rope_controller != null:
+		if rope_controller.is_character_attached():
+			rope_controller.detach_character()
+		else:
+			rope_controller.try_attach_character()
+	
 	_dir_changed_elapsed_time += delta * Engine.time_scale
 	
 	if _last_input.is_zero_approx(): return
@@ -122,7 +136,7 @@ func take_item(item: Node2D, drop_callback) -> void:
 
 ## Triggers death animation and disable controls
 func kill() -> void:
-	if disable_death || _dead:
+	if _dead || (disable_death && OS.is_debug_build()):
 		return
 	
 	_dead = true
