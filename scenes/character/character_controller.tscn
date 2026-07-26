@@ -18,6 +18,9 @@ radius = 30.016663
 [sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
 radius = 17.262676
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_proximity"]
+radius = 120.0
+
 [node name="CharacterController" type="Node2D" unique_id=1427967305 node_paths=PackedStringArray("rigidBody2D", "sprite", "inventory", "o2_counter")]
 script = ExtResource("1_sm8h1")
 rigidBody2D = NodePath("RigidBody2D")
@@ -59,6 +62,14 @@ debug_color = Color(0.68541384, 0.45240247, 1, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D" unique_id=1814544605]
 shape = SubResource("CircleShape2D_yf5fn")
 
+[node name="ProximityArea" type="Area2D" parent="RigidBody2D"]
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/ProximityArea"]
+shape = SubResource("CircleShape2D_proximity")
+
 [node name="Buoyancy" type="Node" parent="RigidBody2D" unique_id=1839481813 node_paths=PackedStringArray("rigidBody2D", "area2D")]
 script = ExtResource("5_jg0a6")
 rigidBody2D = NodePath("..")
@@ -83,3 +94,5 @@ metadata/_custom_type_script = "uid://c036si0iwdhi2"
 [connection signal="area_entered" from="RigidBody2D/Cocotte/BreathArea" to="." method="_on_breath_area_area_entered"]
 [connection signal="area_exited" from="RigidBody2D/Cocotte/BreathArea" to="." method="_on_breath_area_area_exited"]
 [connection signal="timeout" from="O2Counter" to="." method="_on_o_2_counter_timeout"]
+[connection signal="area_entered" from="RigidBody2D/ProximityArea" to="." method="_on_proximity_area_entered"]
+[connection signal="body_entered" from="RigidBody2D/ProximityArea" to="." method="_on_proximity_area_entered"]

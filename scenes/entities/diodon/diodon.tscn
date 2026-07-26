@@ -213,7 +213,7 @@ _data = {
 &"blow": SubResource("Animation_0rj54")
 }
 
-[node name="Diodon" type="RigidBody2D" unique_id=325988343]
+[node name="Diodon" type="RigidBody2D" unique_id=325988343 groups=["startles_hen"]]
 physics_material_override = SubResource("PhysicsMaterial_n5udd")
 script = ExtResource("1_qo8a2")
 

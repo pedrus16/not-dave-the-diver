@@ -16,7 +16,7 @@ radius = 39.1
 atlas = ExtResource("2_kiwsf")
 region = Rect2(307.76804, 570.4197, 107.95212, 133.18768)
 
-[node name="BelovedEgg" type="RigidBody2D" unique_id=1662193688]
+[node name="BelovedEgg" type="RigidBody2D" unique_id=1662193688 groups=["startles_hen"]]
 collision_layer = 2
 mass = 0.3
 physics_material_override = ExtResource("1_8fdbm")

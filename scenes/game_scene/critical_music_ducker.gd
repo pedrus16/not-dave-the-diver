@@ -2,11 +2,15 @@ extends Node
 
 const MUTE_DB := -60.0
 
+## Buses silenced while oxygen is critical.
+@export var ducked_buses: Array[StringName] = [&"Music", &"Ambiance"]
+
+## Seconds to fade the buses out and back.
 @export_range(0.0, 5.0) var music_fade_duration := 0.5
 
-@onready var _music_index := AudioServer.get_bus_index(&"Music")
-@onready var _resting_volume_db := AudioServer.get_bus_volume_db(_music_index)
-
+var _bus_indices: Array[int] = []
+var _resting_volumes_db: Array[float] = []
+var _duck_db := 0.0
 var _is_critical := false
 var _ended := false
 var _tween: Tween
@@ -15,6 +19,16 @@ var _tween: Tween
 func _exit_tree() -> void:
 	AudioServer.set_bus_volume_db(_music_index, _resting_volume_db)
 
+func _ready() -> void:
+	for bus_name in ducked_buses:
+		var index := AudioServer.get_bus_index(bus_name)
+
+		if index < 0:
+			push_warning("CriticalMusicDucker: no audio bus named '%s'" % bus_name)
+			continue
+
+		_bus_indices.append(index)
+		_resting_volumes_db.append(AudioServer.get_bus_volume_db(index))
 
 func _on_oxygen_level_monitor_level_changed(level: OxygenLevelMonitor.Level, _descending: bool) -> void:
 	if _ended:
@@ -27,7 +41,7 @@ func _on_oxygen_level_monitor_level_changed(level: OxygenLevelMonitor.Level, _de
 
 	_is_critical = critical
 
-	_fade_music_to(MUTE_DB if critical else _resting_volume_db)
+	_fade_to(MUTE_DB if critical else 0.0)
 
 
 func mute_for_end() -> void:
@@ -39,13 +53,18 @@ func mute_for_end() -> void:
 	_fade_music_to(MUTE_DB)
 
 
-func _fade_music_to(target_db: float) -> void:
+func _fade_to(target_duck_db: float) -> void:
 	if _tween != null && _tween.is_valid():
 		_tween.kill()
 
 	_tween = create_tween()
-	_tween.tween_method(_set_music_volume, AudioServer.get_bus_volume_db(_music_index), target_db, music_fade_duration)
+	_tween.tween_method(_apply_duck, _duck_db, target_duck_db, music_fade_duration)
 
 
-func _set_music_volume(value: float) -> void:
-	AudioServer.set_bus_volume_db(_music_index, value)
+## Ducking is an offset applied to each bus's resting level, not an absolute
+## value, so buses mixed at different volumes keep their balance while fading.
+func _apply_duck(duck_db: float) -> void:
+	_duck_db = duck_db
+
+	for i in range(_bus_indices.size()):
+		AudioServer.set_bus_volume_db(_bus_indices[i], _resting_volumes_db[i] + duck_db)

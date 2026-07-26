@@ -35,6 +35,7 @@ version_control/autoload_on_startup=true
 
 air="Air areas where the character movements forces are not applied"
 oxygen_consumer=""
+startles_hen="Entities the hen vocalises at when noticed - enemies and the egg"
 
 [input]
 

@@ -8,8 +8,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_611do"]
 radius = 58.077534
 
-[node name="SeaUrchin" type="Area2D" unique_id=49922503]
-monitorable = false
+[node name="SeaUrchin" type="Area2D" unique_id=49922503 groups=["startles_hen"]]
+monitorable = true
 
 [node name="RedOursin" parent="." unique_id=986655947 instance=ExtResource("1_x4ay5")]
 position = Vector2(0, -106)
