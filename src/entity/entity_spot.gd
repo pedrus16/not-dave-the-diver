@@ -22,13 +22,15 @@ func spawn_entity(scene: PackedScene) -> Node2D:
 
 
 ## Instantiate an entity in this spot, by randomly picking one from available_entities.
-func populate(rng: RandomNumberGenerator) -> void:
+##
+## Returns true if an entity was successfully instantiated.
+func populate(cell: Vector2i, rng: RandomNumberGenerator) -> bool:
 	if available_entities == null:
 		push_warning("null available_entities in %s" % get_path())
-		return
+		return false
 
 	if available_entities.entities.is_empty():
-		return
+		return false
 	
 	var matching_entities := available_entities.entities.filter(
 		func(entity: EntityListEntry):
@@ -36,21 +38,30 @@ func populate(rng: RandomNumberGenerator) -> void:
 	)
 	
 	if matching_entities.is_empty():
-		return
+		return false
 	
 	var weights := PackedFloat32Array()
 	weights.resize(matching_entities.size())
+	var weights_sum := 0.0
 	
 	for i in range(matching_entities.size()):
-		weights[i] = matching_entities[i].weight
+		var entity := matching_entities[i] as EntityListEntry
+		weights[i] = entity.weight
+		weights[i] *= entity.cell_weight_factor(cell)
+		weights_sum += weights[i]
+	
+	if is_zero_approx(weights_sum):
+		return false
 	
 	var picked_entities := matching_entities[rng.rand_weighted(weights)] as EntityListEntry
 	
 	if picked_entities.scene == null:
 		push_warning("null scene")
-		return
+		return false
 	
 	spawn_entity(picked_entities.scene)
+	
+	return true
 
 
 func _sum_weights(sum: float, entry: EntityListEntry) -> float:

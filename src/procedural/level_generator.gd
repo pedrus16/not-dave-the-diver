@@ -85,7 +85,7 @@ func _connect_new_module(root: Node2D, info: ConnectorInfo, rng: RandomNumberGen
 	
 	var new_module := chosen_module.instantiate_and_connect(root, connector_index, info.connector)
 	
-	new_module.populate_entities(rng)
+	new_module.populate_entities(info.module_cell, rng)
 	
 	_existing_modules[info.module_cell] = new_module
 	
