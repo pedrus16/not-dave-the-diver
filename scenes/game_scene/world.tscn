@@ -563,6 +563,7 @@ texture = SubResource("GradientTexture2D_smo5t")
 
 [node name="CharacterInventory" parent="CharacterController" index="2" unique_id=971453168 node_paths=PackedStringArray("items_root")]
 items_root = NodePath("../../ItemsRoot")
+rope_color = Color(0.37636825, 0.16335994, 0.058611207, 1)
 
 [node name="AnimationEgg" type="AnimationPlayer" parent="." unique_id=1199442682]
 root_node = NodePath("../AnimationChicken")

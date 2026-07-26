@@ -8,6 +8,13 @@ const ROPE_SEGMENT_COUNT := 4
 @export var hen_rigid_body: RigidBody2D
 @export var items_anchor: Node2D
 
+@export_group("Rope render")
+@export var rope_color: Color = Color.BROWN
+@export var rope_shader: Shader = preload("res://scenes/character/rope.gdshader")
+@export_range(1.0, 30.0) var rope_width := 5.0
+@export_range(0.01, 1.0) var rope_stripe_width := 0.5
+@export_range(0.0, 0.5) var rope_outline_width := 0.1
+
 var _dragged_items: Array[ItemAndRope] = []
 
 
@@ -77,9 +84,20 @@ func _create_rope(item: Node2D) -> CRope2D:
 	var simplify = CRopeSimplifyLineMod.new()
 	rope.line_modules = [smooth, simplify]
 	
-	var renderer = CRopeDirectRenderMod.new()
-	renderer.width = 5.0
-	renderer.color = Color.BROWN
+	var mat := ShaderMaterial.new()
+	mat.shader = rope_shader
+	mat.set_shader_parameter("rope_color1", rope_color.darkened(0.7))
+	mat.set_shader_parameter("rope_color2", rope_color)
+	mat.set_shader_parameter("stripe_width", rope_stripe_width)
+	mat.set_shader_parameter("outline_width", rope_outline_width)
+	rope.material = mat
+	
+	var renderer := CRopeDirectRenderMod.new()
+	renderer.width = rope_width
+	renderer.begin_cap_mode = Line2D.LINE_CAP_ROUND
+	renderer.end_cap_mode = Line2D.LINE_CAP_ROUND
+	renderer.joint_mode = Line2D.LINE_JOINT_SHARP
+	
 	rope.render_modules = [renderer]
 
 	items_root.add_child(rope)
