@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://06oxjeu4t776" path="res://audio/music/Submerged Flight Depth 2.ogg" id="13_6xlfg"]
 [ext_resource type="AudioStream" uid="uid://c610io8bv0g1v" path="res://audio/music/Submerged Flight Depth 3.ogg" id="14_40lml"]
 [ext_resource type="AudioStream" uid="uid://w683mocrv3o1" path="res://audio/music/Submerged Flight Depth 4.ogg" id="15_das7k"]
+[ext_resource type="Script" uid="uid://c4wwbhalilay5" path="res://scenes/character/life_rope_controller.gd" id="15_m3xrb"]
 [ext_resource type="Script" uid="uid://daw85aqcwu1da" path="res://scenes/game_scene/background_music_player.gd" id="16_6xlfg"]
 [ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="17_das7k"]
 [ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="20_smo5t"]
@@ -319,6 +320,20 @@ tracks/3/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RopeParent/LifeRopeController")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"create"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ikvl"]
 _data = {
@@ -451,6 +466,20 @@ collision_mask = 2
 freeze = true
 linear_velocity = Vector2(20, -5)
 angular_velocity = 0.029147
+
+[node name="RopeParent" type="Node2D" parent="." unique_id=1193660167]
+
+[node name="LifeRopeController" type="Node" parent="RopeParent" unique_id=1255801689 node_paths=PackedStringArray("character_body", "surface_anchor", "rope_parent")]
+script = ExtResource("15_m3xrb")
+character_body = NodePath("../../CharacterController/RigidBody2D")
+surface_anchor = NodePath("../RopeAnchor")
+rope_parent = NodePath("..")
+segments_length = 80.0
+metadata/_custom_type_script = "uid://c4wwbhalilay5"
+
+[node name="RopeAnchor" type="Marker2D" parent="RopeParent" unique_id=759660272]
+position = Vector2(822, -119)
+gizmo_extents = 131.9
 
 [node name="ItemsRoot" type="Node2D" parent="." unique_id=424878046]
 
