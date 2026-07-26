@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cmfg6087bef5h"]
+
+[ext_resource type="FontFile" uid="uid://cfji8srb6puup" path="res://scenes/ui/ChelseaMarket-Regular.ttf" id="1_kybf7"]
+[ext_resource type="Texture2D" uid="uid://bmi4wacsy40ft" path="res://scenes/ui/controls/esc.png" id="2_mkg8q"]
+
+[node name="InfoControls" type="MarginContainer" unique_id=804137200]
+offset_left = 742.0
+offset_right = 742.0
+offset_bottom = 65.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=2115806286]
+layout_mode = 2
+theme_override_constants/separation = 58
+
+[node name="Press" type="Label" parent="HBox" unique_id=111415767]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8489214, 0.9999998, 0.967115, 1)
+theme_override_fonts/font = ExtResource("1_kybf7")
+theme_override_font_sizes/font_size = 35
+text = "Press"
+
+[node name="Esc" type="TextureRect" parent="HBox" unique_id=1345439190]
+modulate = Color(1.0273823, 1.2108967, 1.1732527, 1)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_mkg8q")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Controls" type="Label" parent="HBox" unique_id=9559320]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 1, 0.96862745, 1)
+theme_override_fonts/font = ExtResource("1_kybf7")
+theme_override_font_sizes/font_size = 35
+text = "to view controls"
