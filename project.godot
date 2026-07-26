@@ -13,7 +13,7 @@ config_version=5
 config/name="NotDaveTheDiver"
 run/main_scene="uid://ccjdbkpmpoihg"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://ctwoip5a26vmh"
 
 [audio]
 
