@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://xj8vx411rf" path="res://scenes/environment/sky/sky.png" id="6_das7k"]
 [ext_resource type="PackedScene" uid="uid://c7j8k2yf3hy4g" path="res://scenes/egg/egg.tscn" id="7_hi5s7"]
 [ext_resource type="PackedScene" uid="uid://cmpgadulgw58c" path="res://scenes/entities/beloved_egg.tscn" id="7_qlvgr"]
+[ext_resource type="PackedScene" uid="uid://cs02uinhtqi80" path="res://scenes/environment/ponton/ponton.tscn" id="11_m3xrb"]
 [ext_resource type="AudioStream" uid="uid://cdpl362rkig0a" path="res://audio/music/Submerged Flight Depth 1.ogg" id="12_3653u"]
 [ext_resource type="AudioStream" uid="uid://06oxjeu4t776" path="res://audio/music/Submerged Flight Depth 2.ogg" id="13_6xlfg"]
 [ext_resource type="AudioStream" uid="uid://c610io8bv0g1v" path="res://audio/music/Submerged Flight Depth 3.ogg" id="14_40lml"]
@@ -27,6 +28,16 @@
 [ext_resource type="PackedScene" uid="uid://byochmg0hyqbm" path="res://scenes/ui/victory.tscn" id="22_rohsr"]
 [ext_resource type="PackedScene" uid="uid://ne1x2to8nxs3" path="res://scenes/ui/pause.tscn" id="25_rbuxe"]
 
+[sub_resource type="Gradient" id="Gradient_40lml"]
+offsets = PackedFloat32Array(0.432971, 0.9945652)
+colors = PackedColorArray(0.27921075, 0.52946955, 0.4798261, 1, 0.43009743, 0.70156705, 0.6639023, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jc4cr"]
+gradient = SubResource("Gradient_40lml")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smo5t"]
+shader = ExtResource("6_04jd1")
+
 [sub_resource type="Gradient" id="Gradient_k0n85"]
 offsets = PackedFloat32Array(0.027173912, 0.3423913, 0.67210144, 1)
 colors = PackedColorArray(0.020798873, 0.08089232, 0.03073338, 1, 0.020955876, 0.14135295, 0.10011532, 1, 0.062752634, 0.26087144, 0.2130422, 1, 5.7756904e-07, 0.5492049, 0.5495584, 1)
@@ -37,16 +48,6 @@ width = 1980
 height = 1080
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
-
-[sub_resource type="Gradient" id="Gradient_40lml"]
-offsets = PackedFloat32Array(0.432971, 0.9945652)
-colors = PackedColorArray(0.27921075, 0.52946955, 0.4798261, 1, 0.43009743, 0.70156705, 0.6639023, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jc4cr"]
-gradient = SubResource("Gradient_40lml")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_smo5t"]
-shader = ExtResource("6_04jd1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1917, 858)
@@ -351,8 +352,27 @@ script = ExtResource("1_f30al")
 level_generator = NodePath("Level/LevelGenerator")
 first_connector = NodePath("Level/FirstConnector")
 
+[node name="gradient_sky" type="Sprite2D" parent="." unique_id=925322712]
+light_mask = 0
+position = Vector2(797, -984)
+rotation = -1.5707964
+texture = SubResource("GradientTexture1D_jc4cr")
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 3000)
+
+[node name="Sky" type="Sprite2D" parent="gradient_sky" unique_id=1454287374]
+light_mask = 0
+material = SubResource("ShaderMaterial_smo5t")
+position = Vector2(-555, -111.499954)
+rotation = 1.5707964
+scale = Vector2(1.1703126, 0.9200006)
+texture = ExtResource("6_das7k")
+
+[node name="Ponton" parent="." unique_id=939033141 instance=ExtResource("11_m3xrb")]
+position = Vector2(802, -39)
+
 [node name="Gradient_water" type="Sprite2D" parent="." unique_id=1252377305]
-position = Vector2(1056, 5406)
+position = Vector2(1056, 5416.0005)
 scale = Vector2(10, 10)
 texture = SubResource("GradientTexture2D_04jd1")
 
@@ -375,22 +395,6 @@ surface_node = NodePath("../Level/FirstConnector")
 items_root = NodePath("../ItemsRoot")
 egg_scene = ExtResource("7_qlvgr")
 bubble_counter = NodePath("../HUD/BubbleCounter")
-
-[node name="gradient_sky" type="Sprite2D" parent="." unique_id=925322712]
-light_mask = 0
-position = Vector2(797, -984)
-rotation = -1.5707964
-texture = SubResource("GradientTexture1D_jc4cr")
-region_enabled = true
-region_rect = Rect2(0, 0, 2000, 3000)
-
-[node name="Sky" type="Sprite2D" parent="gradient_sky" unique_id=1454287374]
-light_mask = 0
-material = SubResource("ShaderMaterial_smo5t")
-position = Vector2(-555, -111.499954)
-rotation = 1.5707964
-scale = Vector2(1.1703126, 0.9200006)
-texture = ExtResource("6_das7k")
 
 [node name="Waves" parent="." unique_id=627467438 instance=ExtResource("17_das7k")]
 position = Vector2(214.00002, 3)

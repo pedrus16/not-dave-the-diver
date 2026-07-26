@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cs02uinhtqi80"]
+
+[ext_resource type="Texture2D" uid="uid://bq2ehpqo7q2gb" path="res://scenes/environment/ponton/ponton.png" id="1_mjanh"]
+
+[node name="Ponton" type="Sprite2D" unique_id=939033141]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_mjanh")
