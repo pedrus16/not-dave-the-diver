@@ -52,17 +52,17 @@
 [ext_resource type="AudioStream" uid="uid://sr4rv8gnjx6y" path="res://audio/oxygen_levels/about_to_die_oxygen_level_impact.ogg" id="46_atdi"]
 [ext_resource type="PackedScene" uid="uid://cmfg6087bef5h" path="res://scenes/ui/controls/info_controls.tscn" id="47_cj82p"]
 [ext_resource type="Script" uid="uid://b4j3qf6vn7j2g" path="res://scenes/game_scene/critical_music_ducker.gd" id="47_oxduck"]
-[ext_resource type="Script" path="res://src/random_sound_player.gd" id="48_rndsnd"]
-[ext_resource type="AudioStream" path="res://audio/chicken/chicken_1.ogg" id="49_chk1"]
-[ext_resource type="AudioStream" path="res://audio/chicken/chicken_2.ogg" id="50_chk2"]
-[ext_resource type="AudioStream" path="res://audio/chicken/chicken_3.ogg" id="51_chk3"]
-[ext_resource type="AudioStream" path="res://audio/chicken/chicken_4.ogg" id="52_chk4"]
-[ext_resource type="AudioStream" path="res://audio/chicken/chicken_hurt_1.ogg" id="53_hrt1"]
-[ext_resource type="AudioStream" path="res://audio/chicken/chicken_hurt_2.ogg" id="54_hrt2"]
-[ext_resource type="AudioStream" path="res://audio/chicken/chicken_hurt_3.ogg" id="55_hrt3"]
-[ext_resource type="AudioStream" path="res://audio/chicken/chicken_hurt_4.ogg" id="56_hrt4"]
+[ext_resource type="Script" uid="uid://4qxu8b76upx8" path="res://src/random_sound_player.gd" id="48_rndsnd"]
+[ext_resource type="AudioStream" uid="uid://dpxs58o82j4kt" path="res://audio/chicken/chicken_1.ogg" id="49_chk1"]
+[ext_resource type="AudioStream" uid="uid://dg34pk25pnfoy" path="res://audio/chicken/chicken_2.ogg" id="50_chk2"]
+[ext_resource type="AudioStream" uid="uid://bk87ou04j52vm" path="res://audio/chicken/chicken_3.ogg" id="51_chk3"]
+[ext_resource type="AudioStream" uid="uid://hwnmcie2vgup" path="res://audio/chicken/chicken_4.ogg" id="52_chk4"]
+[ext_resource type="AudioStream" uid="uid://cardhhe0f04ob" path="res://audio/chicken/chicken_hurt_1.ogg" id="53_hrt1"]
+[ext_resource type="AudioStream" uid="uid://mfre50c27pxe" path="res://audio/chicken/chicken_hurt_2.ogg" id="54_hrt2"]
+[ext_resource type="AudioStream" uid="uid://dpddqtigjhprp" path="res://audio/chicken/chicken_hurt_3.ogg" id="55_hrt3"]
+[ext_resource type="AudioStream" uid="uid://i2c63rgv1elc" path="res://audio/chicken/chicken_hurt_4.ogg" id="56_hrt4"]
 [ext_resource type="AudioStream" uid="uid://d0egegdid7myj" path="res://audio/urchin_stab.ogg" id="57_stab"]
-[ext_resource type="AudioStream" path="res://audio/chicken/chicken_death.ogg" id="58_death"]
+[ext_resource type="AudioStream" uid="uid://buct8v6rim276" path="res://audio/chicken/chicken_death.ogg" id="58_death"]
 [ext_resource type="AudioStream" uid="uid://bgmb2fwwgolms" path="res://audio/game_start.ogg" id="59_gstart"]
 [ext_resource type="AudioStream" uid="uid://4f648glckitv" path="res://audio/death_fanfare.ogg" id="60_dfanf"]
 [ext_resource type="AudioStream" uid="uid://cbygy6jtx3s66" path="res://audio/dive_completed_victory.ogg" id="61_vict"]
@@ -88,13 +88,13 @@ height = 1080
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="CRopeWorldGravityForceMod" id="CRopeWorldGravityForceMod_cj82p"]
+[sub_resource type="CRopeWorldGravityForceMod" id="CRopeWorldGravityForceMod_dfu2c"]
 
-[sub_resource type="CRopeSmoothLineMod" id="CRopeSmoothLineMod_rga4r"]
+[sub_resource type="CRopeSmoothLineMod" id="CRopeSmoothLineMod_dkeum"]
 
-[sub_resource type="CRopeSimplifyLineMod" id="CRopeSimplifyLineMod_t185m"]
+[sub_resource type="CRopeSimplifyLineMod" id="CRopeSimplifyLineMod_pch4m"]
 
-[sub_resource type="CRopeDirectRenderMod" id="CRopeDirectRenderMod_uexn7"]
+[sub_resource type="CRopeDirectRenderMod" id="CRopeDirectRenderMod_sj14m"]
 color = Color(0.64705884, 0.16470589, 0.16470589, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -488,7 +488,6 @@ stream_1/stream = ExtResource("40_danl")
 stream_1/volume = 0.0
 stream_2/stream = ExtResource("41_atdl")
 stream_2/volume = 0.0
-stream_3/volume = 0.0
 
 [sub_resource type="Environment" id="Environment_dp0gw"]
 background_mode = 3
@@ -607,9 +606,9 @@ stiffness = 1.0
 collision_stride = 1
 collision_width = 20.0
 collision_mask = 8
-force_modules = Array[CRopeForceMod]([SubResource("CRopeWorldGravityForceMod_cj82p")])
-line_modules = Array[CRopeLineMod]([SubResource("CRopeSmoothLineMod_rga4r"), SubResource("CRopeSimplifyLineMod_t185m")])
-render_modules = Array[CRopeRenderMod]([SubResource("CRopeDirectRenderMod_uexn7")])
+force_modules = Array[CRopeForceMod]([SubResource("CRopeWorldGravityForceMod_dfu2c")])
+line_modules = Array[CRopeLineMod]([SubResource("CRopeSmoothLineMod_dkeum"), SubResource("CRopeSimplifyLineMod_pch4m")])
+render_modules = Array[CRopeRenderMod]([SubResource("CRopeDirectRenderMod_sj14m")])
 data = SubResource("CRopeData_m3xrb")
 material = SubResource("ShaderMaterial_m3xrb")
 
@@ -783,6 +782,7 @@ bus = &"SFX"
 [node name="BubblePopSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1075111747]
 process_mode = 3
 stream = ExtResource("35_bbpop")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="OxygenLevelMonitor" type="Node" parent="." unique_id=796402263 node_paths=PackedStringArray("timer")]
@@ -804,41 +804,41 @@ impact_streams = Array[AudioStream]([ExtResource("43_modi"), ExtResource("45_dan
 [node name="CriticalMusicDucker" type="Node" parent="." unique_id=1849459815]
 script = ExtResource("47_oxduck")
 
-[node name="ChickenVoicePlayer" type="AudioStreamPlayer" parent="."]
+[node name="ChickenVoicePlayer" type="AudioStreamPlayer" parent="." unique_id=177938446]
 process_mode = 3
 bus = &"SFX"
 script = ExtResource("48_rndsnd")
 streams = Array[AudioStream]([ExtResource("49_chk1"), ExtResource("50_chk2"), ExtResource("51_chk3"), ExtResource("52_chk4")])
 retrigger_cooldown = 5.0
 
-[node name="ChickenHurtPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ChickenHurtPlayer" type="AudioStreamPlayer" parent="." unique_id=1540666533]
 process_mode = 3
 bus = &"SFX"
 script = ExtResource("48_rndsnd")
 streams = Array[AudioStream]([ExtResource("53_hrt1"), ExtResource("54_hrt2"), ExtResource("55_hrt3"), ExtResource("56_hrt4")])
 
-[node name="UrchinStabPlayer" type="AudioStreamPlayer" parent="."]
+[node name="UrchinStabPlayer" type="AudioStreamPlayer" parent="." unique_id=1480639070]
 process_mode = 3
 stream = ExtResource("57_stab")
 bus = &"SFX"
 
-[node name="ChickenDeathPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ChickenDeathPlayer" type="AudioStreamPlayer" parent="." unique_id=1933690412]
 process_mode = 3
 stream = ExtResource("58_death")
 bus = &"SFX"
 
-[node name="GameStartJinglePlayer" type="AudioStreamPlayer" parent="."]
+[node name="GameStartJinglePlayer" type="AudioStreamPlayer" parent="." unique_id=235057273]
 process_mode = 3
 stream = ExtResource("59_gstart")
 autoplay = true
 bus = &"Jingles"
 
-[node name="DeathFanfarePlayer" type="AudioStreamPlayer" parent="."]
+[node name="DeathFanfarePlayer" type="AudioStreamPlayer" parent="." unique_id=1093047274]
 process_mode = 3
 stream = ExtResource("60_dfanf")
 bus = &"Jingles"
 
-[node name="VictoryJinglePlayer" type="AudioStreamPlayer" parent="."]
+[node name="VictoryJinglePlayer" type="AudioStreamPlayer" parent="." unique_id=561374984]
 process_mode = 3
 stream = ExtResource("61_vict")
 bus = &"Jingles"
@@ -898,25 +898,25 @@ pause_overlay = NodePath("../PauseOverlay")
 [connection signal="defeat" from="EndConditionManager" to="HUD/OverlayManager" method="show_defeat"]
 [connection signal="victory" from="EndConditionManager" to="OxygenLevelBed" method="mute_for_end"]
 [connection signal="victory" from="EndConditionManager" to="CriticalMusicDucker" method="mute_for_end"]
+[connection signal="victory" from="EndConditionManager" to="VictoryJinglePlayer" method="play"]
 [connection signal="victory" from="EndConditionManager" to="HUD/OverlayManager" method="show_victory"]
 [connection signal="body_entered" from="WaterEntryEffect" to="WaterEntryEffect" method="_on_body_entered"]
 [connection signal="died" from="CharacterController" to="EndConditionManager" method="_on_character_died"]
 [connection signal="died" from="CharacterController" to="OxygenLevelMonitor" method="stop"]
 [connection signal="died" from="CharacterController" to="OxygenLevelBed" method="mute_for_end"]
 [connection signal="died" from="CharacterController" to="CriticalMusicDucker" method="mute_for_end"]
+[connection signal="died" from="CharacterController" to="ChickenDeathPlayer" method="play"]
+[connection signal="died" from="CharacterController" to="DeathFanfarePlayer" method="play"]
 [connection signal="entered_water" from="CharacterController" to="SurfaceMusicPlayer" method="stop"]
 [connection signal="entered_water" from="CharacterController" to="DiveSoundPlayer" method="_on_character_entered_water"]
 [connection signal="entered_water" from="CharacterController" to="UnderwaterAmbiencePlayer" method="_on_character_entered_water"]
 [connection signal="exited_water" from="CharacterController" to="DiveSoundPlayer" method="_on_character_exited_water"]
 [connection signal="exited_water" from="CharacterController" to="GreaterRefillSoundPlayer" method="play"]
-[connection signal="startled" from="CharacterController" to="ChickenVoicePlayer" method="play_random"]
 [connection signal="o2_lost" from="CharacterController" to="ChickenHurtPlayer" method="play_random"]
 [connection signal="o2_lost" from="CharacterController" to="UrchinStabPlayer" method="play"]
-[connection signal="died" from="CharacterController" to="ChickenDeathPlayer" method="play"]
-[connection signal="died" from="CharacterController" to="DeathFanfarePlayer" method="play"]
-[connection signal="victory" from="EndConditionManager" to="VictoryJinglePlayer" method="play"]
 [connection signal="o2_refilled" from="CharacterController" to="SmallRefillSoundPlayer" method="play"]
 [connection signal="o2_refilled" from="CharacterController" to="BubblePopSoundPlayer" method="play"]
+[connection signal="startled" from="CharacterController" to="ChickenVoicePlayer" method="play_random"]
 [connection signal="level_changed" from="OxygenLevelMonitor" to="OxygenLevelBed" method="_on_oxygen_level_monitor_level_changed"]
 [connection signal="level_changed" from="OxygenLevelMonitor" to="OxygenImpactPlayer" method="_on_oxygen_level_monitor_level_changed"]
 [connection signal="level_changed" from="OxygenLevelMonitor" to="CriticalMusicDucker" method="_on_oxygen_level_monitor_level_changed"]
