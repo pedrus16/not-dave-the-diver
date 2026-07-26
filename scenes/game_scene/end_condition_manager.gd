@@ -9,6 +9,8 @@ signal defeat
 @export var egg_scene: PackedScene
 @export var bubble_counter: Control
 
+@export var wait_death_animation := false
+
 var _ended := false
 
 
@@ -40,7 +42,8 @@ func _on_character_died() -> void:
 
 	_ended = true
 	
-	await character.sprite.animation_finished
+	if wait_death_animation:
+		await character.sprite.animation_finished
 	
 	_hide_bubble_counter()
 	defeat.emit()
