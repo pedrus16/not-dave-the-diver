@@ -167,7 +167,6 @@ metadata/_custom_type_script = "uid://havu0syglhv2"
 position = Vector2(303, 692)
 gizmo_extents = 114.8
 script = ExtResource("15_vbwnd")
-can_hold_egg = true
 available_entities = ExtResource("16_gx3gv")
 metadata/_custom_type_script = "uid://havu0syglhv2"
 

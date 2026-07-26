@@ -96,6 +96,7 @@ func _connect_new_module(root: Node2D, info: ConnectorInfo, rng: RandomNumberGen
 func _place_egg(rng: RandomNumberGenerator) -> void:
 	var max_depth := -1
 	var deepest_spots: Array[EntitySpot] = []
+	var deepest_spots_vertical: Array[EntitySpot] = []
 	
 	for cell in _existing_modules:
 		var module := _existing_modules[cell]
@@ -114,13 +115,20 @@ func _place_egg(rng: RandomNumberGenerator) -> void:
 		
 		for spot in module.entity_spots:
 			if spot.can_hold_egg:
-				deepest_spots.append(spot)
+				if cell.x == 0:
+					deepest_spots_vertical.append(spot)
+				else:
+					deepest_spots.append(spot)
 	
-	if deepest_spots.is_empty():
+	var spots_to_use := deepest_spots
+	if spots_to_use.is_empty():
+		spots_to_use = deepest_spots_vertical
+	
+	if spots_to_use.is_empty():
 		push_error("Cannot place the egg: there are no spots in the level")
 		return
 	
-	var chosen_spot := deepest_spots[rng.randi() % deepest_spots.size()]
+	var chosen_spot := spots_to_use[rng.randi() % spots_to_use.size()]
 	chosen_spot.spawn_entity(config.egg_scene)
 
 
