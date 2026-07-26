@@ -60,14 +60,6 @@ height = 1080
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(1917, 858)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xlfg"]
-size = Vector2(1917, 888)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hi5s7"]
-
 [sub_resource type="CRopeWorldGravityForceMod" id="CRopeWorldGravityForceMod_kui8r"]
 
 [sub_resource type="CRopeSmoothLineMod" id="CRopeSmoothLineMod_7kswv"]
@@ -89,6 +81,14 @@ shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/outline_width = 0.2000000095
 shader_parameter/stripe_width = 0.5
 shader_parameter/repeat = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1917, 858)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xlfg"]
+size = Vector2(1917, 888)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hi5s7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sm8h1"]
 radius = 32.0
@@ -443,6 +443,40 @@ items_root = NodePath("../ItemsRoot")
 egg_scene = ExtResource("7_qlvgr")
 bubble_counter = NodePath("../HUD/BubbleCounter")
 
+[node name="RopeParent" type="Node2D" parent="." unique_id=1193660167]
+
+[node name="LifeRopeController" type="Node" parent="RopeParent" unique_id=1255801689 node_paths=PackedStringArray("rope", "character_body", "surface_anchor")]
+script = ExtResource("15_m3xrb")
+debug_print_points_count = true
+rope = NodePath("../LifeRope")
+character_body = NodePath("../../CharacterController/RigidBody2D")
+surface_anchor = NodePath("../RopeAnchor")
+grow_ratio = 1.05
+retract_speed = 6.0
+metadata/_custom_type_script = "uid://c4wwbhalilay5"
+
+[node name="RopeAnchor" type="Marker2D" parent="RopeParent" unique_id=759660272]
+position = Vector2(908, -40)
+gizmo_extents = 131.9
+
+[node name="LifeRope" type="CRope2D" parent="RopeParent" unique_id=506757574]
+substeps = 20
+damping = 1.0
+stiffness = 1.0
+collision_stride = 1
+collision_width = 20.0
+collision_mask = 8
+force_modules = Array[CRopeForceMod]([SubResource("CRopeWorldGravityForceMod_kui8r")])
+line_modules = Array[CRopeLineMod]([SubResource("CRopeSmoothLineMod_7kswv"), SubResource("CRopeSimplifyLineMod_hvo7t")])
+render_modules = Array[CRopeRenderMod]([SubResource("CRopeDirectRenderMod_tpw37")])
+data = SubResource("CRopeData_m3xrb")
+material = SubResource("ShaderMaterial_m3xrb")
+
+[node name="Ponton2" parent="RopeParent" unique_id=684647749 instance=ExtResource("11_m3xrb")]
+position = Vector2(894.02, -22.74)
+region_enabled = true
+region_rect = Rect2(579.51807, 343.90103, 102.75049, 193.69077)
+
 [node name="Waves" parent="." unique_id=627467438 instance=ExtResource("17_das7k")]
 position = Vector2(214.00002, 3)
 scale = Vector2(1.0400003, 1.1599995)
@@ -502,35 +536,6 @@ collision_mask = 2
 freeze = true
 linear_velocity = Vector2(20, -5)
 angular_velocity = 0.029147
-
-[node name="RopeParent" type="Node2D" parent="." unique_id=1193660167]
-
-[node name="LifeRopeController" type="Node" parent="RopeParent" unique_id=1255801689 node_paths=PackedStringArray("rope", "character_body", "surface_anchor")]
-script = ExtResource("15_m3xrb")
-debug_print_points_count = true
-rope = NodePath("../LifeRope")
-character_body = NodePath("../../CharacterController/RigidBody2D")
-surface_anchor = NodePath("../RopeAnchor")
-grow_ratio = 1.05
-retract_speed = 6.0
-metadata/_custom_type_script = "uid://c4wwbhalilay5"
-
-[node name="RopeAnchor" type="Marker2D" parent="RopeParent" unique_id=759660272]
-position = Vector2(898, -5)
-gizmo_extents = 131.9
-
-[node name="LifeRope" type="CRope2D" parent="RopeParent" unique_id=506757574]
-substeps = 20
-damping = 1.0
-stiffness = 1.0
-collision_stride = 1
-collision_width = 20.0
-collision_mask = 8
-force_modules = Array[CRopeForceMod]([SubResource("CRopeWorldGravityForceMod_kui8r")])
-line_modules = Array[CRopeLineMod]([SubResource("CRopeSmoothLineMod_7kswv"), SubResource("CRopeSimplifyLineMod_hvo7t")])
-render_modules = Array[CRopeRenderMod]([SubResource("CRopeDirectRenderMod_tpw37")])
-data = SubResource("CRopeData_m3xrb")
-material = SubResource("ShaderMaterial_m3xrb")
 
 [node name="ItemsRoot" type="Node2D" parent="." unique_id=424878046]
 
