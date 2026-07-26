@@ -471,10 +471,10 @@ angular_velocity = 0.029147
 
 [node name="LifeRopeController" type="Node" parent="RopeParent" unique_id=1255801689 node_paths=PackedStringArray("character_body", "surface_anchor", "rope_parent")]
 script = ExtResource("15_m3xrb")
+debug_print_points_count = true
 character_body = NodePath("../../CharacterController/RigidBody2D")
 surface_anchor = NodePath("../RopeAnchor")
 rope_parent = NodePath("..")
-segments_length = 80.0
 grow_ratio = 1.05
 retract_speed = 6.0
 collision_mask = 8
