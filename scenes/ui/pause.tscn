@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cfji8srb6puup" path="res://scenes/ui/ChelseaMarket-Regular.ttf" id="1_k23cl"]
 [ext_resource type="Script" uid="uid://c0h4u5kftb1ji" path="res://scenes/ui/pause.gd" id="1_qgos8"]
+[ext_resource type="PackedScene" uid="uid://4soq51vaem36" path="res://scenes/ui/controls/controls.tscn" id="2_5834a"]
 [ext_resource type="PackedScene" uid="uid://oityoildfldv" path="res://scenes/ui/overlay_button.tscn" id="2_qgos8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdns4"]
@@ -24,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 450
+theme_override_constants/separation = 30
 alignment = 1
 
 [node name="Pause" type="Label" parent="VBoxContainer" unique_id=1760952452]
@@ -33,9 +34,13 @@ size_flags_horizontal = 4
 offset_transform_position_ratio = Vector2(0, -1.5)
 theme_override_colors/font_color = Color(0.8509804, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_k23cl")
-theme_override_font_sizes/font_size = 83
+theme_override_font_sizes/font_size = 90
 text = "Pause"
 horizontal_alignment = 1
+
+[node name="ControlsKeyboard" parent="VBoxContainer" unique_id=816654439 instance=ExtResource("2_5834a")]
+custom_minimum_size = Vector2(0, 460)
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1653704364]
 layout_mode = 2
