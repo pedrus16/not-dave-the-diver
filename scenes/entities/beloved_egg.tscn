@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://6tvhquxebfsg" path="res://scenes/egg/IMG_1923.png" id="2_kiwsf"]
 [ext_resource type="Script" uid="uid://3n7r8juui21u" path="res://src/buoyancy.gd" id="3_8fdbm"]
 [ext_resource type="Script" uid="uid://c6adivoj0o54e" path="res://src/entity/effects/pick_effect.gd" id="3_kiwsf"]
+[ext_resource type="PackedScene" uid="uid://c8bvixca44oqg" path="res://scenes/ui/shiny.tscn" id="5_7wqjo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vw8f7"]
 radius = 22.0
@@ -53,3 +54,5 @@ script = ExtResource("3_8fdbm")
 rigidBody2D = NodePath("..")
 buoyancy = -50.0
 metadata/_custom_type_script = "uid://3n7r8juui21u"
+
+[node name="Shiny" parent="." unique_id=1051989265 instance=ExtResource("5_7wqjo")]

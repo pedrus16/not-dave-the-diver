@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://c8bvixca44oqg"]
+
+[ext_resource type="Texture2D" uid="uid://dsvsxs0731ptm" path="res://scenes/ui/shiny_01.png" id="1_hfuyk"]
+[ext_resource type="Texture2D" uid="uid://d32qra13wh2nv" path="res://scenes/ui/shiny_02.png" id="2_oywq5"]
+
+[sub_resource type="Gradient" id="Gradient_r71jv"]
+offsets = PackedFloat32Array(0, 0.5787037, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.14660496, 0.14660496, 0.14660496, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jc4cr"]
+gradient = SubResource("Gradient_r71jv")
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2(0.5102389, 0.48293516)
+fill_to = Vector2(0.16894197, 0.8242321)
+
+[sub_resource type="Animation" id="Animation_hfuyk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shiny01:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shiny02:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shiny01:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_oywq5"]
+resource_name = "shine"
+length = 3.0000000000000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shiny01:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4666667, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(1, 1), Vector2(0.7, 0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shiny02:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4333333, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(0.5, 0.5), Vector2(0.7, 0.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shiny01:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646259971647, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shiny02:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.17453292519943295, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r71jv"]
+_data = {
+&"RESET": SubResource("Animation_hfuyk"),
+&"shine": SubResource("Animation_oywq5")
+}
+
+[node name="Shiny" type="Sprite2D" unique_id=1051989265]
+z_index = 6
+
+[node name="Shiny01" type="Sprite2D" parent="." unique_id=1001490100]
+modulate = Color(0.77254903, 1, 0.9372549, 0.78431374)
+z_index = 6
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_hfuyk")
+
+[node name="Shiny02" type="Sprite2D" parent="." unique_id=920766808]
+modulate = Color(0.77254903, 1, 0.9372549, 0.78431374)
+z_index = 6
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_oywq5")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1620764664]
+z_index = 6
+color = Color(0.82095236, 0.9999133, 0.91816455, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_jc4cr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1046742159]
+libraries/ = SubResource("AnimationLibrary_r71jv")
+autoplay = &"shine"
