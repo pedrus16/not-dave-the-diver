@@ -10,7 +10,7 @@ class_name O2LightUpdater extends Node
 
 
 func _physics_process(delta: float) -> void:
-	var ratio := 1.0 + (o2_counter.ratio / darken_begin_ratio - 1.0)
+	var ratio := clampf(1.0 + (o2_counter.ratio / darken_begin_ratio - 1.0), 0.0, 1.0)
 	
 	var target_color := _initial_color.lerp(lowest_hp_color, 1.0 - ratio)
 	light.color = lerp(light.color, target_color, smooth_speed * delta)

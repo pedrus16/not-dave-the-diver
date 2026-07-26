@@ -466,7 +466,7 @@ rope = NodePath("../LifeRope")
 character_body = NodePath("../../CharacterController/RigidBody2D")
 surface_anchor = NodePath("../RopeAnchor")
 grow_ratio = 1.05
-retract_speed = 6.0
+retract_speed = 8.0
 metadata/_custom_type_script = "uid://c4wwbhalilay5"
 
 [node name="RopeAnchor" type="Marker2D" parent="RopeParent" unique_id=759660272]
@@ -556,9 +556,8 @@ angular_velocity = 0.029147
 [node name="CharacterController" parent="." unique_id=1427967305 node_paths=PackedStringArray("rope_controller") instance=ExtResource("2_yvi15")]
 position = Vector2(467, -396)
 rope_controller = NodePath("../RopeParent/LifeRopeController")
-movePower = 480.0
+movePower = 600.0
 disable_controls = true
-disable_death = true
 
 [node name="CollisionShape2D" parent="CharacterController/RigidBody2D" parent_id_path=PackedInt32Array(1427967305, 1615751047) index="0" unique_id=648187429]
 shape = SubResource("CircleShape2D_sm8h1")
@@ -587,6 +586,7 @@ rope_color = Color(0.37636825, 0.16335994, 0.058611207, 1)
 script = ExtResource("19_7kswv")
 o2_counter = NodePath("../O2Counter")
 light = NodePath("../RigidBody2D/PointLight2D2")
+smooth_speed = 2.0
 metadata/_custom_type_script = "uid://cv0qdx1fvhw7x"
 
 [node name="AnimationEgg" type="AnimationPlayer" parent="." unique_id=1199442682]
