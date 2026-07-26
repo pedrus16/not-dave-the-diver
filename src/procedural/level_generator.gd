@@ -65,6 +65,13 @@ func _connect_new_module(root: Node2D, info: ConnectorInfo, rng: RandomNumberGen
 	
 	if _should_force_vertical_module(info):
 		candidates = modules_registry.vertical_modules()
+		
+		# Avoid exclusively vertical levels
+		if info.module_cell.y >= 2:
+			candidates = candidates.filter(
+				func(module: LevelModuleDescriptor) -> bool:
+					return module.has_connecter_at(ModuleConnector.Location.LEFT) || module.has_connecter_at(ModuleConnector.Location.RIGHT)
+			)
 	else:
 		candidates = modules_registry.modules_by_connector_location(new_connector_location)
 	
@@ -78,7 +85,7 @@ func _connect_new_module(root: Node2D, info: ConnectorInfo, rng: RandomNumberGen
 	
 	var new_module := chosen_module.instantiate_and_connect(root, connector_index, info.connector)
 	
-	new_module.populate_entities(rng)
+	new_module.populate_entities(info.module_cell, rng)
 	
 	_existing_modules[info.module_cell] = new_module
 	
@@ -131,6 +138,10 @@ func _should_close_connector(info: ConnectorInfo, rng: RandomNumberGenerator) ->
 	
 	# Avoid modules to go above the surface
 	if info.module_cell.y < 0:
+		return true
+	
+	# Only first module can be at depth 0
+	if info.module_cell.y == 0 && info.module_cell.x != 0:
 		return true
 	
 	# Avoid modules to go up

@@ -146,8 +146,8 @@ position = Vector2(-6.0000305, 589)
 scale = Vector2(0.35, 0.35)
 
 [node name="EntitySpot" type="Marker2D" parent="." unique_id=1496097455]
-position = Vector2(169, 185)
-rotation = -0.66634786
+position = Vector2(170, 235.00002)
+rotation = -2.0188892
 gizmo_extents = 82.8
 script = ExtResource("15_1ibii")
 available_entities = ExtResource("19_s5pk2")

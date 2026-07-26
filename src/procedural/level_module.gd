@@ -58,10 +58,24 @@ func dangling_connectors() -> Array[ModuleConnector]:
 	return dangling
 	
 
-func populate_entities(rng: RandomNumberGenerator) -> void:
+func populate_entities(cell: Vector2i, rng: RandomNumberGenerator) -> void:
+	var spots_to_populate := entity_spots.duplicate()
+	_shuffle_with_rng(spots_to_populate, rng)
+	
 	var entity_count := (rng.randf() ** 0.5) * 3 + 1
-	
-	var spots_to_populate := entity_spots.duplicate().slice(0, min(entity_count, entity_spots.size()))
-	
+	var populated := 0
+		
 	for spot in spots_to_populate:
-		spot.populate(rng)
+		if populated >= entity_count:
+			break
+		
+		if spot.populate(cell, rng):
+			populated += 1
+
+
+func _shuffle_with_rng(array: Array, rng: RandomNumberGenerator) -> void:
+	for i in range(array.size() - 1, 0, -1):
+		var j := rng.randi_range(0, i)
+		var temp = array[i]
+		array[i] = array[j]
+		array[j] = temp

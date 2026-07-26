@@ -68,8 +68,8 @@ metadata/_custom_type_script = "uid://3n7r8juui21u"
 
 [node name="O2Counter" type="Node" parent="." unique_id=1789200111]
 script = ExtResource("3_tmmmg")
-max_duration = 20.0
-initial_duration = 20.0
+max_duration = 30.0
+initial_duration = 30.0
 autostart = true
 metadata/_custom_type_script = "uid://7t5sh57io46g"
 

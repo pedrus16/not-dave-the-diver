@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://3uduwmt56m28"]
+
+[ext_resource type="Script" uid="uid://b08vf7bsktk8w" path="res://src/procedural/level_generator.gd" id="1_8w083"]
+[ext_resource type="Script" uid="uid://p87sktxecw5y" path="res://dev_scenes/level_generation/generation_tester.gd" id="1_fjy8e"]
+[ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="1_sfsln"]
+[ext_resource type="Resource" uid="uid://dgkj5jnojkba7" path="res://config/generation_config.tres" id="3_iwqjy"]
+[ext_resource type="Resource" uid="uid://dt8h2eysjrn3f" path="res://config/modules_registry.tres" id="4_din5o"]
+[ext_resource type="Script" uid="uid://colwl1hgsb5yy" path="res://dev_scenes/level_generation/debug_camera.gd" id="6_iwqjy"]
+
+[node name="GenerationTester" type="Node2D" unique_id=1449838354 node_paths=PackedStringArray("generator", "first_connector")]
+script = ExtResource("1_fjy8e")
+generator = NodePath("LevelGenerator")
+first_connector = NodePath("ModuleConnector")
+
+[node name="LevelGenerator" type="Node" parent="." unique_id=559773983]
+script = ExtResource("1_8w083")
+config = ExtResource("3_iwqjy")
+modules_registry = ExtResource("4_din5o")
+metadata/_custom_type_script = "uid://b08vf7bsktk8w"
+
+[node name="ModuleConnector" parent="." unique_id=141346909 instance=ExtResource("1_sfsln")]
+position = Vector2(947, 21)
+location = 1
+
+[node name="DebugCamera" type="Camera2D" parent="." unique_id=1781444643]
+position = Vector2(1000, 3000)
+zoom = Vector2(0.1, 0.1)
+script = ExtResource("6_iwqjy")
+metadata/_custom_type_script = "uid://colwl1hgsb5yy"
