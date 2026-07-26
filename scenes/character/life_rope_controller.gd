@@ -16,8 +16,9 @@ class_name LifeRopeController extends Node
 
 var retracting := false:
 	set(val):
-		retracting = val
-		_on_retracting_changed()
+		if val != retracting:
+			retracting = val
+			_on_retracting_changed()
 
 var _rope: CRope2D
 var _character_anchor: CRopeAnchor
@@ -116,7 +117,8 @@ func _closest_point(from: Vector2) -> Dictionary:
 	var closest_index := -1
 	var closest_dist := INF
 	
-	for i in range(points.size()):
+	# 0 is reserved for surface anchor
+	for i in range(1, points.size()):
 		var dist := from.distance_squared_to(points[i])
 		
 		if dist < closest_dist:

@@ -32,6 +32,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if disable_controls == true: return
 	
 	var input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	if rope_controller.is_character_attached():
+		rope_controller.retracting = input.y < -0.4 && in_water
+		if rope_controller.retracting:
+			input.y = 0.0
+			input = input.normalized()
+	
 	var input_delta := input - _last_input
 	rigidBody2D.add_constant_force(input_delta * movePower)
 	
