@@ -33,7 +33,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	var input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
-	if rope_controller.is_character_attached():
+	if rope_controller != null && rope_controller.is_character_attached():
 		rope_controller.retracting = input.y < -0.4 && in_water
 		if rope_controller.retracting:
 			input.y = 0.0
