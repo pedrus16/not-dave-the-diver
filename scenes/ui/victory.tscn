@@ -41,6 +41,7 @@ theme_override_constants/separation = 25
 alignment = 1
 
 [node name="RetryButton" parent="VBoxContainer/VBoxContainer" unique_id=573227147 instance=ExtResource("3_sxxsh")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 1
 text = "Play again"

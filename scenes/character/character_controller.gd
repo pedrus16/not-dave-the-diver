@@ -138,7 +138,7 @@ func take_item(item: Node2D, drop_callback) -> void:
 func kill() -> void:
 	if _dead || (disable_death && OS.is_debug_build()):
 		return
-	
+
 	_dead = true
 	sprite.animation = "dying"
 	disable_controls = true

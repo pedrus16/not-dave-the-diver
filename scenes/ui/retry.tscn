@@ -46,6 +46,7 @@ size_flags_horizontal = 1
 text = "Retry"
 
 [node name="MainMenuButton" parent="VBoxContainer/VBoxContainer" unique_id=1284350547 instance=ExtResource("3_1twu8")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 1
 text = "Main menu"
