@@ -20,7 +20,7 @@ func _ready() -> void:
 	
 	rigid_body.body_entered.connect(_flip.unbind(1))
 	
-	rigid_body.rotation_degrees = 0
+	rigid_body.set_deferred("rotation_degrees", 0)
 
 
 func _physics_process(delta: float) -> void:
