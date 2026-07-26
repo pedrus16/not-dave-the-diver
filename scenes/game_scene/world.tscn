@@ -410,9 +410,9 @@ region_rect = Rect2(0, 0, 2000, 3000)
 [node name="Sky" type="Sprite2D" parent="gradient_sky" unique_id=1454287374]
 light_mask = 0
 material = SubResource("ShaderMaterial_smo5t")
-position = Vector2(-555, -111.499954)
+position = Vector2(-555, -146.49997)
 rotation = 1.5707964
-scale = Vector2(1.1703126, 0.9200006)
+scale = Vector2(1.2067709, 0.9200006)
 texture = ExtResource("6_das7k")
 
 [node name="Ponton" parent="." unique_id=939033141 instance=ExtResource("11_m3xrb")]
