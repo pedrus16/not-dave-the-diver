@@ -244,7 +244,6 @@ metadata/_custom_type_script = "uid://3n7r8juui21u"
 [node name="O2DeltaEffect" type="Node" parent="." unique_id=2138932931 node_paths=PackedStringArray("collision_object")]
 script = ExtResource("7_14coh")
 o2_delta = -5.0
-mode = 1
 collision_object = NodePath("../Area2D")
 metadata/_custom_type_script = "uid://cbfyng2ojjdy2"
 
