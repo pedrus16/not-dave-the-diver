@@ -4,6 +4,8 @@ signal died
 signal entered_water
 signal exited_water
 signal o2_refilled
+signal o2_lost
+signal startled
 
 @export var rigidBody2D: RigidBody2D
 @export var sprite: AnimatedSprite2D
@@ -140,6 +142,9 @@ func add_o2_delta(seconds: float) -> void:
 	if seconds > 0.0:
 		o2_refilled.emit()
 
+	if seconds < 0.0:
+		o2_lost.emit()
+
 	o2_counter.add_time(seconds)
 
 
@@ -156,5 +161,11 @@ func kill() -> void:
 	sprite.animation = "dying"
 	disable_controls = true
 	rigidBody2D.add_constant_force(-_last_input * movePower)
-	
+
 	died.emit()
+
+
+func _on_proximity_area_entered(node: Node2D) -> void:
+	if not node.is_in_group("startles_hen"): return
+
+	startled.emit()

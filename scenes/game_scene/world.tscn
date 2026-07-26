@@ -52,6 +52,20 @@
 [ext_resource type="AudioStream" uid="uid://sr4rv8gnjx6y" path="res://audio/oxygen_levels/about_to_die_oxygen_level_impact.ogg" id="46_atdi"]
 [ext_resource type="PackedScene" uid="uid://cmfg6087bef5h" path="res://scenes/ui/controls/info_controls.tscn" id="47_cj82p"]
 [ext_resource type="Script" uid="uid://b4j3qf6vn7j2g" path="res://scenes/game_scene/critical_music_ducker.gd" id="47_oxduck"]
+[ext_resource type="Script" path="res://src/random_sound_player.gd" id="48_rndsnd"]
+[ext_resource type="AudioStream" path="res://audio/chicken/chicken_1.ogg" id="49_chk1"]
+[ext_resource type="AudioStream" path="res://audio/chicken/chicken_2.ogg" id="50_chk2"]
+[ext_resource type="AudioStream" path="res://audio/chicken/chicken_3.ogg" id="51_chk3"]
+[ext_resource type="AudioStream" path="res://audio/chicken/chicken_4.ogg" id="52_chk4"]
+[ext_resource type="AudioStream" path="res://audio/chicken/chicken_hurt_1.ogg" id="53_hrt1"]
+[ext_resource type="AudioStream" path="res://audio/chicken/chicken_hurt_2.ogg" id="54_hrt2"]
+[ext_resource type="AudioStream" path="res://audio/chicken/chicken_hurt_3.ogg" id="55_hrt3"]
+[ext_resource type="AudioStream" path="res://audio/chicken/chicken_hurt_4.ogg" id="56_hrt4"]
+[ext_resource type="AudioStream" uid="uid://d0egegdid7myj" path="res://audio/urchin_stab.ogg" id="57_stab"]
+[ext_resource type="AudioStream" path="res://audio/chicken/chicken_death.ogg" id="58_death"]
+[ext_resource type="AudioStream" uid="uid://bgmb2fwwgolms" path="res://audio/game_start.ogg" id="59_gstart"]
+[ext_resource type="AudioStream" uid="uid://4f648glckitv" path="res://audio/death_fanfare.ogg" id="60_dfanf"]
+[ext_resource type="AudioStream" uid="uid://cbygy6jtx3s66" path="res://audio/dive_completed_victory.ogg" id="61_vict"]
 
 [sub_resource type="Gradient" id="Gradient_40lml"]
 offsets = PackedFloat32Array(0.432971, 0.9945652)
@@ -467,7 +481,7 @@ stream_3/stream = ExtResource("15_das7k")
 stream_3/volume = 0.0
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_oxbed"]
-stream_count = 4
+stream_count = 3
 stream_0/stream = ExtResource("38_modl")
 stream_0/volume = 0.0
 stream_1/stream = ExtResource("40_danl")
@@ -739,10 +753,11 @@ top_reference = NodePath("../Level/FirstConnector")
 process_mode = 3
 stream = ExtResource("26_srfbg")
 autoplay = true
-bus = &"Music"
+bus = &"Ambiance"
 
 [node name="DiveSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=897693760]
 process_mode = 3
+bus = &"SFX"
 script = ExtResource("28_dvsnd")
 dive_in_stream = ExtResource("29_dvin")
 dive_out_stream = ExtResource("30_dvout")
@@ -750,24 +765,25 @@ dive_out_stream = ExtResource("30_dvout")
 [node name="UnderwaterAmbiencePlayer" type="AudioStreamPlayer" parent="." unique_id=1556371006]
 process_mode = 3
 stream = ExtResource("32_uwbgm")
-bus = &"Music"
+bus = &"Ambiance"
 script = ExtResource("31_uwamb")
 
 [node name="SmallRefillSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2097759333]
 process_mode = 3
 stream = ExtResource("33_smrfl")
-volume_db = -4.0
+volume_db = -6.0
 bus = &"SFX"
 
 [node name="GreaterRefillSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2104344890]
 process_mode = 3
 stream = ExtResource("34_grrfl")
-volume_db = -4.0
+volume_db = -6.0
 bus = &"SFX"
 
 [node name="BubblePopSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1075111747]
 process_mode = 3
 stream = ExtResource("35_bbpop")
+bus = &"SFX"
 
 [node name="OxygenLevelMonitor" type="Node" parent="." unique_id=796402263 node_paths=PackedStringArray("timer")]
 script = ExtResource("36_oxmon")
@@ -776,6 +792,7 @@ timer = NodePath("../CharacterController/O2Counter")
 [node name="OxygenLevelBed" type="AudioStreamPlayer" parent="." unique_id=557526038]
 process_mode = 3
 stream = SubResource("AudioStreamSynchronized_oxbed")
+bus = &"OxygenLevels"
 script = ExtResource("37_oxbed")
 
 [node name="OxygenImpactPlayer" type="AudioStreamPlayer" parent="." unique_id=840819614]
@@ -786,6 +803,45 @@ impact_streams = Array[AudioStream]([ExtResource("43_modi"), ExtResource("45_dan
 
 [node name="CriticalMusicDucker" type="Node" parent="." unique_id=1849459815]
 script = ExtResource("47_oxduck")
+
+[node name="ChickenVoicePlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+bus = &"SFX"
+script = ExtResource("48_rndsnd")
+streams = Array[AudioStream]([ExtResource("49_chk1"), ExtResource("50_chk2"), ExtResource("51_chk3"), ExtResource("52_chk4")])
+retrigger_cooldown = 5.0
+
+[node name="ChickenHurtPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+bus = &"SFX"
+script = ExtResource("48_rndsnd")
+streams = Array[AudioStream]([ExtResource("53_hrt1"), ExtResource("54_hrt2"), ExtResource("55_hrt3"), ExtResource("56_hrt4")])
+
+[node name="UrchinStabPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("57_stab")
+bus = &"SFX"
+
+[node name="ChickenDeathPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("58_death")
+bus = &"SFX"
+
+[node name="GameStartJinglePlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("59_gstart")
+autoplay = true
+bus = &"Jingles"
+
+[node name="DeathFanfarePlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("60_dfanf")
+bus = &"Jingles"
+
+[node name="VictoryJinglePlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("61_vict")
+bus = &"Jingles"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=484726210]
 
@@ -853,6 +909,12 @@ pause_overlay = NodePath("../PauseOverlay")
 [connection signal="entered_water" from="CharacterController" to="UnderwaterAmbiencePlayer" method="_on_character_entered_water"]
 [connection signal="exited_water" from="CharacterController" to="DiveSoundPlayer" method="_on_character_exited_water"]
 [connection signal="exited_water" from="CharacterController" to="GreaterRefillSoundPlayer" method="play"]
+[connection signal="startled" from="CharacterController" to="ChickenVoicePlayer" method="play_random"]
+[connection signal="o2_lost" from="CharacterController" to="ChickenHurtPlayer" method="play_random"]
+[connection signal="o2_lost" from="CharacterController" to="UrchinStabPlayer" method="play"]
+[connection signal="died" from="CharacterController" to="ChickenDeathPlayer" method="play"]
+[connection signal="died" from="CharacterController" to="DeathFanfarePlayer" method="play"]
+[connection signal="victory" from="EndConditionManager" to="VictoryJinglePlayer" method="play"]
 [connection signal="o2_refilled" from="CharacterController" to="SmallRefillSoundPlayer" method="play"]
 [connection signal="o2_refilled" from="CharacterController" to="BubblePopSoundPlayer" method="play"]
 [connection signal="level_changed" from="OxygenLevelMonitor" to="OxygenLevelBed" method="_on_oxygen_level_monitor_level_changed"]
