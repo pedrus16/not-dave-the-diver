@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://w683mocrv3o1" path="res://audio/music/Submerged Flight Depth 4.ogg" id="15_das7k"]
 [ext_resource type="Script" uid="uid://c4wwbhalilay5" path="res://scenes/character/life_rope_controller.gd" id="15_m3xrb"]
 [ext_resource type="Script" uid="uid://daw85aqcwu1da" path="res://scenes/game_scene/background_music_player.gd" id="16_6xlfg"]
+[ext_resource type="Shader" uid="uid://c7fyrrosormw2" path="res://scenes/character/rope.gdshader" id="16_atqfn"]
 [ext_resource type="PackedScene" uid="uid://b4xhgxweykciv" path="res://scenes/environment/water/waves.tscn" id="17_das7k"]
 [ext_resource type="PackedScene" uid="uid://dupuonc680hyc" path="res://scenes/environment/water/water.tscn" id="20_smo5t"]
 [ext_resource type="PackedScene" uid="uid://dlxim7mtv1puh" path="res://scenes/o2_counter/bubble_counter.tscn" id="21_dp0gw"]
@@ -56,6 +57,28 @@ size = Vector2(1917, 858)
 size = Vector2(1917, 888)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hi5s7"]
+
+[sub_resource type="CRopeWorldGravityForceMod" id="CRopeWorldGravityForceMod_m3xrb"]
+
+[sub_resource type="CRopeSmoothLineMod" id="CRopeSmoothLineMod_m3xrb"]
+
+[sub_resource type="CRopeSimplifyLineMod" id="CRopeSimplifyLineMod_atqfn"]
+
+[sub_resource type="CRopeDirectRenderMod" id="CRopeDirectRenderMod_m3xrb"]
+color = Color(0.64705884, 0.16470589, 0.16470589, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[sub_resource type="CRopeData" id="CRopeData_m3xrb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m3xrb"]
+shader = ExtResource("16_atqfn")
+shader_parameter/rope_color1 = Color(0.32757428, 0.17255324, 0.02377647, 1)
+shader_parameter/rope_color2 = Color(0.6223341, 0.34924203, 0.08310392, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 0.2000000095
+shader_parameter/stripe_width = 0.5
+shader_parameter/repeat = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sm8h1"]
 radius = 32.0
@@ -469,20 +492,32 @@ angular_velocity = 0.029147
 
 [node name="RopeParent" type="Node2D" parent="." unique_id=1193660167]
 
-[node name="LifeRopeController" type="Node" parent="RopeParent" unique_id=1255801689 node_paths=PackedStringArray("character_body", "surface_anchor", "rope_parent")]
+[node name="LifeRopeController" type="Node" parent="RopeParent" unique_id=1255801689 node_paths=PackedStringArray("rope", "character_body", "surface_anchor")]
 script = ExtResource("15_m3xrb")
 debug_print_points_count = true
+rope = NodePath("../LifeRope")
 character_body = NodePath("../../CharacterController/RigidBody2D")
 surface_anchor = NodePath("../RopeAnchor")
-rope_parent = NodePath("..")
 grow_ratio = 1.05
 retract_speed = 6.0
-collision_mask = 8
 metadata/_custom_type_script = "uid://c4wwbhalilay5"
 
 [node name="RopeAnchor" type="Marker2D" parent="RopeParent" unique_id=759660272]
 position = Vector2(822, -119)
 gizmo_extents = 131.9
+
+[node name="LifeRope" type="CRope2D" parent="RopeParent" unique_id=506757574]
+substeps = 20
+damping = 1.0
+stiffness = 1.0
+collision_stride = 1
+collision_width = 20.0
+collision_mask = 8
+force_modules = Array[CRopeForceMod]([SubResource("CRopeWorldGravityForceMod_m3xrb")])
+line_modules = Array[CRopeLineMod]([SubResource("CRopeSmoothLineMod_m3xrb"), SubResource("CRopeSimplifyLineMod_atqfn")])
+render_modules = Array[CRopeRenderMod]([SubResource("CRopeDirectRenderMod_m3xrb")])
+data = SubResource("CRopeData_m3xrb")
+material = SubResource("ShaderMaterial_m3xrb")
 
 [node name="ItemsRoot" type="Node2D" parent="." unique_id=424878046]
 
