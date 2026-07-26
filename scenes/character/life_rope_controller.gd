@@ -1,9 +1,12 @@
 class_name LifeRopeController extends Node
 
+@export var debug_print_points_count := false
+
 @export var character_body: RigidBody2D
 @export var surface_anchor: Node2D
 @export var rope_parent: Node2D
 
+@export_group("Rope behavior")
 @export_range(100, 2000) var max_points := 600
 @export_range(1.0, 500.0) var max_attach_distance := 100.0
 @export_range(5.0, 200.0) var segments_length := 40.0
@@ -12,7 +15,12 @@ class_name LifeRopeController extends Node
 @export_range(0.0, 100000.0, 1.0, "exp") var retract_pull_strength := 3000.0
 @export_flags_2d_physics var collision_mask: int
 
-@export var debug_print_points_count := false
+@export_group("Rope render")
+@export var color: Color = Color.BROWN
+@export var shader: Shader = preload("res://scenes/character/rope.gdshader")
+@export_range(1.0, 30.0) var width := 10.0
+@export_range(0.01, 1.0) var stripe_width := 0.5
+@export_range(0.0, 0.5) var outline_width := 0.2
 
 var retracting := false:
 	set(val):
@@ -46,8 +54,8 @@ func create() -> void:
 	data.create_line_by_length(character_body.global_position, surface_anchor.global_position, segments_length)
 	
 	_rope = CRope2D.new()
-	_rope.damping = 1.0
-	_rope.collision_stride = 1
+	_rope.damping = 1.0 # avoids the rope to go up very fast when detaching it form the character
+	_rope.collision_stride = 1 # avoids glitches with colliders
 	_rope.collision_mask = collision_mask
 	_rope.data = data
 
@@ -75,9 +83,20 @@ func create() -> void:
 	var simplify = CRopeSimplifyLineMod.new()
 	_rope.line_modules = [smooth, simplify]
 	
-	var renderer = CRopeDirectRenderMod.new()
-	renderer.width = 5.0
-	renderer.color = Color.BROWN
+	var mat := ShaderMaterial.new()
+	mat.shader = shader
+	mat.set_shader_parameter("rope_color1", color.darkened(0.7))
+	mat.set_shader_parameter("rope_color2", color)
+	mat.set_shader_parameter("stripe_width", stripe_width)
+	mat.set_shader_parameter("outline_width", outline_width)
+	_rope.material = mat
+	
+	var renderer := CRopeDirectRenderMod.new()
+	renderer.width = width
+	renderer.begin_cap_mode = Line2D.LINE_CAP_ROUND
+	renderer.end_cap_mode = Line2D.LINE_CAP_ROUND
+	renderer.joint_mode = Line2D.LINE_JOINT_SHARP
+	
 	_rope.render_modules = [renderer]
 
 	rope_parent.add_child(_rope)
