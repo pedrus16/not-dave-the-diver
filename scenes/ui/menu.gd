@@ -14,5 +14,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_play_pressed() -> void:
-	print("PLY")
 	start.emit()

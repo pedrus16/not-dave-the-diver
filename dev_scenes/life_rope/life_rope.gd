@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	# Update anvil anchor index
 	anvil_anchor.index = rope.data.get_count() - 1
 	
-	print(rope.data.get_count())
+	#print(rope.data.get_count())
 
 
 func _create_rope() -> void:
