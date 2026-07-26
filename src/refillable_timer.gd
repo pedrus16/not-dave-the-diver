@@ -12,7 +12,14 @@ signal timeout
 ## If true, the timer will start immediately when it enters the scene tree.
 @export var autostart := false
 
-var time_left: float
+@onready var time_left: float = initial_duration
+
+var ratio: float:
+	get:
+		if is_zero_approx(max_duration):
+			return 1.0
+		
+		return clampf(time_left / max_duration, 0.0, 1.0)
 
 var _started := false
 
