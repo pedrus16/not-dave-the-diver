@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bs0ldmfmyxcy5"]
+
+[ext_resource type="PackedScene" uid="uid://dluan0057olli" path="res://scenes/character/character_controller.tscn" id="1_hfvcu"]
+[ext_resource type="Script" uid="uid://cijgn62klvyb0" path="res://dev_scenes/life_rope/life_rope.gd" id="1_l00dh"]
+[ext_resource type="Texture2D" uid="uid://bawri81ek7rhe" path="res://scenes/entities/anvil.png" id="2_gcvsj"]
+
+[node name="LifeRope" type="Node2D" unique_id=2098882454 node_paths=PackedStringArray("character", "anvil")]
+script = ExtResource("1_l00dh")
+character = NodePath("CharacterController/RigidBody2D")
+anvil = NodePath("Anchor")
+
+[node name="CharacterController" parent="." unique_id=1427967305 instance=ExtResource("1_hfvcu")]
+position = Vector2(655, 465)
+movePower = 500.0
+
+[node name="Anchor" type="Sprite2D" parent="." unique_id=901655593]
+position = Vector2(472, 308)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_gcvsj")
+
+[editable path="CharacterController"]
