@@ -1,0 +1,33 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://myar71kstyfj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmo0x"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7ftdr"]
+_surfaces = [{
+"aabb": AABB(-1.7319365, 0, -1, 2.7319365, 1e-05, 2),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAAAAQABgAHAAAABwADAAAABwAIAAMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("SqIAAP9/AAD//wAAAAAAAP//AAD/fwAASqIAANk7AABKogAA//8AAP//AAD//wAAlkQAAP//AAAAAAAAYnMAAJZEAAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "plane_Plane"
+_surfaces = [{
+"aabb": AABB(-1.7319365, 0, -1, 2.7319365, 1e-05, 2),
+"attribute_data": PackedByteArray("/3//f///AAD///9//3/ZO/9/////////AAD//wAA/38AAAAA"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAAAAQABgAHAAAABwADAAAABwAIAAMA"),
+"material": SubResource("StandardMaterial3D_nmo0x"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("SqIAAP9/AMD//wAAAAD/v///AAD/f/+/SqIAANk7AMBKogAA////v///AAD///+/lkQAAP//AsAAAAAAYnMFwJZEAAAAAALAU/1Vgf///3////9/7PyIgf///3////9/h/s7ggH6/oK/+x+C")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_7ftdr")

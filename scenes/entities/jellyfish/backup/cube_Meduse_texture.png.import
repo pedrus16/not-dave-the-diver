@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo2mvcs0oduym"
-path.s3tc="res://.godot/imported/Meduse.png-7b8169b49f070b1ea5bdcd1959dca4ba.s3tc.ctex"
+uid="uid://b2s4ef6gsib22"
+path.s3tc="res://.godot/imported/cube_Meduse_texture.png-1e2223fc3305b6cb3a6113c608f53ee8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "ffb52e1442baebccf4f1194d1f9ecca3"
+}
 
 [deps]
 
-source_file="res://scenes/entities/jellyfish/frames/Meduse.png"
-dest_files=["res://.godot/imported/Meduse.png-7b8169b49f070b1ea5bdcd1959dca4ba.s3tc.ctex"]
+source_file="res://scenes/entities/jellyfish/backup/cube_Meduse_texture.png"
+dest_files=["res://.godot/imported/cube_Meduse_texture.png-1e2223fc3305b6cb3a6113c608f53ee8.s3tc.ctex"]
 
 [params]
 

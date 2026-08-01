@@ -1,0 +1,745 @@
+[gd_scene format=3 uid="uid://bqvmkpjhe5ffr"]
+
+[ext_resource type="Texture2D" uid="uid://d3yaxvxvcq710" path="res://scenes/entities/jellyfish/frames/Meduse-1.png" id="1_ql0ye"]
+[ext_resource type="Texture2D" uid="uid://bqv8pkkhdy80h" path="res://scenes/entities/jellyfish/frames/Meduse-2.png" id="2_bh7p1"]
+[ext_resource type="Texture2D" uid="uid://cxkwt5oydvhud" path="res://scenes/entities/jellyfish/frames/Meduse-3.png" id="3_lx585"]
+[ext_resource type="Texture2D" uid="uid://crt2osfqdn5we" path="res://scenes/entities/jellyfish/frames/Meduse-4.png" id="4_2uqsn"]
+[ext_resource type="Texture2D" uid="uid://be3y3li8c715o" path="res://scenes/entities/jellyfish/frames/Meduse-5.png" id="5_q7anl"]
+[ext_resource type="Texture2D" uid="uid://ct6erthbrivso" path="res://scenes/entities/jellyfish/frames/Meduse-6.png" id="6_tnnym"]
+[ext_resource type="Texture2D" uid="uid://bo2mvcs0oduym" path="res://scenes/entities/jellyfish/frames/Meduse.png" id="7_kinp4"]
+[ext_resource type="PackedScene" uid="uid://b138jx3o2ro6e" path="res://scenes/entities/jellyfish/backup/jellyfish.glb" id="8_bh7p1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ql0ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bh7p1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lx585")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2uqsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q7anl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tnnym")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_bh7p1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skeleton2D/root/tentacle1_1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.874593]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.9502896]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.34322327]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.24569188]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Skeleton2D/root/tentacle1_1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-98, -4)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 56)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 48)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 50)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Skeleton2D/root/cap:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Skeleton2D/root/cap:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Skeleton2D/root/cap:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Skeleton2D/root/eyes:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, -65)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Skeleton2D/root/eyes:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../Skeleton2D/root/eyes:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1199993, 0.8000006)]
+}
+
+[sub_resource type="Animation" id="Animation_ql0ye"]
+resource_name = "thrust"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skeleton2D/root/tentacle1_1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.874593, 0.874593, 1.395194, 0.59994423, 0.0438779, -0.038086914, 0.874593]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.9502896, -0.9797476, -0.8743946, 0.91011256, 0.80273163, 0.21062434, -0.9502896]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.34322327, -0.5942296, -1.260959, 0.08513475, 1.0186449, 0.221407, -0.34322327]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.24569188, -0.24569188, -1.4515982, -0.4549628, 0.7796999, 0.66404384, -0.24569188]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Skeleton2D/root/tentacle1_1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-98, -4), Vector2(-103, -4.0000005), Vector2(-88.99999, -7), Vector2(-63, 7.999996), Vector2(-58.999996, 5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 56), Vector2(0, 56), Vector2(0, 56), Vector2(0, 56), Vector2(0, 56)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 48), Vector2(0, 48), Vector2(0, 48), Vector2(0, 48), Vector2(0, 48)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 50), Vector2(1, 50), Vector2(1, 50), Vector2(1, 50), Vector2(1, 50)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Skeleton2D/root/cap:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.1, 0.27, 0.4, 0.54, 0.67),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Skeleton2D/root/cap:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.1, 0.27, 0.4, 0.54, 0.67),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Skeleton2D/root/cap:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.27, 0.4, 0.54, 0.67, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2000028, 0.8400004), Vector2(1.320004, 0.76252663), Vector2(0.8590518, 1.5877025), Vector2(0.69181204, 1.5495403), Vector2(0.6988399, 1.637095), Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Skeleton2D/root/eyes:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.26, 0.41, 0.54, 0.67, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3, -65), Vector2(3, -63.000008), Vector2(3, -62.000004), Vector2(3, -75.00001), Vector2(3, -78), Vector2(1, -82), Vector2(3, -65)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Skeleton2D/root/eyes:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../Skeleton2D/root/eyes:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.26, 0.41, 0.54, 0.67, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.1199993, 0.8000006), Vector2(1.0799989, 0.6800006), Vector2(1.1189934, 0.4943224), Vector2(1.1199993, 1.0000006), Vector2(1.0399985, 1.0400006), Vector2(1.0400004, 1.0400012), Vector2(1.1199993, 0.8000006)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bh7p1"]
+_data = {
+&"RESET": SubResource("Animation_bh7p1"),
+&"thrust_old": SubResource("Animation_ql0ye")
+}
+
+[node name="Jellyfish" type="Node2D" unique_id=697981505]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=883662540]
+position = Vector2(29, 8)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+frame_progress = 0.059735738
+
+[node name="polygons" type="Node2D" parent="." unique_id=620219387]
+
+[node name="Cap" type="Polygon2D" parent="polygons" unique_id=1130162086]
+visible = false
+offset = Vector2(-336, -282)
+texture = ExtResource("7_kinp4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(248, 296, 424, 296, 449.49014, 283.26752, 464.19968, 264.1996, 458.2069, 232.05655, 415.1679, 191.19673, 367.77054, 173.76321, 302.93964, 173.21841, 253.90785, 194.46552, 222.8544, 221.70538, 209.77927, 245.13168, 214.68243, 274.00595)
+uv = PackedVector2Array(248, 296, 424, 296, 449.49014, 283.26752, 464.19968, 264.1996, 458.2069, 232.05655, 415.1679, 191.19673, 367.77054, 173.76321, 302.93964, 173.21841, 253.90785, 194.46552, 222.8544, 221.70538, 209.77927, 245.13168, 214.68243, 274.00595)
+bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/cap", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "root/tentacle1_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3/tentacle2_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3/tentacle3_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3/tentacle4_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/eyes", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4/tail_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Eyes" type="Polygon2D" parent="polygons" unique_id=760590904]
+visible = false
+position = Vector2(-96, -138)
+texture = ExtResource("7_kinp4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(32, 56.000004, 160.00003, 56.000004, 160.00003, 112.00001, 32, 112.00001)
+uv = PackedVector2Array(32, 56.000004, 160.00003, 56.000004, 160.00003, 112.00001, 32, 112.00001)
+bones = ["root", PackedFloat32Array(0, 0, 0, 0), "root/cap", PackedFloat32Array(0, 0, 0, 0), "root/eyes", PackedFloat32Array(1, 1, 1, 1), "root/tentacle1_1", PackedFloat32Array(0, 0, 0, 0), "root/tentacle1_1/tentacle1_2", PackedFloat32Array(0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0), "root/tentacle2_1", PackedFloat32Array(0, 0, 0, 0), "root/tentacle2_1/tentacle2_2", PackedFloat32Array(0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3", PackedFloat32Array(0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3/tentacle2_4", PackedFloat32Array(0, 0, 0, 0), "root/tentacle3_1", PackedFloat32Array(0, 0, 0, 0), "root/tentacle3_1/tentacle3_2", PackedFloat32Array(0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3", PackedFloat32Array(0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3/tentacle3_4", PackedFloat32Array(0, 0, 0, 0), "root/tentacle4_1", PackedFloat32Array(0, 0, 0, 0), "root/tentacle4_1/tentacle4_2", PackedFloat32Array(0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3", PackedFloat32Array(0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3/tentacle4_4", PackedFloat32Array(0, 0, 0, 0), "root/tail_1", PackedFloat32Array(0, 0, 0, 0), "root/tail_1/tail_2", PackedFloat32Array(0, 0, 0, 0), "root/tail_1/tail_2/tail_3", PackedFloat32Array(0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4", PackedFloat32Array(0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4/tail_5", PackedFloat32Array(0, 0, 0, 0)]
+
+[node name="Tail" type="Polygon2D" parent="polygons" unique_id=2027645330]
+visible = false
+position = Vector2(-88, -154)
+texture = ExtResource("7_kinp4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(32, 144, 72, 144, 72, 176, 71.999985, 207.99998, 71.999985, 239.99998, 71.99998, 272, 79.99999, 303.99997, 79.99999, 335.99997, 79.99999, 367.99997, 79.99999, 391.99997, 39.999992, 391.99997, 39.999992, 367.99997, 39.999992, 335.99997, 39.999992, 303.99997, 31.999992, 271.99997, 32, 239.99998, 32, 207.99998, 32, 175.99998)
+uv = PackedVector2Array(32, 144, 72, 144, 72, 176, 71.999985, 207.99998, 71.999985, 239.99998, 71.99998, 272, 79.99999, 303.99997, 79.99999, 335.99997, 79.99999, 367.99997, 79.99999, 391.99997, 39.999992, 391.99997, 39.999992, 367.99997, 39.999992, 335.99997, 39.999992, 303.99997, 31.999992, 271.99997, 32, 239.99998, 32, 207.99998, 32, 175.99998)
+polygons = [PackedInt32Array(0, 1, 2, 17), PackedInt32Array(17, 2, 3, 16), PackedInt32Array(16, 3, 4, 15), PackedInt32Array(15, 4, 5, 14), PackedInt32Array(5, 6, 13, 14), PackedInt32Array(6, 7, 12, 13), PackedInt32Array(7, 8, 11, 12), PackedInt32Array(8, 9, 10, 11)]
+bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/cap", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3/tentacle2_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3/tentacle3_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3/tentacle4_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/eyes", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1", PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), "root/tail_1/tail_2", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tail_1/tail_2/tail_3", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4/tail_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0)]
+
+[node name="Tail2" type="Polygon2D" parent="polygons" unique_id=1806338857]
+visible = false
+position = Vector2(-52, -154)
+texture = ExtResource("7_kinp4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(32, 144, 72, 144, 72, 176, 71.999985, 207.99998, 71.999985, 239.99998, 71.99998, 272, 79.99999, 303.99997, 79.99999, 335.99997, 79.99999, 367.99997, 79.99999, 391.99997, 39.999992, 391.99997, 39.999992, 367.99997, 39.999992, 335.99997, 39.999992, 303.99997, 31.999992, 271.99997, 32, 239.99998, 32, 207.99998, 32, 175.99998)
+uv = PackedVector2Array(32, 144, 72, 144, 72, 176, 71.999985, 207.99998, 71.999985, 239.99998, 71.99998, 272, 79.99999, 303.99997, 79.99999, 335.99997, 79.99999, 367.99997, 79.99999, 391.99997, 39.999992, 391.99997, 39.999992, 367.99997, 39.999992, 335.99997, 39.999992, 303.99997, 31.999992, 271.99997, 32, 239.99998, 32, 207.99998, 32, 175.99998)
+polygons = [PackedInt32Array(0, 1, 2, 17), PackedInt32Array(17, 2, 3, 16), PackedInt32Array(16, 3, 4, 15), PackedInt32Array(15, 4, 5, 14), PackedInt32Array(5, 6, 13, 14), PackedInt32Array(6, 7, 12, 13), PackedInt32Array(7, 8, 11, 12), PackedInt32Array(8, 9, 10, 11)]
+bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/cap", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3/tentacle2_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3/tentacle3_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3/tentacle4_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/eyes", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1", PackedFloat32Array(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "root/tail_1/tail_2", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tail_1/tail_2/tail_3", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4/tail_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0)]
+
+[node name="Tail3" type="Polygon2D" parent="polygons" unique_id=1579902785]
+visible = false
+position = Vector2(-14, -154)
+texture = ExtResource("7_kinp4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(32, 144, 72, 144, 72, 176, 71.999985, 207.99998, 71.999985, 239.99998, 71.99998, 272, 79.99999, 303.99997, 79.99999, 335.99997, 79.99999, 367.99997, 79.99999, 391.99997, 39.999992, 391.99997, 39.999992, 367.99997, 39.999992, 335.99997, 39.999992, 303.99997, 31.999992, 271.99997, 32, 239.99998, 32, 207.99998, 32, 175.99998)
+uv = PackedVector2Array(32, 144, 72, 144, 72, 176, 71.999985, 207.99998, 71.999985, 239.99998, 71.99998, 272, 79.99999, 303.99997, 79.99999, 335.99997, 79.99999, 367.99997, 79.99999, 391.99997, 39.999992, 391.99997, 39.999992, 367.99997, 39.999992, 335.99997, 39.999992, 303.99997, 31.999992, 271.99997, 32, 239.99998, 32, 207.99998, 32, 175.99998)
+polygons = [PackedInt32Array(0, 1, 2, 17), PackedInt32Array(17, 2, 3, 16), PackedInt32Array(16, 3, 4, 15), PackedInt32Array(15, 4, 5, 14), PackedInt32Array(5, 6, 13, 14), PackedInt32Array(6, 7, 12, 13), PackedInt32Array(7, 8, 11, 12), PackedInt32Array(8, 9, 10, 11)]
+bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/cap", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_1/tentacle2_2/tentacle2_3/tentacle2_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_1/tentacle3_2/tentacle3_3/tentacle3_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_1/tentacle4_2/tentacle4_3/tentacle4_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/eyes", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1", PackedFloat32Array(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "root/tail_1/tail_2", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tail_1/tail_2/tail_3", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4/tail_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0)]
+
+[node name="Tentacle" type="Polygon2D" parent="polygons" unique_id=1588046146]
+position = Vector2(-208, -152)
+texture = ExtResource("7_kinp4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(120.00001, 144, 144, 144, 144.00002, 176, 144.00002, 200, 144.00002, 224, 144, 248, 144, 272, 144, 296, 144, 320, 144, 344, 144, 368.00003, 120, 368.00003, 120, 344, 120, 320, 120, 296, 120, 272, 120, 248, 120.000015, 224, 120.000015, 200, 120.000015, 176)
+uv = PackedVector2Array(120.00001, 144, 144, 144, 144.00002, 176.00002, 144.00002, 200.00003, 144.00002, 224.00003, 144.00002, 248.00003, 144.00002, 272.00003, 144.00002, 296.00003, 144.00002, 320.00003, 144.00002, 344.00006, 144, 368.00003, 120, 368.00003, 120.000015, 344.00006, 120.000015, 320.00003, 120.000015, 296.00003, 120.000015, 272.00003, 120.000015, 248.00003, 120.000015, 224.00003, 120.000015, 200.00003, 120.000015, 176.00002)
+polygons = [PackedInt32Array(8, 3, 4, 7), PackedInt32Array(7, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(0, 1, 2, 19), PackedInt32Array(2, 3, 18, 19), PackedInt32Array(4, 17, 18, 3), PackedInt32Array(17, 4, 5, 16), PackedInt32Array(16, 5, 6, 15), PackedInt32Array(6, 7, 14, 15), PackedInt32Array(14, 7, 8, 13), PackedInt32Array(8, 9, 12, 13), PackedInt32Array(9, 10, 11, 12)]
+bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/cap", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/eyes", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1", PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), "root/tentacle1_1/tentacle1_2", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "root/tentacle1_1/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4/tail_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Tentacle2" type="Polygon2D" parent="polygons" unique_id=1888842598]
+position = Vector2(-162, -152)
+texture = ExtResource("7_kinp4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(120.00001, 144, 144, 144, 144.00002, 176, 144.00002, 200, 144.00002, 224, 144, 248, 144, 272, 144, 296, 144, 320, 144, 344, 144, 368.00003, 120, 368.00003, 120, 344, 120, 320, 120, 296, 120, 272, 120, 248, 120.000015, 224, 120.000015, 200, 120.000015, 176)
+uv = PackedVector2Array(120.00001, 144, 144, 144, 144.00002, 176.00002, 144.00002, 200.00003, 144.00002, 224.00003, 144.00002, 248.00003, 144.00002, 272.00003, 144.00002, 296.00003, 144.00002, 320.00003, 144.00002, 344.00006, 144, 368.00003, 120, 368.00003, 120.000015, 344.00006, 120.000015, 320.00003, 120.000015, 296.00003, 120.000015, 272.00003, 120.000015, 248.00003, 120.000015, 224.00003, 120.000015, 200.00003, 120.000015, 176.00002)
+polygons = [PackedInt32Array(8, 3, 4, 7), PackedInt32Array(7, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(0, 1, 2, 19), PackedInt32Array(2, 3, 18, 19), PackedInt32Array(4, 17, 18, 3), PackedInt32Array(17, 4, 5, 16), PackedInt32Array(16, 5, 6, 15), PackedInt32Array(6, 7, 14, 15), PackedInt32Array(14, 7, 8, 13), PackedInt32Array(8, 9, 12, 13), PackedInt32Array(9, 10, 11, 12)]
+bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/cap", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/eyes", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1", PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), "root/tentacle1_1/tentacle1_2", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "root/tentacle1_1/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2", PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), "root/tentacle2_2/tentacle1_2", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "root/tentacle2_2/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4/tail_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Tentacle3" type="Polygon2D" parent="polygons" unique_id=468988302]
+position = Vector2(-102, -152)
+texture = ExtResource("7_kinp4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(120.00001, 144, 144, 144, 144.00002, 176, 144.00002, 200, 144.00002, 224, 144, 248, 144, 272, 144, 296, 144, 320, 144, 344, 144, 368.00003, 120, 368.00003, 120, 344, 120, 320, 120, 296, 120, 272, 120, 248, 120.000015, 224, 120.000015, 200, 120.000015, 176)
+uv = PackedVector2Array(120.00001, 144, 144, 144, 144.00002, 176.00002, 144.00002, 200.00003, 144.00002, 224.00003, 144.00002, 248.00003, 144.00002, 272.00003, 144.00002, 296.00003, 144.00002, 320.00003, 144.00002, 344.00006, 144, 368.00003, 120, 368.00003, 120.000015, 344.00006, 120.000015, 320.00003, 120.000015, 296.00003, 120.000015, 272.00003, 120.000015, 248.00003, 120.000015, 224.00003, 120.000015, 200.00003, 120.000015, 176.00002)
+polygons = [PackedInt32Array(8, 3, 4, 7), PackedInt32Array(7, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(0, 1, 2, 19), PackedInt32Array(2, 3, 18, 19), PackedInt32Array(4, 17, 18, 3), PackedInt32Array(17, 4, 5, 16), PackedInt32Array(16, 5, 6, 15), PackedInt32Array(6, 7, 14, 15), PackedInt32Array(14, 7, 8, 13), PackedInt32Array(8, 9, 12, 13), PackedInt32Array(9, 10, 11, 12)]
+bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/cap", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/eyes", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1", PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), "root/tentacle1_1/tentacle1_2", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "root/tentacle1_1/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3", PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), "root/tentacle3_3/tentacle1_2", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "root/tentacle3_3/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4/tail_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Tentacle4" type="Polygon2D" parent="polygons" unique_id=665737737]
+position = Vector2(-56, -152)
+texture = ExtResource("7_kinp4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(120.00001, 144, 144, 144, 144.00002, 176, 144.00002, 200, 144.00002, 224, 144, 248, 144, 272, 144, 296, 144, 320, 144, 344, 144, 368.00003, 120, 368.00003, 120, 344, 120, 320, 120, 296, 120, 272, 120, 248, 120.000015, 224, 120.000015, 200, 120.000015, 176)
+uv = PackedVector2Array(120.00001, 144, 144, 144, 144.00002, 176.00002, 144.00002, 200.00003, 144.00002, 224.00003, 144.00002, 248.00003, 144.00002, 272.00003, 144.00002, 296.00003, 144.00002, 320.00003, 144.00002, 344.00006, 144, 368.00003, 120, 368.00003, 120.000015, 344.00006, 120.000015, 320.00003, 120.000015, 296.00003, 120.000015, 272.00003, 120.000015, 248.00003, 120.000015, 224.00003, 120.000015, 200.00003, 120.000015, 176.00002)
+polygons = [PackedInt32Array(8, 3, 4, 7), PackedInt32Array(7, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(0, 1, 2, 19), PackedInt32Array(2, 3, 18, 19), PackedInt32Array(4, 17, 18, 3), PackedInt32Array(17, 4, 5, 16), PackedInt32Array(16, 5, 6, 15), PackedInt32Array(6, 7, 14, 15), PackedInt32Array(14, 7, 8, 13), PackedInt32Array(8, 9, 12, 13), PackedInt32Array(9, 10, 11, 12)]
+bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/cap", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/eyes", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle1_1", PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), "root/tentacle1_1/tentacle1_2", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "root/tentacle1_1/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0), "root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tentacle4_4", PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), "root/tentacle4_4/tentacle1_2", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "root/tentacle4_4/tentacle1_2/tentacle1_3", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4", PackedFloat32Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6", PackedFloat32Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0), "root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8/tentacle1_9", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0), "root/tail_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/tail_1/tail_2/tail_3/tail_4/tail_5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=413598197]
+root_node = NodePath("../AnimatedSprite2D")
+libraries/ = SubResource("AnimationLibrary_bh7p1")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=1060331181]
+
+[node name="root" type="Bone2D" parent="Skeleton2D" unique_id=1159380807]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="cap" type="Bone2D" parent="Skeleton2D/root" unique_id=1593834733]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+auto_calculate_length_and_angle = false
+length = 54.258
+bone_angle = -90.0
+
+[node name="eyes" type="Bone2D" parent="Skeleton2D/root" unique_id=867678350]
+position = Vector2(3, -65)
+scale = Vector2(1.1199993, 0.8000006)
+rest = Transform2D(1, 0, 0, 1, 0, -56)
+
+[node name="tentacle1_1" type="Bone2D" parent="Skeleton2D/root" unique_id=771326218]
+position = Vector2(-98, -4)
+rotation = 0.874593
+rest = Transform2D(1, 0, 0, 1, -76, 0)
+
+[node name="tentacle1_2" type="Bone2D" parent="Skeleton2D/root/tentacle1_1" unique_id=716458092]
+position = Vector2(0, 56)
+rotation = -0.9502896
+scale = Vector2(0.99999994, 0.99999994)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+
+[node name="tentacle1_3" type="Bone2D" parent="Skeleton2D/root/tentacle1_1/tentacle1_2" unique_id=512950807]
+position = Vector2(0, 48)
+rotation = -0.34322327
+scale = Vector2(0.99999994, 0.99999994)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+
+[node name="tentacle1_4" type="Bone2D" parent="Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3" unique_id=1071589263]
+position = Vector2(1, 50)
+rotation = -0.24569188
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_5" type="Bone2D" parent="Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4" unique_id=823718978]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_6" type="Bone2D" parent="Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5" unique_id=1124348775]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_7" type="Bone2D" parent="Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6" unique_id=519754946]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_8" type="Bone2D" parent="Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7" unique_id=191019641]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 25.0
+bone_angle = 90.0
+
+[node name="tentacle1_9" type="Bone2D" parent="Skeleton2D/root/tentacle1_1/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8" unique_id=70667745]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 20.0
+bone_angle = 90.0
+
+[node name="tentacle2_2" type="Bone2D" parent="Skeleton2D/root" unique_id=1988359471]
+position = Vector2(-30, 0)
+rest = Transform2D(1, 0, 0, 1, -30, 0)
+
+[node name="tentacle1_2" type="Bone2D" parent="Skeleton2D/root/tentacle2_2" unique_id=1394046678]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+
+[node name="tentacle1_3" type="Bone2D" parent="Skeleton2D/root/tentacle2_2/tentacle1_2" unique_id=1853348958]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+
+[node name="tentacle1_4" type="Bone2D" parent="Skeleton2D/root/tentacle2_2/tentacle1_2/tentacle1_3" unique_id=1352654943]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_5" type="Bone2D" parent="Skeleton2D/root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4" unique_id=1493912038]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_6" type="Bone2D" parent="Skeleton2D/root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5" unique_id=1744949248]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_7" type="Bone2D" parent="Skeleton2D/root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6" unique_id=24447634]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_8" type="Bone2D" parent="Skeleton2D/root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7" unique_id=1177316858]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 25.0
+bone_angle = 90.0
+
+[node name="tentacle1_9" type="Bone2D" parent="Skeleton2D/root/tentacle2_2/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8" unique_id=554161534]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 20.0
+bone_angle = 90.0
+
+[node name="tentacle3_3" type="Bone2D" parent="Skeleton2D/root" unique_id=498571854]
+position = Vector2(30, 0)
+rest = Transform2D(1, 0, 0, 1, 30, 0)
+
+[node name="tentacle1_2" type="Bone2D" parent="Skeleton2D/root/tentacle3_3" unique_id=1742971754]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+
+[node name="tentacle1_3" type="Bone2D" parent="Skeleton2D/root/tentacle3_3/tentacle1_2" unique_id=642715022]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+
+[node name="tentacle1_4" type="Bone2D" parent="Skeleton2D/root/tentacle3_3/tentacle1_2/tentacle1_3" unique_id=1222552297]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_5" type="Bone2D" parent="Skeleton2D/root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4" unique_id=1752620022]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_6" type="Bone2D" parent="Skeleton2D/root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5" unique_id=411224488]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_7" type="Bone2D" parent="Skeleton2D/root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6" unique_id=940417452]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_8" type="Bone2D" parent="Skeleton2D/root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7" unique_id=565006958]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 25.0
+bone_angle = 90.0
+
+[node name="tentacle1_9" type="Bone2D" parent="Skeleton2D/root/tentacle3_3/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8" unique_id=1378305014]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 20.0
+bone_angle = 90.0
+
+[node name="tentacle4_4" type="Bone2D" parent="Skeleton2D/root" unique_id=1533226084]
+position = Vector2(76, 0)
+rest = Transform2D(1, 0, 0, 1, 76, 0)
+
+[node name="tentacle1_2" type="Bone2D" parent="Skeleton2D/root/tentacle4_4" unique_id=1476603042]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+
+[node name="tentacle1_3" type="Bone2D" parent="Skeleton2D/root/tentacle4_4/tentacle1_2" unique_id=1631692494]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+
+[node name="tentacle1_4" type="Bone2D" parent="Skeleton2D/root/tentacle4_4/tentacle1_2/tentacle1_3" unique_id=322908389]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_5" type="Bone2D" parent="Skeleton2D/root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4" unique_id=1266479054]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_6" type="Bone2D" parent="Skeleton2D/root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5" unique_id=982232201]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_7" type="Bone2D" parent="Skeleton2D/root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6" unique_id=95813207]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 52.536
+bone_angle = 90.0
+
+[node name="tentacle1_8" type="Bone2D" parent="Skeleton2D/root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7" unique_id=1539774140]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 25.0
+bone_angle = 90.0
+
+[node name="tentacle1_9" type="Bone2D" parent="Skeleton2D/root/tentacle4_4/tentacle1_2/tentacle1_3/tentacle1_4/tentacle1_5/tentacle1_6/tentacle1_7/tentacle1_8" unique_id=826628211]
+position = Vector2(0, 24)
+rest = Transform2D(1, 0, 0, 1, 0, 24)
+auto_calculate_length_and_angle = false
+length = 20.0
+bone_angle = 90.0
+
+[node name="tail_1" type="Bone2D" parent="Skeleton2D/root" unique_id=2130420149]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="tail_2" type="Bone2D" parent="Skeleton2D/root/tail_1" unique_id=2090237823]
+position = Vector2(0, 48)
+rest = Transform2D(1, 0, 0, 1, 0, 48)
+
+[node name="tail_3" type="Bone2D" parent="Skeleton2D/root/tail_1/tail_2" unique_id=640166835]
+position = Vector2(0, 54)
+rest = Transform2D(1, 0, 0, 1, 0, 54)
+
+[node name="tail_4" type="Bone2D" parent="Skeleton2D/root/tail_1/tail_2/tail_3" unique_id=1044957212]
+position = Vector2(0, 51)
+rest = Transform2D(1, 0, 0, 1, 0, 51)
+
+[node name="tail_5" type="Bone2D" parent="Skeleton2D/root/tail_1/tail_2/tail_3/tail_4" unique_id=1211777835]
+position = Vector2(0, 48)
+rest = Transform2D(1, 0, 0, 1, 0, 48)
+auto_calculate_length_and_angle = false
+length = 35.121
+bone_angle = 90.0
+
+[node name="jellyfish" parent="." unique_id=2044022966 instance=ExtResource("8_bh7p1")]

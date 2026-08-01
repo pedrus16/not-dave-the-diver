@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dn4pxaw6sxydl" path="res://scenes/modules/module_connector.tscn" id="5_js1kk"]
 [ext_resource type="PackedScene" uid="uid://dlxim7mtv1puh" path="res://scenes/o2_counter/bubble_counter.tscn" id="6_2xucn"]
 [ext_resource type="PackedScene" uid="uid://b56q2ilrsxwhc" path="res://scenes/entities/diodon/diodon.tscn" id="11_m7sb5"]
+[ext_resource type="PackedScene" uid="uid://baa05n4exgy8b" path="res://scenes/entities/jellyfish/jellyfish.tscn" id="12_jtdfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbais"]
 size = Vector2(665, 46.5)
@@ -89,6 +90,9 @@ angle_range_degree = 30.0
 
 [node name="Diodon" parent="World" unique_id=325988343 instance=ExtResource("11_m7sb5")]
 position = Vector2(824, -355)
+
+[node name="Jellyfish" parent="World" unique_id=747316159 instance=ExtResource("12_jtdfu")]
+position = Vector2(1166, -262)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=187618121]
 
